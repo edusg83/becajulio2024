@@ -1,18 +1,19 @@
-/* identificador */
-#parrafo1 {
-    color:#ab0000;
-    font-size:20px;
+.caja1{
+    
+    border:2px;
+    border-color:#000000;
+    border-style: dotted;
+    float:left;
+    padding:2%;
+   
 }
 
-/* atributo class */
-.claseParrafo1{
-    color:#7d16f3;
-}
+.caja2{
+    border:2px;
+    border-color:#000000;
+    border-style: dotted;
 
-#parrafo2{
-    color:green;
-}
-
-#parrafo3{
-    color:blue;
+    float:left;
+    width: 150px;
+    height: 150px;
 }
