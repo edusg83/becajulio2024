@@ -30,4 +30,5 @@ footer p{
 }
 footer .fecha-hora {
     float: right;
+    font-style: italic;
 }
