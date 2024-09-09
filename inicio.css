@@ -1,4 +1,25 @@
+*{
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
 .parrafo{
-    color: red;
+    color: wheat;
     cursor: pointer;
+}
+
+#p1{
+    color: aqua;
+    cursor: crosshair;
+}
+
+#p2{
+    color: violet;
 }
