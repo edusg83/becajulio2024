@@ -1,27 +1,56 @@
-.colorTexto{
-    
+
+body {
+    margin: 0;
+    padding: 0;
     
 }
 
-.caja1{
-    border:5px;
-    margin: 15px;
-    padding: 15px;
-    float:right;
-    border-style: solid;
-    border-color: black;
-    width: 150px;
-    height: 150px;
+
+.container {
+    text-align: left;
 }
 
-.centrar{
+
+.centrar {
     text-align: center;
 }
 
 
-.footerIzquierda{
-    float: left;
+.main {
+    display: flex;
+    justify-content: space-between;
 }
-.footerDerecha{
+
+
+.aside {
+    margin-left: 20px;
+    flex: 0 0 200px; 
+}
+.autor-desconocido {
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.caja1 {
+    border: 5px solid black;
+    margin: 15px;
+    padding: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+.footerIzquierda {
+    float: left;
+    margin-right: 20px;
+}
+
+.footerDerecha {
     float: right;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
