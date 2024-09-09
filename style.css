@@ -2,7 +2,7 @@ body{
     background-color: rgb(135, 135, 177);
 }
 
-.intro{
+.p-container p{
     background-color: aliceblue;
     display: inline;
     border-radius: 10px;
