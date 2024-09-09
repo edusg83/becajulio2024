@@ -1,5 +1,27 @@
 .colorTexto{
-    color:aqua;
+    
     
 }
 
+.caja1{
+    border:5px;
+    margin: 15px;
+    padding: 15px;
+    float:right;
+    border-style: solid;
+    border-color: black;
+    width: 150px;
+    height: 150px;
+}
+
+.centrar{
+    text-align: center;
+}
+
+
+.footerIzquierda{
+    float: left;
+}
+.footerDerecha{
+    float: right;
+}
