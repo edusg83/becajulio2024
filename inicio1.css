@@ -1,0 +1,18 @@
+/* identificador */
+#parrafo1 {
+    color:#ab0000;
+    font-size:20px;
+}
+
+/* atributo class */
+.claseParrafo1{
+    color:#7d16f3;
+}
+
+#parrafo2{
+    color:green;
+}
+
+#parrafo3{
+    color:blue;
+}
