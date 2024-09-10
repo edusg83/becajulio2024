@@ -1,37 +1,43 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 nav {
-    background-color: rgba(127, 193, 238, 0.562);
+    background-color: rgba(41, 41, 41, 0.89);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
+
 
 nav img {
     width: 150px;
     display: block;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-.introtext{
+header p {
     text-align: center;
 }
 
-.introbutton button{
-    align-items: center;
+header button {
+    display: block;
+    margin: auto;
 }
-
 
 nav ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    margin-right: 25px;
 }
 
+
+/* main textos*/
 .textos {
     display: flex;
     flex-wrap: wrap;
@@ -44,31 +50,59 @@ nav ul {
     margin-top: 10px;
 }
 
-h4{
+.textoinfo h2{
+    text-align: center;
+}
+
+h4 {
     text-align: center;
     color: rgb(65, 63, 63);
 }
-.formulario {
-    display: flex;
-    justify-content: center;
-}
+
+
 
 form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 50%;
+    width: 40%;
     margin: auto;
-
-}
-
-.container {
-    width: 50%;
     background-color: rgba(127, 193, 238, 0.562);
 
+
 }
+
+label,
+input {
+    width: 98%;
+    padding: 10px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container {
+    width: 45%;
+    padding: 10px;
+
+}
+
+.email {
+    width: 100%;
+}
+
 
 footer {
     margin-top: 20px;
+    padding: 50px;
     text-align: center;
+    background-color: rgba(41, 41, 41, 0.89);
+}
+
+footer p{
+    color: white;
+    font-weight: bold;
 }
