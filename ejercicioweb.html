@@ -26,7 +26,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus quod,
                 voluptatum minima iure animi dolor porro earum dolore aut unde laudantium, officiis sed blanditiis
                 inventore.</p>
-            <input type="submit" value="Enviar">
+            <input class="boton" type="submit" value="Enviar">
         </article>
         <article>
             <div class="container">
@@ -84,22 +84,28 @@
         <article>
             <p class="centrar">Completa el formulario</p>
             <form class="formulario">
-                <label for="text">Nombre:</label>
-                <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
-                <label for="text">Apellidos:</label>
-                <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
+                <div>
+                    <label for="text">Nombre:</label>
+                    <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
+                    <label for="text">Apellidos:</label>
+                    <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
+                </div>
                 <br>
+                <div>
                 <label for="text">Email:</label>
-                <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
+                <input placeholder="Introduzca su email" type="email" id="email" name="email">
+                </div>
                 <br>
-                <label for="text">Contraseña:</label>
-                <input type="password" id="password" name="password">
-                <label for="text">Repite la Contraseña:</label>
-                <input type="password" id="password" name="password">
-                <br>
-                <input type="checkbox" name="aceptar" value="condiciones">
-                <label for="vehicle1"> Acceptar terminos y condiciones</label>
-                <input type="submit" value="Enviar">
+                <div>
+                    <label for="text">Contraseña:</label>
+                    <input type="password" id="password" name="password">
+                    <label for="text">Repite la Contraseña:</label>
+                    <input type="password" id="password" name="password">
+                    <br>
+                    <input type="checkbox" name="aceptar" value="condiciones">
+                    <label for="vehicle1"> Acceptar terminos y condiciones</label>
+                    <input class="boton" type="submit" value="Enviar">
+                </div>
             </form>
         </article>
     </main>

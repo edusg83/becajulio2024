@@ -1,3 +1,12 @@
+.derecha {
+    float: left;
+}
+
+.izquierda {
+    float: right;
+    padding: 10px;
+}
+
 .centrar {
     text-align: center;
     border: 1px solid black;
@@ -19,14 +28,7 @@
     padding-bottom: 1%;
 }
 
-.derecha {
-    float: left;
-}
 
-.izquierda {
-    float: right;
-    padding: 10px;
-}
 
 header {
     height: 50px;
@@ -62,7 +64,14 @@ header {
     margin: 0, auto;
     overflow: hidden;
 }
-
+.boton{
+    background-color: rgb(26, 135, 236);
+    color: beige;
+    border-radius: 10px;
+    border-color: rgb(26, 135, 236);
+}
 footer {
     margin-top: 20px;
+    background-color: black;
+    color: beige;
 }
