@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Beca Julio 2024</title>
+    <link rel="stylesheet" href="css/inicio1.css">
+    <link rel="icon" href="images/logoHTML5.png" type="image/png">
+
+</head>
+
+
+<body>
+    <header class="centrar">
+        <h1>Beca Julio 2024</h1>
+    </header>
+
+    <main id="main" class="main">
+        <section>
+            <div class="p-container">
+                <p id="cita1">
+                    “Todo el mundo trata de realizar algo grande, sin darse cuenta de que la vida se compone de cosas
+                    pequeñas.<br>
+                    <strong>Elige al Autor de esta cita:</strong>
+
+                </p>
+                <select>
+
+                    <option value="1">Pepe</option>
+                    <option value="2">Jose</option>
+                    <option value="3">Frank</option>
+                </select>
+                <p id="cita2">
+                    “La vida es como una bicicleta. Para mantener el equilibrio tienes que seguir adelante.<br>
+                    <strong>Albert Einstein</strong>
+                </p>
+                <p><label for="comentarios">Comentarios:</label></p>
+                <textarea id="comentarios" name="comentarios" rows="5" cols="33">Deja un comentario</textarea>
+                <p><button type="submit">enviar</button></p>
+            </div>
+            <form oninput="resultado.value=rango.value;pro.value=rango.value;">
+                <input type="range" id="rango" value="0">
+                <output id="resultado">Sin valor</output>
+            </form>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="left">
+            <p>Fabri EOI<br>
+                C:/La calle, 3, 03206<br>
+                Alicante (Alicante)</p>
+            <a href="mailto:pepe@correo.es">Enviar correo a pepe</a>
+            <datalist id="telefonos">
+                <option value="123456789" label="telf1">
+                <option value="987654321" label="telf2">
+            </datalist>
+            <a href=“tel:666 00 11 22”>Llamar a pepe</a>
+
+        </div>
+        <div class="right">
+            <p id="datetime"></p>
+        </div>
+    </footer>
+    <script src="js/fichero.js"> </script>
+</body>
+
+</html>
