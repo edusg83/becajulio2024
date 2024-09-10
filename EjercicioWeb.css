@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+
 header{
     background-color: #f8f9fa;
     text-align: center;
@@ -8,7 +13,6 @@ header p {
     width: 50%;
     margin: auto;
     margin-bottom: 20px;
-    font-family: sans-serif;
     color: #5f555c;
 }
 
@@ -34,20 +38,64 @@ li{
     width: 25%;
 }
 
+ul li p{
+    color: #5f555c;
+}
+
 #form{
     border-top: solid #dddfe1;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     border: solid blue;
 }
 
 #form p{
     text-align: center;
+    padding: 20px;
 }
 
 form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    margin: auto;
     border: solid red;
-    display: block;
-    width: 50%;
-    justify-content: center;
+}
+
+.form{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#first_name, #last_name, #password, #confirm_password{ 
+    width: 250px;
+    background-color: #eef2f8;
+    border-radius: 3px;
+    border: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#email{
+    width: 530px;
+    background-color: #eef2f8;
+    border-radius: 3px;
+    border: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#terms{
+    display: inline;
+
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    background-color: #212529;
+    color: white;
+    padding: 20px;
 }
