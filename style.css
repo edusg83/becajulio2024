@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 header, footer{
-    padding: 10%; 
-    background-color: rgb(187, 238, 189);
+    padding: 1rem; 
+    background-color: rgb(211, 247, 212);
     
     float: left;
     width: 100%;
@@ -13,16 +15,13 @@ header, footer{
 
 
 .main{
-    background-color: rgb(178, 178, 235);
+    background-color: rgb(213, 213, 248);
     width: 70%;
     float: left;
     padding: 2rem;
     
 }
 
-p{
-    width: 60%;
-}
 
 cite{
     padding: 2rem; 
