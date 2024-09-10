@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+header{
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+figure{
+    width: 50px;
+   
+}
+
+figure img{
+    width: 100%;
+}
+nav{
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+header nav ul{
+   display: inline-flex; 
+   list-style: none; 
+   color: white;
+    
+}
+
+header nav ul li{
+    padding: 0.5rem; 
+    
+}
+
+header nav ul li a{
+    color: white;
+}
+
+.topcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 5rem 3rem;
+    text-align: center;
+    background-color: rgb(247, 245, 245); 
+    margin: 3rem 1rem;
+}
+
+ h1, h3{
+    margin: 0.5rem 0; 
+}
+
+p{
+    margin: 0.5rem 0;
+}
+
+button{
+    background-color: rgb(0, 119, 255);
+    width: 20%;
+    align-self: center;
+    color: white;
+    padding: 0.5rem 1rem; 
+    border: 0px solid transparent;
+    border-radius: 5px;
+
+}
+
+.articles{
+    padding: 5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.articles article{
+ flex: 1 1 calc(33% - 2rem); 
+  margin: 1rem; 
+  box-sizing: border-box; 
+  background-color: rgb(247, 245, 245); 
+  padding: 2rem;
+  text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+
+.formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    width: 60%;
+    margin: 0 auto; 
+    justify-content: flex-start;
+  }
+  
+  fieldset {
+    margin: 0.5rem 0; 
+    border: 0px solid transparent;
+  }
+
+  fieldset:nth-child(4) input, fieldset:nth-child(1) input, fieldset:nth-child(3) input, fieldset:nth-child(2) input, 
+  fieldset:nth-child(5) input{
+    width: 100%;
+    padding: 0.5rem; 
+    border-radius: 5px;
+    background-color: rgb(247, 245, 245); 
+    border: 0px solid transparent;
+  }
+  
+  
+  .formulario fieldset:nth-child(1),
+  .formulario fieldset:nth-child(2) {
+    flex: 1 1 calc(50% - 1rem); 
+  }
+  
+  
+  .formulario fieldset:nth-child(3) {
+    flex: 1 1 100%; 
+  }
+  
+ 
+  .formulario fieldset:nth-child(4),
+  .formulario fieldset:nth-child(5) {
+    flex: 1 1 calc(50% - 1rem); 
+  }
+  
+ 
+  .formulario fieldset:nth-child(6) {
+    flex: 1 1 100%; 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    justify-content: flex-start;
+    width: 100%; 
+    margin-left: 0;
+  }
+  
+ 
+  .submit {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit:hover {
+    background-color: #0056b3;
+  }
+  
