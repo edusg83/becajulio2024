@@ -19,6 +19,10 @@ nav > ul > li{
 .right {
     float: right;
 }
+
+.sec-2{
+    margin-top:2%;
+}
 .caja-main {
     background: #f8f9fa;
     text-align: center;
@@ -29,6 +33,7 @@ nav > ul > li{
     text-align: center;
     display: inline-block;
     margin: 10px;
+    padding:2%;
 }
 .row1, .row2, .row3, .row4{
     display: block;
