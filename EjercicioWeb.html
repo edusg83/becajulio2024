@@ -13,13 +13,9 @@
         <button>Call to action</button>
     </header>
 
-    <!--https://sadanduseless.b-cdn.net/wp-content/uploads/2014/06/funny-cat10.jpg-->
-
     <nav>
-        <div class = "image-container">
-            <img src="" alt="Logotipo" class="image">
-        </div>
-        
+        <img src="placeholder" alt="Logotipo" class="image">
+
         <ul>
             <li><a href="Placeholder">Home</a></li>
             <li><a href="Placeholder">About</a></li>
@@ -74,27 +70,28 @@
                 
                 <div class = "form" id = "email-container">
                     <label for = "email">Email adress</label>
-                    <input type = "email" name="email" id = "email">
+                    <input type = "email" name="email" id = "email" required>
                 </div>
 
                 <div class = "form">
                     <label for = "password">Password</label>
-                    <input type = "password" name = "password" id = "password">
+                    <input type = "password" name = "password" id = "password" required>
                 </div>
 
                 <div class = "form">
                     <label for="confirm_password">Confirm password</label>
-                    <input type="password" name = "confirm_password" id = "confirm_password">
+                    <input type="password" name = "confirm_password" id = "confirm_password" required>
                 </div>
 
                 <div class = "form" id = "terms-container">
-                    <label for="terms">I accept <a href = "placeholder" target = "_blank">terms and conditions</a></label>
-                    <input type = "checkbox" name = "terms" id = "terms">
+                    <label for="terms">I accept <a href = "placeholder" target = "_blank">terms & conditions</a></label>
+                    <input type = "checkbox" name = "terms" id = "terms" required>
                 </div>
 
-                <div>
+                <div class = "button">
                     <button>Create account</button>
                 </div>
+
             </form>
         </section>
 

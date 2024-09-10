@@ -22,6 +22,7 @@ header p {
     margin: auto;
     margin-bottom: 20px;
     color: #5f555c;
+    padding-top: 20px;
 }
 
 header button{
@@ -49,8 +50,8 @@ nav ul{
 nav img{
     color: white;
     float:left;
-
- 
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 nav ul li{
@@ -77,7 +78,10 @@ nav ul li a{
 #boxes ul li{
     list-style-type: none;
     background-color: #f8f9fa;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-top: 40px;
     margin: 20px;
     text-align: center;
     width: 25%;
@@ -85,6 +89,7 @@ nav ul li a{
 
 ul li p{
      color: #5f555c;
+     padding: 10px;
 }
 
 #form{
@@ -98,6 +103,8 @@ ul li p{
     text-align: center;
     padding: 20px;
 }
+
+
 
 form{
     display: flex;
@@ -134,6 +141,25 @@ form{
 #terms-container{
    display: flex;
    flex-direction: row-reverse;
+   margin-top: 10px;
+}
+
+#terms-container a{
+    text-decoration: none;
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    width: 305px;
+}
+
+form button{
+    background-color: #0061f2;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 #terms{
