@@ -39,7 +39,7 @@ li{
 }
 
 ul li p{
-    color: #5f555c;
+     color: #5f555c;
 }
 
 #form{
@@ -87,9 +87,13 @@ form{
     padding: 5px;
 }
 
-#terms{
-    display: inline;
+#terms-container{
+   display: flex;
+   flex-direction: row-reverse;
+}
 
+#terms{
+    margin-right: 4px;
 }
 
 footer{
