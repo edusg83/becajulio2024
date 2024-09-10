@@ -1,0 +1,43 @@
+body{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+#welcome td{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome h1{
+    margin: 0;
+    padding: 0;
+}
+
+#tarjetas-centro{
+    width: 100%;
+}
+
+#tarjetas-centro tr{
+    margin: 1em;
+}
+
+#tarjetas-centro td{
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 2em;
+}
