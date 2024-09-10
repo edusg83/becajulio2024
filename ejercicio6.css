@@ -21,10 +21,18 @@ figure img{
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 0.1rem solid black;
     border-collapse: collapse;
 }
 th, td {
-    padding: 10px;
+    padding: 1rem;
     text-align: left;
+}
+
+#formulario div{
+    margin-bottom: 0.3em;
+}
+
+#imgSubmit{
+    max-height: 3em;
 }
