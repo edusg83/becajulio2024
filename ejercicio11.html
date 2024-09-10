@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de texto</title>
+    <link rel="stylesheet" href="ejercicio11.css">
+</head>
+
+<body>
+    <header class="centrar">
+        <h1>Elementos de texto</h1>
+    </header>
+    <nav class="navegation">
+
+    </nav>
+    <main id="main" class="main">
+        <section>
+            <form action="" class="form">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="pepe@gmail.com">
+                <br>
+                <label for="date">Fecha de nacimiento: </label>
+                <input type="date" name="date" id="date">
+                <br>
+                <label for="descripcion">Descripcion</label><br>
+                <textarea name="descripcion" id="descripcion" placeholder="Estoy interesado por..." rows="10" cols="20"></textarea>
+                <br>
+                <label for="opciones">Activar</label>
+                <input type="checkbox" name="opciones" id="activar" value="desactivar">
+                <label for="opciones">Desactivar</label>
+                <input type="checkbox" name="opcines" id="desactivar" value="desactivar">
+                <br>
+                <label for="contraseña">Contraseña: </label>
+                <input type="password" name="contraseña" id="contraseñ">
+                <br>
+                <select>
+                    <optgroup label="Lenguajes">
+                        <option value="Java">Java</option>
+                        <option value="Html">HTML</option>
+                        <option value="Css">CSS</option>
+                        <option value="Javascript">Javascript</option>
+                    </optgroup>
+                </select>
+            </form>
+        </section>
+        <aside>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Autor</th>
+                        <th>Cita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Albert Einstein</td>
+                        <td><a href="#cita1" title="Ir a la cita 1" target="_blank">Albert Einstein</a></td>
+                    </tr>
+                    <tr>
+                        <td>Frank A. Clark</td>
+                        <td><a href="#cita2" title="Ir a la cita 2" target="_blank">Frank A. Clark</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+            <div>
+                <figure>
+                    <img src="images/aeinstein.jpeg" alt="Imagen no encontrada">
+                    <details>
+                        <summary>Citas</summary>
+                        <figcaption><a href="#cita1" title="Ir a la cita 1" target="_blank">Albert Einstein</a></figcaption>
+                    </details>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="images/frank-a-clark.jpeg" alt="Imagen no encontrada" width="142" height="189">
+                    <details>
+                        <summary>Citas</summary>
+                        <figcaption><a href="#cita2" title="Ir a la cita 2">Frank A. Clark</a></figcaption>
+                    </details>
+                </figure>
+            </div>
+            <div>
+                <a href="ejercicio7.html" download="">Enlaces</a>
+            </div>
+        </aside>
+    </main>
+    <footer class="centrar">
+        <b>Curso HTML5 EOI – 2024</b>
+        <address>
+            Alumno EOI<br />
+            C:/La calle, 3 , 03206<br />
+            Alicante (Alicante)<br />
+            <a href="mailto:pepe@correo.es">Enviar correo a Pepe</a><br />
+            <a href="tel:666001122">Llamar a Pepe</a><br />
+        </address>
+        <time datetime="09/09/2024" class="fecha">
+            09/09/2024
+        </time>
+    </footer>
+</body>
+
+</html>
