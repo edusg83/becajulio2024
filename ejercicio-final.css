@@ -1,0 +1,80 @@
+nav {
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    margin-top: 15px;
+    margin-right: 5px;
+    float: right;
+}
+
+a {
+    
+    margin-right: 5px;
+    color: white;
+}
+
+.section1 > div {
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+
+button {
+    
+    color: white;
+    background-color: rgb(69, 123, 194);
+    border-radius: 5px;
+    border-color: rgb(69, 123, 194);
+}
+
+.section2 {
+    margin-top: 50px;
+    display: flex;
+}
+
+.section2 > div {
+    text-align: center;
+    font-size: 15px;
+    width: 150px;
+    height: 130px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    margin-left: 50px;
+}
+
+hr {
+    margin: 50px;
+    color: gray;
+    width: 1200px;
+}
+
+form {
+    text-align: center;
+}
+
+form > legend {
+    margin-bottom: 50px;
+}
+
+
+footer {
+    height: 100px;
+    color: white;
+    background-color: black;
+
+}
+
+footer > div {
+    text-align: center;
+}
+
+footer > div > p {
+    margin-top: 50px;
+}
