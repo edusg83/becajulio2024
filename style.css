@@ -3,10 +3,9 @@
 }
 header, footer{
     padding: 10%; 
-    margin: 1rem; 
     background-color: rgb(187, 238, 189);
-    height: 5vh;
-    float: center;
+    
+    float: left;
     width: 100%;
     
 }
@@ -15,12 +14,14 @@ header, footer{
 
 .main{
     background-color: rgb(178, 178, 235);
+    width: 70%;
+    float: left;
+    padding: 2rem;
     
-    margin: 1rem; 
-    height: 600px;
-    width: 100%;
-    float: center;
-    
+}
+
+p{
+    width: 60%;
 }
 
 cite{
@@ -33,19 +34,22 @@ cite{
 
 aside{
     width: 30%;
-    height: 200px;
-    background-color: pink; 
-    float: right;
-
-    padding: 10%; 
-}
-
-aside{
-    float: right;
-    height: 60vh;
-    width: 30%;
+    
    
+    float: right;
+
+    padding: 2rem; 
 }
+
+figure{
+    width: 100px;
+}
+
+img{
+    width: 100%;
+}
+
+
 
 .right{
     float: right;
