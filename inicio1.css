@@ -17,15 +17,11 @@ body {
 
 
 .main {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-
-.aside {
-    margin-left: 20px;
-    flex: 0 0 200px; 
-}
 .autor-desconocido {
     margin-bottom: 20px;
     text-align: center; 
@@ -50,7 +46,38 @@ body {
 
 .footer {
     clear: both;
-    text-align: center;
     padding: 10px;
     border-top: 1px solid #ccc;
+}
+
+
+.aside {
+    font-family: Arial, sans-serif;
+}
+
+.author-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.author-image {
+    width: 150px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.author-name {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
