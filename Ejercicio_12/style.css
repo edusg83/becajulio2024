@@ -19,10 +19,6 @@ nav > ul > li{
 .right {
     float: right;
 }
-footer {
-    background: #000000;
-    color: #FFFFFF;
-}
 .caja-main {
     background: #f8f9fa;
     text-align: center;
@@ -34,13 +30,26 @@ footer {
     display: inline-block;
     margin: 10px;
 }
-.row1, .row2, .row3 {
+.row1, .row2, .row3, .row4{
     display: block;
 }
 .row {
     display: inline-block;
+    padding: 10px;
 }
 .sec-3 {
     display: flex;
     justify-content: center;
+    padding: 20px 0 50px 0;
+}
+input {
+    background: #bbdefb;
+    padding: 10px;
+    border: none;
+}
+footer {
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background: #000000;
+    color: #FFFFFF;
 }
