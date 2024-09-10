@@ -1,0 +1,20 @@
+main {
+    display: flex;
+}
+.sec-1 {
+    float: left;
+}
+.sec-2 {
+    float: right;
+}
+form {
+    margin: 50px 0px 50px 0px;
+    padding: 20px;
+    background-color: beige;
+}
+.formulario {
+    padding: 10px;
+}
+.formulario input {
+    border-radius: 5px;
+}
