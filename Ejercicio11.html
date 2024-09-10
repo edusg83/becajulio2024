@@ -20,44 +20,47 @@
         <section>
             <h2>Formulario de Ejemplo</h2>
             <form action="" method="post"  accept-charset="UTF-8">
+                <fieldset>
+                    <legend>Datos personales:</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+    
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" min="1" max="100" step="1" placeholder="Introduce tu contraseña" required>
+    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+                    
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="100" step="1" placeholder="Introduce tu edad" required>
+                    
+                    <label for="cumpleaños">Fecha de nacimiento:</label>
+                    <input type="date" id="cumpleaños" name="cumpleaños" required>
+    
+                    <label for="cita">Hora de cita:</label>
+                    <input type="time" id="cita" name="cita" required>
+    
+                    <label for="buscar">Buscar:</label>
+                    <input type="search" id="buscar" name="buscar" required>
+    
+                    
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero">
+                        <option value="maculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+    
+                    
+                    <label for="archivo">Subir archivo:</label>
+                    <input type="file" id="archivo" name="archivo">
+    
+                    
+                    <label for="commentarios">Comentarios:</label>
+                    <textarea id="commentarios" name="commentarios" rows="4" cols="50" placeholder="Introduce tus comentarios aquí"></textarea>
+    
+                </fieldset>
                 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
-
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" min="1" max="100" step="1" placeholder="Introduce tu contraseña" required>
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required>
-                
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" min="1" max="100" step="1" placeholder="Introduce tu edad" required>
-                
-                <label for="cumpleaños">Fecha de nacimiento:</label>
-                <input type="date" id="cumpleaños" name="cumpleaños" required>
-
-                <label for="cita">Hora de cita:</label>
-                <input type="time" id="cita" name="cita" required>
-
-                <label for="buscar">Buscar:</label>
-                <input type="search" id="buscar" name="buscar" required>
-
-                
-                <label for="genero">Género:</label>
-                <select id="genero" name="genero">
-                    <option value="maculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>
-                </select>
-
-                
-                <label for="archivo">Subir archivo:</label>
-                <input type="file" id="archivo" name="archivo">
-
-                
-                <label for="commentarios">Comentarios:</label>
-                <textarea id="commentarios" name="commentarios" rows="4" cols="50" placeholder="Introduce tus comentarios aquí"></textarea>
-
                 
                 <fieldset>
                     <legend>Suscripción:</legend>
