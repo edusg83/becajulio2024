@@ -1,0 +1,68 @@
+.centrar {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.formulario {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.displaycentral {
+    text-align: center;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 1%;
+}
+
+.derecha {
+    float: left;
+}
+
+.izquierda {
+    float: right;
+    padding: 10px;
+}
+
+header {
+    height: 50px;
+}
+
+.cardIzquierda {
+    text-align: center;
+    border: 1px solid black;
+    width: 24%;
+    float: left;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cardCentro {
+    text-align: center;
+    border: 1px solid black;
+    width: 24%;
+    overflow: hidden;
+}
+
+.cardDerecha {
+    text-align: center;
+    border: 1px solid black;
+    width: 24%;
+    float: right;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: 0, auto;
+    overflow: hidden;
+}
+
+footer {
+    margin-top: 20px;
+}
