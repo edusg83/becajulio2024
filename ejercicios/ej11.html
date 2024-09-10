@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../inicio1.css" />
+    <script src="fichero.js"></script>
+    <title>Curso EOI</title>
+</head>
+
+<body>
+    <header class="centrar"></header>
+    <main id="main" class="main">
+        <section>
+            <form action="action">
+                <div class="form-example">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-example">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-example">
+                    <input type="submit" value="Dar de alta">
+                </div>
+            </form>
+            <meter value="60" min="0" max="100" low="40" high="80" optimum="100">60</meter>
+            <progress value="30" max="100">30</progress>
+            <select name="" id="">
+                <optgroup label="pares">
+                    <option value="2">2</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </optgroup>
+                <optgroup label="impares">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="9">9</option>
+                    <option value="11">11</option>
+                    <option value="13">13</option>
+                </optgroup>
+                <optgroup label="multiplos de 3">
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                    <option value="12">12</option>
+                    <option value="15">15</option>
+                    <option value="18">18</option>
+                </optgroup>
+            </select>
+            <datalist id="listaTelef">
+                <option value="666123456">666123456</option>
+                <option value="666987654">666987654</option>
+            </datalist>
+            <p><label>Telefono: <input type="tel" name="Telefono" list="listaTelef"></label></p>
+        </section>
+    </main>
+    <footer><span style="float: left;">Alumno EOI <br>
+            <a href="mailto:pepe@correo.es">Enviar correo a pepe</a> <br>
+            <a href="tel:666001122">Llamar a pepe</a>
+            <br> C:/La calle, 3 , 03206
+            <br> Alicante (Alicante) </span> <span style="float: right;"> <time datetime="2024-09-09T18:56">
+            </time>18:56 <br> 09-09-2024</span></footer>
+</body>
+
+</html>
