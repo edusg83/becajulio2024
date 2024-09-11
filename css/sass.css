@@ -2,6 +2,10 @@
     font-size: 3em;
     text-align: center;
     margin: 1em;
+
+}
+.p2{
+    text-shadow: rgb(150, 150, 150) 3px 3px 5px;
 }
 
 .p3{
@@ -10,6 +14,10 @@
     text-decoration: overline;
 }
 
+.p4{
+    background: -webkit-linear-gradient(top, #FFFFFF, #666666)
+}
+
 section{
-    background:  url("../images/logoHTML5.png") repeat-x;
+    /*background:  url("../images/logoHTML5.png") repeat-x;*/
 }
