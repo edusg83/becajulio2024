@@ -20,7 +20,7 @@ a {
     color: white;
 }
 
-.section1 > div {
+.section1{
     text-align: center;
     background-color: aliceblue;
     border-radius: 3px;
@@ -42,17 +42,16 @@ button {
 .section2 > div {
     text-align: center;
     font-size: 15px;
-    width: 150px;
+    width: 550px;
     height: 130px;
     border-radius: 5px;
     background-color: aliceblue;
-    margin-left: 50px;
+    margin-left: 60px;
 }
 
 hr {
     margin: 50px;
     color: gray;
-    width: 1200px;
 }
 
 form {
@@ -71,10 +70,11 @@ footer {
 
 }
 
-footer > div {
+footer{
     text-align: center;
 }
 
-footer > div > p {
+footer > p {
+    padding: 40px;
     margin-top: 50px;
 }
