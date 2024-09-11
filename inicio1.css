@@ -1,13 +1,12 @@
 
 .fondos{
-    background-color:rgba(218, 218, 218, 0.5);
     /*box-shadow: rgb(233, 8, 8) 10px 10px;*/
-    background: -webkit-linear-gradient(top, #FFFFFF, #666666);
-    transform: perspective(250px) rotate3d(0, 1, 0, 25deg);
+    background-color:#ab0000;
 }
 
 .fondos:hover{
-    
+    transition: background-color 3s ease-in-out, transform 0.5s ease-in;
+
 }
 
 h2{
