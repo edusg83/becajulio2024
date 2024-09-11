@@ -1,9 +1,17 @@
 p:nth-child(2) {
     color: red;
 }
+p:nth-child(3) {
+    color: red;
+    font-size: 10em;
+    text-decoration: overline;
+    margin: 2em;
+}
 
 p:first-child {
     color: red;
+    font-size: 3em;
+    margin: 1em;
 }
 
 p:last-child {
@@ -18,8 +26,11 @@ p:nth-child(odd) {
     background-color: yellow;
 }
 main:only-child{
-    background-color: aqua;
+    background-color: red;
 }
 main:not(p){
     background-color: red;
+}
+section{
+    background-image: url("images.png");
 }
