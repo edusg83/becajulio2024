@@ -1,63 +1,13 @@
-.caja1{
-    
-    border:2px;
-    border-color:#000000;
-    border-style: dotted;
-    float:left;
-    padding:2%;
-   
-}
-
-.caja2{
-    border:2px;
-    border-color:#000000;
-    border-style: dotted;
-
-    float:left;
-    width: 150px;
-    height: 150px;
-}
-
-/* Selectores de elementos */
-div {
-    background-color:blue;
-    font-size: 18px;
-}   
-
-/* Selectores de clase */
-.textoRojo{
-    color:red;
-}
-
-.textoAzul{
-    color:blue;
-}
-
-/* Selectores por identificador */
-#introduccion{
-    font-size:24px;
-    font-weight: bold;
-}
-
-#description{
-    font-size:18px;
-
-}
-
-/* Selector por nombre */
-p[name="nombre"]{
-    color:blue;
-}
-
-section, p{
-    color:red;
-
-}
-
-.enlaces{
-    text-decoration: none;
-}
 
 .fondos{
-    background-color:rgb(0,255,100,0.5);
+    background-color:rgba(218, 218, 218, 0.5);
+    /*box-shadow: rgb(233, 8, 8) 10px 10px;*/
+    background: -webkit-linear-gradient(top, #FFFFFF, #666666);
+}
+
+.fondos:hover{
+    transform: translateY(100px) rotate(45deg) scaleX(0.3);
+}
+h2{
+    text-shadow: rgb(233, 8, 8) 10px 10px 15px;
 }
