@@ -18,7 +18,7 @@ p{
     color: red;
 } */
 
-p:nth-child(2), p:first-child, p:last-child, p:first-of-type, section:only-child{
+/* p:nth-child(2), p:first-child, p:last-child, p:first-of-type, section:only-child{
     color: red;
 }
 
@@ -28,5 +28,15 @@ p:nth-child(even), :not(p){
 
 p:nth-child(odd){
     background-color: yellow;
+} */
+
+.p1{
+    font-size: 3em;
+    text-align: center;
+}
+
+.p3{
+    font-size: 10em;
+    text-decoration: overline;
 }
 
