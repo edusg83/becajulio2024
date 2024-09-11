@@ -31,19 +31,29 @@ section{
 @keyframes mianimacion{
     0% {
       background: red;
+   
+      transform: translate(0px,0px);
     }
-30% {
+20% {
       background: yellow;
+    
+      transform: translate(200px,00px);
     }
-    40% {
+    50% {
       background: blue;
+   
+      transform: translate(200px,200px);
   }
 
-  50% {
+  75% {
     background: green;
+  
+    transform: translate(00px,200px);
 }
 
-60% {
+100% {
     background: red;
+ 
+    transform: translate(0px,0px);
 }
   }
