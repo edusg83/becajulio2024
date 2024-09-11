@@ -17,3 +17,34 @@
     width: 150px;
     height: 150px;
 }
+
+/* Selectores de elementos */
+div {
+    background-color:blue;
+    font-size: 18px;
+}   
+
+/* Selectores de clase */
+.textoRojo{
+    color:red;
+}
+
+.textoAzul{
+    color:blue;
+}
+
+/* Selectores por identificador */
+#introduccion{
+    font-size:24px;
+    font-weight: bold;
+}
+
+#description{
+    font-size:18px;
+
+}
+
+/* Selector por nombre */
+p[name="nombre"]{
+    color:blue;
+}
