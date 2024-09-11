@@ -12,9 +12,29 @@ p{
     font-size: 2em;
 } */
 
-seccion[name="seccion1"], .articulo2, p+section, .articulo2,section,
+/* seccion[name="seccion1"], .articulo2, p+section, .articulo2,section,
 [class~="articulo"],[class$="2"],[class^="art"], #sec1
 {
     color: red;
+} */
+
+p:nth-child(2), p:first-child, p:last-child, p:first-of-type{
+    color: red;
 }
 
+p:nth-child(even){
+    background-color: red;
+}
+
+p:nth-child(odd){
+    background-color: yellow;
+}
+
+section:only-child{
+    color: red;
+
+}
+
+:not(p){
+    background-color: red;
+}
