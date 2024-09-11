@@ -19,7 +19,7 @@ p:nth-child(odd){
 }
 
 
-section main:only-child{
+main > section:only-child{
     color: red;
 }
 
