@@ -1,0 +1,41 @@
+/* a) Para el segundo elemento <p> , establecer el color de texto rojo */
+/* p:nth-child(2) {
+    color: red;
+} */
+
+/* b) Para el primer elemento <p> , establecer el color de texto rojo */
+/* p:first-child{
+    color: red;
+} */
+/* c) Para el último elemento <p> , establecer el color de texto rojo */
+/* p:last-child{
+    color: red;
+} */
+
+/* d) Para los elementos en posición par establecer color de fondo rojo y 
+para los elementos en posición impar establecer color de fondo amarillo */
+/* p:nth-child(even){
+    color: red;
+}
+
+p:nth-child(odd){
+    color: yellow;
+} */
+
+/* e) Para el elemento <section> hijo único de <main> establecer el
+color de texto rojo */
+/* main:only-child{
+    color: red;
+} */
+
+/* f) Para el primer elemento de los elementos del mismo tipo de elemento <p>
+establecer el color de texto rojo*/
+/* p:first-of-type{
+    color: red;
+} */
+
+/* g) Usando la Pseudo-clase :not(selector) establecer para los 
+elementos <p> un color de fondo rojo */
+p:not(selector){
+    color: red;
+}
