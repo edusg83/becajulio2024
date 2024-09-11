@@ -27,7 +27,7 @@ p:first-of-type{
     color: red;
 }
 
-p:not(selector){
+main:not(p){
     background-color: red;
 }
 
