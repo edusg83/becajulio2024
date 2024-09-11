@@ -1,0 +1,25 @@
+/*p:nth-child(2) {
+    color: red;
+  }*/
+
+/*p:first-child{
+    color:red;
+  }*/
+  /*p:last-child{
+    color:red;
+  }*/
+  /*p:nth-child(2n) {
+    background-color: red;
+  }
+  p:nth-child(2n+1) {
+    background-color: yellow;
+  }*/
+  /*section:only-child{
+    color: red;
+  }*/
+  /*p:first-of-type{
+    color: red;
+  }*/
+  main:not(p){
+    background-color: red;
+  }
