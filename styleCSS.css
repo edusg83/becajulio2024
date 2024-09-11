@@ -1,0 +1,13 @@
+section{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid rgb(0, 110, 255);
+    font-size: 5em;
+    
+}
+
+p{
+    color: red;
+    text-align: center;
+    font-size: 2em;
+}
