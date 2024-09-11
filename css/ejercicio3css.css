@@ -1,0 +1,18 @@
+section[name*="seccion1"], .article2{
+    color: red;
+}
+section+p{
+    color: red;
+}
+main>section{
+    color: red;
+}
+article[class*="article"]{
+    color: red;
+}
+article[class$="2"]{
+    color: red;
+}
+article[class^="art"]{
+    color: red;
+}
