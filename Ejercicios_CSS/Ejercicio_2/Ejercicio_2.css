@@ -1,0 +1,14 @@
+main{
+    border: 1px;
+    border-style: solid;
+    border-color: blue;
+}
+
+section{
+    font-size: 5em;
+}
+
+p{
+    color: red;
+    font-size: 2em;
+}
