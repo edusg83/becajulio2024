@@ -53,4 +53,13 @@ section{
     border-radius: 2em 0 0 0;
     width: 10em;
     border: 1px solid blue;
+    text-shadow: rgb(150, 150, 150) 3px 3px 5px;
+    transform: rotate(180deg);
+
+}
+
+.p4{
+    background: -webkit-linear-gradient(top, #FFFFFF, #666666);
+    transform: rotate3d(0, 1, 0, 45deg);
+
 }
