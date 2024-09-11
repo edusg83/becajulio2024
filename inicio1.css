@@ -48,3 +48,9 @@ div {
 p[name="nombre"]{
     color:blue;
 }
+
+section, p{
+    color:red;
+
+}
+
