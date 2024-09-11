@@ -1,6 +1,5 @@
 .p2{
-    border-style: solid;
-    border-left-color: blue;
-    border-width: 10em;
+    border: 1px solid blue;
+    border-radius: 2em;
     width: 10em;
 }
