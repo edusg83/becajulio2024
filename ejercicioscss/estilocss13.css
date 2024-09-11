@@ -1,0 +1,24 @@
+/*p{
+    display: inline-flex;
+}*/
+
+
+/*#sec1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+p {
+    width: fit-content; 
+}*/
+
+#sec1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+p {
+    width: fit-content; 
+}
