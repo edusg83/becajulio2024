@@ -16,7 +16,7 @@ main section{
     color: red;
 }
 
-[class~="articulo"] {
+[class*="articulo"] {
     color: red;
 }
 
