@@ -6,6 +6,10 @@
 
 .p3{
     font-size: 3em;
-    margin: 2em;
+    margin-top: 2em;
     text-decoration: overline;
+}
+
+section{
+    background:  url("../images/logoHTML5.png") repeat-x;
 }
