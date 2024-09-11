@@ -1,0 +1,27 @@
+section p:nth-of-type(2) {
+    color: red;
+}
+section p:first-of-type {
+    color: red;
+}
+
+section p:last-of-type {
+    color: red;
+}
+section p:nth-of-type(odd) {
+    background-color: yellow;
+}
+
+section p:nth-of-type(even) {
+    background-color: red;
+}
+main > section {
+    color: red;
+}
+section p:first-of-type {
+    color: red;
+}
+
+*:not(p) {
+    background-color: red;
+}
