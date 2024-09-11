@@ -36,6 +36,6 @@ establecer el color de texto rojo*/
 
 /* g) Usando la Pseudo-clase :not(selector) establecer para los 
 elementos <p> un color de fondo rojo */
-p:not(selector){
-    color: red;
+main:not(p){
+    background-color: red;
 }
