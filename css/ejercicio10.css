@@ -5,7 +5,15 @@
     text-shadow: rgb(180, 110, 110) 3px 3px 5px;
 }
 
+.p2:hover {
+    transform: rotate(180deg);
+}
+
 .p4 {
     color: white;
-    background: -webkit-linear-gradient(left, #5c5a5a, #ffffff);
+    background: linear-gradient(#5c5a5a, #ffffff);
+}
+
+.p4:hover {
+    transform: rotate3d(5,15,16,-50deg);
 }
