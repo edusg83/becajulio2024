@@ -14,22 +14,22 @@
     }
     25% {
         top: 0;
-        left: calc(100% - 100px); /* Mueve el objeto a la derecha (restando su ancho) */
+        left: calc(100% - 100px);
         background-color: yellow;
     }
     50% {
-        top: calc(100% - 50px); /* Mueve el objeto a la parte inferior (restando su altura) */
-        left: calc(100% - 100px); /* Mantiene el objeto a la derecha */
+        top: calc(100% - 50px);
+        left: calc(100% - 100px); 
         background-color: blue;
     }
     75% {
-        top: calc(100% - 50px); /* Mantiene el objeto en la parte inferior */
-        left: 0; /* Mueve el objeto a la izquierda */
+        top: calc(100% - 50px); 
+        left: 0;
         background-color: green;
     }
     100% {
         top: 0;
-        left: 0; /* Devuelve el objeto a la posición inicial */
+        left: 0; 
         background-color: red;
     }
 }
