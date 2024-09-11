@@ -5,8 +5,11 @@
 
 }
 .p2{
+    text-align: center;
     transform: rotate(180deg);
     text-shadow: rgb(150, 150, 150) 3px 3px 5px;
+    animation: mianimacion 1s ease-in-out 0s infinite alternate none;
+    transform: perspective(500px) rotate3d(0, 1, 0, 45deg);
 }
 
 .p3{
@@ -24,3 +27,23 @@
 section{
     /*background:  url("../images/logoHTML5.png") repeat-x;*/
 }
+
+@keyframes mianimacion{
+    0% {
+      background: red;
+    }
+30% {
+      background: yellow;
+    }
+    40% {
+      background: blue;
+  }
+
+  50% {
+    background: green;
+}
+
+60% {
+    background: red;
+}
+  }
