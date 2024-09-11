@@ -10,27 +10,27 @@
 @keyframes mianimacion {
     0% {
         background: red;
-        transform: scale(0, 0);
+        transform: translate(0px, 0px);
     }
 
     25% {
         background: yellow;
-        transform: scale(0, 0);
+        transform: translate(200px, 0px);
     }
 
     50% {
         background: blue;
-        transform: scale(200, 200);
+        transform: translate(200px, 200px);
     }
 
     75% {
         background: green;
-        transform: scale(0, 200);
+        transform: translate(0px, 200px);
     }
 
     100% {
         background: red;
-        transform: scale(0, 0);
+        transform: translate(0px, 0px);
     }
 }
 
