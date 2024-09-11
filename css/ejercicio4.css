@@ -1,0 +1,25 @@
+p:nth-child(2) {
+    color: red;
+}
+
+p:first-child {
+    color: red;
+}
+
+p:last-child {
+    color: red;
+}
+
+p:nth-child(even) {
+    background-color: red;
+}
+
+p:nth-child(odd) {
+    background-color: yellow;
+}
+main:only-child{
+    background-color: aqua;
+}
+main:not(p){
+    background-color: red;
+}
