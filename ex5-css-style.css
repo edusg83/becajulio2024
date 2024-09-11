@@ -12,6 +12,7 @@
    text-align: center;
    text-shadow: 2px 2px 5px rgba(206, 83, 218, 0.966); 
    color: rgb(59, 58, 56);
+   transform: rotate(180deg);
 
 }
 
@@ -24,6 +25,7 @@
 
 .p4{
     background-image: linear-gradient(to right, rgb(6, 6, 95), rgb(22, 87, 148), rgb(253, 145, 21));
+    transform: rotate3d(1, 1, 1, 45deg);
 }
 
 section {
