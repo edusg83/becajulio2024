@@ -1,0 +1,30 @@
+.p2 {
+  margin: 30px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid;
+  animation: animacion 10s ease-in-out 5s infinite normal none;
+  }
+  
+  @keyframes animacion {
+    0% {
+      background-color: red;
+      transform: translate(0, 0);
+    }
+    25% {
+      background-color: yellow;
+      transform: translate(200px, 0);
+    }
+    50% {
+      background-color: blue;
+      transform: translate(200px, 200px);
+    }
+    75% {
+      background-color: green;
+      transform: translate(0, 200px);
+    }
+    100% {
+      background-color: red;
+      transform: translate(0, 0);
+    }
+  }
