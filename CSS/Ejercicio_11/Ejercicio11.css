@@ -1,36 +1,35 @@
 .p2{
-    animation: animation 2s ease-in-out 0s infinite normal none;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: animation 12s linear infinite;
 }
 
 @keyframes animation {
-    0%{
-        color: red;
-        position: absolute;
+    0% {
         top: 0;
         left: 0;
+        background-color: red;
     }
-    25%{
-        color: yellow;
-        position: absolute;
-        top: 200;
-    }
-    50%{
-        color:blue;
-        position: absolute;
-        top: 200px;
-        left: 200px;
-    }
-    75%{
-        color: green;
-        position: absolute;
+    25% {
         top: 0;
-        left: 200;
+        left: calc(100% - 100px); /* Mueve el objeto a la derecha (restando su ancho) */
+        background-color: yellow;
     }
-    100%{
-        color: red;
-        position: absolute;
+    50% {
+        top: calc(100% - 50px); /* Mueve el objeto a la parte inferior (restando su altura) */
+        left: calc(100% - 100px); /* Mantiene el objeto a la derecha */
+        background-color: blue;
+    }
+    75% {
+        top: calc(100% - 50px); /* Mantiene el objeto en la parte inferior */
+        left: 0; /* Mueve el objeto a la izquierda */
+        background-color: green;
+    }
+    100% {
         top: 0;
-        left: 0;
+        left: 0; /* Devuelve el objeto a la posición inicial */
+        background-color: red;
     }
-
 }
