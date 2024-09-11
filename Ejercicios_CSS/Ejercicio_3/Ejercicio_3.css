@@ -1,35 +1,51 @@
+/* c) Crear una regla que establezca el color rojo del texto al elemento con atributo name=“seccion1” */
 /* [name~= "seccion1"]{
     color: red;
 }
 
-[name~= "seccion2"], .articulo2{
+/* d) Añadir a la regla anterior un selector para que se seleccione los elementos con atributo class=“articulo2”/ */
+/* [name~= "seccion2"], .articulo2{
     color: red;
 } */
 
+/* e) Incluir un elemento <p> entre los dos elementos <section> con el texto SEPARA ARTÍCULOS . Crear una regla que establezca el
+color rojo del texto al elemento <section> que vaya detrás del elemento <p>, usar el operador + */
 /* section + p{
     color: red;
 } */
 
+/* f) Crear una regla que establezca el color rojo al elemento <article> con el atributo class que contenga
+la palabra articulo2 */
 /* article[class ~= articulo2]{
     color: red;
 } */
 
+/* g) Meter todos los elementos <section> dentro de un elemento <main> . Crear una regla de establezca
+el color rojo los elementos <section> */
 /* main section{
     color: red;
 } */
 
+/* h) Crear una regla que establezca el color rojo a todos los elementos que contengan en el atributo
+class el texto articulo */
 /* [class *= articulo]{
     color: red;
 } */
 
+/* i) Crear una regla que establezca el color rojo a todos los elementos que contengan en el atributo
+class el texto 2 al final del valor */
 /* [class $= "2"]{
     color: red;
 } */
 
+/* j) Crear una regla que establezca el color rojo a todos los elementos que contengan en el atributo
+class el texto art al inicio del valor */
 /* [class ^= "art"]{
     color: red;
 } */
 
-#sec1{
+/* k) Establecer el atributo id=“sec1” en el elemento <section> con atributo name=“seccion1” y crear
+una regla que establezca el color rojo al elemento con atributo id=“sec1” */
+/* #sec1{
     color: red;
-}
+} */
