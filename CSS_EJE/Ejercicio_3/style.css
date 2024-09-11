@@ -1,0 +1,27 @@
+section[name="section1"] { 
+    color:red;
+}
+section[name="section2"] > .articulio2{ 
+    color:red;
+}
+p + section {
+    color:red;
+}
+.articulo2 {
+    color:red;
+}
+main > section {
+    color:red;
+}
+article[class~="articulo"] { 
+    color:red;
+}
+article[class$="2"] { 
+    color:red;
+}
+article[class^="art"] { 
+    color:red;
+}
+#sec1 {
+    color:red;
+}
