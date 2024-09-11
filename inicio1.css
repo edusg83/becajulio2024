@@ -2,12 +2,23 @@
 .fondos{
     /*box-shadow: rgb(233, 8, 8) 10px 10px;*/
     background-color:#ab0000;
-}
-
-.fondos:hover{
-    transition: background-color 3s ease-in-out, transform 0.5s ease-in;
+    animation: mianimacion 1s ease-in-out 0s infinite normal none;
 
 }
+
+@keyframes mianimacion{
+    0% {
+    background: #FFFFFF;
+    }
+    50% {
+    background: #FF0000;
+    }
+    100% {
+    background: #FFFFFF;
+   }
+   }
+
+
 
 h2{
     text-shadow: rgb(233, 8, 8) 10px 10px 15px;
