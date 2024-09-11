@@ -5,6 +5,7 @@
 
 }
 .p2{
+    transform: rotate(180deg);
     text-shadow: rgb(150, 150, 150) 3px 3px 5px;
 }
 
@@ -15,7 +16,9 @@
 }
 
 .p4{
-    background: -webkit-linear-gradient(top, #FFFFFF, #666666)
+    text-align: center;
+    background: -webkit-linear-gradient(top, #FFFFFF, #666666);
+    transform: perspective(500px) rotate3d(0, 1, 0, 45deg);
 }
 
 section{
