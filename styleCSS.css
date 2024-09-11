@@ -42,3 +42,10 @@ p:nth-child(odd){
     margin-top: 2em;
 }
 
+section{
+    background-image: url(./images/icono.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
