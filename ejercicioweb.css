@@ -12,12 +12,6 @@
     border: 1px solid black;
 }
 
-.formulario {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    border: 1px solid black;
-}
 
 .displaycentral {
     text-align: center;
@@ -49,20 +43,38 @@ header {
     border: 1px solid black;
     width: 24%;
     overflow: hidden;
+    float: left;
 }
 
 .cardDerecha {
     text-align: center;
     border: 1px solid black;
     width: 24%;
-    float: right;
+    float: left;
     overflow: hidden;
 }
+.card{
+    text-align: center;
+    border: 1px solid black;
+    width: 24%;
+    overflow: hidden;
+}
+
 
 .container {
     width: 90%;
     margin: 0, auto;
     overflow: hidden;
+}
+.tituloformulario{
+    
+    text-align: center;
+}
+.formulario {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: 1px solid black;
 }
 .boton{
     background-color: rgb(26, 135, 236);

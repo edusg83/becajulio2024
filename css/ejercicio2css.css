@@ -1,0 +1,10 @@
+section{
+    border: 2px solid ;
+    width: auto;
+    font-size: 5em;
+    
+}
+section>p{
+    color: aquamarine;
+    font-size: 2em;
+}
