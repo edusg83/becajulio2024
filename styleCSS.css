@@ -18,11 +18,11 @@ p{
     color: red;
 } */
 
-p:nth-child(2), p:first-child, p:last-child, p:first-of-type{
+p:nth-child(2), p:first-child, p:last-child, p:first-of-type, section:only-child{
     color: red;
 }
 
-p:nth-child(even){
+p:nth-child(even), :not(p){
     background-color: red;
 }
 
@@ -30,11 +30,3 @@ p:nth-child(odd){
     background-color: yellow;
 }
 
-section:only-child{
-    color: red;
-
-}
-
-:not(p){
-    background-color: red;
-}
