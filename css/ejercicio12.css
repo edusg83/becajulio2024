@@ -1,0 +1,51 @@
+.p2 {
+    border-radius: 2em 0 0 0;
+    width: 10em;
+    border: 1px solid blue;
+    text-shadow: rgb(180, 110, 110) 3px 3px 5px;
+    /* animation: mianimacion 1s ease-in-out 0s infinite normal none; */
+
+}
+
+@keyframes mianimacion {
+    0% {
+        background: red;
+        transform: translate(0px, 0px);
+    }
+
+    25% {
+        background: yellow;
+        transform: translate(200px, 0px);
+    }
+
+    50% {
+        background: blue;
+        transform: translate(200px, 200px);
+    }
+
+    75% {
+        background: green;
+        transform: translate(0px, 200px);
+    }
+
+    100% {
+        background: red;
+        transform: translate(0px, 0px);
+    }
+}
+
+
+.p4 {
+    color: white;
+    background: linear-gradient(#5c5a5a, #ffffff);
+}
+
+p:nth-child(odd) {
+    
+    float: left;
+}
+
+p:nth-child(even) {
+    
+    float: right;
+}
