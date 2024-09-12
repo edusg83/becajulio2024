@@ -82,7 +82,7 @@ nav ul li a{
     justify-content: center;
 }
 
-#boxes ul li{
+#boxes ul li {
     list-style-type: none;
     background-color: #f8f9fa;
     padding: 40px 20px 40px 20px ;
@@ -92,8 +92,8 @@ nav ul li a{
 }
 
 ul li p{
-     color: #5f555c;
-     padding: 10px;
+    color: #5f555c;
+    padding: 10px;
 }
 
 #form_section{
@@ -167,4 +167,10 @@ footer{
     background-color: #212529;
     color: white;
     padding: 20px;
+}
+
+@media (max-width: 728px){
+   *{
+    background-color: #0d6efd;
+   }
 }

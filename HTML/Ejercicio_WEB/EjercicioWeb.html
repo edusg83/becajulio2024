@@ -59,17 +59,17 @@
             <form name = "formulario" method = "GET" action = "placeholder" target = "placeholder">
                 <div class = "form_container">
                     <label for = "first_name">First name</label>
-                    <input type = "text" name = "first_name" id = "first_name" required>
+                    <input type = "text" name = "first_name" id = "first_name" required autocomplete="name">
                 </div>
                 
                 <div class = "form_container">
                     <label for = "last_name">Last name</label>
-                    <input type="text" name = "last_name" id = last_name required>    
+                    <input type="text" name = "last_name" id = last_name required autocomplete="family-name">    
                 </div>
                 
                 <div class = "form_container" id = "email-container">
                     <label for = "email">Email adress</label>
-                    <input type = "email" name="email" id = "email" required>
+                    <input type = "email" name="email" id = "email" required autocomplete="email">
                 </div>
 
                 <div class = "form_container">
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class = "form_container" id = "terms-container">
-                    <label for="terms">I accept <a href = "placeholder" target = "_blank">terms & conditions</a></label>
+                    <label for="terms_checkbox">I accept <a href = "placeholder" target = "_blank">terms & conditions</a></label>
                     <input type = "checkbox" name = "terms_checkbox" id = "terms_checkbox" required>
                 </div>
 
