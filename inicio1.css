@@ -1,6 +1,14 @@
-.posicion{
-    position:relative;
-    top:100px;
-    left:150px;
-
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+}
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
