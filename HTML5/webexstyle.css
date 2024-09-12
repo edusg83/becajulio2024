@@ -112,7 +112,7 @@ form {
 
 .formulario {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
 }
 
@@ -137,7 +137,9 @@ form input {
 }
 
 .email {
-    width: 100%;
+    width: 95.5%;
+    flex: none;
+    justify-content: space-between;
 }
 
 form button {
