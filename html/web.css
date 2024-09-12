@@ -1,47 +1,55 @@
 
-.clear {
-    clear: both;  
+main{
+    margin-top:2%;
+}
+.header{
+    
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header{
-    background-color: black;
-}
-.containerHeader .logo{
+.logo{
     width: 50px; 
     height: auto; 
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 6b1ba9dd992ba7d32011d37303b4020753602c58
 }
 
-.containerHeader a{
-    float: right;
+a{
+    
     padding: 10px;
     color: #ccc;
     text-decoration: none;
-}
-
-.containerHeader{
-    background-color: black;
 }
 
 
 .grid-container {
     display: grid;
     grid-template-columns: 33% 33% 33% ;
-    grid-template-rows: 33% 33% 33% ;
-    gap: 20px;
-    padding: 20px;
+    grid-template-rows: 50% 50%;
+    gap: 1%;
+    margin-top:2%;
+    padding:3%;
 }
 
 .grid-item {
     background-color: #f9f9f9; 
-    padding: 30px;
+    padding-top: 40px;
+    padding-bottom:40px;
     text-align: center;
+    margin-top:2%;
 }
 
 .grid-item-1 {
     background-color: #f9f9f9; 
-    padding: 20px;
+    padding:5%;
     text-align: center;
+    
 }
 
 
