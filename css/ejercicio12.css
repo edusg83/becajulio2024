@@ -1,7 +1,8 @@
-p:nth-child(even) {
-    
+section{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
 }
-
-p:nth-child(odd) {
-    text-align: right;
+p{
+    background-color: red;
 }

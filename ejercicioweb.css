@@ -1,10 +1,27 @@
+body {
+    margin: 0px;
+}
+
+header {
+    height: 50px;
+    background-color: rgb(20, 19, 19);
+    margin-bottom: 2%;
+}
+
+
 .derecha {
-    float: left;
+    float: right;
+    padding: 15px;
 }
 
 .izquierda {
-    float: right;
-    padding: 10px;
+    float: left;
+    
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .centrar {
@@ -12,76 +29,121 @@
     border: 1px solid black;
 }
 
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 .displaycentral {
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #f3eeee;
+    background: #f3eeee;
     margin-bottom: 30px;
     padding-left: 12%;
     padding-right: 12%;
     padding-bottom: 1%;
 }
 
-
-
-header {
-    height: 50px;
+.displaycards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.cardIzquierda {
-    text-align: center;
-    border: 1px solid black;
-    width: 24%;
-    float: left;
-    overflow: hidden;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.cardCentro {
-    text-align: center;
-    border: 1px solid black;
-    width: 24%;
-    overflow: hidden;
-    float: left;
-}
-
-.cardDerecha {
-    text-align: center;
-    border: 1px solid black;
-    width: 24%;
-    float: left;
-    overflow: hidden;
-}
-.card{
-    text-align: center;
-    border: 1px solid black;
-    width: 24%;
-    overflow: hidden;
-}
 
 
 .container {
     width: 90%;
-    margin: 0, auto;
-    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+    display: grid;
 }
-.tituloformulario{
-    
+
+.card {
     text-align: center;
+    background-color: #f3eeee;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 3%;
 }
-.formulario {
+hr{
+    width: 80%;
+}
+.tituloformulario {
+
+    text-align: center;
+
+}
+
+.display-formulario {
+    width: 100%;
+
+}
+
+form {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    border: 1px solid black;
+    margin-left: 20%;
+    margin-right: 20%;
 }
-.boton{
+
+.boton {
     background-color: rgb(26, 135, 236);
     color: beige;
     border-radius: 10px;
     border-color: rgb(26, 135, 236);
 }
+
+.izquierda-formulario{
+    float: left;
+    margin-left: 12% ;
+}
+.boton-enviar-formulario{
+    float: right;
+    margin-right: 16%;
+    background-color: rgb(26, 135, 236);
+    color: beige;
+    border-radius: 10px;
+    border-color: rgb(26, 135, 236);
+}
+.contenedor-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.fila-form {
+    display: flex;
+    gap: 20px;
+}
+.grupo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.grupo-form.max {
+    width: 100%;
+}
+.grupo-form.mitad {
+    width: 47%;
+}
+.grupo-form label {
+    text-align: start;
+}
+.grupo-form input {
+    width: 97%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid  #f3eeee;
+    background-color:  #f3eeee;
+    border-radius: 4px;
+}
+
 footer {
     margin-top: 20px;
     background-color: black;

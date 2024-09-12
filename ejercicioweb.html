@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ejercicioweb.css">
+    <link rel="shortcut icon" href="imagenes/cuervo.png" type="image/x-icon">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <div class="derecha">
-            <img src="imagenes/cuervo.png" alt="" width="50">
-        </div>
         <div class="izquierda">
+            <img src="imagenes/cuervo.png" alt="" width="35">
+        </div>
+        <div class="derecha">
             <a href="">Inicio</a>
             <a href="">Sobre nosotros</a>
             <a href="">Contacto</a>
@@ -28,52 +29,52 @@
                 inventore.</p>
             <input class="boton" type="submit" value="Enviar">
         </article>
-        <article>
+        <article class="displaycards">
             <div class="container">
-                <div class="cardIzquierda">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
                     </p>
                 </div>
-                <div class="cardCentro">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
                     </p>
                 </div>
-                <div class="cardDerecha">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
                     </p>
                 </div>
 
-                <div class="cardIzquierda">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
                     </p>
                 </div>
-                <div class="cardCentro">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
                     </p>
                 </div>
-                <div class="cardDerecha">
+                <div class="card">
                     <h2>
-                        titulo promedio
+                        Titulo promedio
                     </h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sit repellat autem adipisci minus
                         quod
@@ -82,32 +83,46 @@
             </div>
 
         </article>
-      
-        <article>
+
+        <article class="display-formulario">
+            <hr>
             <p class="tituloformulario">Completa el formulario</p>
-            <form class="formulario">
-                <div>
-                    <label for="text">Nombre:</label>
-                    <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
-                    <label for="text">Apellidos:</label>
-                    <input type="text" id="text" name="text" placeholder="Ingrese texto aquí">
+
+            <form action="">
+                <div class="contenedor-form">
+                    <div class="fila-form">
+                        <div class="grupo-form mitad">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div class="grupo-form mitad">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido">
+                        </div>
+                    </div>
+                    <div class="fila-form">
+                        <div class="grupo-form max">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="fila-form">
+                        <div class="grupo-form mitad">
+                            <label for="text">Contraseña:</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="grupo-form mitad">
+                            <label for="text">Repite la Contraseña:</label>
+                            <input type="password" id="password2" name="password2">
+                        </div>
+                    </div>
                 </div>
                 <br>
-                <div>
-                <label for="text">Email:</label>
-                <input placeholder="Introduzca su email" type="email" id="email" name="email">
-                </div>
-                <br>
-                <div>
-                    <label for="text">Contraseña:</label>
-                    <input type="password" id="password" name="password">
-                    <label for="text">Repite la Contraseña:</label>
-                    <input type="password" id="password" name="password">
-                    <br>
+                <div class="izquierda-formulario">
                     <input type="checkbox" name="aceptar" value="condiciones">
                     <label for="vehicle1"> Acceptar terminos y condiciones</label>
-                    <input class="boton" type="submit" value="Enviar">
                 </div>
+                <input class="boton-enviar-formulario" type="submit" value="Enviar">
             </form>
         </article>
     </main>
