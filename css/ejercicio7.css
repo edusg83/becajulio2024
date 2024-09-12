@@ -1,5 +1,7 @@
 p:nth-child(2) {
     color: red;
+    border: 10em;
+    border: 2em solid blue;
 }
 p:nth-child(3) {
     color: red;
