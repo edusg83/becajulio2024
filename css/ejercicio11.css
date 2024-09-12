@@ -1,0 +1,30 @@
+.p2 {
+    
+    width: 100px;
+    height: 100px;
+    animation: mianimacion 5s ease-in-out 0s infinite normal none;
+
+}
+  
+  @keyframes mianimacion{
+    0%{
+    background: red;
+    transform: translate(0, 0);
+    }
+    25% {
+    background: yellow;
+    transform: translate(200px, 0);
+    }
+    50% {
+    background: blue;
+    transform: translate(200px, 200px);
+    }
+    75% {
+    background: green;
+    transform: translate(0, 200px);
+   }
+   100%{
+    background: red;
+    transform: translate(0, 0);
+   }
+}

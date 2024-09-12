@@ -1,0 +1,10 @@
+
+
+
+section p:nth-child(odd) {
+  text-align: left;
+}
+  
+section p:nth-child(even) {
+  text-align: right;
+}
