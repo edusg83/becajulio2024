@@ -63,3 +63,11 @@ section{
     transform: rotate3d(0, 1, 0, 45deg);
 
 }
+
+.p:nth-child(even){
+    float: right;
+}
+
+.p:nth-child(odd){
+    float: left; 
+}
