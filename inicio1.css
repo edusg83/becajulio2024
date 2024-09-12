@@ -1,14 +1,10 @@
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-}
-.flex-item {
-    width: 100px;
-    height: 100px;
-    background-color: lightcoral;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+@media (max-width: 1024px) {
+    body {
+    background-color: #3333FF;
+    }
+   }
+
+@media (max-width: 768px) {
+    body {
+    background-color: #FF33FF;
+    }}
