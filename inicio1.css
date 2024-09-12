@@ -1,25 +1,6 @@
+.posicion{
+    position:relative;
+    top:100px;
+    left:150px;
 
-.fondos{
-    /*box-shadow: rgb(233, 8, 8) 10px 10px;*/
-    background-color:#ab0000;
-    animation: mianimacion 1s ease-in-out 0s infinite normal none;
-
-}
-
-@keyframes mianimacion{
-    0% {
-    background: #FFFFFF;
-    }
-    50% {
-    background: #FF0000;
-    }
-    100% {
-    background: #FFFFFF;
-   }
-   }
-
-
-
-h2{
-    text-shadow: rgb(233, 8, 8) 10px 10px 15px;
 }
