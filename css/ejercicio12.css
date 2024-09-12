@@ -2,9 +2,9 @@
 
 
 section p:nth-child(odd) {
-  text-align: left;
+  float: left;
 }
   
 section p:nth-child(even) {
-  text-align: right;
+  float: right;
 }
