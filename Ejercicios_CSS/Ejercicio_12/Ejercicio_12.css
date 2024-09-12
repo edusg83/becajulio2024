@@ -1,7 +1,7 @@
-.p2 {
-    transform: rotate(180deg);
+p:nth-child(even){
+    text-align: right;
 }
 
-.p4 {
-    transform: rotate3d(4, 4, -1, 40deg);
+p:nth-child(odd){
+    text-align: left;
 }
