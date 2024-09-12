@@ -1,43 +1,98 @@
-body{
-    width: 100%;
+body {
     align-items: center;
     display: flex;
     flex-direction: column;
-}
-
-header{
-    width: 100%;
-    display: flex;
-    align-items:  center;
-    justify-content: space-between;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-}
-#welcome td{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-#welcome h1{
     margin: 0;
     padding: 0;
 }
 
-#tarjetas-centro{
+/* HEADER */
+header {
     width: 100%;
+    padding: 0.5em 0 0.5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(168, 139, 139);
 }
 
-#tarjetas-centro tr{
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+/* WELCOME */
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em;
+    margin: 1.5em 0em 1.5em 0;
+    background-color: gray;
+    text-align: center;
+}
+
+#welcome h1 {
+    margin: 0;
+}
+
+#welcome button {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: blue;
+    color: white;
+}
+
+/* tarjetas-centro */
+#tarjetas-centro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#tarjetas-centro article {
     margin: 1em;
+    padding: 1em;
+    width: 25%;
+    background-color: aqua;
 }
 
-#tarjetas-centro td{
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    padding: 2em;
+/* DORMULARIO */
+#formulario {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#formulario div {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+}
+
+#formulario #email {
+    width: 90.5%;
+}
+
+#formulario input {
+    padding: 0.5em;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    margin-top: 2em;
+    padding: 0.5em 0 0.5em 0;
+    background-color: black;
+    text-align: center;
+    color: white;
 }

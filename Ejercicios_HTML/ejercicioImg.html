@@ -13,126 +13,89 @@
         <div>
             <img src="logotipo.png" alt="LOGOTIPO" style="height: 50px;">
         </div>
-        <nav style="float: right;">
-            <table>
-                <tr>
-                    <td>
-                        <a href="#">Home</a>
-                    </td>
-                    <td>
-                        <a href="#">About</a>
-                    </td>
-                    <td>
-                        <a href="#">Contact</a>
-                    </td>
-                </tr>
-            </table>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <table id="welcome">
-            <tbody>
-                <tr>
-                    <td>
-                        <h1>A Warm welcome!</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>With Boostrap 5</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button>Call to action</button>
-                    </td>
-                </tr>
-                </tr>
-            </tbody>
-        </table>
-        <table id="tarjetas-centro">
-            <tbody>
-                <tr>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos ut molestias excepturi vero
-                            eius odit hic sequi magnam at? Distinctio saepe odio quidem a, similique eos nemo corporis
-                            porro ex!</p>
-                    </td>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio in et, id dolor iusto
-                            praesentium labore quam nobis earum maiores eos sapiente eum quis corporis, beatae explicabo
-                            unde soluta quia.</p>
-                    </td>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam officiis libero eius voluptas
-                            harum magni ducimus debitis, molestiae nisi itaque iure alias. Et eius ab blanditiis officia
-                            illum quos adipisci.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>With Boostrap 5</p>
-                    </td>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>With Boostrap 5</p>
-                    </td>
-                    <td>
-                        <p><strong>Fresh new layout</strong></p>
-                        <p>With Boostrap 5</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="welcome">
+            <h1>A Warm welcome!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, voluptatum. Illum veritatis porro
+                earum reiciendis sequi, accusamus illo beatae architecto neque. Illo tempore, odio fugiat vitae tenetur
+                sit odit pariatur?</p>
+            <button type="button">Call to action</button>
+        </div>
 
-        <form action="">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2" style="text-align: center;">Completa el siguiente formulario</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Firts name</td>
-                        <td>Last name</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input flex type="text" name="name" id="name" maxlength="50" placeholder="Nombre">
-                        </td>
-                        <td>
-                            <input type="text" name="name" id="name" maxlength="50" placeholder="Nombre">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Email addres</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="name" id="name" maxlength="50" placeholder="Nombre">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td>Confirm Password</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="name" id="name" maxlength="50" placeholder="Nombre">
-                        </td>
-                        <td>
-                            <input type="text" name="name" id="name" maxlength="50" placeholder="Nombre">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
+        <div id="tarjetas-centro">
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+            <article>
+                <h3><strong>Fresh new layout</strong></h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </article>
+        </div>
+
+        <div>
+            <h3> Completa el siguiente formulario</h3>
+            <form action="" id="formulario">
+                <div>
+                    <span>Firts name</span>
+                    <input flex type="text" name="name" id="name">
+                </div>
+                <div>
+                    <span>Last name</span>
+                    <input type="text" name="surname" id="surname">
+                </div>
+                <div id="email">
+                    <span>Email addres</span>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <span>Password</span>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <span>Confirm password</span>
+                    <input type="password" name="password_conf" id="password_conf">
+                </div>
+                <div id="checkboxContainer">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <span>Acepto los terminos y condciones</span>
+                </div>
+                <div>
+                    <input type="submit" name="submit" id="submit">
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Copyright C Your Website 2024</p>
