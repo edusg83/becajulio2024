@@ -1,0 +1,84 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    color: white;
+    background-color: black;
+}
+
+.right {
+    margin-top: 15px;
+    color: white;
+}
+
+.right > a {
+    margin-left: 10px;
+    color: white;
+}
+
+header {
+    display: flex;
+}
+
+header > div {
+    margin: 20px;
+}
+
+#head1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 80%;
+    height: 400px;
+}
+
+#head2 {
+    padding: 20px;
+}
+
+button {
+    color: white;
+    background-color: rgb(5, 121, 237);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+#main1 {
+    background-color: lightslategray;
+    color: white;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0px 5px 0px 5px;
+    padding: 5px;
+    width: 450px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.button {
+    background-color: lightgray;
+}

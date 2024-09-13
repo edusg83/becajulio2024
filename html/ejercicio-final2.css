@@ -1,0 +1,152 @@
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    background-color: black;
+}
+
+.right {
+    margin-top: 15px;
+    color: white;
+}
+
+.right > a {
+    margin-left: 10px;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+button {
+    color: white;
+    background-color: rgb(5, 121, 237);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.grid-model {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2);
+    
+}
+
+.grid-model > div {
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 20px 20px 20px 20px;
+    padding: 20px;
+    
+}
+
+form {
+    text-align: center;
+}
+
+legend {
+    margin: 30px 0px 30px 0px;
+}
+
+form {
+    height: 400px;
+    
+}
+
+.first-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.first-container > div , .third-container > div {
+    margin: 5px;
+    
+}
+
+.first-container > div > label, .third-container > div > label {
+    float: left;
+}
+
+.second-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.second-container > div > label {
+    float: left;
+}
+
+.first-container > div > input, .third-container > div > input {
+    width: 400px;
+}
+
+.second-container > div > input {
+    width: 815px;
+}
+
+.third-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.four-container {
+    display: flex;
+    justify-content: center;
+}
+
+.container-terms{
+    display: flex;
+    flex-direction: row;
+
+}
+
+#label-terms {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.container-terms {
+    float: left;
+    margin-right: 500px;
+}
+
+.four-container > button {
+    float: right;
+}
+
+.first-container, .second-container, .third-container, .four-container {
+    margin: 20px 0px 20px 0px;
+}
+
+form > div > div > input {
+    background-color: aliceblue;
+    border: none;
+    height: 30px;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
