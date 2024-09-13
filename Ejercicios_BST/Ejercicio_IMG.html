@@ -31,7 +31,7 @@
             </div>
         </div>
     </nav>
-    
+
     <header class="container-fluid">
         <div class="p-5 mb-4 bg-light text-center">
             <div class="container p-5">
@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="container-fluid">
+    <main class="container-fluid">
         <div class="row row-cols-3 text-center">
             <div class="col">
                 <div class="card mb-4 bg-dark-subtle rounded-0 border-0">
@@ -101,44 +101,42 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <hr>
 
-    <div class="container mt-5">
+    <form class="container mt-5" action="#">
         <h3 class="text-center">Completa el siguiente formulario</h3>
-        <form action="#">
-            <div class="row row-cols-2 g-3">
-                <div class="col">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre">
-                </div>
-                <div class="col">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido">
-                </div>
-                <div class="col-12">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="col">
-                    <label for="pass" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="pass">
-                </div>
-                <div class="col">
-                    <label for="conf-pass" class="form-label">Confirmar contraseña</label>
-                    <input type="password" class="form-control" id="conf-pass">
-                </div>
-                <div class="col">
-                    <input class="form-check-input" type="checkbox" id="terminos">
-                    <label class="check" for="terminos">Acepto los <a href="#">terminos y condiciones</a></label>
-                </div>
-                <div class="col text-end">
-                    <button type="submit" class="btn btn-primary">Crear cuenta</button>
-                </div>
+        <div class="row row-cols-2 g-3">
+            <div class="col">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
             </div>
-        </form>
-    </div>
+            <div class="col">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col">
+                <label for="pass" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="pass">
+            </div>
+            <div class="col">
+                <label for="conf-pass" class="form-label">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="conf-pass">
+            </div>
+            <div class="col">
+                <input class="form-check-input" type="checkbox" id="terminos">
+                <label class="check" for="terminos">Acepto los <a href="#">terminos y condiciones</a></label>
+            </div>
+            <div class="col text-end">
+                <button type="submit" class="btn btn-primary">Crear cuenta</button>
+            </div>
+        </div>
+    </form>
 
     <footer class="bg-dark text-white text-center p-5 mt-5">
         <p class="m-0">Copyright @ Yout Website 2024</p>
