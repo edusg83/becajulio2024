@@ -1,0 +1,12 @@
+.nav-link, .nav-link:hover {
+    color: #FFFFFF;
+}
+.sec_1 {
+    padding: 50px 25px 25px 25px;
+}
+.sec_2 {
+    padding: 0px 25px 50px 25px;
+}
+.t {
+    font-size: 1.5em;
+}
