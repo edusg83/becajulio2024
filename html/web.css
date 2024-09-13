@@ -3,21 +3,19 @@ main{
     margin-top:2%;
 }
 .header{
-    
+    height: 50px;
+    width: auto;
     background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .logo{
     width: 50px; 
     height: auto; 
-<<<<<<< HEAD
-   
-=======
     
->>>>>>> 6b1ba9dd992ba7d32011d37303b4020753602c58
 }
 
 a{
@@ -111,15 +109,26 @@ a{
 
 
 
-footer h2{
+h2{
     text-align: center;
 }
 
-footer {
+.formularioContainer {
     width: 600px; 
     height: auto;
-    margin: 20px auto 0; /* margin-top: 20px; y auto a los lados */
+    margin: 20px auto 0; 
     padding: 10px;
     border-top: 1px solid #ccc;
     
+}
+
+footer{
+    display: flex;
+    height: 100px;
+    width: auto;
+    background-color: black;
+    text-align: center;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }
