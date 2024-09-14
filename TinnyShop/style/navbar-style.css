@@ -1,0 +1,89 @@
+* {
+    font-family: "Nunito", "Raleway", 'Segoe UI';
+}
+
+/*HEADER CUSTOM*/
+.custom-bg-navbar {
+    background-color: #6D2932;
+}
+
+.custom-bg-light {
+    background-color: #E8D8C4;
+
+}
+
+.custom-bg-medium-light {
+    background-color: #C7B7A3;
+
+}
+
+
+.custom-text-color-light {
+    color: #E8D8C4;
+}
+
+.custom-text-color-medium-light {
+    color: #C7B7A3;
+}
+
+#logo-tinny {
+    width: 170px;
+}
+
+.offcanvas-title {
+    font-family: "Nunito";
+    color: #c7b7a391;
+}
+
+ul.dropdown-menu {
+    background-color: #E8D8C4 !important;
+}
+
+ul.dropdown-menu li a:hover {
+    background-color: #c7b7a388;
+}
+
+input.form-control{
+    background-color: #E8D8C4 !important;
+}
+
+.btn-custom-search {
+    font-weight: bold;
+    color: #561C24;
+    background-color: #E8D8C4;
+    border: #C7B7A3;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding:10px;
+}
+
+.btn-custom-search:hover{
+    font-weight: bold;
+    color: #E8D8C4;
+    background-color: #220c0f8f;
+    border: 1px solid #6D2932;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding:10px;
+
+}
+
+.btn-custom-search:active{
+    font-weight: bold;
+    color: #561C24;
+    background-color: #E8D8C4;
+    border: #C7B7A3;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding:10px;
+}
+
+.btn-custom-search:disabled{
+    font-weight: bold;
+    color: #561C24;
+    background-color: #E8D8C4;
+    border: #C7B7A3;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding:10px;}
+
