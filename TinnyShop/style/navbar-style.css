@@ -1,8 +1,12 @@
-* {
-    font-family: "Nunito", "Raleway", 'Segoe UI';
-}
+
 
 /*HEADER CUSTOM*/
+header{
+    position: sticky;
+    top: 0;
+    padding: 0!important;
+    z-index: 100;
+}
 .custom-bg-navbar {
     background-color: #6D2932;
 }

@@ -1,0 +1,61 @@
+.custom-slider {
+    padding: 0;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 10px 10px 20px rgba(56, 47, 47, 0.5);
+}
+
+.slider-img {
+    width: 100%;
+    object-fit: contain;
+}
+
+div#best-sellers{
+    text-align: center;
+    margin-top: 100px;
+   
+}
+
+.custom-card {
+    border-radius: 15px;
+    border: none;
+    background-color: #f8f2efab;
+    margin-top: 50px;
+}
+
+.card-header {
+    background-color: #6D2932;
+    padding: 6px;
+}
+
+.windows-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close {
+    background-color: #b34251;
+}
+
+.max {
+    background-color: #FFDC7F;
+}
+
+.min {
+    background-color: #A1D6B2;
+}
+
+.img-card {
+
+    width: 100%;
+    object-fit: contain;
+}
