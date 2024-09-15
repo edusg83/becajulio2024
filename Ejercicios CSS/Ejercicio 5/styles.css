@@ -1,0 +1,44 @@
+/* a) Regla para que la clase p1 tenga un tamaño de fuente 3 veces más grande y texto centrado */
+.p1 {
+    font-size: 3em; /* 3 veces más grande */
+    text-align: center; /* Texto alineado al centro */
+}
+
+/* b) Regla para que la clase p3 tenga un tamaño de fuente 10 veces más grande y overline */
+.p3 {
+    font-size: 10em; /* 10 veces más grande */
+    text-decoration: overline; /* Decoración de texto: overline */
+}
+
+/* Reglas anteriores del Ejercicio 4 */
+p:nth-of-type(2) {
+    color: red;
+}
+
+p:first-of-type {
+    color: red;
+}
+
+p:last-of-type {
+    color: red;
+}
+
+p:nth-child(even) {
+    background-color: red;
+}
+
+p:nth-child(odd) {
+    background-color: yellow;
+}
+
+main > section:only-child {
+    color: red;
+}
+
+p:first-of-type {
+    color: red;
+}
+
+p:not(:first-of-type) {
+    background-color: red;
+}
