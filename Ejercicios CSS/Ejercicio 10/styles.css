@@ -1,0 +1,17 @@
+/* a) Regla para la clase p2 que le haga rotar 180 grados */
+.p2 {
+    border: 2px solid blue;
+    border-radius: 2em;
+    width: 10em;
+    padding: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: rotate(180deg); /* Rotación de 180 grados */
+}
+
+/* b) Regla para la clase p4 que use rotate3d */
+.p4 {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 1em;
+    color: white;
+    transform: rotate3d(1, 1, 0, 45deg); /* Rotación 3D en los ejes X e Y, con un ángulo de 45 grados */
+}
