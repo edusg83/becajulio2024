@@ -1,0 +1,20 @@
+/* a) Disponer todos los elementos <p> en una fila, uno a continuación del otro */
+#sec1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Espacio entre los elementos */
+}
+
+/* b) Disponer todos los elementos <p> en una columna, uno a continuación del otro */
+#sec1.column {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    width: auto; /* No ocupe el eje x por completo */
+}
+
+/* c) Posicionar las cajas a la derecha de la pantalla en columna */
+#sec1.right-column {
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los elementos a la derecha */
+    width: auto;
+}
