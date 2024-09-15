@@ -1,0 +1,6 @@
+/* a) Regla para que <section> tenga como imagen de fondo 'logoEOI.jpg' que se repita horizontalmente */
+section {
+    background-image: url('logoEOI.jpg'); /* Ruta de la imagen */
+    background-repeat: repeat-x; /* Repetir horizontalmente */
+    background-size: cover; /* Cubrir toda la sección */
+}
