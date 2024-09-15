@@ -1,0 +1,13 @@
+/* a) Regla para que la clase p1 tenga margen de tamaño 1em */
+.p1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 1em; /* Margen de 1em alrededor del elemento */
+}
+
+/* b) Regla para que la clase p3 tenga un margen superior de 2em */
+.p3 {
+    font-size: 10em;
+    text-decoration: overline;
+    margin-top: 2em; /* Margen superior de 2em */
+}
