@@ -1,0 +1,15 @@
+/* a) Regla para la clase p2 que cree una sombra de texto */
+.p2 {
+    border: 2px solid blue;
+    border-radius: 2em;
+    width: 10em;
+    padding: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto con valores personalizados */
+}
+
+/* b) Regla para la clase p4 que cree un degradado linear */
+.p4 {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Degradado de izquierda a derecha con colores elegidos */
+    padding: 1em;
+    color: white; /* Texto en blanco para mayor contraste */
+}
