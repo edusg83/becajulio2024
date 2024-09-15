@@ -58,4 +58,8 @@ div#best-sellers{
 
     width: 100%;
     object-fit: contain;
+    background-color: #6d293259;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
 }
