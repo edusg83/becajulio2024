@@ -9,36 +9,3 @@
     font-size: 10em; /* 10 veces más grande */
     text-decoration: overline; /* Decoración de texto: overline */
 }
-
-/* Reglas anteriores del Ejercicio 4 */
-p:nth-of-type(2) {
-    color: red;
-}
-
-p:first-of-type {
-    color: red;
-}
-
-p:last-of-type {
-    color: red;
-}
-
-p:nth-child(even) {
-    background-color: red;
-}
-
-p:nth-child(odd) {
-    background-color: yellow;
-}
-
-main > section:only-child {
-    color: red;
-}
-
-p:first-of-type {
-    color: red;
-}
-
-p:not(:first-of-type) {
-    background-color: red;
-}
