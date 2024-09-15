@@ -1,0 +1,9 @@
+section {
+    display: block;
+}
+.p1, .p3 {
+    float: left;
+}
+.p2, .p4 {
+    float: right;
+}

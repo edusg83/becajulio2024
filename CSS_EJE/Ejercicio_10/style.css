@@ -1,0 +1,57 @@
+p:nth-child(2) {
+    color: red;
+}
+p:first-child {
+    color: red;
+}
+p:last-child {
+    color: red;
+}
+    /*
+p:nth-child(1), :nth-child(3) {
+    background: red;
+}
+    */
+p:nth-child(2), :nth-child(4) {
+    background: yellow;
+}
+section:only-child {
+    color: red;
+}
+p:first-of-type {
+    color: red;
+}
+    /*
+section:not(p) {
+    background: red;
+} 
+    */
+.p1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 1em;
+}
+.p2 {
+    /*
+    border-radius: 2em;
+    border: 10em solid #002fff;
+    */
+    box-shadow: rgb(150,150,150) 5px 5px;
+    transform: rotate(180deg);
+}
+.p3 {
+    font-size: 10em;
+    text-align: center;
+    text-decoration: overline;
+    margin-top: 2em;
+}
+.p4 {
+    background: -webkit-linear-gradient(30deg, #FFFFFF, #666666);
+    transform: rotate3d(0, 1, 0, 45deg);
+}
+section {
+       /*
+    background-image: url("https://www.eoi.es/sites/default/files/inline-files/logoeoiok.jpg");
+       */
+}
+

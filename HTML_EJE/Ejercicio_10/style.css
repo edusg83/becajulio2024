@@ -1,0 +1,9 @@
+main {
+    display: flex;
+}
+.sec-1 {
+    float: left;
+}
+aside {
+    float: right;
+}

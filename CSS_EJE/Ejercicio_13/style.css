@@ -1,0 +1,18 @@
+.sec1 {
+    display: flex;
+    flex-direction: row;
+}
+.sec2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.sec3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+p {
+    border: 5px solid red;
+    padding: 50px;
+}
