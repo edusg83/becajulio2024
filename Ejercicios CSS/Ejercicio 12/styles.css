@@ -1,0 +1,55 @@
+/* Regla para alinear los elementos impares a la izquierda */
+p:nth-child(odd) {
+    float: left;
+    width: 45%; /* Establece el ancho para que haya espacio para los elementos alineados a la derecha */
+    margin-right: 5%; /* Espacio entre los elementos alineados a la derecha */
+}
+
+/* Regla para alinear los elementos pares a la derecha */
+p:nth-child(even) {
+    float: right;
+    width: 45%; /* Ancho igual al de los impares */
+    margin-left: 5%; /* Espacio entre los elementos alineados a la izquierda */
+}
+
+/* Animación para la clase p2 que cambia de color y posición */
+@keyframes colorPositionAnimation {
+    0% {
+        background-color: red;
+        transform: translate(0, 0);
+    }
+    25% {
+        background-color: yellow;
+        transform: translate(200px, 0);
+    }
+    50% {
+        background-color: blue;
+        transform: translate(200px, 200px);
+    }
+    75% {
+        background-color: green;
+        transform: translate(0, 200px);
+    }
+    100% {
+        background-color: red;
+        transform: translate(0, 0);
+    }
+}
+
+.p2 {
+    border: 2px solid blue;
+    border-radius: 2em;
+    width: 10em;
+    padding: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: rotate(180deg);
+    animation: colorPositionAnimation 5s infinite;
+}
+
+/* Regla para la clase p4 que use rotate3d */
+.p4 {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    padding: 1em;
+    color: white;
+    transform: rotate3d(1, 1, 0, 45deg);
+}
