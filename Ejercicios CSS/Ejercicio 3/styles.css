@@ -1,0 +1,44 @@
+/* c) Regla que establece color rojo al elemento con name="seccion1" */
+section[name="seccion1"] {
+    color: red;
+}
+
+/* d) Añadir selector para los elementos con class="articulo2" dentro de seccion1 */
+section[name="seccion1"], .articulo2 {
+    color: red;
+}
+
+/* e) Regla para el <section> que va detrás del elemento <p>, usando el operador + */
+p + section {
+    color: red;
+}
+
+/* f) Regla que establece color rojo al <article> con class que contenga la palabra articulo2 */
+article[class*="articulo2"] {
+    color: red;
+}
+
+/* i) Regla para todos los elementos que contengan "2" al final del atributo class */
+[class$="2"] {
+    color: red;
+}
+
+/* j) Regla para todos los elementos con class que empiece con "art" */
+[class^="art"] {
+    color: red;
+}
+
+/* k) Regla que establece color rojo al elemento con id="sec1" */
+#sec1 {
+    color: red;
+}
+
+/* g) Regla que establece color rojo a todos los elementos <section> dentro de <main> */
+main section {
+    color: red;
+}
+
+/* h) Regla que establece color rojo a todos los elementos con class que contengan "articulo" */
+[class*="articulo"] {
+    color: red;
+}
