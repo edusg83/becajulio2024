@@ -1,0 +1,2 @@
+sass --watch sass:css  HACER QUE HAGA LOS CAMBIOS AUTOAMTICAMENTE
+sass ejemplo.scss fichero.css  GENERAR ARCHVIO CSS CON ESE ARCHVIO SASS

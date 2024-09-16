@@ -1,0 +1,180 @@
+$grid-width: 40px;
+$gutter-width: 10px;
+$ancho: 20px;
+$i: 6;
+$type: monster;
+
+$altura: height;
+$ancho: width;
+$el1: 1em;
+$map: (
+    clave1: 1em,
+    clave2: 2em,
+    clave3: 3em
+);
+$listaMargen: (
+    10px 15px 0 0
+);
+
+// --------------------------------------------SAS : listas y mapas
+nav {
+    #{$ancho}: 80%;
+    #{$altura}: 23px;
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+
+        a {
+            font-weight: bold;
+            font-size: map-get($map, "clave1");
+            margin: $listaMargen;
+        }
+    }
+}
+
+
+//---------------- SAS : directivas de control
+@while $i >0 {
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+
+    $i: $i - 2;
+}
+
+p {
+    @if $type ==ocean {
+        color: blue;
+    }
+
+    @else if $type ==matador {
+        color: red;
+    }
+
+    @else if $type ==monster {
+        color: green;
+    }
+
+    @else {
+        color: black;
+    }
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+}
+
+@each $animal in puma, sea-slug, egret, salamander {
+    .#{$animal}-icon {
+        background-image: url('/images/#{$animal}.png');
+    }
+}
+
+//------------------------------SAS : mixins
+@mixin rounded-top-left {
+    $vert: top;
+    $horz: left;
+    $radius: 10px;
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+#navbar li {
+    @include rounded-top-left;
+}
+
+#footer {
+    @include rounded-top-left;
+}
+
+@mixin rounded($vert, $horz, $radius: 10px) {
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+#navbar li {
+    @include rounded(top, left);
+}
+
+#footer {
+    @include rounded(top, left, 5px);
+}
+
+#sidebar {
+    @include rounded(top, left, 8px);
+}
+
+
+@mixin apply-to-ie6-only {
+    * html {
+        @content;
+    }
+}
+
+@include apply-to-ie6-only {
+    #logo {
+        background-image: url(/logo.gif);
+    }
+}
+
+
+//--------------------------------- extender clases
+.error {
+    border: 1px #f00;
+    background-color: #fdd;
+}
+
+.seriousError {
+    @extend .error;
+    border-width: 3px;
+}
+
+// funciones propias
+@function grid-width($n) {
+    @return $n * $grid-width +($n - 1) * $gutter-width;
+}
+
+//---------------------------------- SAS : estilos parciales
+/* Archivo _cabecera.scss */
+.cabecera {
+    width: $ancho;
+}
+
+/* Archivo styles.scss */
+// Importa cada estilo parcial
+// @import "variables";
+// @import "cabecera";
+
+#sidebar {
+    width: grid-width(5);
+}
+
+
+nav {
+    width: 80%;
+    height: 23px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+
+        a {
+            font-weight: bold;
+        }
+    }
+}
