@@ -6,9 +6,10 @@ console.log(cadena1.charAt(cadena1.length - 1))
 
 console.log(cadena1.toLowerCase())
 
-cadena1.replace("DE","ME")
-
+cadena1 = cadena1.replace("DE","ME");
 console.log(cadena1)
+
+cadena1 = "CADENA1"
 
 let cadena2 = "CADENA2"
 
