@@ -1,13 +1,13 @@
 let cadena1 = "CADENA1";
 
-cadena1.indexOf("ENA");
+console.log(cadena1.indexOf("ENA"));
 
-cadena1.lastIndexOf();
+console.log(cadena1.lastIndexOf());
 
-cadena1.toLowerCase();
+console.log(cadena1.toLowerCase());
 
-cadena1 = cadena1.replace("DE","ME");
+console.log(cadena1.replace("DE","ME"));
 
 let cadena2 = "CADENA2";
 
-cadena1 + cadena2;
+console.log(cadena1 + ", " +cadena2);
