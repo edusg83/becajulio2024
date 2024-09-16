@@ -2,7 +2,7 @@
 let array1 = [1, 2, 3, 4];
 
 // b) Crear un pequeño programa que recorra el array y cuando encuentre el 1 muestre UNO , el 2 muestre DOS, el 3 muestre TRES, el 4 muestre CUATRO Utilizar la instrucción Switch
-for (let i = 0; i < array1.length; i++) {
+for (let num of array1) {
     switch (num) {
         case 1:
             console.log("UNO");
@@ -27,4 +27,5 @@ console.log(array1);
 for (let i = 0; i < 3; i++) {
     array1.pop();
 }
+
 console.log(array1);
