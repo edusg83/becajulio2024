@@ -1,0 +1,22 @@
+nav {
+
+    $altura: height;
+    $ancho: width;
+
+    #{$ancho}: 80%;
+    #{$altura}: 23px;
+    $listaMargen:(10px 15px 0 0);
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+
+        a {
+            font-weight: bold;
+            margin: $listaMargen;
+        }
+    }
+}
