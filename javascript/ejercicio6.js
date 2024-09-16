@@ -1,7 +1,7 @@
 let array1 = [1,2,3,4];
 
 
-for(let i = 0; i < array1.length+1; i++){
+for(var i of array1){
 
     switch(i){
         case 1:
