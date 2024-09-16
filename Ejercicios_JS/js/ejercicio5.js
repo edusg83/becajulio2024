@@ -22,15 +22,10 @@ for (let num of array1) {
 
 // c) Introducir un 3 al final del array y visualizar el array
 array1.push(3);
-for(let num in array1){
-    console.log(num);
-}
+console.log(array1);
 
 // d) Quitar los 3 últimos elementos del array y visualizar el array
 for (let i = 0; i < 3; i++) {
     array1.pop();
 }
-
-for(let num of array1){
-    console.log(num);
-}
+console.log(array1);
