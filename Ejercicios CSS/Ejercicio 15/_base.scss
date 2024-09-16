@@ -1,0 +1,17 @@
+// _base.scss
+// Variables globales
+$primary-color: #3498db;
+$hover-color: #2ecc71;
+$font-stack: Helvetica, sans-serif;
+$nav-height: 23px;
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+}

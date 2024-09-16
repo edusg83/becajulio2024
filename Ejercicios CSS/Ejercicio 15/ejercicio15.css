@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+nav {
+  width: 80%;
+  height: 23px;
+}
+nav:hover {
+  text-decoration: underline;
+}
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  font-weight: bold;
+  color: #3498db;
+}
+nav li a:hover {
+  text-decoration: #2ecc71;
+}
+
+/*# sourceMappingURL=ejercicio15.css.map */

@@ -1,0 +1,34 @@
+// _nav.scss
+@mixin hover-decoration($decoration) {
+    &:hover {
+      text-decoration: $decoration;
+    }
+  }
+  
+  @mixin nav-size($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  
+  nav {
+    @include nav-size(80%, $nav-height);
+  
+    @include hover-decoration(underline);
+  
+    ul {
+      list-style-type: none;
+    }
+  
+    li {
+      float: left;
+  
+      a {
+        font-weight: bold;
+        color: $primary-color;
+  
+        // Usamos una función para cambiar el color al hacer hover
+        @include hover-decoration($hover-color);
+      }
+    }
+  }
+  
