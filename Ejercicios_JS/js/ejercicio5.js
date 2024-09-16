@@ -27,10 +27,10 @@ for(let num in array1){
 }
 
 // d) Quitar los 3 últimos elementos del array y visualizar el array
-for (let i; i < 3; i++) {
+for (let i = 0; i < 3; i++) {
     array1.pop();
 }
 
-for(let num in array1){
+for(let num of array1){
     console.log(num);
 }
