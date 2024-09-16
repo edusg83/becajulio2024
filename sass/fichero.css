@@ -1,0 +1,35 @@
+.title, .smalltitle {
+  font-size: 20px;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+}
+
+.smalltitle {
+  font-size: 10px;
+}
+
+nav {
+  width: 50%;
+  height: 23px;
+}
+nav:hover {
+  text-decoration: underline;
+}
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  font-weight: bold;
+}
+
+.col {
+  border-radius: 5px;
+  background-color: lightblue;
+  margin: 5px 10px 5px 10px;
+}
+
+/*# sourceMappingURL=fichero.css.map */

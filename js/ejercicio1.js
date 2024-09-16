@@ -1,0 +1,6 @@
+console.time()
+console.info("Informacion")
+console.warn("!!!!!!")
+console.error("Error")
+console.log("Hello world!")
+console.timeEnd()

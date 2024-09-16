@@ -1,0 +1,50 @@
+$alto: height;
+$ancho: width;
+$title: 20px;
+
+@mixin card {
+    $color: lightblue;
+    $radius: 5px;
+    $margin: 5px 10px 5px 10px;
+    
+    border-radius: $radius;
+    background-color: $color;
+    margin: $margin;
+}
+
+
+
+.title {
+    font-size: $title;
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+}
+
+.smalltitle {
+    @extend .title;
+    font-size: $title / 2;
+}
+
+nav {
+    #{$ancho}: round($number: 50%);
+    #{$alto}: round($number: 23px);
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+
+        a {
+            font-weight: bold;
+        }
+    }
+}
+
+.col {@include card}
