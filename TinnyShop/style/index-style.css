@@ -15,7 +15,15 @@
 div#best-sellers{
     text-align: center;
     margin-top: 100px;
-   
+}
+
+div#best-sellers h1{
+    font-family: "Fjalla One";
+    font-size: 9em;
+}
+
+div#best-sellers hr{
+    border: 3px solid #6D2932;
 }
 
 .custom-card {
@@ -62,4 +70,12 @@ div#best-sellers{
     border-radius: 10px;
     border: none;
     margin-bottom: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+div.card-body a{
+    background-color: #6D2932!important;
+    border-color: #6D2932;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }

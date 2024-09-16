@@ -1,0 +1,13 @@
+
+footer{
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #561C24;
+}
+
+footer p{
+    text-align: center;
+    font-family: "Raleway";
+    color: #E8D8C4;
+    margin-top: 6px;
+}
