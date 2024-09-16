@@ -10,8 +10,9 @@ if (cadena2 == undefined) {
 let cliente = {
     nombre: "PEPITO",
     tel: "656666666",
-    direccion: "C/Salud,21",
 }
+
+cliente.direccion = "C/Salud,21";
 
 console.log(cliente.nombre + ", " + cliente.tel + ", " + cliente.direccion);
 
