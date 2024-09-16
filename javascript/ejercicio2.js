@@ -1,5 +1,4 @@
-
-let alto = 12;
+let alto = 12 ;
 
 let ancho = 12.203004;
 
