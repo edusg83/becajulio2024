@@ -44,6 +44,7 @@ cliente1.direccion = "Desengaño 21";
 
 console.log(cliente1.nombre, cliente1.tel, cliente1.direccion);*/
 
+array1 = [1, 2, 3, 4];
 for (let i = 0; i < array1.length; i++) {
     let numero = array1[i];
 
