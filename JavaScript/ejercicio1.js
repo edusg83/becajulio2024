@@ -70,3 +70,23 @@ console.log(array1);
 
 array1.length -= 3;
 console.log(array1);
+
+for (let numero of array1) {
+    switch (numero) {
+        case 1:
+            console.log("UNO");
+            break;
+        case 2:
+            console.log("DOS");
+            break;
+        case 3:
+            console.log("TRES");
+            break;
+        case 4:
+            console.log("CUATRO");
+            break;
+        default:
+            console.log("No se sabe el número");
+    }
+
+}
