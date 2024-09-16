@@ -11,7 +11,7 @@ console.log(cadena1.charAt(cadena1.length - 1));
 console.log(cadena1.toLowerCase());
 
 // e) Sustituir en cadena1 "DE" por "ME“
-console.log(cadena1.replace(/["DE"]/gi, "ME"));
+console.log(cadena1.replace("DE", "ME"));
 
 // f) Crear una variable de tipo cadena llamada cadena2 con valor CADENA2 y concatenar cadena2 con cadena1
 let cadena2 = "CADENA2";
