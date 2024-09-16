@@ -70,3 +70,12 @@ console.log("Array después de añadir un 3 al final:", array1);
 
 array1.splice(-3); 
 console.log("Array después de quitar los últimos 3 elementos:", array1);
+
+//Ejercicio 7
+let pieza1 = {peso: 20}; 
+let pieza2 = {peso: '20'}; 
+
+console.log(pieza1[0] == pieza2[0]); 
+console.log(pieza1[0] === pieza2[0]); 
+let res = 0
+console.log((pieza1[0] + pieza2[0]) ? res !=0 : pieza1[0] * pieza2[0]); 
