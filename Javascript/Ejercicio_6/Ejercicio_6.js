@@ -19,12 +19,12 @@ for(let i = 1; i <= array1.length;i++){
 
 array1.push(3)
 
-for(let i = 1; i <= array1.length;i++){
+for(let i = 0; i <= array1.length;i++){
     console.log(array1[i])
 }
 
-array1.splice(3,3)
+array1.splice(3,4)
 
-for(let i = 1; i <= array1.length;i++){
+for(let i = 0; i <= array1.length;i++){
     console.log(array1[i])
 }
