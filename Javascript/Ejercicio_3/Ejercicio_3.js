@@ -13,4 +13,4 @@ cadena1 = "CADENA1"
 
 let cadena2 = "CADENA2"
 
-console.log(cadena1 + cadena2)
+console.log(cadena2 + cadena1)
