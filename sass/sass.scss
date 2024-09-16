@@ -1,0 +1,17 @@
+$altura: height;
+$ancho: width;
+$el1:5em;
+$bgcolor: background-color; 
+$color: color; 
+nav {
+#{$ancho}: 80%;
+#{$altura}: 23px;
+#{$bgcolor}: #010372; 
+#{$color}: #f4f4f4; 
+
+ul { list-style-type: none; }
+li {
+float: left;
+a { font-weight: bold; font-size: $el1;}
+}
+}
