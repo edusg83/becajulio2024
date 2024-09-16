@@ -1,0 +1,30 @@
+
+$width: 80%;
+$bc: rgb(148, 197, 107);
+@mixin shadow{
+    box-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+}
+
+
+
+nav {
+    width: $width;
+    height: 23px;
+    background-color: $bc;
+    @include shadow;
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+
+        a {
+            font-weight: bold;
+        }
+    }
+}
+
+
+
