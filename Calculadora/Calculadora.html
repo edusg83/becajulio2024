@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="outer-shell">
+        <div class="display-container">
+          <p class="display" id="display"></p>
+        </div>
+        <div class="button-container">
+          <div class="button-row">
+            <input type="button" value="7" onclick="setDisplay(7)" />
+            <input type="button" value="8" onclick="setDisplay(8)" />
+            <input type="button" value="9" onclick="setDisplay(9)" />
+            <input
+              type="button"
+              value="/"
+              onclick="setDisplay(''), setSymbol('/'), storeValue()"
+            />
+          </div>
+          <div class="button-row">
+            <input type="button" value="4" onclick="setDisplay(4)" />
+            <input type="button" value="5" onclick="setDisplay(5)" />
+            <input type="button" value="6" onclick="setDisplay(6)" />
+            <input
+              type="button"
+              value="X"
+              onclick="setDisplay(''),setSymbol('*'), storeValue()"
+            />
+          </div>
+          <div class="button-row">
+            <input type="button" value="1" onclick="setDisplay(1)" />
+            <input type="button" value="2" onclick="setDisplay(2)" />
+            <input type="button" value="3" onclick="setDisplay(3)" />
+            <input
+              type="button"
+              value="-"
+              onclick="setDisplay(''), setSymbol('-'), storeValue()"
+            />
+          </div>
+          <div class="button-row">
+            <input type="button" value="0" onclick="setDisplay(0)" />
+            <input type="button" value="." onclick="setDisplay('.')" />
+            <input
+              type="button"
+              value="+"
+              onclick="setDisplay(''), setSymbol('+'), storeValue()"
+            />
+            <input
+              type="button"
+              value="="
+              class="result"
+              onclick="calculateResult()"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
