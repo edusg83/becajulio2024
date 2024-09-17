@@ -18,11 +18,9 @@ function setSymbol(param){
 }
 
 function storeValue(){
-    if(num1 == undefined){
-        num1 = Number(document.getElementById("display").innerHTML.textContent);
-    }else{
-        num2 =  Number(document.getElementById("display").innerHTML.textContent);
-    }
+
+    num1 = Number(document.getElementById("display").innerHTML.textContent);
+
 }
 
 function calculateResult(){
