@@ -9,14 +9,8 @@ let funciones = {
 funciones.colorVerde();
 
 // b) Añadir al Objeto funciones otra propiedad función llamada colorRojo que cuando se invoque muestre por consola “ROJO”
-
-funciones = {
-    colorVerde: function(){
-        console.log("VERDE");
-    },
-    colorRojo: function(){
-        console.log("ROJO");
-    }
+funciones.colorRojo = function() {
+    console.log("ROJO");
 };
 
 funciones.colorVerde();
