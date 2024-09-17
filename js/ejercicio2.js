@@ -71,11 +71,38 @@ console.log("Array después de añadir un 3 al final:", array1);
 array1.splice(-3); 
 console.log("Array después de quitar los últimos 3 elementos:", array1);
 
-//Ejercicio 7
-let pieza1 = {peso: 20}; 
-let pieza2 = {peso: '20'}; 
+// //Ejercicio 7
+// let pieza1 = {peso: 20}; 
+// let pieza2 = {peso: '20'}; 
 
-console.log(pieza1[0] == pieza2[0]); 
-console.log(pieza1[0] === pieza2[0]); 
-let res = 0
-console.log((pieza1[0] + pieza2[0]) ? res !=0 : pieza1[0] * pieza2[0]); 
+// console.log(pieza1[0] == pieza2[0]); 
+// console.log(pieza1[0] === pieza2[0]); 
+// let res = 0
+// console.log((pieza1[0] + pieza2[0]) ? res !=0 : pieza1[0] * pieza2[0]); 
+
+//Ejercicio 8
+
+function suma(param1, param2){
+    return param1 + param2; 
+}
+
+let res = suma(12,12); 
+
+(function(param1, param2){
+    return param1 + param2; 
+}(12,12)); 
+
+//Ejercicio 10
+
+let funciones = {}; 
+
+function colorVerde(){
+    console.log("VERDE"); 
+}
+funciones.add(colorVerde()); 
+
+function colorRojo(){
+    console.log("ROJO"); 
+}
+
+funciones.add(colorRojo()); 
