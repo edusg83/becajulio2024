@@ -101,6 +101,7 @@ function colorVerde(){
 }
 funciones.add(colorVerde()); 
 
+funciones.colorVerde(); 
 function colorRojo(){
     console.log("ROJO"); 
 }
