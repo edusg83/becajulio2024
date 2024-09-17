@@ -1,0 +1,36 @@
+
+
+main {
+    margin-top: 5em;
+    background-color: rgb(9, 72, 114);
+    border-radius: 10px;
+    height: 550px !important;
+    width: 500px !important;
+}
+
+#resultado {
+    background-color: lightblue;
+    height: 3%;
+    border-radius: 5px;
+    font-size: 50px;
+}
+
+.col {
+    margin-bottom: 20px;
+}
+
+.col > button {
+    background-color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    width: 80px;
+    height: 50px;
+    margin-right: 25px;
+    font-size:20px;
+}
+
+button[id = '='] {
+    background-color: orange;
+}
+
