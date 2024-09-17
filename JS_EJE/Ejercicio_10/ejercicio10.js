@@ -1,10 +1,10 @@
 
 let funciones = {
     colorVerde: function(){
-        console.log("VERDE")
+        console.log("VERDE");
     },
     colorRojo: function(){
-        console.log("ROJO")
+        console.log("ROJO");
     }
 }
 
