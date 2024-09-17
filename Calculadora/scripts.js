@@ -4,8 +4,8 @@ let = symbol = '';
 
 function setDisplay(param){
     if(param == '-' || param == '*' || param == '+' || param == '/'){
-        document.getElementById("display").innerHTML = '';
         setSymbol(param);
+        document.getElementById("display").innerHTML = '';
     }else{
         document.getElementById("display").innerHTML = document.getElementById("display").textContent + param;
     }
@@ -27,7 +27,7 @@ function calculateResult(){
 
     let result = 0;
 
-    if(num2 = undefined){
+    if(num2 == undefined){
         num2 =  Number(document.getElementById("display").innerHTML.textContent);
     }
 
