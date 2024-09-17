@@ -1,3 +1,7 @@
+let = num1 = undefined;
+let = num2 = undefined;
+let = symbol = '';
+
 function setDisplay(param){
     if(param == ''){
         document.getElementById("display").innerHTML = ''
@@ -6,52 +10,36 @@ function setDisplay(param){
     }
 }
 
-const objeto = {
-    num1:0,
-    num2:0,
-    symbol:'',
-    check:false
-}
 
 function setSymbol(param){
-    switch(param){
-        case '+':
-            objeto.symbol = '+'
-            break;
-        case '-':
-            objeto.symbol = '-'
-            break;
-        case '*':
-            objeto.symbol = '*'
-            break;
-        case '/':
-            objeto.symbol = '/'
-            break;
+    if(symbol != ''){
+        symbol = param;
     }
 }
 
 function storeValue(){
-    if(objeto.check == false){
-        objeto.num1 == document.getElementById("display").innerHTML;
-        objeto.check == true;
+    if(num1 == undefined){
+        num1 = Number(document.getElementById("display").innerHTML.textContent);
     }else{
-        objeto.num2 == document.getElementById("display").innerHTML;
+        num2 =  Number(document.getElementById("display").innerHTML.textContent);
     }
 }
 
 function calculateResult(){
-    switch(objeto.symbol){
-        case '+':
-            document.getElementById("display").innerHTML = objeto.num1 + objeto.num2;
-            break;
-        case '-':
-            document.getElementById("display").innerHTML = objeto.num1 - objeto.num2;
-            break;
-        case '*':
-            document.getElementById("display").innerHTML = objeto.num1 * objeto.num2;
-            break;
-        case '/':
-            document.getElementById("display").innerHTML = objeto.num1 / objeto.num2;
-            break;
+    if(num1 != undefined && num2 != undefined){
+        switch(symbol){
+            case '+':
+                document.getElementById("display").innerHTML.textContent = num1 + num2;
+                break;
+            case '*':
+                document.getElementById("display").innerHTML = num1 *  num2;
+                break;
+            case '/':
+                document.getElementById("display").innerHTML = num1 / num2;
+                break;
+            case '-':
+                document.getElementById("display").innerHTML = num1 - num2;
+                break;
+        }
     }
 }
