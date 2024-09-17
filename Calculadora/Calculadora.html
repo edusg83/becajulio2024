@@ -10,10 +10,10 @@
   <body>
     <main>
       <div class="outer-shell">
-        <div class="display-container">
+        <section class="display-container">
           <p class="display" id="display"></p>
-        </div>
-        <div class="button-container">
+        </section>
+        <section class="button-container">
           <div class="button-row">
             <input type="button" value="7" onclick="setDisplay(7)" />
             <input type="button" value="8" onclick="setDisplay(8)" />
@@ -43,7 +43,9 @@
               onclick="calculateResult()"
             />
           </div>
-        </div>
+            <input type="button" value="C" class = "clear-button"/>
+          </div>
+        </section>
       </div>
     </main>
   </body>

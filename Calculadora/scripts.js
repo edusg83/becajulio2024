@@ -1,13 +1,13 @@
-let = num1 = undefined;
-let = num2 = undefined;
-let = symbol = '';
+let num1 = undefined;
+let num2 = undefined;
+let symbol = '';
 
 function setDisplay(param){
     if(param == '-' || param == '*' || param == '+' || param == '/'){
         setSymbol(param);
         document.getElementById("display").innerHTML = '';
     }else{
-        document.getElementById("display").innerHTML = document.getElementById("display").textContent + param;
+        document.getElementById("display").innerHTML = document.getElementById("display").innerHTML + param;
     }
 }
 
@@ -19,7 +19,7 @@ function setSymbol(param){
 
 function storeValue(){
 
-    num1 = Number(document.getElementById("display").innerHTML.textContent);
+    num1 = Number(document.getElementById("display").innerHTML);
 
 }
 
@@ -28,7 +28,7 @@ function calculateResult(){
     let result = 0;
 
     if(num2 == undefined){
-        num2 =  Number(document.getElementById("display").innerHTML.textContent);
+        num2 =  Number(document.getElementById("display").innerHTML);
     }
 
     switch(symbol){
@@ -48,4 +48,8 @@ function calculateResult(){
 
     document.getElementById("display").innerHTML = result;
 
+}
+
+function clearDisplay(){
+    document.getElementById
 }

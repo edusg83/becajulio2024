@@ -69,3 +69,8 @@ input {
 .result {
   background-color: #ff8500;
 }
+
+.clear-button {
+  width: 90%;
+  margin-right: 5%;
+}
