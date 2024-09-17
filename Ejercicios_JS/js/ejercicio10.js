@@ -13,5 +13,4 @@ funciones.colorRojo = function() {
     console.log("ROJO");
 };
 
-funciones.colorVerde();
 funciones.colorRojo();
