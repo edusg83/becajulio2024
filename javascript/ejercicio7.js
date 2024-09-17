@@ -21,10 +21,7 @@ if(pieza1.peso === pieza2.peso){
     console.log("Las propiedades son diferentes")
 }
 
-if(pieza1.peso == pieza2.peso){
-    resultado = pieza1.peso + pieza2.peso;
-}else{
-    resultado = pieza1.peso * pieza2.peso;
-}
+
+let resultado = (pieza1.peso == pieza2.peso) ? pieza1.peso + Number(pieza2.peso) : pieza1.peso * Number(pieza2.peso);
 
 console.log(resultado);
