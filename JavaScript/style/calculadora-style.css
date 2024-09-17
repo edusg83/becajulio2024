@@ -1,0 +1,45 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(198, 243, 185);
+}
+
+header h1{
+    text-align: center;
+    padding: 20px; 
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+#container-calculadora{
+    width: 400px;
+    background-color: rgba(228, 219, 247, 0.651);
+    padding: 20px;
+    border-radius:10px ;
+    box-shadow: 2px 2px 2px #b5a0c9da;
+}
+
+#resultadoCalculadora{
+    width: 350px;
+}
+
+.buton-cal button{
+    height: 70px;
+    padding: 10px;
+}
+
+.buton-cal img{
+    max-height: 40px;
+    width: fit-content;
+    object-fit: contain;
+}

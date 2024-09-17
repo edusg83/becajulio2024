@@ -15,6 +15,7 @@ let funciones = {
 
    colorRojo : function(){
     console.log("rojo");
+    this.colorVerde();
    }
 };
 
