@@ -92,7 +92,7 @@ let res = suma(12,12);
     return param1 + param2; 
 }(12,12)); 
 
-//Ejercicio 10
+//Ejercicio 10 y 11
 
 let funciones = {}; 
 
@@ -102,9 +102,15 @@ function colorVerde(){
 
 funciones.colorVerde = colorVerde; 
 funciones.colorVerde(); 
-funciones.colorVerde(); 
+
 function colorRojo(){
+    funciones.colorVerde(); 
     console.log("ROJO"); 
 }
 
 funciones.colorRojo = colorRojo; 
+
+funciones.colorRojo(); 
+
+
+
