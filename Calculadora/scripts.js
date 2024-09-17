@@ -3,8 +3,9 @@ let = num2 = undefined;
 let = symbol = '';
 
 function setDisplay(param){
-    if(param == ''){
-        document.getElementById("display").innerHTML = ''
+    if(param == '-' || param == '*' || param == '+' || param == '/'){
+        document.getElementById("display").innerHTML = '';
+        setSymbol(param);
     }else{
         document.getElementById("display").innerHTML = document.getElementById("display").textContent + param;
     }
@@ -12,9 +13,8 @@ function setDisplay(param){
 
 
 function setSymbol(param){
-    if(symbol != ''){
-        symbol = param;
-    }
+    symbol = param;
+    storeValue()
 }
 
 function storeValue(){
@@ -26,20 +26,28 @@ function storeValue(){
 }
 
 function calculateResult(){
-    if(num1 != undefined && num2 != undefined){
-        switch(symbol){
-            case '+':
-                document.getElementById("display").innerHTML.textContent = num1 + num2;
-                break;
-            case '*':
-                document.getElementById("display").innerHTML = num1 *  num2;
-                break;
-            case '/':
-                document.getElementById("display").innerHTML = num1 / num2;
-                break;
-            case '-':
-                document.getElementById("display").innerHTML = num1 - num2;
-                break;
-        }
+
+    let result = 0;
+
+    if(num2 = undefined){
+        num2 =  Number(document.getElementById("display").innerHTML.textContent);
     }
+
+    switch(symbol){
+        case '+':
+            result = num1 + num2;
+            break;
+        case '*':
+            result = num1 *  num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+    }
+
+    document.getElementById("display").innerHTML = result;
+
 }
