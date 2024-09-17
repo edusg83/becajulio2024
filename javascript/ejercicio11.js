@@ -5,8 +5,10 @@ let funciones = {
     }
   };
   
+
   funciones.colorRojo = function() {
-    console.log(funciones.colorVerde());
+    console.log("ROJO");
+    this.colorVerde();
   };
 
   funciones.colorRojo();
