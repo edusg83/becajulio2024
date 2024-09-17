@@ -1,0 +1,33 @@
+.calculadora {
+    background: #425462;
+    border-radius: 10px;
+    padding: 1.5em;
+}
+.pantalla {
+    padding: 1em;
+}
+.mostrar {
+    background: #D1E4F0;
+    color: #000000;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1em;
+    font-size: 3em;
+    font-weight: 500;
+}
+.fila {
+    padding: 1em;
+}
+.boton-input {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 3em;
+    font-weight: 500;
+}
+.naranja {
+    background: #fb8200;
+}
+
+
