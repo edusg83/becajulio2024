@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="calculadora.css" />
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <div class="calculadora">
+    <label name="panel" id="panel">0</label>
+    <div class="botones">
+      <button onclick="borrarNumero()">C</button>
+      <button onclick="clearAll()">AC</button>
+      <button onclick="guardar()">MS</button>
+      <button onclick="recuperar()" id="recuperar" disabled>MR</button>
+      <button onclick="addNumber(7)">7</button>
+      <button onclick="addNumber(8)">8</button>
+      <button onclick="addNumber(9)">9</button>
+      <button onclick="operacion('/')">&#247;</button>
+      <button onclick="addNumber(4)">4</button>
+      <button onclick="addNumber(5)">5</button>
+      <button onclick="addNumber(6)">6</button>
+      <button onclick="operacion('*')">X</button>
+      <button onclick="addNumber(1)">1</button>
+      <button onclick="addNumber(2)">2</button>
+      <button onclick="addNumber(3)">3</button>
+      <button onclick="operacion('-')"> -</button>
+      <button onclick="addNumber(0)">0</button>
+      <button onclick="decimal()">&middot;</button>
+      <button onclick="operacion('+')">+</button>
+      <button onclick="resultado()" id="igual"> =</button>
+    </div>
+  </div>
+
+  <script src="calculadora.js"></script>
+</body>
+
+</html>

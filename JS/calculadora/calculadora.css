@@ -1,0 +1,82 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#panel {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #d1e4f0;
+  text-align: end;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 3em;
+  width: 100%;
+  /* height: 2em; */
+  /* margin: 0.25em; */
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.calculadora {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  background-color: #425462;
+  border-radius: 1em;
+  padding: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
+.botones {
+  /* margin: 0.5em; */
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.33em;
+  margin: 0.1em;
+  -webkit-border-radius: 0.33em;
+  -moz-border-radius: 0.33em;
+  -ms-border-radius: 0.33em;
+  -o-border-radius: 0.33em;
+}
+
+button:hover:enabled {
+  background-color: #d1e4f0;
+}
+
+button:active:enabled {
+  background-color: #425462;
+}
+
+#igual {
+  background-color: #fe7f00;
+}
+
+#igual:hover {
+  background-color: #f28800;
+}
+
+#igual:active {
+  background-color: #cc7300;
+}
