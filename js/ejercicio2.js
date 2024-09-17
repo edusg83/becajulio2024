@@ -99,11 +99,11 @@ let funciones = {};
 function colorVerde(){
     console.log("VERDE"); 
 }
-funciones.add(colorVerde()); 
+funciones[colorVerde()]; 
 
 funciones.colorVerde(); 
 function colorRojo(){
     console.log("ROJO"); 
 }
 
-funciones.add(colorRojo()); 
+funciones[colorRojo()]; 
