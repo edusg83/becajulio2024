@@ -27,7 +27,7 @@ function imprimirNumero(digito) {
 function setoperator(ope) {
     if (operacion.num1.length != 0) {
         operacion.operador = ope;
-        document.getElementById("resultado").innerHTML = operacion.num1 + " "+ ope;
+        document.getElementById("resultado").innerHTML = operacion.num1 + " " + ope;
     } else if (resultado != 0) {
         operacion.operador = ope;
         document.getElementById("resultado").innerHTML = resultado + " " + ope;
@@ -43,13 +43,17 @@ function operacionTriunfo() {
 
     switch (operacion.operador) {
         case "/":
-            resultado = parseFloat(primero) / parseFloat(segundo);
-            document.getElementById("resultado").innerHTML = resultado;
+            if (primero == 0 && segundo == 0) {
+                document.getElementById("resultado").innerHTML = 0;
+            } else {
+                resultado = parseFloat(primero) / parseFloat(segundo);
+                document.getElementById("resultado").innerHTML = resultado;
+
+            }
 
             break;
         case "+":
             resultado = parseFloat(primero) + parseFloat(segundo);
-            console.log("suma")
             document.getElementById("resultado").innerHTML = resultado;
             break;
         case "-":
