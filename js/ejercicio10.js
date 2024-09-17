@@ -1,13 +1,14 @@
-var funciones = {
-    colorVerde: function(){
-        console.log("soy verde")
-    },
-    colorRojo: function(){
-        console.log("soy rojo")
-    }
-
+function colorVerde(){
+    return console.log("soy verde");
+}
+function colorRojo(){
+    return console.log("soy rojo");
 }
 
-funciones.colorRojo;
+var funciones = {
+}
+funciones.colorRojo = colorRojo;
 
-funciones.colorVerde;
+funciones.colorVerde = colorVerde;
+
+funciones.colorRojo();
