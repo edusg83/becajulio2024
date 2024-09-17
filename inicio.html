@@ -14,8 +14,22 @@
 <!-- Indica el cuerpo del documento html. Donde estará toda el contenido del documento-->
 <body>
    <script>
-   let sema=undefined;
-   console.log(typeof(sema)===undefined);
+  
+        let nombre="Sonia";
+        let obj={
+            nombre:"Sandra",
+            saludo: function(){
+                console.log("Hola " +this.nombre);
+            }
+        }
+
+        let maria = {
+            nombre:"María"
+        }
+
+        maria.saludo=obj.saludo;
+        maria.saludo();
+
    
    </script>
 
