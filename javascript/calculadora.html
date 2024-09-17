@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="description" content="Curso HTML5 EOI">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Calculadora</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="calculadora.js" defer></script>
+    <link rel="stylesheet" href="calculadora.css">
+    <link rel="icon" href="https://media.istockphoto.com/id/1324893210/es/foto/cachorro-bulldog-franc%C3%A9s-sobre-fondo-blanco.jpg?s=2048x2048&w=is&k=20&c=pZ6ojhCCTKoJ1LxkPbXVpB5HBZJq2auTakHzCQeGWvo=" type="image/png" sizes="16x16">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <input type="text" name="pantalla" id="pantalla" value="0" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input type="button" id="numero7" value="7" onclick="agregarNumero('7')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero8" value="8" onclick="agregarNumero('8')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero9" value="9" onclick="agregarNumero('9')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="dividir" value="%" onclick="seleccionarOperador('%')">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input type="button" id="numero4" value="4" onclick="agregarNumero('4')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero5" value="5" onclick="agregarNumero('5')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero6" value="6" onclick="agregarNumero('6')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="multiplicar" value="x" onclick="seleccionarOperador('x')">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input type="button" id="numero1" value="1" onclick="agregarNumero('1')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero2" value="2" onclick="agregarNumero('2')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="numero3" value="3" onclick="agregarNumero('3')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="restar" value="-" onclick="seleccionarOperador('-')">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input type="button" id="numero0" value="0" onclick="agregarNumero('0')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="punto" value="." onclick="agregarNumero('.')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="sumar" value="+" onclick="seleccionarOperador('+')">
+            </div>
+            <div class="col-3">
+                <input type="button" id="igual" value="=" onclick="calcular()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
