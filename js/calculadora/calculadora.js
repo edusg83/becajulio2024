@@ -30,7 +30,7 @@ function setoperator(ope) {
         document.getElementById("resultado").innerHTML = operacion.num1 + " "+ ope;
     } else if (resultado != 0) {
         operacion.operador = ope;
-        document.getElementById("resultado").innerHTML = "";
+        document.getElementById("resultado").innerHTML = resultado + " " + ope;
         operacion.num1 = resultado;
         resultado = "";
     }
