@@ -1,9 +1,9 @@
 
 let funciones = {
-    colorVerde: function(){
+    colorVerde: function() {
         console.log("VERDE");
     },
-    colorRojo: function(){
+    colorRojo: function() {
         console.log("ROJO");
     }
 }
