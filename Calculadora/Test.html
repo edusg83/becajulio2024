@@ -31,7 +31,7 @@
     <section id="calculator-body" class="container rounded p-3">
       <article id="display-container" class="fluid-container p-4 rounded mb-5">
         <div class="row-cols-1 mx-5">
-          <input type="text" id="display" class="col rounded py-2" readonly />
+          <input type="text" id="display" class="col rounded py-2" value="0" readonly />
         </div>
       </article>
 
@@ -98,7 +98,7 @@
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
           <button class="col p-2 rounded">
-            <i class="fa-solid fa-c fs-3"></i>
+            <i class="fa-solid fa-c fs-3" onclick="deleteOperation()"></i>
           </button>
           <button class="col p-2 rounded">
             <i class="fa-solid fa-m fs-3"></i>
