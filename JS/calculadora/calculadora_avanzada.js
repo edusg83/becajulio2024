@@ -4,17 +4,51 @@ let $panel = document.getElementById("panel");
 let operacionActual = '';
 let isDecimal = false;
 let multiplicador = 10;
-let memoria;
+let memoriaAlmacenada = 0;
+let isNegativo = false;
 
 function addNumber(number) {
-  if (!isDecimal) {
-    numActual *= multiplicador;
-  } else {
-    number /= multiplicador;
+  if ($panel.innerHTML.length <= 14) {
+    if (!isDecimal) {
+      numActual *= multiplicador;
+    } else {
+      number /= multiplicador;
+      multiplicador *= 10;
+    }
+    if (isNegativo) {
+      number *= -1;
+    }
+  
+    numActual += number;
+    if (isDecimal) {
+      numActual = redondeo(numActual);
+    }
+    $panel.innerHTML = numActual;
   }
-  multiplicador *= 10;
-  numActual += Number(number);
-  $panel.innerHTML = numActual;
+  bloquearNumeros();
+  bloquearDecimales();
+  bloquearNegativo();
+}
+
+function bloquearNumeros() {
+  let valor = ($panel.innerHTML.length === 15) ? true : false;
+
+  let botones = document.getElementsByClassName("numero");
+  Array.from(botones).forEach(element => {
+    element.disabled = valor;
+  });
+}
+
+function bloquearDecimales() {
+  let valor = ($panel.innerHTML.length >= 13) ? true : false;
+
+  document.getElementById("decimal").disabled = valor;
+}
+
+function bloquearNegativo() {
+  let valor = ($panel.innerHTML.length === 15) ? true : false;
+
+  document.getElementById("negativo").disabled = valor;
 }
 
 function operacion(simbolo) {
@@ -25,7 +59,12 @@ function operacion(simbolo) {
   }
   operacionActual = simbolo;
   numActual = 0;
+  isNegativo = false;
+  $panel.innerHTML = numActual;
   resetDecimal();
+  bloquearNumeros();
+  bloquearNegativo();
+  bloquearDecimales();
 }
 
 function resultado() {
@@ -45,45 +84,87 @@ function resultado() {
         return;
       }
       resultadoOperacion /= numActual;
-      resultadoOperacion = Math.round(resultadoOperacion * 1000000000) / 1000000000;
+      break;
+    case "%":
+      resultadoOperacion *= (numActual / 100);
       break;
   }
   operacionActual = "";
-  $panel.innerHTML = resultadoOperacion;
+
+  $panel.innerHTML = redondeo(resultadoOperacion);
   numActual = resultadoOperacion;
   resetDecimal();
+  isNegativo = false;
+  bloquearNumeros();
+  bloquearNegativo();
+  bloquearDecimales();
+}
+
+function redondeo(number) {
+  
+  let precision = 100000000000000;
+  for (let i = 0; i < number.toString().split('.')[0].length; i++) {
+    precision /= 10;
+  }
+  return parseFloat(Math.round(number * precision) / precision);
 }
 
 function borrarNumero() {
   numActual = 0;
   $panel.innerHTML = 0;
   resetDecimal();
+  isNegativo = false;
+  bloquearNumeros();
+  bloquearNegativo();
+  bloquearDecimales();
 }
 
 function clearAll() {
   borrarNumero();
   resultadoOperacion = 0;
   operacionActual = '';
-  memoria = undefined;
-  document.getElementById("recuperar").disabled = true;
 }
 
 function decimal() {
-  multiplicador = 10;
   isDecimal = true;
 }
 
 function resetDecimal() {
-  multiplicador = 10;
   isDecimal = false;
+  multiplicador = 10;
 }
 
-function guardar() {
-  memoria = Number($panel.innerHTML).valueOf();
+function guardarMemoria() {
+  memoriaAlmacenada = Number($panel.innerHTML).valueOf();
+  if (isNegativo) {
+    memoriaAlmacenada *= -1;
+  }
   document.getElementById("recuperar").disabled = false;
+  deshabilitar(false);
 }
 
-function recuperar() {
-  numActual = memoria;
+function recuperarMemoria() {
+  numActual = memoriaAlmacenada;
   $panel.innerHTML = numActual;
+}
+
+function deshabilitar(estado) {
+  document.getElementById("recuperar").disabled = estado;
+  document.getElementById("borrarMemoria").disabled = estado;
+}
+
+function borrarMemoria() {
+  memoriaAlmacenada = 0;
+  deshabilitar(true);
+}
+
+function memoria(opcion) {
+  memoriaAlmacenada += (opcion === '+' ? numActual : - numActual);
+  deshabilitar(false);
+}
+
+function negativo() {
+  numActual *= -1;
+  $panel.innerHTML = numActual;
+  isNegativo = !isNegativo;
 }

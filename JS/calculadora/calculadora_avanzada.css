@@ -4,28 +4,9 @@ body {
   align-items: center;
 }
 
-#panel {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  background-color: #d1e4f0;
-  text-align: end;
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 3em;
-  width: 100%;
-  /* height: 2em; */
-  /* margin: 0.25em; */
-  border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
-}
-
 .calculadora {
   display: flex;
-  width: fit-content;
+  width: 21em;
   flex-direction: column;
   align-items: center;
   background-color: #425462;
@@ -37,10 +18,32 @@ body {
   -o-border-radius: 1em;
 }
 
+#panel {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #d1e4f0;
+  text-align: end;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 3em;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.1em;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+
 .botones {
   /* margin: 0.5em; */
   margin-top: 1em;
   display: grid;
+  width: 100%;
+  gap: 0.25em;
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -53,8 +56,8 @@ button {
   font-weight: bold;
   width: 2em;
   height: 2em;
+  box-sizing: border-box;
   border-radius: 0.33em;
-  margin: 0.1em;
   -webkit-border-radius: 0.33em;
   -moz-border-radius: 0.33em;
   -ms-border-radius: 0.33em;
@@ -67,6 +70,54 @@ button:hover:enabled {
 
 button:active:enabled {
   background-color: #425462;
+}
+
+.memoria {
+  background-color: #808080;
+}
+
+.memoria:hover:enabled {
+  background-color: #a6a6a6;
+}
+
+.memoria:active:enabled {
+  background-color: #737373;
+}
+
+.operacion {
+  background-color: #00edff;
+}
+
+.operacion:hover:enabled {
+  background-color: #00bdcc;
+}
+
+.operacion:active:enabled {
+  background-color: #008d99;
+}
+
+.borrar {
+  background-color: #cc0000;
+}
+
+.borrar:hover:enabled {
+  background-color: #990000;
+}
+
+.borrar:active:enabled {
+  background-color: #650000;
+}
+
+.puntuacion {
+  background-color: #40A933 ;
+}
+
+.puntuacion:hover:enabled {
+  background-color: #39982D;
+}
+
+.puntuacion:active:enabled {
+  background-color: #338828;
 }
 
 #igual {

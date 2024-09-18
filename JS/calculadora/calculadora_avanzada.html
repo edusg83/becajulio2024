@@ -12,30 +12,30 @@
   <div class="calculadora">
     <label name="panel" id="panel">0</label>
     <div class="botones">
-      <button onclick="borrarNumero()">M+</button>
-      <button onclick="borrarNumero()">M-</button>
-      <button onclick="recuperar()" id="recuperar" disabled>MR</button>
-      <button onclick="guardar()">MS</button>
-      <button onclick="borrarNumero()" id="borrarMemoria" disabled>MC</button>
-      <button onclick="addNumber(7)">7</button>
-      <button onclick="addNumber(8)">8</button>
-      <button onclick="addNumber(9)">9</button>
-      <button onclick="borrarNumero()">C</button>
-      <button onclick="clearAll()">AC</button>
-      <button onclick="addNumber(4)">4</button>
-      <button onclick="addNumber(5)">5</button>
-      <button onclick="addNumber(6)">6</button>
-      <button onclick="operacion('/')">&#247;</button>
-      <button onclick="operacion('*')">X</button>
-      <button onclick="addNumber(1)">1</button>
-      <button onclick="addNumber(2)">2</button>
-      <button onclick="addNumber(3)">3</button>
-      <button onclick="operacion('+')">+</button>
-      <button onclick="operacion('-')"> -</button>
-      <button onclick="borrarNumero()">+/-</button>
-      <button onclick="addNumber(0)">0</button>
-      <button onclick="decimal()">&middot;</button>
-      <button onclick="borrarNumero()">%</button>
+      <button onclick="memoria('+')" class="memoria">M+</button>
+      <button onclick="memoria('-')" class="memoria">M-</button>
+      <button onclick="recuperarMemoria()" id="recuperar" class="memoria" disabled>MR</button>
+      <button onclick="guardarMemoria()" class="memoria">MS</button>
+      <button onclick="borrarMemoria()" id="borrarMemoria" class="memoria" disabled>MC</button>
+      <button onclick="addNumber(7)" class="numero">7</button>
+      <button onclick="addNumber(8)" class="numero">8</button>
+      <button onclick="addNumber(9)" class="numero">9</button>
+      <button onclick="borrarNumero()" class="borrar">C</button>
+      <button onclick="clearAll()" class="borrar">AC</button>
+      <button onclick="addNumber(4)" class="numero">4</button>
+      <button onclick="addNumber(5)" class="numero">5</button>
+      <button onclick="addNumber(6)" class="numero">6</button>
+      <button onclick="operacion('/')" class="operacion">&#247;</button>
+      <button onclick="operacion('*')" class="operacion">X</button>
+      <button onclick="addNumber(1)" class="numero">1</button>
+      <button onclick="addNumber(2)" class="numero">2</button>
+      <button onclick="addNumber(3)" class="numero">3</button>
+      <button onclick="operacion('+')" class="operacion">+</button>
+      <button onclick="operacion('-')" class="operacion"> -</button>
+      <button onclick="negativo()" class="puntuacion" id="negativo">+/-</button>
+      <button onclick="addNumber(0)" class="numero">0</button>
+      <button onclick="decimal()" class="puntuacion" id="decimal">&middot;</button>
+      <button onclick="operacion('%')" class="operacion">%</button>
       <button onclick="resultado()" id="igual"> =</button>
     </div>
   </div>
