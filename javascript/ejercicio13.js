@@ -1,6 +1,6 @@
 try{
-    console("Hola")
+    throw new EvalError(['Se ha producido un error', ['ejercicio13.js', [12]]]);
 } catch(e){ 
-    throw new EvalError('Se ha producido un error, ejercicio13.js, en el bloque try');
+    console.error(e.name + ": " + e.message);
 }
 
