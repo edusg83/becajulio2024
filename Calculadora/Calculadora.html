@@ -31,64 +31,64 @@
     <section id="calculator-body" class="container rounded p-3">
       <article id="display-container" class="fluid-container p-4 rounded mb-5">
         <div class="row-cols-1 mx-5">
-          <input type="text" id="display" class="col rounded py-2" value="0" readonly />
+          <input type="text" id="display" class="col rounded py-2 fs-4 text-end" value="0" readonly />
         </div>
       </article>
 
       <article id="button-container" class="mx-4 mb-4 p-4 rounded">
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded" onclick="setDisplay('7')">
+          <button class="col p-2 rounded" onclick="setDisplay('7')" onclick="setDisplay('7')">
             <i class="fa-solid fa-7 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('8')">
             <i class="fa-solid fa-8 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('9')">
             <i class="fa-solid fa-9 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('/')">
             <i class="fa-solid fa-divide fs-3"></i>
           </button>
         </div>
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('4')">
             <i class="fa-solid fa-4 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('5')">
             <i class="fa-solid fa-5 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('6')">
             <i class="fa-solid fa-6 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('X')">
             <i class="fa-solid fa-xmark fs-3"></i>
           </button>
         </div>
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('1')">
             <i class="fa-solid fa-1 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('2')">
             <i class="fa-solid fa-2 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('3')">
             <i class="fa-solid fa-3 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('-')">
             <i class="fa-solid fa-minus fs-3"></i>
           </button>
         </div>
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('0')">
             <i class="fa-solid fa-0 fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('.')">
             <i class="fa-solid fa-circle fs-7"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('+')">
             <i class="fa-solid fa-plus fs-3"></i>
           </button>
           <button class="col p-2 rounded">
@@ -97,8 +97,8 @@
         </div>
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded">
-            <i class="fa-solid fa-c fs-3" onclick="deleteOperation()"></i>
+          <button class="col p-2 rounded" onclick="deleteOperation()">
+            <i class="fa-solid fa-c fs-3"></i>
           </button>
           <button class="col p-2 rounded">
             <i class="fa-solid fa-m fs-3"></i>
