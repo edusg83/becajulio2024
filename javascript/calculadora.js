@@ -4,16 +4,21 @@ var numeroM = "";
 var operador = "";
 var pantalla = document.getElementById("pantalla");
 
+function funcionC(){
+    numero1=0;
+    pantalla.value = numero1;
+    
+}
 
 function funcionMmas(){
     numeroM += (pantalla.value);
-    pantalla.value = "Save";
+    pantalla.value = "Guardado";
     
 }
 
 function funcionMC(){
     numeroM = 0;
-    pantalla.value = "Clean";
+    pantalla.value = "Limpiado";
 }
 
 function funcionMR() {
@@ -23,6 +28,7 @@ function funcionMR() {
     operador = "";
 
 }
+
 function agregarNumero(numero) {
     if (operador === "") {
         numero1 += numero;
