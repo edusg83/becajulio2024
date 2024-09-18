@@ -1,10 +1,9 @@
 
-
 main {
     margin-top: 5em;
     background-color: rgb(9, 72, 114);
     border-radius: 10px;
-    height: 550px !important;
+    height: 600px !important;
     width: 500px !important;
 }
 
@@ -19,7 +18,7 @@ main {
     margin-bottom: 20px;
 }
 
-.col > button {
+.col>button {
     background-color: white;
     font-weight: bold;
     border-radius: 10px;
@@ -27,10 +26,28 @@ main {
     width: 80px;
     height: 50px;
     margin-right: 25px;
-    font-size:20px;
+    font-size: 20px;
 }
 
-button[id = '='] {
+button[id='='] {
     background-color: orange;
 }
 
+#clear,
+#clearAll {
+    width: 40%;
+}
+
+.memory>button {
+    margin-right: 60px;
+}
+
+button:active {
+    background-color: lightgrey;
+    transform: scale(0.95);
+}
+
+button[id='=']:active {
+    background-color: burlywood;
+    transform: scale(0.95);
+}
