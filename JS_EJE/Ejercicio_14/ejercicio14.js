@@ -20,15 +20,18 @@ let hijo2=Object.create(objetoPadre);
 hijo2.edad=30;
 hijo2.nombre="Pepe";
 hijo2.apellidos="Martinez Garcia";
+
 hijo1.muestraDatos();
 hijo2.muestraDatos();
 
 /*hijo1.verEdad(); hijo2.verEdad();*/
+
 /* Creamos una función nueva del Objeto Padre que será heredada por hijo1 e hijo2 a través del prototype */
 
 objetoPadre["verEdad"]=function() {
 console.log(this.edad);
 }
+
 hijo1.verEdad();
 hijo2.verEdad();
 
