@@ -1,9 +1,28 @@
 var numero1 = "";
 var numero2 = "";
+var numeroM = "";
 var operador = "";
 var pantalla = document.getElementById("pantalla");
 
 
+function funcionMmas(){
+    numeroM += (pantalla.value);
+    pantalla.value = "Save";
+    
+}
+
+function funcionMC(){
+    numeroM = 0;
+    pantalla.value = "Clean";
+}
+
+function funcionMR() {
+    pantalla.value = numeroM;
+    numero1 = numeroM;
+    numero2 = "";
+    operador = "";
+
+}
 function agregarNumero(numero) {
     if (operador === "") {
         numero1 += numero;
@@ -17,15 +36,13 @@ function agregarNumero(numero) {
 
 function seleccionarOperador(op) {
     operador = op;  
+    pantalla.value=operador;
 }
 
 
 function calcular() {
-    
-    let num1 = parseFloat(numero1);
-    let num2 = parseFloat(numero2);
 
-    if (isNaN(num1) || isNaN(num2)) {
+    if (isNaN(numero1) || isNaN(numero2)) {
         pantalla.value = "Error";
         return;
     }
@@ -33,20 +50,20 @@ function calcular() {
     let resultado;
     switch (operador) {
         case "+":
-            resultado = num1 + num2;
+            resultado = numero1 + numero2;
             break;
         case "-":
-            resultado = num1 - num2;
+            resultado =numero1 - numero2;
             break;
         case "x":
-            resultado = num1 * num2;
+            resultado = numero1 * numero2;
             break;
         case "%":
-            if (num2 === 0) {
+            if (numero2 === 0) {
                 pantalla.value = "Error";
                 return;
             }
-            resultado = num1 / num2;
+            resultado = numero1 / numero2;
             break;
         default:
             return;
