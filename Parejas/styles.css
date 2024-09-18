@@ -5,6 +5,32 @@ nav input {
     color: white;
 }
 
+nav button:hover {
+    animation: shakeItBaby 0.2s ease-in-out infinite normal none;
+}
+
+@keyframes shakeItBaby {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 body {
     height: 100vh;
     font-family: 'Trebuchet MS', Arial, sans-serif;
