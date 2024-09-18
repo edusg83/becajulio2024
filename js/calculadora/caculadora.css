@@ -5,7 +5,7 @@
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     gap: 20px;
     padding: 20px;
     background-color: #b1a8a8;
@@ -26,6 +26,19 @@ p{
 }
 .colorIgual{
     background-color: rgb(153, 109, 109);
+}
+
+.extraDiv{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.extraButton{
+
+    width: 95px;
 }
 
 button {
