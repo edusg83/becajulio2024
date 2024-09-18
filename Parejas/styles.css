@@ -1,5 +1,7 @@
-header {
+header,
+footer {
     background-color: #2B2B2B;
+    width: 100%;
 }
 
 header button:hover {
@@ -31,7 +33,7 @@ header button:hover {
 
 main {
     background-color: #A4A9AD;
-    width: 100%;
+    min-height: 100vh;
 }
 
 .player_card {
