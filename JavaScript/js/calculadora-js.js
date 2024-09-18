@@ -1,6 +1,7 @@
 let resultado = '';
 let operadorClicado = '';
 let numeroGuardado = '';
+let memoria = 0;
 
 
 function addNumero(num) {
@@ -14,8 +15,8 @@ function calcular() {
     let resultadoFinal = 0;
 
 
-    let num1 = parseInt(numeroGuardado);
-    let num2 = parseInt(numeroActual);
+    let num1 = parseFloat(numeroGuardado);
+    let num2 = parseFloat(numeroActual);
 
     switch (operadorClicado) {
         case '+':
@@ -54,4 +55,9 @@ function clean(){
     operadorClicado = '';
 
     document.getElementById('resultado').innerHTML = '';
+}
+
+function mplus(){
+    let numeroActual = parseFloat(resultado) || 0;
+    memoria += numeroActual;
 }
