@@ -1,5 +1,5 @@
 try {
-    throw new EvalError("Se ha prodicido un error, ejercicio13.js " + 100)
+    isFinite.apply.arguments;
 } catch (error) {
-    throw new EvalError("Se ha prodicido un error, ejercicio13.js " + 100)
+    throw new EvalError("Se ha prodicido un error linea 100")
 }
