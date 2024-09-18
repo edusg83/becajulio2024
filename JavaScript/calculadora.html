@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="esp">
 
 <head>
     <meta charset="UTF-8">
@@ -20,31 +20,39 @@
         <h1>La calculadora mágica</h1>
     </header>
 
-    <div class="container">
-        <div class="" id="container-calculadora">
-            <input type="text" id="resultadoCalculadora" class="text-end">
-
-            <div class="botones-calculadora row">
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(7)"><img src="img/siete.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(8)"><img src="img/ocho.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn" onclick="setContador(9)"><img src="img/nueve.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn" onclick="division"><img src="img/barra-oblicua.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn" onclick="setContador(4)"><img src="img/cuatro.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(5)"><img src="img/cinco.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(6)"><img src="img/seis.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn" onclick="multiplicacion"><img src="img/aster.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(1)"><img src="img/una.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(2)"><img src="img/dos.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(3)"><img src="img/tres.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="resta" ><img src="img/menos (1).png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="setContador(0)"><img src="img/letra-o.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="punto"><img src="img/punto.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="suma"><img src="img/mas.png" alt=""></button></div>
-                <div class="col-3 buton-cal"><button class="btn " onclick="resultado"><img src="img/igual.png" alt=""></button></div>
-
-            </div>
-        </div>
+  <div class="container-calculadora container shadow " id="container-calculadora">
+    <div class="row result-container " id="result-container">
+        <div class="col-12" id="resultado"><p></p></div>
     </div>
+    <div class="row botones g-0">
+        <div class="btn col-3"><button onclick="clean()"><p class="funciones">C</p></button></div>
+        <div class="btn col-3"><button onclick="mplus()"><p class="funciones">M+</p></button></div>
+        <div class="btn col-3"><button onclick="mr()"><p class="funciones">MR</p></button></div>
+        <div class="btn col-3"><button onclick="mc()"><p class="funciones">MC</p></button></div>
+
+
+
+        <div class="btn col-3"><button onclick="addNumero('7')"><img src="img/numero-7.png" alt="numero-7"></button></div>
+        <div class="btn col-3"><button onclick="addNumero('8')"><img src="img/numero-8.png" alt="numero-8"></button></div>
+        <div class="btn col-3"><button onclick="addNumero('9')"><img src="img/numero-9.png" alt="numero-9"></button></div>
+        <div class="btn col-3"><button onclick="operacion('/')"><img src="img/division.png" alt=""></button></div>
+
+        <div class="btn col-3"><button onclick="addNumero('4')"><img src="img/numero-4.png" alt="numero-7"></button></div>
+        <div class="btn col-3"><button onclick="addNumero('5')"><img src="img/numero-5.png" alt="numero-8"></button></div>
+        <div class="btn col-3"><button onclick="operacion('6')"><img src="img/numero-6.png" alt="numero-9"></button></div>
+        <div class="btn col-3"><button onclick="operacion('*')"><img src="img/ha-fallado.png" alt=""></button></div>
+
+        <div class="btn col-3"><button onclick="addNumero('1')"><img src="img/numero-1.png" alt="numero-7"></button></div>
+        <div class="btn col-3"><button onclick="addNumero('2')"><img src="img/numero-2.png" alt="numero-8"></button></div>
+        <div class="btn col-3"><button onclick="operacion('3')"><img src="img/numero-3.png" alt="numero-9"></button></div>
+        <div class="btn col-3"><button onclick="operacion('-')"><img src="img/menos.png" alt=""></button></div>
+    
+        <div class="btn col-3"><button onclick="addNumero('0')"><img src="img/numero-cero.png" alt="numero-7"></button></div>
+        <div class="btn col-3"><button onclick="addNumero(',')"><img src="img/punto-final.png" alt="numero-8"></button></div>
+        <div class="btn col-3"><button onclick="operacion('=')"><img src="img/igual.png" alt="numero-9"></button></div>
+        <div class="btn col-3"><button onclick="operacion('+')"><img src="img/mas.png" alt=""></button></div>
+    </div>
+  </div>
 
 </body>
 

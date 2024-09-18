@@ -1,45 +1,90 @@
-
 *{
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
 }
 
 body{
-    background-color: rgb(198, 243, 185);
-}
-
-header h1{
-    text-align: center;
-    padding: 20px; 
-}
-
-.container{
-    display: flex;
+    background-color: #fff0d144;
+    display: block;
     justify-content: center;
-    align-items: center;
- 
+}
+
+header{
+    display: block;
+    text-align: center;
+    background-color: #795757;
+    border: 3px solid #3B3030;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+header h1 {
+    color: #FFF0D1;
+    font-size: 3em;
+    text-shadow: 
+   1px 1px 0px #3B3030, 
+        -1px 1px 0px #3B3030, 
+        1px -1px 0px #3B3030, 
+        -1px -1px 0px #3B3030;
 }
 
 #container-calculadora{
-    width: 400px;
-    background-color: rgba(228, 219, 247, 0.651);
-    padding: 20px;
-    border-radius:10px ;
-    box-shadow: 2px 2px 2px #b5a0c9da;
+    margin-top: 40px;
+    width: 540px;
+   background-color: #795757; 
+   border: solid #3B3030;
+   padding: 10px;
+   border-radius: 20px;
 }
 
-#resultadoCalculadora{
-    width: 350px;
+#resultado{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 2px;
+    background-color: #e6e0d4d5;
+    border: solid #664343;
+    box-shadow: none;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+
 }
 
-.buton-cal button{
-    height: 70px;
+div.btn button{
+    margin-top: 20px;
+    padding: 2px;
+    background-color: #fff0d173;
+    border: solid #664343;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: none;
+    border-radius: 30px;
     padding: 10px;
 }
 
-.buton-cal img{
-    max-height: 40px;
-    width: fit-content;
-    object-fit: contain;
+div.btn button:hover{
+    margin-top: 20px;
+    padding: 2px;
+    background-color: #fff0d1e3;
+    border: solid #664343;
+    box-shadow: 5px 5px 10px rgba(83, 29, 3, 0.712) !important ;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+div.btn img{
+    width: 70px;
+    object-fit: fit-content;
+    
+}
+
+#result-container{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 30px;
 }
