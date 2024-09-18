@@ -25,3 +25,8 @@ objetoPadre['verEdad']=function(){
 }
 hijo1.verEdad();
 hijo2.verEdad();
+
+function a(){
+    var resp = prompt("cual es tu nombre")
+    confirm("desea continuar")
+}
