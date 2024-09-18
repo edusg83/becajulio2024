@@ -1,10 +1,13 @@
 body{
-    font-size:xx-large;
+    font-size: xx-large;
+    background-image: linear-gradient(to bottom, #f97b5b, #f7ccaa);
+    margin: 0;
+    height: 100vh; 
 }
    
 .container{
     margin-top: 10%;
-    background-color: rgb(44, 35, 125);
+    background-color: rgba(3, 64, 117, 0.767);
     padding: 30px;
     width: 400px;
     height: auto;
@@ -36,3 +39,13 @@ body{
     background-color: orange;
  
 }
+
+#igual:hover {
+    background-color: rgb(0, 221, 255);
+ 
+}
+.container input[type="button"]:hover {
+    background-color: rgb(0, 221, 255);
+}
+
+
