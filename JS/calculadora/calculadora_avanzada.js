@@ -31,7 +31,7 @@ function addNumber(number) {
 }
 
 function bloquearNumeros() {
-  let valor = ($panel.innerHTML.length === 15) ? true : false;
+  let valor = ($panel.innerHTML.length >= 15) ? true : false;
 
   let botones = document.getElementsByClassName("numero");
   Array.from(botones).forEach(element => {
@@ -46,7 +46,7 @@ function bloquearDecimales() {
 }
 
 function bloquearNegativo() {
-  let valor = ($panel.innerHTML.length === 15) ? true : false;
+  let valor = ($panel.innerHTML.length >= 15) ? true : false;
 
   document.getElementById("negativo").disabled = valor;
 }
@@ -101,12 +101,20 @@ function resultado() {
 }
 
 function redondeo(number) {
-  
+  let resultado;
+
   let precision = 100000000000000;
   for (let i = 0; i < number.toString().split('.')[0].length; i++) {
     precision /= 10;
   }
-  return parseFloat(Math.round(number * precision) / precision);
+
+  resultado = parseFloat(Math.round(number * precision) / precision);
+
+  if (resultado.toString().length > 15) {
+    resultado = resultado.toExponential(3);
+  }
+
+  return resultado;
 }
 
 function borrarNumero() {
