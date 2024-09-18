@@ -19,3 +19,11 @@ body {
 button:hover {
     background-color: gray;
 }
+
+#result:hover {
+    background-color: #FFD85B;
+}
+
+.operador:hover {
+    background-color: aqua;
+}

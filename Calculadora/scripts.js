@@ -1,7 +1,7 @@
 let num1 = 0;
 let num2 = 0;
 let memory = 0;
-let symbol;
+let symbol = "";
 let firstOperation = true;
 let display;
 
@@ -22,12 +22,12 @@ function storeValue() {
   } else {
     num1 = Number(display.value);
   }
-  console.log(num1, num2);
 }
 
 function storeSymbol(param) {
-  symbol = param;
-  console.log(symbol);
+  if (symbol == "") {
+    symbol = param;
+  }
 }
 
 function deleteOperation() {

@@ -48,7 +48,7 @@
           <button class="col p-2 rounded" onclick="setDisplay('9')">
             <i class="fa-solid fa-9 fs-3"></i>
           </button>
-          <button class="col p-2 rounded" onclick="setDisplay('/'), storeValue(), storeSymbol('/')">
+          <button class="col p-2 rounded operador" onclick="setDisplay('/'); storeValue(); storeSymbol('/')">
             <i class="fa-solid fa-divide fs-3"></i>
           </button>
         </div>
@@ -63,7 +63,7 @@
           <button class="col p-2 rounded" onclick="setDisplay('6')">
             <i class="fa-solid fa-6 fs-3"></i>
           </button>
-          <button class="col p-2 rounded" onclick="setDisplay('X')">
+          <button class="col p-2 rounded" onclick="setDisplay('X'); storeValue(); storeSymbol('X')">
             <i class="fa-solid fa-xmark fs-3"></i>
           </button>
         </div>
@@ -78,7 +78,7 @@
           <button class="col p-2 rounded" onclick="setDisplay('3')">
             <i class="fa-solid fa-3 fs-3"></i>
           </button>
-          <button class="col p-2 rounded" onclick="setDisplay('-')">
+          <button class="col p-2 rounded" onclick="setDisplay('-'); storeValue(); storeSymbol('-')">
             <i class="fa-solid fa-minus fs-3"></i>
           </button>
         </div>
@@ -90,10 +90,10 @@
           <button class="col p-2 rounded" onclick="setDisplay('.')">
             <i class="fa-solid fa-circle fs-7"></i>
           </button>
-          <button class="col p-2 rounded" onclick="setDisplay('+')">
+          <button class="col p-2 rounded" onclick="setDisplay('/'); storeValue(); storeSymbol('+')">
             <i class="fa-solid fa-plus fs-3"></i>
           </button>
-          <button class="col p-2 rounded">
+          <button id="result" class="col p-2 rounded">
             <i class="fa-solid fa-equals fs-3"></i>
           </button>
         </div>
