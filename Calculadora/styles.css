@@ -11,6 +11,10 @@ body {
     background-color: #41414B;
 }
 
+#display {
+    background-color: #D2E2F1;
+}
+
 #button-container,
 #display-container {
     background-color: #595B6A;
