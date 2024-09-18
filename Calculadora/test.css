@@ -1,3 +1,13 @@
 #calculator-body {
-  max-width: 500px;
+    max-width: 500px;
+    background-color: #41414B;
+}
+
+#button-container,
+#display-container {
+    background-color: #595B6A;
+}
+
+button:hover {
+    background-color: gray;
 }
