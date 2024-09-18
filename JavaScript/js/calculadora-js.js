@@ -61,3 +61,13 @@ function mplus(){
     let numeroActual = parseFloat(resultado) || 0;
     memoria += numeroActual;
 }
+
+function mr() {
+    resultado = memoria.toString();
+    document.getElementById("resultado").innerHTML = resultado;
+}
+
+function mc(){
+    memoria = 0;
+}
+
