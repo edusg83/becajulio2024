@@ -51,3 +51,7 @@ button[id='=']:active {
     background-color: burlywood;
     transform: scale(0.95);
 }
+
+#memory > button {
+    width: 25%;
+}

@@ -1,5 +1,6 @@
 try {
-    evaaal();
-} catch (err) {
-    throw new EvalError('Se ha producido un error','ejercicio13.js', 100);
+    
+    throw new EvalError(['Se ha producido un error',['ejercicio13.js', [100]]]);
+} catch (error) {
+    console.error(error.message);
 }
