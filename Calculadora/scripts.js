@@ -1,55 +1,22 @@
-let num1 = undefined;
-let num2 = undefined;
-let symbol = '';
+let num1;
+let num2;
+let memory;
+let symbol;
+let firstOperation = true;
 
-function setDisplay(param){
-    if(param == '-' || param == '*' || param == '+' || param == '/'){
-        setSymbol(param);
-        document.getElementById("display").innerHTML = '';
-    }else{
-        document.getElementById("display").innerHTML = document.getElementById("display").innerHTML + param;
-    }
+function setDisplay(param) {
+  let display = document.getElementById("display");
+  if (display.value == 0 && firstOperation) {
+    display.value = param;
+    firstOperation = false;
+  } else {
+    display.value += param;
+  }
 }
 
-
-function setSymbol(param){
-    symbol = param;
-    storeValue()
-}
-
-function storeValue(){
-
-    num1 = Number(document.getElementById("display").innerHTML);
-
-}
-
-function calculateResult(){
-
-    let result = 0;
-
-    if(num2 == undefined){
-        num2 =  Number(document.getElementById("display").innerHTML);
-    }
-
-    switch(symbol){
-        case '+':
-            result = num1 + num2;
-            break;
-        case '*':
-            result = num1 *  num2;
-            break;
-        case '/':
-            result = num1 / num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-    }
-
-    document.getElementById("display").innerHTML = result;
-
-}
-
-function clearDisplay(){
-    document.getElementById
+function deleteOperation() {
+  num1 = undefined;
+  num2 = undefined;
+  symbol = undefined;
+  display.value = "";
 }
