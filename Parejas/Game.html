@@ -26,12 +26,16 @@
         <input class="w-50 border-0 mb-2" type="text" value="" readonly>
     </header>
 
-    <main class="container-fluid d-flex flex-row pt-5">
+    <main class="d-flex flex-row py-5">
 
-        <section class="col-3 align-self-center d-flex flex-column align-items-center">
-            <label for="text">Jugador 1</label>
-            <input type="text" readonly>
-            <label for="text">Aciertos</label>
+        <section class="col-3 align-self-center d-flex flex-column align-items-center border container player_card">
+            <div class="d-flex flex-column  align-items-center border-bottom">
+                <input type="text" class="border-0" readonly>
+                <label for="text">Aciertos</label>
+            </div>
+            <div>
+                <ul></ul>
+            </div>
         </section>
 
         <section class="col-6" id="game_section">
@@ -61,10 +65,14 @@
             </article>
         </section>
 
-        <section class="col-3 align-self-center d-flex flex-column align-items-center">
-            <label for="text">Jugador 1</label>
-            <input type="text" readonly>
-            <label for="text">Aciertos</label>
+        <section class="col-3 align-self-center d-flex flex-column align-items-center border container player_card">
+            <div class="d-flex flex-column align-items-center border-bottom">
+                <input type="text" class="border-0" readonly>
+                <label for="text">Aciertos</label>
+            </div>
+            <div>
+                <ul></ul>
+            </div>
         </section>
 
     </main>

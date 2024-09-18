@@ -31,12 +31,30 @@ header button:hover {
 
 main {
     background-color: #A4A9AD;
+    width: 100%;
+}
+
+.player_card {
+    background-color: #78C850;
+    overflow: hidden;
 }
 
 #game_section button {
-    max-width: 60px;
-    height: 100px;
+    max-width: 80px;
+    height: 120px;
     transition: 0.5s ease-in-out;
+}
+
+#game_section button:nth-child(even) {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/441/original/water-pokemon-pattern-free-vector.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+#game_section button:nth-child(odd) {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/435/original/grass-pokemon-pattern-free-vector.jpg");
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 #game_section button:hover {
