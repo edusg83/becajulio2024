@@ -32,6 +32,9 @@ function storeSymbol(param) {
   }
 }
 
+//TODO uff...
+function calculateResult() {}
+
 function deleteOperation() {
   num1 = 0;
   num2 = 0;
