@@ -17,13 +17,13 @@ body {
 }
 
 button:hover {
-    background-color: gray;
-}
-
-#result:hover {
-    background-color: #FFD85B;
+    background-color: #d9d9d9;
 }
 
 .operador:hover {
-    background-color: aqua;
+    background-color: #ffca52;
+}
+
+.special:hover {
+    background-color: #4f8bd0;
 }
