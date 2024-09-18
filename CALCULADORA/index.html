@@ -13,7 +13,7 @@
         <section class="container">
             <div class="calculadora mt-5 mb-5">
                 <div class="pantalla">
-                    <input type="text" id="mostrar" class="mostrar" value="0" maxlength="20" readonly="true">
+                    <input type="text" id="resultado" class="mostrar" value="0" maxlength="20" readonly="true">
                 </div>
                 <div class="row fila">
                     <div class="col-md-3">
@@ -26,7 +26,7 @@
                         <input type="button" class="boton-input" id="9" value="9">
                     </div>
                     <div class="col-md-3">
-                        <input type="button" class="boton-input" id="" value="÷">
+                        <input type="button" class="boton-input" id="" value="÷" onclick="dividir()">
                     </div>
                 </div>
                 <div class="row fila">
@@ -40,7 +40,7 @@
                         <input type="button" class="boton-input" id="6" value="6">
                     </div>
                     <div class="col-md-3">
-                        <input type="button" class="boton-input" id="" value="x">
+                        <input type="button" class="boton-input" id="" value="x" onclick="multiplicar()">
                     </div>
                 </div>
                 <div class="row fila">
@@ -54,7 +54,7 @@
                         <input type="button" class="boton-input" id="3" value="3">
                     </div>
                     <div class="col-md-3">
-                        <input type="button" class="boton-input" id="" value="-">
+                        <input type="button" class="boton-input" id="" value="-" onclick="restar()">
                     </div>
                 </div>
                 <div class="row fila">
@@ -65,10 +65,10 @@
                         <input type="button" class="boton-input" id="." value=".">
                     </div>
                     <div class="col-md-3">
-                        <input type="button" class="boton-input" id="+" value="+">
+                        <input type="button" class="boton-input" id="+" value="+" onclick="sumar()">
                     </div>
                     <div class="col-md-3">
-                        <input type="button" class="boton-input naranja" id="" value="=">
+                        <input type="button" class="boton-input naranja" id="" value="=" onclick="calcular()">
                     </div>
                 </div>
             </div>
