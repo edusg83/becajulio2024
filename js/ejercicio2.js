@@ -114,11 +114,22 @@ funciones.colorRojo();
 
 //Ejercicio 13
 
-try{
-    alleeeert('hey'); 
+// try{
+//     alleeeert('hey'); 
 
-}catch(error){
-    throw new EvalError("Se ha producido un error", 'ejercicio2.js', 100); 
-}
+// }catch(error){
+//     throw new EvalError("Se ha producido un error", 'ejercicio2.js', 100); 
+// }
 
+//Ejercicio 15
+
+let nombre = '';  
+
+//window.alert('Introduzca el nombre: '); 
+//window.prompt('Introduzca el nombre: ', nombre); 
+nombre = prompt('Introudzca el nombre'); 
+console.log(nombre); 
+let confirm = ''; 
+confirm = confirm('Confirmas?'); 
+console.log(confirm); 
 
