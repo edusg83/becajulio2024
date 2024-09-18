@@ -1,0 +1,56 @@
+body {
+    background: radial-gradient(circle, #f14cdb, #000000, #f14cdb, black);
+  }
+
+#tablero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;   
+    width: 100%;     
+    max-width: 320px;        
+    margin: 0 auto;          
+    padding: 20px;        
+}
+
+.container{
+    color:#f14cdb;
+}
+.container:hover{
+    box-shadow: 0 0 10px 3px rgba(242, 118, 180, 0.7);
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #e747a7;
+    margin: 5px; 
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    position: relative;
+    flex: 1 1 calc(33.33% - 10px); 
+    box-sizing: border-box; 
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 3px rgba(242, 118, 180, 0.7);
+}
+.card.flip {
+    background-color: #e747a7;
+}
+
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    border-radius: 8px;
+}
+
+.card.flip img {
+    display: block;
+}
