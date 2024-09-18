@@ -1,0 +1,12 @@
+nav button,
+nav input {
+    max-width: 600px;
+}
+
+body {
+    height: 100vh
+}
+
+#game_section {
+    border: solid red;
+}
