@@ -21,6 +21,7 @@
 
 <body>
   <header class="container-fluid d-flex flex-row justify-content-center">
+    <i class="fa fa-calculator fs-2 me-3 mt-2" aria-hidden="true"></i>
     <h1>Calculadora</h1>
     <i class="fa fa-calculator fs-2 ms-3 mt-2" aria-hidden="true"></i>
   </header>
@@ -36,7 +37,7 @@
 
       <article id="button-container" class="mx-4 mb-4 p-4 rounded">
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
-          <button class="col p-2 rounded">
+          <button class="col p-2 rounded" onclick="setDisplay('7')">
             <i class="fa-solid fa-7 fs-3"></i>
           </button>
           <button class="col p-2 rounded">
@@ -97,16 +98,19 @@
 
         <div class="row row-cols-5 column-gap-3 d-flex justify-content-center mb-2">
           <button class="col p-2 rounded">
-            <i class="fa-solid fa-7 fs-3"></i>
+            <i class="fa-solid fa-c fs-3"></i>
           </button>
           <button class="col p-2 rounded">
-            <i class="fa-solid fa-8 fs-3"></i>
+            <i class="fa-solid fa-m fs-3"></i>
+            <i class="fa-solid fa-c fs-3"></i>
           </button>
           <button class="col p-2 rounded">
-            <i class="fa-solid fa-9 fs-3"></i>
+            <i class="fa-solid fa-m fs-3"></i>
+            <i class="fa-solid fa-r fs-3"></i>
           </button>
           <button class="col p-2 rounded">
-            <i class="fa-solid fa-xmark fs-3"></i>
+            <i class="fa-solid fa-m fs-3"></i>
+            <i class="fa-solid fa-plus fs-3"></i>
           </button>
         </div>
       </article>
