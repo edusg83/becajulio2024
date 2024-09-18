@@ -112,5 +112,13 @@ funciones.colorRojo = colorRojo;
 
 funciones.colorRojo(); 
 
+//Ejercicio 13
+
+try{
+    alleeeert('hey'); 
+
+}catch(error){
+    throw new EvalError("Se ha producido un error", 'ejercicio2.js', 100); 
+}
 
 
