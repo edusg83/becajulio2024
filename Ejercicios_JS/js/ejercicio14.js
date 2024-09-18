@@ -16,6 +16,7 @@ var hijo2 = Object.create(objetoPadre);
 hijo2.edad = 30;
 hijo2.nombre = 'Pepe';
 hijo2.apellidos = 'Martinez Garcia';
+
 hijo1.muestraDatos();
 hijo2.muestraDatos();
 
