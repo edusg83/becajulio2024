@@ -11,7 +11,7 @@ function addNumero(num) {
 
 
 function calcular() {
-    let numeroActual = resultado;
+    let numeroActual = parseFloat(resultado);
     let resultadoFinal = 0;
 
 
@@ -60,6 +60,7 @@ function clean(){
 function mplus(){
     let numeroActual = parseFloat(resultado) || 0;
     memoria += numeroActual;
+    resultado = '';
 }
 
 function mr() {
