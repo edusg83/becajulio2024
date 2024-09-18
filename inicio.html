@@ -13,25 +13,21 @@
 </head>
 <!-- Indica el cuerpo del documento html. Donde estará toda el contenido del documento-->
 <body>
+    <div id="demo">
+
+    </div>
+    
    <script>
   
-        let nombre="Sonia";
-        let obj={
-            nombre:"Sandra",
-            saludo: function(){
-                console.log("Hola " +this.nombre);
-            }
-        }
-
-        let maria = {
-            nombre:"María"
-        }
-
-        maria.saludo=obj.saludo;
-        maria.saludo();
-
+       try{
+        aleeeert("Hola");
+       }
+       catch(err){
+        document.getElementById("demo").innerHTML=err.message;
+       }
    
    </script>
+
 
 </body>
 
