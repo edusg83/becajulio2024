@@ -13,8 +13,39 @@
     <body>
         <div class="container m-5 p-5">
             <div class="row">
-                <div class="col-12 d-flex justify-content-center align-items-center width-100">
-                    <input type="text"  class="form-control" id="display" readonly>
+                <div class="col-12 d-flex justify-content-center flex-column align-items-center width-100 bg-light">
+                    <h2 id="operation"></h2>
+                    <hr>
+                    <br>
+                    <h1 id="newInput"></h1>
+                   
+                </div>
+            </div>
+            <div class="row my-1 d-flex justify-content-center align-items-center">
+                <div class="col-2 d-grid gap-2 ">
+                    <button class="btn btn-primary" onClick="clearLastChar()" >
+                        C
+                    </button>
+                </div>
+                <div class="col-2 d-grid gap-2 ">
+                    <button class="btn btn-primary" onClick="clearAll()" >
+                        AC
+                    </button>
+                </div>
+                <div class="col-2 d-grid gap-2 ">
+                    <button class="btn btn-primary" onClick="getMemoryBack()" >
+                        MR
+                    </button>
+                </div>
+                <div class="col-2 d-grid gap-2 ">
+                    <button class="btn btn-primary" onClick="memoryAddition()" >
+                        M+
+                    </button>
+                </div>
+                <div class="col-2 d-grid gap-2 ">
+                    <button class="btn btn-primary" onClick="resetMemory()" >
+                        MC
+                    </button>
                 </div>
             </div>
             <div class="row my-1">
@@ -106,19 +137,7 @@
                     </button>
                 </div>
             </div>
-            <div class="row my-1">
-                <div class="col-6 d-grid gap-2 ">
-                    <button class="btn btn-primary" onClick="clearLastChar()" >
-                        C
-                    </button>
-                </div>
-                <div class="col-6 d-grid gap-2 ">
-                    <button class="btn btn-primary" onClick="clearAll()" >
-                        AC
-                    </button>
-                </div>
-                
-            </div>
+           
         </div>
         <script src="./calculadora.js" async defer></script>
     </body>

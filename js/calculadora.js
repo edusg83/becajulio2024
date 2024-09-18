@@ -1,20 +1,22 @@
 let display = document.getElementById('display');
+let operation = document.getElementById('operation'); 
+let newInput = document.getElementById('newInput'); 
 
 function appendNumber(number){
-    display.value += number; 
+    newInput.innerHTML += number; 
 }
 
 function appendOperator(operator){
-    if(display.value){
-        let lastChar = display.value.trim().slice(-1); 
+    if(newInput){
+        let lastChar = newInput.innerHTML.trim().slice(-1); 
         console.log(lastChar); 
         if(['+', '-', '*', '/'].includes(lastChar)){
-            display.value = display.value.trim().slice(0, -1) + " " + operator + " "; 
+            newInput.innerHTML = newInput.innerHTML.trim().slice(0, -1) + " " + operator + " "; 
         }else if(['.'].includes(lastChar)){
            
             return; 
         }else{
-            display.value += " " + operator + " ";
+            newInput.innerHTML += " " + operator + " ";
         }
 
     }
@@ -22,7 +24,26 @@ function appendOperator(operator){
 }
 
 function clearLastChar(){
-  display.value =  display.value.trim().slice(0,-1); 
+  newInput.innerHTML =  newInput.innerHTML.trim().slice(0,-1); 
+}
+
+
+function calculate(){
+    try{
+      //  display.value = eval(display.value); 
+        let expression = newInput.innerHTML;
+        let numbers = getNumbers(expression);
+        let operators = getOperators(expression);
+    
+        calculateMultiplicationOrDivision(operators, numbers);  
+        calculateAdditionOrSubstraction(operators, numbers); 
+        operation.innerHTML = expression + " =" ; 
+        //Muestra el resultado
+        newInput.innerHTML = numbers[0]; 
+      
+    }catch(error){
+        newInput.innerHTML = 'Error'; 
+    }
 }
 
 function getNumbers(expression){
@@ -91,25 +112,22 @@ function calculateAdditionOrSubstraction(operators, numbers){
     
 }
 
-function calculate(){
-    try{
-      //  display.value = eval(display.value); 
-        let expression = display.value;
-        let numbers = getNumbers(expression);
-        let operators = getOperators(expression);
-    
-        calculateMultiplicationOrDivision(operators, numbers);  
-        calculateAdditionOrSubstraction(operators, numbers); 
-        
-        //Muestra el resultado
-        display.value = numbers[0]; 
-      
-    }catch(error){
-        display.value = 'Error'; 
-    }
-}
 
 function clearAll(){
-    display.value = ""; 
+    newInput.innerHTML = ""; 
+    operation.innerHTML = ""; 
+}
+
+function resetMemory(){
+    operation.innerHTML = "";
+}
+
+function memoryAddition(){
+    operation.innerHTML = "";
+}
+
+function getMemoryBack(){
+    newInput.innerHTML = operation.innerHTML; 
+    operation.innerHTML = ""; 
 }
 
