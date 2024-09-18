@@ -62,3 +62,17 @@ main {
 #game_section button:hover {
     scale: 1.05;
 }
+
+footer p:hover {
+    animation: rotateItBaby 1s linear infinite;
+}
+
+@keyframes rotateItBaby {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
