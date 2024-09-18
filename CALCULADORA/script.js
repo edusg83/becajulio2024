@@ -1,23 +1,11 @@
 
-function sumar() {
 
-}
+const pantalla = document.getElementById("resultado"); 
 
-function restar() {
-
-}
-
-function multiplicar() {
-
-}
-
-function dividir() {
-
+function addpantalla(input){
+	pantalla.value += input;
 }
 
 function calcular() {
-	sumar();
-	restar();
-	multiplicar();
-	dividir();
+	pantalla.value = eval(pantalla.value);
 }
