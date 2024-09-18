@@ -50,7 +50,8 @@ main {
   align-items: center;
   background-color: #415364;
   border-radius: 25px;
-  padding: 20px;
+  padding: 4%;
+  margin: 0% 0% 3% 5%;
 }
 
 .button-row {
@@ -64,6 +65,7 @@ input {
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
+  border: solid red;
 }
 
 .result {
