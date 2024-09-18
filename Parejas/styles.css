@@ -3,11 +3,11 @@ nav input {
     max-width: 600px;
     background-color: #001F3F;
     color: white;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
 body {
     height: 100vh;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
 header {
@@ -23,4 +23,9 @@ main {
     font-size: 90px;
     background-image: url("https://static.vecteezy.com/system/resources/previews/011/443/504/original/pink-cartoon-flowers-background-seamless-pattern-eps-simple-modern-abstract-summer-floral-print-design-vector.jpg");
     background-size: cover;
+    transition: 1s ease-in-out;
+}
+
+#game_section button:hover {
+    scale: 1.03;
 }
