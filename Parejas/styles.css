@@ -63,6 +63,13 @@ main {
     scale: 1.05;
 }
 
+.test {
+    max-width: 80px;
+    height: 120px;
+    transition: 0.5s ease-in-out;
+    rotate: 180deg;
+}
+
 footer p:hover {
     animation: rotateItBaby 1s linear infinite;
 }
