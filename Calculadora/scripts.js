@@ -4,12 +4,11 @@ let memory = 0;
 let symbol = "";
 let firstOperation = true;
 let symbolPressed = false;
-let display;
+let display = document.getElementById("display");
 
 let operadores = ["-", "+", "X", "/"];
 
 function setDisplay(param) {
-  display = document.getElementById("display");
   if (firstOperation && param != "0") {
     display.value = param;
     firstOperation = false;
@@ -23,7 +22,6 @@ function setDisplay(param) {
 }
 
 function storeValue() {
-  display = document.getElementById("display");
   if (num1 != 0) {
     num2 = Number(display.value);
   } else {
@@ -38,10 +36,7 @@ function storeSymbol(param) {
   }
 }
 
-//TODO uff...
 function calculateResult() {
-  display = document.getElementById("display");
-
   switch (symbol) {
     case "+":
       num1 = num1 + num2;
@@ -56,8 +51,6 @@ function calculateResult() {
       num1 = num1 / num2;
       break;
   }
-
-  console.log(num1);
 
   if (num1 % 1 != 0) {
     num1 = num1.toFixed(3);
@@ -80,14 +73,12 @@ function deleteOperation() {
 }
 
 function displayMemory() {
-  display = document.getElementById("display");
   if (memory != 0) {
     display.value = memory;
   }
 }
 
 function addMemory() {
-  display = document.getElementById("display");
   if (display.value != "0" && !symbolPressed) {
     memory += Number(display.value);
     display.value = 0;
