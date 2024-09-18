@@ -6,16 +6,18 @@ let firstOperation = true;
 let symbolPressed = false;
 let display;
 
+let operadores = ["-", "+", "X", "/"];
+
 function setDisplay(param) {
   display = document.getElementById("display");
   if (firstOperation && param != "0") {
     display.value = param;
     firstOperation = false;
   } else {
-    if (param != "-") {
-      display.value += param;
-    } else {
+    if (operadores.includes(param)) {
       display.value = "";
+    } else {
+      display.value += param;
     }
   }
 }
@@ -40,6 +42,27 @@ function storeSymbol(param) {
 //TODO uff...
 function calculateResult() {
   display = document.getElementById("display");
+
+  switch (symbol) {
+    case "+":
+      num1 = num1 + num2;
+      break;
+    case "-":
+      num1 = num1 - num2;
+      break;
+    case "X":
+      num1 = num1 * num2;
+      break;
+    case "/":
+      num1 = num1 / num2;
+      break;
+  }
+
+  display.value = num1;
+
+  num2 = 0;
+  symbol = "";
+  symbolPressed = false;
 }
 
 function deleteOperation() {
@@ -63,6 +86,7 @@ function addMemory() {
   if (display.value != "0" && !symbolPressed) {
     memory += Number(display.value);
     display.value = 0;
+    firstOperation = true;
   }
 }
 
