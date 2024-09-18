@@ -12,7 +12,11 @@ function setDisplay(param) {
     display.value = param;
     firstOperation = false;
   } else {
-    display.value += param;
+    if (param != "-") {
+      display.value += param;
+    } else {
+      display.value = "";
+    }
   }
 }
 
@@ -23,6 +27,7 @@ function storeValue() {
   } else {
     num1 = Number(display.value);
   }
+  console.log(num1, num2);
 }
 
 function storeSymbol(param) {
@@ -33,7 +38,9 @@ function storeSymbol(param) {
 }
 
 //TODO uff...
-function calculateResult() {}
+function calculateResult() {
+  display = document.getElementById("display");
+}
 
 function deleteOperation() {
   num1 = 0;
