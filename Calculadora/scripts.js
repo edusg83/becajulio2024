@@ -29,7 +29,6 @@ function storeValue() {
   } else {
     num1 = Number(display.value);
   }
-  console.log(num1, num2);
 }
 
 function storeSymbol(param) {
@@ -56,6 +55,12 @@ function calculateResult() {
     case "/":
       num1 = num1 / num2;
       break;
+  }
+
+  console.log(num1);
+
+  if (num1 % 1 != 0) {
+    num1 = num1.toFixed(3);
   }
 
   display.value = num1;
