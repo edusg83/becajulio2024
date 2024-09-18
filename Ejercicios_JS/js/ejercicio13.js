@@ -1,5 +1,5 @@
 try {
-    isFinite.apply.arguments;
+    throw new RangeError(['Se ha producido un error',['ejercicio13.js', [100]]]);
 } catch (error) {
-    throw new EvalError("Se ha prodicido un error linea 100")
+    throw new RangeError(['Se ha producido un error', ['ejercicio13.js', [100]]]);
 }
