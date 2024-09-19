@@ -26,7 +26,6 @@ function asignarImagenes(imagenesRandom) {
     cartas.forEach((tarjeta, index) => {
         if (index < imagenesRandom.length) {
             let imagenCorrecta = tarjeta.querySelector(".imagen-correcta");
-
             if (imagenCorrecta) {
                 imagenCorrecta.src = imagenesRandom[index];
             }
@@ -68,11 +67,8 @@ function comprobarEleccion(carta1, carta2) {
             resetEstilos(carta1, carta2)
         }, 1000);
 
-        if (turnoActual == 1) {
-            turnoActual = 2;
-        } else {
-            turnoActual = 1;
-        }
+        turnoActual = (turnoActual == 1) ? 2 : 1;
+        actualizarTurno(turnoActual);
     }
 }
 
@@ -101,5 +97,18 @@ function actualizarPuntos(turnoActual) {
     } else {
         puntosJ2 ++;
         puntosJugador2.innerHTML = "Puntuacion: " + puntosJ2;
+    }
+}
+
+function actualizarTurno(turnoActual){
+    const textoTurnoJ1 = document.querySelector("#turno-j1");
+    const textoTurnoJ2 = document.querySelector("#turno-j2");
+
+    if(turnoActual == 1){
+        textoTurnoJ1.innerHTML = "Es tu turno";
+        textoTurnoJ2.innerHTML = "No tu turno";
+    } else {
+        textoTurnoJ2.innerHTML = "Es tu turno";
+        textoTurnoJ1.innerHTML = "No tu turno";
     }
 }
