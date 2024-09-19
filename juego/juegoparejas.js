@@ -9,8 +9,17 @@ function numeroAleatorioButton() {
 
 let jugador1;
 let jugador2;
+let puntosJugador1 = 0;
+let puntosJugador2 = 0;
+let carta1;
+let carta2;
+let imagen1;
+let imagen2;
+let turno = false; // jugador1 = false jugador2 = true
 
 function iniciarJuego() {
+
+    document.getElementById("reiniciar").innerHTML = "Reiniciar juego";
 
     let botones = `                
     <div>
@@ -40,6 +49,8 @@ function iniciarJuego() {
 
     document.getElementById("colCartas").innerHTML = botones;
 
+    document.getElementById("resultado1").innerHTML = "";
+    document.getElementById("resultado2").innerHTML = "";
 
     jugador1 = "";
     jugador2 = "";
@@ -47,7 +58,7 @@ function iniciarJuego() {
     jugador1 = prompt("Introduce el nombre del jugador1");
     jugador2 = prompt("Introduce el nombre del jugador2");
 
-    document.getElementById("p-header").innerHTML += jugador1;
+    document.getElementById("p-header").innerHTML = "Turno de " + jugador1;
     document.getElementById("p-body-1").innerHTML = jugador1;
     document.getElementById("p-body-2").innerHTML = jugador2;
 
@@ -86,15 +97,10 @@ function iniciarJuego() {
     }
 }
 
-let puntosJugador1 = 0;
-let puntosJugador2 = 0;
 
 
-let carta1;
-let carta2;
-let imagen1;
-let imagen2;
-let turno = false; // jugador1 = false jugador2 = true
+
+
 
 function prepararJugada(imagen, button) {
 
