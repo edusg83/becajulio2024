@@ -1,9 +1,11 @@
-// a) Solicitar por pantalla un valor y guardarlo en una variable llamada nombre , mostrar el valor introducido por console.log. El
-// mensaje que tiene que aparecer al pedir el nombre es ‘Introduzca el nombre :’
-let nombre = prompt("Introduzca el nombre :");
-console.log(nombre);
+// a) Crear una plantilla Html5 con la siguiente estructura dentro del <body>:
+// <header>CABECERA</header>
+// <main><section>SECCION1<article>ARTICULO1
+// </article></section></main><footer>PIE</footer>
 
-// a) Solicitar por pantalla una confirmación y guardarlo en una variable llamada continuar , mostrar el valor por console.log. El
-// mensaje que tiene que aparecer al pedir la confirmación es, ‘¿Desea continuar?’
-let continuar = confirm("¿Desea continuar?")
-console.log(continuar);
+// b) Buscar el elemento <header> y mostrar por consola el elemento encontrado. Realizar la búsqueda de 3 maneras diferentes :
+//  getElementsByTagName, getElementById, querySelector
+
+console.log(document.getElementsByTagName("header"));
+console.log(document.getElementById("header"));
+console.log(document.querySelector("header"));
