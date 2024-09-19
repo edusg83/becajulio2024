@@ -1,0 +1,66 @@
+header{
+    display: flex;
+    height: 100%;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    padding-left: 2%;
+}
+/*main{
+    display: flex;
+    flex-direction: row;
+}
+img{
+    height: 80px;
+    width: 80px;
+}
+#jugador1{
+    padding-right: 20px ;
+    height: 25%;
+   
+
+}
+#jugador2{
+    height: 25%;
+}
+#imagenesParejas{
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}*/
+main {
+    display: flex;
+    align-items: flex-start;
+    height: 100%; 
+}
+
+section {
+    flex: 1;
+    text-align: center;
+}
+
+
+.jugador_deselec {
+
+}
+
+.jugador_selec{
+     
+    background-color: rgb(160, 229, 229);
+}
+
+
+#imagenesParejas {
+    display: grid;
+    grid-template-columns: repeat(6, 80px); /* 6 columnas de 80px de ancho */
+    grid-template-rows: repeat(5, 80px); /* 5 filas de 80px de alto */
+    gap: 10px;
+    justify-content: center; /* Centra el grid en el contenedor */
+    width: 60%; /* La parte central ocupará un 60% del ancho */
+}
+
+img {
+    height: 80px;
+    width: 80px;
+}
