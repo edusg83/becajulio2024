@@ -1,6 +1,9 @@
 .tarjeta {
     border: 5px solid black;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagen-oculta {
@@ -14,8 +17,4 @@
 .tarjeta.inactiva{
     cursor: not-allowed;
     pointer-events: none;
-}
-
-.tarjeta img {
-    margin-left: 18%;
 }

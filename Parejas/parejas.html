@@ -13,10 +13,42 @@
     <link rel="stylesheet" href="css/parejas.css" />
 </head>
 
-<body>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+<body class="row m-5">
+    <div class="col-3 d-flex flex-column align-items-center justify-content-between">
+        <div class="panel-jugador d-flex flex-column justify-content-around border align-items-center border-3 border-dark rounded w-100 h-50" id="J1">
+            <p class="fs-1">Jugador 1</p>
+            <p class="puntuacion fs-2" id="puntuacion-j1">Puntuacion: 5</p>
+            <p class="turno fs-3" id="turno-j1">Es tu turno</p>
+            <div class="d-flex flex-wrap">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+            </div>
+        </div>
+        
+        <div class="panel-jugador d-flex flex-column justify-content-around border align-items-center border-3 border-dark rounded w-100 h-50" id="J2">
+            <p class="fs-1">Jugador 2</p>
+            <p class="puntuacion fs-2" id="puntuacion-j2">Puntuacion: 0</p>
+            <p class="turno fs-3" id="turno-j1">No es tu turno</p>
+            <div class="d-flex flex-wrap">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+                <img src="img/Bulbasaur.png" alt="Carta" width="50" height="50"
+                    class="imagen-puntuada border border-3 border-dark rounded">
+            </div>
+        </div>
+    </div>
+    <div class="col-9 container d-flex justify-content-center align-items-center">
         <div class="row g-2">
-
             <div class="col-3">
                 <div class="bg-secondary text-center tarjeta" onclick="guardarEleccion(this)">
                     <img src="img/Missingo.png" alt="Carta" width="200" height="200" class="imagen-oculta">
@@ -117,9 +149,7 @@
                 </div>
             </div>
         </div>
-        <button onclick="reset()">Nueva partida</button>
     </div>
-
 </body>
 
 <script src="js/parejas.js"></script>
