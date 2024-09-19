@@ -13,9 +13,9 @@ const cards = Array.from(document.getElementsByClassName("card"));
 
 const imageMap = new Map();
 
-const valueMap = new Map();
-
 const cardSet = new Set();
+
+const cardPairs = new Set();
 
 let cardValue1 = null;
 
@@ -23,61 +23,72 @@ let cardValue2 = null;
 
 let lock = false;
 
+playerTurn = null;
+
 for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
-  valueMap.set(i, 0);
 }
 
 function storeCardValue(cardValue, idCard) {
-  const card = document.getElementById(idCard);
-  cardSet.add(card);
-
   if (lock) {
     return;
   }
 
-  if (cardValue1 != null && cardSet.values().next().value.id == idCard) {
-    cardSet.delete(card);
-    return;
-  }
+  const card = document.getElementById(idCard);
+  cardSet.add(card);
+  cardPairs.add(card);
 
   flipCard(idCard);
 
   if (cardValue1 == null) {
     cardValue1 = cardValue;
   } else if (cardValue2 == null) {
-    cardValue2 = cardValue;
     lock = true;
+    cardValue2 = cardValue;
+    checkCards();
   }
 }
 
 function checkCards() {
+  console.log(cardValue1, cardValue2);
+  console.log(cardPairs);
+  console.log(cardSet);
   if (cardValue1 == cardValue2) {
-    //Action..
+    setScore();
   } else {
-    //Action..
+    cardPairs.forEach((card) => {
+      if (card.value == cardValue1 || card.value == cardValue2) {
+        cardPairs.delete(card);
+      }
+    });
+    setTimeout(flipBack, 1500);
+    setTurn();
+  }
+  setTimeout(reset, 2000);
+}
+
+function setScore() {
+  let currentPlayer = "score_display_player1";
+
+  if (playerTurn == 2) {
+    currentPlayer = "score_display_player2";
   }
 
-  cardArray = null;
+  document.getElementById(currentPlayer).value =
+    Number(document.getElementById(currentPlayer).value) + 1;
 }
 
-function assignValue() {
-  cards.forEach((card) => {
-    let index = randomGenerator();
-
-    while (valueMap.get(index) == 2) {
-      index = randomGenerator();
-    }
-
-    card.value = index;
-
-    let cont = valueMap.get(index) + 1;
-
-    valueMap.set(index, cont);
-  });
+function setTurn() {
+  if (playerTurn == 2 || playerTurn == null) {
+    playerTurn = 1;
+    document.getElementById("turn_display").value = "Turno del jugador 1!";
+  } else {
+    playerTurn = 2;
+    document.getElementById("turn_display").value = "Turno del jugador 2!";
+  }
 }
 
-function assignImage() {
+function assignImages() {
   cards.forEach((card) => {
     let index = randomGenerator();
 
@@ -86,6 +97,7 @@ function assignImage() {
     }
 
     card.children[0].style.backgroundImage = `url(${imagenes[index]})`;
+    card.value = imagenes[index];
 
     let cont = imageMap.get(imagenes[index]) + 1;
 
@@ -104,15 +116,16 @@ function flipCard(idCard) {
 
 function flipBack() {
   cardSet.forEach((card) => {
-    card.classList.toggle("rotateEffect");
-    card.classList.toggle("p-100");
+    if (!cardPairs.has(card)) {
+      card.classList.toggle("rotateEffect");
+      card.children[0].classList.toggle("opacity-100");
+    }
   });
-
-  reset();
 }
 
 function reset() {
   cardValue1 = null;
-  cardValue1 = null;
+  cardValue2 = null;
   lock = false;
+  cardSet.clear();
 }
