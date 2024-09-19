@@ -68,14 +68,14 @@
         return array;
     }
 
-    function voltearCarta(cardElement) {
-        if (tableroBloqueado || cardElement.classList.contains('flip')) return;
-        cardElement.classList.add('flip');
+    function voltearCarta(contenido) {
+        if (tableroBloqueado || contenido.classList.contains('flip')) return;
+        contenido.classList.add('flip');
         if (!primeraCarta) {
-            primeraCarta = cardElement;
+            primeraCarta = contenido;
             return;
         }
-        segundaCarta = cardElement;
+        segundaCarta = contenido;
         tableroBloqueado = true;
         revisaPareja();
     }
