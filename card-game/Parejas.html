@@ -10,59 +10,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href=" https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css " rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
         <style>
 
-        .frontside{
-            display: none;
-        }
-
-        .backside{
-            display: block;
-        }
-        .card{
-           height: fit-content;
-           
-
-        }
-
-        .show-back .frontside {
-            display: block; 
-        }
-        .flipped .frontside {
-            display: block; 
-        }
-
-        .flipped .backside {
-            display: none; 
-        }
-
-        #card-container{
-            width: 50%;
-            margin: 1rem;
-            padding: 1rem;
-            
-        }
-
-        .player{
-            
-            height: auto;
-            padding: 1rem;
-            background-color: aqua;
-        }
-
-        .player1turn{
-            border: 3px solid rgb(0, 26, 255); 
-            -webkit-box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
-            -moz-box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
-            box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
-        }
-
-        .player2turn{ 
-            border: 3px solid rgb(255, 0, 0); 
-            -webkit-box-shadow: -1px 2px 41px -3px rgba(250, 142, 142, 1);
-            -moz-box-shadow: -1px 2px 41px -3px  rgba(250, 142, 142, 1);
-            box-shadow: -1px 2px 41px -3px  rgba(250, 142, 142, 1);
-        }
         </style>
     </head>
     <body>
@@ -96,18 +46,25 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content text-center">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="modalWinnerLabel">El ganador es: </h5>
+                  <h5 class=" text-center" id="modalWinnerLabel">El ganador es: </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <h1 id="winner"></h1>
-                  <h2 id="winnerPoints"></h2>
+                  <div class="row">
+                    <div class="col-6">
+                      <img src="../images/youwin.jpg" alt="has ganado" class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                      <h1 id="winner"></h1>
+                      <h2 id="winnerPoints"></h2>
+                    </div>
+                  </div> 
                 </div>
               </div>
             </div>
           </div>
         <!--Fin del modal-->     
-        <div class="container-fluid  p-5 text-center">
+        <div class="container-fluid  p-5 text-center bg-olas">
           <h1>Encuentra las parejas</h1>
           <h2 id="playerTurn">Turno del jugador: 1</h2>
           <div class="container-fluid d-flex justify-content-center align-items-center">

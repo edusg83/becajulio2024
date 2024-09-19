@@ -127,11 +127,11 @@ let nombre = '';
 
 //window.alert('Introduzca el nombre: '); 
 //window.prompt('Introduzca el nombre: ', nombre); 
-nombre = prompt('Introudzca el nombre'); 
-console.log(nombre); 
+//nombre = prompt('Introudzca el nombre'); 
+//onsole.log(nombre); 
 let confirm = ''; 
-confirm = confirm('Confirmas?'); 
-console.log(confirm); 
+//confirm = confirm('Confirmas?'); 
+//console.log(confirm); 
 
 //Ejercicio 16
 console.log(navigator.clipboard + ": navigator.clipboard");
@@ -161,7 +161,7 @@ console.log(navigator.webdriver + ": navigator.webdriver");
 
 //Ejercicio 17
 
-location.pathname = 'alpha'; 
+
 
 
 //Ejercicio 18

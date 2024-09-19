@@ -41,23 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startGame() {
-  var myModal = new bootstrap.Modal(document.getElementById('modalSetPlayers'), {
+  let modalSetPlayers = new bootstrap.Modal(document.getElementById('modalSetPlayers'), {
     backdrop: 'static',
     keyboard: false
   });
-  myModal.show();
+  modalSetPlayers.show();
   document.getElementById('playersForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     player1 = document.getElementById('inputPlayer1Name').value;
     player2 = document.getElementById('inputPlayer2Name').value;
+
     document.getElementById('playerName1').innerHTML = player1;
     document.getElementById('playerName2').innerHTML = player2;
     document.getElementById('playerPoints1').innerHTML = player1Points;
     document.getElementById('playerPoints2').innerHTML = player2Points;
-    console.log(player1, player2);
-
-    myModal.hide();
+  
+    modalSetPlayers.hide();
   });
 }
 
@@ -79,15 +79,10 @@ function changeTurnVisual() {
   }
 }
 
-
 function turnUp(element) {
   if (flippedCards.length < 2) {
     checkFlippedAndPush(element);
-    if(currentPlayer == 1){
-      element.classList.add('player1turn');
-    }else{
-      element.classList.add('player2turn');
-    }
+    markElementPlayerTurn(element); 
   }
 
   if (flippedCards.length === 2) {
@@ -98,36 +93,6 @@ function turnUp(element) {
   }
 }
 
-function checkFlippedAndPush(element) {
-  if (element.classList.contains('flipped')) {
-    return;
-  }
-
-  if (!element.classList.contains('show-back')) {
-    element.classList.add('show-back');
-    element.classList.add('flipped');
-    flippedCards.push(element.id.slice(0, -1));
-    console.log(flippedCards);
-  }
-}
-
-function compareCards() {
-  let points = 0;
-  if (flippedCards[0] === flippedCards[1]) {
-    console.log("Son iguales");
-    disabledCards();
-    addCardsToResolved();
-    points = 1;
-   
-  } else {
-    console.log("no son iguales");
-    resetCardsFlipped();
-  }
-  console.log(flippedCards);
-  flippedCards = [];
-  return points;
-}
-
 function playerTurnAction(points) {
   if (points === 0) {
     currentPlayer = (currentPlayer === 1) ? 2 : 1;
@@ -135,23 +100,61 @@ function playerTurnAction(points) {
 
   } else {
     if (currentPlayer === 1) {
-      player1Points++;
-      totalPoints++;
-      document.getElementById('playerPoints1').innerHTML = player1Points;
+      player1Points = addPlayerPoints(player1Points, 'playerPoints1');  
     } else {
-      player2Points++;
-      totalPoints++;
-      document.getElementById('playerPoints2').innerHTML = player2Points;
+      player2Points = addPlayerPoints(player2Points, 'playerPoints2');
     }
   }
-  console.log(totalPoints);
-
   if (totalPoints == maxPoints) {
     showWinnerModal();
   }
 }
 
+function addPlayerPoints(playerPoints, elementId) {
+  playerPoints++;
+  totalPoints++;
+  document.getElementById(elementId).innerHTML = playerPoints;
+  return playerPoints; 
+}
 
+function markElementPlayerTurn(element){
+  if(currentPlayer == 1){
+    element.classList.add('player1turn');
+  }else{
+    element.classList.add('player2turn');
+  }
+}
+
+function checkFlippedAndPush(element) {
+  if (element.classList.contains('flipped')) {
+    return;
+  }
+
+  if (!element.classList.contains('show-back')) {
+    flipCards(element);
+    flippedCards.push(element.id.slice(0, -1));
+  }
+
+}
+
+function flipCards(element) {
+  element.classList.add('show-back');
+  element.classList.add('flipped');
+}
+
+function compareCards() {
+  let points = 0;
+  if (flippedCards[0] === flippedCards[1]) {
+    disabledCards();
+    addCardsToResolved();
+    points = 1; 
+  } else {
+    resetCardsFlipped();
+  }
+
+  flippedCards = [];
+  return points;
+}
 
 function resetCardsFlipped() {
   const cards = document.querySelectorAll('.flipped');
@@ -160,22 +163,23 @@ function resetCardsFlipped() {
     if (!card.classList.contains('blocked')) {
       setTimeout(() => {
         card.classList.remove('show-back', 'flipped');
-        if(player == 1){
-          card.classList.remove('player1turn');
-          console.log(player); 
-        }else{
-          card.classList.remove('player2turn');
-          console.log(player); 
-        }
+        removePlayerMark(player, card);
       }, 500);
     }
 
   });
 }
 
+function removePlayerMark(player, card) {
+  if (player == 1) {
+    card.classList.remove('player1turn');
+  } else {
+    card.classList.remove('player2turn');
+  }
+}
+
 function disabledCards() {
   let cards = document.querySelectorAll('.flipped');
-  console.log(cards);
   cards.forEach(card => {
     card.style.pointerEvents = 'none';
     card.classList.add('blocked');
@@ -186,9 +190,7 @@ function disabledCards() {
 function addCardsToResolved() {
   resolvedCards.push(flippedCards[0]);
   resolvedCards.push(flippedCards[1]);
-  console.log(resolvedCards);
   flippedCards = [];
-  console.log(flippedCards);
 }
 
 function shuffle(array) {
