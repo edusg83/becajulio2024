@@ -1,3 +1,3 @@
-console.log(document.getElementsByTagName('section'));
+console.log(document.getElementsByTagName('header'));
 console.log(document.getElementById('cabecera'));
-console.log(document.querySelector('main'));
+console.log(document.querySelector('header'));
