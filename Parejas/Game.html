@@ -18,80 +18,98 @@
         </script>
 </head>
 
-<body onload="assignImage(); assignValue(); setPlayerName();">
+<!-- Acuerdate de poner setplayername -->
+
+<body onload="assignImage(); assignValue(); setPlayer(); setPlayerTurn();">
 
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
         <button class="w-50 border-0 mt-2">Nueva Partida!</button>
-        <input class="w-50 border-0 mb-2 text-center" type="text" value="Turno del jugador x!" readonly>
+        <input class="w-50 border-0 mb-2 text-center" type="text" value="" readonly id="turn_display">
     </header>
 
-    <main class="d-flex flex-row py-5">
+    <main class="d-flex flex-row pt-5">
 
         <section
             class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column  align-items-center border-bottom">
-                <input type="text" class="border-0 text-center" id="player1_name" value="" readonly>
+                <input type="text" class="border-0 text-center" id="player1_board" value="" readonly>
                 <label for="text">Aciertos</label>
             </div>
             <div>
-                <ul></ul>
+                <input type="text" readonly value="" id="score_display_player1">
             </div>
         </section>
 
         <section class="col-6" id="game_section">
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR1C1" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR1C1" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0 opacity-0"></div>
                 </button>
-                <button id="cardR1C2" class="col card  border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR1C2" class="col card  border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0 opacity-0"></div>
                 </button>
-                <button id="cardR1C3" class="col card  border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR1C3" class="col card  border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR1C4" class="col card  border-0 p-0" value="" onclick="toggleEffect(this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-            </article>
-            <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR2C1" class="col card  border-0 p-0" value="" onclick="toggleEffect(this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C2" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C3" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C4" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR1C4" class="col card  border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR3C1" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR2C1" class="col card  border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C2" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR2C2" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C3" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR2C3" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C4" class="col card border-0 p-0" value="" onclick="toggleEffect(this.id)">
+                <button id="cardR2C4" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR4C1" class="col card border-0 p-0" onclick="toggleEffect(this.id)">
+                <button id="cardR3C1" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C2" class="col card border-0 p-0" onclick="toggleEffect(this.id)">
+                <button id="cardR3C2" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C3" class="col card border-0 p-0" onclick="toggleEffect(this.id)">
+                <button id="cardR3C3" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C4" class="col card border-0 p-0" onclick="toggleEffect(this.id)">
+                <button id="cardR3C4" class="col card border-0 p-0" value=""
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+            </article>
+            <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
+                <button id="cardR4C1" class="col card border-0 p-0"
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C2" class="col card border-0 p-0"
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C3" class="col card border-0 p-0"
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C4" class="col card border-0 p-0"
+                    onclick="toggleEffect(this.id); storeCardValue(this.value);">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
@@ -100,17 +118,17 @@
         <section
             class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column align-items-center border-bottom">
-                <input type="text" class="border-0 text-center" id="player2_name" value="" readonly>
+                <input type="text" class="border-0 text-center" id="player2_board" value="" readonly>
                 <label for="text">Aciertos</label>
             </div>
             <div>
-                <ul></ul>
+                <input type="text" readonly value="" id="score_display_player2">
             </div>
         </section>
 
 
     </main>
-    <footer class="d-flex justify-content-center">
+    <footer class=" d-flex justify-content-center">
         <p class="text-light p-2 mt-2">Intentalo lo mejor que puedas!</p>
     </footer>
     <!-- Scripts -->
