@@ -117,7 +117,7 @@ function pedirJugadores() {
     document.getElementById("jug2").innerHTML = "Jugador 2: " + nombreJugador2;
 }
 function barajar() {
-    let parejasMezcladas = barajarArray([...doblesparejas]);
+    let parejasMezcladas = barajarArray(doblesparejas);
 
     for (let i = 1; i <= 30; i++) {
         let img = document.getElementById("" + i); 
