@@ -18,7 +18,7 @@
         </script>
 </head>
 
-<body onload="assignImage()">
+<body onload="assignImage(); assignValue(); setPlayerName();">
 
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
         <button class="w-50 border-0 mt-2">Nueva Partida!</button>
@@ -30,7 +30,7 @@
         <section
             class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column  align-items-center border-bottom">
-                <input type="text" class="border-0" readonly>
+                <input type="text" class="border-0 text-center" id="player1_name" value="" readonly>
                 <label for="text">Aciertos</label>
             </div>
             <div>
@@ -100,7 +100,7 @@
         <section
             class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column align-items-center border-bottom">
-                <input type="text" class="border-0" readonly>
+                <input type="text" class="border-0 text-center" id="player2_name" value="" readonly>
                 <label for="text">Aciertos</label>
             </div>
             <div>
