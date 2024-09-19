@@ -21,6 +21,11 @@ let cardValue2 = null;
 
 let lock = false;
 
+for (let i = 0; i < imagenes.length; i++) {
+  imageMap.set(imagenes[i], 0);
+  valueMap.set(i, 0);
+}
+
 function storeCardValue(cardValue, idCard) {
   if (lock) {
     return;
@@ -34,4 +39,48 @@ function storeCardValue(cardValue, idCard) {
     cardValue2 = cardValue;
     lock = true;
   }
+}
+
+function checkCards() {
+  if (cardValue1 == cardValue2) {
+    //Action..
+  } else {
+    //Action..
+  }
+}
+
+function assignValue() {
+  cards.forEach((card) => {
+    let index = randomGenerator();
+
+    while (valueMap.get(index) == 2) {
+      index = randomGenerator();
+    }
+
+    card.value = index;
+
+    let cont = valueMap.get(index) + 1;
+
+    valueMap.set(index, cont);
+  });
+}
+
+function assignImage() {
+  cards.forEach((card) => {
+    let index = randomGenerator();
+
+    while (imageMap.get(imagenes[index]) == 2) {
+      index = randomGenerator();
+    }
+
+    card.children[0].style.backgroundImage = `url(${imagenes[index]})`;
+
+    let cont = imageMap.get(imagenes[index]) + 1;
+
+    imageMap.set(imagenes[index], cont);
+  });
+}
+
+function randomGenerator() {
+  return Math.floor(Math.random() * imagenes.length);
 }
