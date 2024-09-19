@@ -1,5 +1,3 @@
-const cards = Array.from(document.getElementsByClassName("card"));
-
 const imagenes = [
   "/Parejas/resources/Squirtle.jpg",
   "/Parejas/resources/Pikachu.jpg",
@@ -11,91 +9,100 @@ const imagenes = [
   "/Parejas/resources/Charmander.jpg",
 ];
 
-//Mapa para controlar la repeticion de imagenes
+const cards = Array.from(document.getElementsByClassName("card"));
+
 const imageMap = new Map();
 
-//Mapa para controlar los valores asignados a cada carta
-const valueMap = new Map();
+const cardSet = new Set();
 
-let player = {
-  name: "name",
-  hits: 0,
-  id: "",
-  playerTurn: false,
-  plusHit: function () {
-    this.hits++;
-  },
-};
+const cardPairs = new Set();
 
-let player1;
+let cardValue1 = null;
 
-let player2;
+let cardValue2 = null;
 
-let num1;
+let lock = false;
 
-let num2;
+let isActive = false;
 
-let isCardActive = false;
+playerTurn = null;
 
 for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
 }
 
-for (let i = 0; i < imagenes.length; i++) {
-  valueMap.set(i, 0);
-}
+function storeCardValue(cardValue, idCard) {
+  const card = document.getElementById(idCard);
+  cardSet.add(card);
 
-function setPlayer() {
-  let name = prompt("Hola! Cual es tu nombre?!");
+  console.log();
 
-  player1 = Object.create(player);
-  player1.name = name;
-  player1.id = document.getElementById("player1_board");
-  player1.playerTurn = true;
+  if (lock) {
+    return;
+  }
 
-  player2 = Object.create(player);
-  player2.name = "Evil Eduardo";
-  player2.id = document.getElementById("player2_board");
-  player2.playerTurn = false;
+  if (cardSet.values().next().id == idCard && isActive) {
+    cardPairs.delete(card);
+    flipBack();
+    reset();
+    return;
+  }
 
-  document.getElementById("player1_board").value = player1.name;
-  document.getElementById("player2_board").value = player2.name;
-}
+  cardPairs.add(card);
 
-function setPlayerTurn() {
-  let display = document.getElementById("turn_display");
+  flipCard(idCard);
 
-  display.value = "";
-
-  if (player1.playerTurn) {
-    display.value = "Turno de " + player1.name;
-  } else {
-    display.value = "Turno de " + player2.name;
+  if (cardValue1 == null) {
+    cardValue1 = cardValue;
+    isActive = true;
+  } else if (cardValue2 == null) {
+    lock = true;
+    cardValue2 = cardValue;
+    checkCards();
   }
 }
 
-function randomGenerator() {
-  return Math.floor(Math.random() * imagenes.length);
+function checkCards() {
+  console.log(cardValue1, cardValue2);
+  console.log(cardPairs);
+  console.log(cardSet);
+  if (cardValue1 == cardValue2) {
+    setScore();
+  } else {
+    cardPairs.forEach((card) => {
+      if (card.value == cardValue1 || card.value == cardValue2) {
+        cardPairs.delete(card);
+      }
+    });
+    setTimeout(flipBack, 1500);
+    setTurn();
+  }
+  setTimeout(reset, 2000);
 }
 
-function assignValue() {
-  cards.forEach((element) => {
-    let index = randomGenerator();
+function setScore() {
+  let currentPlayer = "score_display_player1";
 
-    while (valueMap.get(index) == 2) {
-      index = randomGenerator();
-    }
+  if (playerTurn == 2) {
+    currentPlayer = "score_display_player2";
+  }
 
-    element.value = index;
-
-    let suma = valueMap.get(index) + 1;
-
-    valueMap.set(index, suma);
-  });
+  document.getElementById(currentPlayer).value =
+    Number(document.getElementById(currentPlayer).value) + 1;
 }
 
-function assignImage() {
-  cards.forEach(function (card) {
+function setTurn() {
+  if (playerTurn == 2 || playerTurn == null) {
+    playerTurn = 1;
+    document.getElementById("turn_display").value = "Turno del jugador 1!";
+  } else {
+    playerTurn = 2;
+    document.getElementById("turn_display").value = "Turno del jugador 2!";
+  }
+}
+
+function assignImages() {
+  cards.forEach((card) => {
     let index = randomGenerator();
 
     while (imageMap.get(imagenes[index]) == 2) {
@@ -103,64 +110,66 @@ function assignImage() {
     }
 
     card.children[0].style.backgroundImage = `url(${imagenes[index]})`;
+    card.value = imagenes[index];
 
-    let suma = imageMap.get(imagenes[index]) + 1;
+    let cont = imageMap.get(imagenes[index]) + 1;
 
-    imageMap.set(imagenes[index], suma);
+    imageMap.set(imagenes[index], cont);
   });
 }
 
-function toggleEffect(param) {
-  let button = document.getElementById(param);
-  button.classList.toggle("rotateEffect");
-  button.children[0].classList.toggle("opacity-100");
-  button.classList.add("activo");
+function randomGenerator() {
+  return Math.floor(Math.random() * imagenes.length);
 }
 
-function toggleBack() {
-  const buttons = document.getElementsByClassName("activo");
-
-  console.log(buttons);
-
-  for (let element of buttons) {
-    element.classList.toggle("rotateEffect");
-    element.children[0].classList.toggle("opacity-100");
-    element.classList.remove("activo");
-  }
+function flipCard(idCard) {
+  document.getElementById(idCard).classList.toggle("rotateEffect");
+  document.getElementById(idCard).children[0].classList.toggle("opacity-100");
 }
 
-function storeCardValue(param) {
-  if (isCardActive) {
-    num2 = param;
-    checkValue();
-  } else {
-    num1 = param;
-    isCardActive = true;
-  }
-}
-
-function checkValue() {
-  if (num1 == num2) {
-    if (player1.playerTurn) {
-      player1.plusHit();
-    } else {
-      player2.plusHit();
+function flipBack() {
+  cardSet.forEach((card) => {
+    if (!cardPairs.has(card)) {
+      card.classList.toggle("rotateEffect");
+      card.children[0].classList.toggle("opacity-100");
     }
-  } else {
-    toggleBack();
-    isCardActive = false;
-    if (player1.playerTurn) {
-      player1.playerTurn = false;
-      player2.playerTurn = true;
-    } else {
-      player1.playerTurn = true;
-      player2.playerTurn = false;
-    }
-  }
-
-  num1 = undefined;
-  num2 = undefined;
-
-  document.getElementById("score_display_player1").value = player1.hits;
-  document.getElementById("score_display_player2").value = player2.hits;
+  });
 }
+
+function flipAll() {
+  cards.forEach((card) => {
+    if (card.classList.contains("rotateEffect")) {
+      card.classList.toggle("rotateEffect");
+      card.children[0].classList.toggle("opacity-100");
+    }
+  });
+}
+
+function reset() {
+  cardValue1 = null;
+  cardValue2 = null;
+  lock = false;
+  cardSet.clear();
+}
+
+function newGame() {
+  cardValue1 = null;
+  cardValue2 = null;
+  lock = false;
+  playerTurn = null;
+  cardPairs.clear();
+  cardSet.clear();
+  flipAll();
+  imageMap.clear();
+  for (let i = 0; i < imagenes.length; i++) {
+    imageMap.set(imagenes[i], 0);
+  }
+  cards.forEach((card) => {
+    card.children[0].style.backgroundImage = "";
+    card.value = "";
+  });
+  assignImages();
+}
+
+//TODO ASIGNAR NOMBRES, ASIGNAR ICONOS DE ACIERTO, ASIGNAR COLOR DE TURNO, CAMBIAR DISPLAY DE TURNO PARA QUE DIGA NOMBRE DEL JUGADOR
+//TODO AÑADIR EFFECTO DE DERROTA Y VICTORIA, AÑADIR CONDICION DE VICTORIA
