@@ -58,6 +58,7 @@ function comprobarEleccion(carta1, carta2) {
         carta2.classList.add('inactiva');
         resetElecciones();
         actualizarPuntos(turnoActual);
+        agregarImagenAcertada(imagenCorrecta1, turnoActual)
     } else {
         carta1.style.borderColor = 'red';
         carta2.style.borderColor = 'red';
@@ -92,23 +93,40 @@ function actualizarPuntos(turnoActual) {
     const puntosJugador2 = document.querySelector("#puntuacion-j2");
 
     if (turnoActual == 1) {
-        puntosJ1 ++;
+        puntosJ1++;
         puntosJugador1.innerHTML = "Puntuacion: " + puntosJ1;
     } else {
-        puntosJ2 ++;
+        puntosJ2++;
         puntosJugador2.innerHTML = "Puntuacion: " + puntosJ2;
     }
 }
 
-function actualizarTurno(turnoActual){
+function actualizarTurno(turnoActual) {
     const textoTurnoJ1 = document.querySelector("#turno-j1");
     const textoTurnoJ2 = document.querySelector("#turno-j2");
 
-    if(turnoActual == 1){
+    if (turnoActual == 1) {
         textoTurnoJ1.innerHTML = "Es tu turno";
         textoTurnoJ2.innerHTML = "No tu turno";
     } else {
         textoTurnoJ2.innerHTML = "Es tu turno";
         textoTurnoJ1.innerHTML = "No tu turno";
+    }
+}
+
+function agregarImagenAcertada(rutaImagen, turnoActual) {
+    const imagenesJ1 = document.querySelector("#img-J1");
+    const imagenesJ2 = document.querySelector("#img-J2");
+
+    const template = `
+        <img src="${rutaImagen}" alt="Carta" width="50" height="50"
+             class="imagen-puntuada border border-3 border-success rounded bg-success">
+    `;
+
+    if (turnoActual == 1) {
+        //He utiliazado esto porque va añadiendo 1 a 1 ya que innesHTML sobreescribe todas las imagenes
+        imagenesJ1.insertAdjacentHTML('beforeend', template);
+    } else {
+        imagenesJ2.insertAdjacentHTML('beforeend', template);
     }
 }
