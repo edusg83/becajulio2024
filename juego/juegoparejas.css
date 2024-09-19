@@ -36,7 +36,8 @@ img {
 #colJugador1, #colJugador2 {
     height: 100px;
     background-color: lightblue;
-    color: white;
+    color: rgb(65, 77, 128);
+    font-weight: bold;
 }
 
 .salto {
@@ -51,4 +52,8 @@ img {
     background-image: none;
     width: 7%;
     height: 3%;
+}
+
+#resultado1, #resultado2 {
+    font-size: 20px;
 }
