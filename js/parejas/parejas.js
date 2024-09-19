@@ -43,12 +43,11 @@ function cambiarJugador() {
 }
 
 function revelar(id) {
-    let img = document.getElementById("" + id); // Seleccionamos la imagen por ID
+    let img = document.getElementById("" + id); 
 
     if (img.src.endsWith("img/reverso.png") && (jugada.carta1.id.length == 0 || jugada.carta2.id.length == 0)) {
 
-        img.src = "img/" + parejasMezcladas[id - 1]; // Asignamos la imagen correspondiente
-
+        img.src = "img/" + parejasMezcladas[id - 1]; 
         if (jugada.carta1.id.length != 0) {
             jugada.carta2.src = parejasMezcladas[id - 1];
             jugada.carta2.id = id;
@@ -69,9 +68,9 @@ function revelar(id) {
             comprobarGanador((puntuacio1 + puntuacio2))
         } else if (jugada.carta1.src.length > 0 && jugada.carta2.src.length > 0) {
             setTimeout(function () {
-                let img1 = document.getElementById("" + jugada.carta1.id); // Seleccionamos la imagen por ID
+                let img1 = document.getElementById("" + jugada.carta1.id); 
                 img1.src = "img/reverso.png"
-                let img2 = document.getElementById("" + jugada.carta2.id); // Seleccionamos la imagen por ID
+                let img2 = document.getElementById("" + jugada.carta2.id); 
                 img2.src = "img/reverso.png"
                 jugada = { carta1: { id: '', src: '' }, carta2: { id: '', src: '' } }
                 cambiarJugador()
@@ -84,8 +83,8 @@ function ocultarCartas() {
     document.getElementById("score1").innerHTML = "Puntuacion: " + puntuacio1;
     document.getElementById("score2").innerHTML = "Puntuacion: " + puntuacio2;
     for (let i = 1; i <= 30; i++) {
-        let img = document.getElementById("" + i); // Seleccionamos la imagen por ID
-        img.src = "img/reverso.png"; // Asignamos la imagen correspondiente
+        let img = document.getElementById("" + i); 
+        img.src = "img/reverso.png"; 
     }
 }
 
@@ -118,13 +117,11 @@ function pedirJugadores() {
     document.getElementById("jug2").innerHTML = "Jugador 2: " + nombreJugador2;
 }
 function barajar() {
-    // Mezclamos el array de imágenes
     let parejasMezcladas = barajarArray([...doblesparejas]);
 
-    // Asignamos las imágenes a los elementos <img> con ids del 1 al 30
     for (let i = 1; i <= 30; i++) {
-        let img = document.getElementById("" + i); // Seleccionamos la imagen por ID
-        img.src = "img/" + parejasMezcladas[i - 1]; // Asignamos la imagen correspondiente
+        let img = document.getElementById("" + i); 
+        img.src = "img/" + parejasMezcladas[i - 1]; 
     }
     comprobarGanador(15);
 }
