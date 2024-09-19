@@ -43,11 +43,11 @@ function cambiarJugador() {
 }
 
 function revelar(id) {
-    let img = document.getElementById("" + id); 
+    let img = document.getElementById("" + id);
 
     if (img.src.endsWith("img/reverso.png") && (jugada.carta1.id.length == 0 || jugada.carta2.id.length == 0)) {
 
-        img.src = "img/" + parejasMezcladas[id - 1]; 
+        img.src = "img/" + parejasMezcladas[id - 1];
         if (jugada.carta1.id.length != 0) {
             jugada.carta2.src = parejasMezcladas[id - 1];
             jugada.carta2.id = id;
@@ -68,9 +68,9 @@ function revelar(id) {
             comprobarGanador((puntuacio1 + puntuacio2))
         } else if (jugada.carta1.src.length > 0 && jugada.carta2.src.length > 0) {
             setTimeout(function () {
-                let img1 = document.getElementById("" + jugada.carta1.id); 
+                let img1 = document.getElementById("" + jugada.carta1.id);
                 img1.src = "img/reverso.png"
-                let img2 = document.getElementById("" + jugada.carta2.id); 
+                let img2 = document.getElementById("" + jugada.carta2.id);
                 img2.src = "img/reverso.png"
                 jugada = { carta1: { id: '', src: '' }, carta2: { id: '', src: '' } }
                 cambiarJugador()
@@ -83,8 +83,8 @@ function ocultarCartas() {
     document.getElementById("score1").innerHTML = "Puntuacion: " + puntuacio1;
     document.getElementById("score2").innerHTML = "Puntuacion: " + puntuacio2;
     for (let i = 1; i <= 30; i++) {
-        let img = document.getElementById("" + i); 
-        img.src = "img/reverso.png"; 
+        let img = document.getElementById("" + i);
+        img.src = "img/reverso.png";
     }
 }
 
@@ -96,9 +96,8 @@ function barajarArray(array) {
     return array;
 }
 function comprobarGanador(i) {
-    console.log(i);
+
     if (i == 15) {
-        console.log("estoy")
         if (puntuacio1 > puntuacio2) {
             alert("Has resultado ganador, " + nombreJugador1 + " Felicidades, eres un maquina")
         } else if (puntuacio2 > puntuacio1) {
@@ -106,7 +105,9 @@ function comprobarGanador(i) {
         } else {
             alert("Increible, habeis empatado, Felicidades " + nombreJugador2 + " y " + nombreJugador1)
         }
-        nuevaPartida()
+        setTimeout(() => {
+            nuevaPartida()
+        }, 3000);
     }
 }
 
@@ -117,11 +118,11 @@ function pedirJugadores() {
     document.getElementById("jug2").innerHTML = "Jugador 2: " + nombreJugador2;
 }
 function barajar() {
-    let parejasMezcladas = barajarArray(doblesparejas);
-
     for (let i = 1; i <= 30; i++) {
-        let img = document.getElementById("" + i); 
-        img.src = "img/" + parejasMezcladas[i - 1]; 
+        let img = document.getElementById("" + i);
+        img.src = "img/" + parejasMezcladas[i - 1];
     }
-    comprobarGanador(15);
-}
+    setTimeout(() => {
+        comprobarGanador(15);
+    }, 2000);
+}    
