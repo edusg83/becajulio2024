@@ -13,18 +13,15 @@
 </head>
 <!-- Indica el cuerpo del documento html. Donde estará toda el contenido del documento-->
 <body>
-    <div id="demo">
-
+    <div id="demo" style="background-color:red;">
+        <p style="color:white;">Texto demo con fondo rojo</p>
     </div>
     
    <script>
   
-       try{
-        aleeeert("Hola");
-       }
-       catch(err){
-        document.getElementById("demo").innerHTML=err.message;
-       }
+      let capa= document.getElementById("demo");
+      console.log(capa);
+      capa.style.backgroundColor="#ffffff";
    
    </script>
 
