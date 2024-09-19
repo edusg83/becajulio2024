@@ -38,5 +38,5 @@ function asignValue() {
 function toggleEffect(param) {
   let button = document.getElementById(param);
   button.classList.toggle("test");
-  button.children[0].classList.toggle("test2");
+  button.children[0].classList.toggle("opacity-100");
 }

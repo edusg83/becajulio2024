@@ -46,7 +46,7 @@ main {
     height: 120px;
     transition: 0.5s ease-in-out;
     position: relative !important;
-    z-index: 5 !important;
+    z-index: 2 !important;
 }
 
 #game_section article:nth-child(odd) button:nth-child(even) {
@@ -101,12 +101,4 @@ footer p:hover {
     background-size: cover;
     background-position: center;
     transition: 0.4s ease-in-out;
-    position: absolute !important;
-    z-index: 1 !important;
-}
-
-
-.test2 {
-    border: solid red;
-    transform: rotate3d(0, 1, 0, 180deg);
 }
