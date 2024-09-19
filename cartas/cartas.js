@@ -24,16 +24,21 @@
     dadoInicio();
 
     const tablero = document.getElementById('tablero');
-    barajarCartas.forEach((contenido, index) => {
+
+    for (let i = 0; i < barajarCartas.length; i++) {
         const carta = document.createElement('div');
         carta.classList.add('card');
-        carta.dataset.value = contenido;
-        carta.dataset.index = index;
-        
-        carta.innerHTML = `<img src='animales/${contenido}' alt='Card Image'>`;
-        carta.addEventListener('click', () => voltearCarta(carta));
+        carta.dataset.value = barajarCartas[i];
+        carta.dataset.index = i;
+        const img = document.createElement('img');
+        img.src = 'animales/' + barajarCartas[i];
+        img.alt = 'Card Image'; 
+        carta.appendChild(img);
+        carta.addEventListener('click', function() {
+            voltearCarta(carta);
+        });
         tablero.appendChild(carta);
-    });
+    }
 
     function dadoInicio() {
         let tirada1 = Math.floor(Math.random() * 6) + 1;
@@ -65,43 +70,38 @@
 
     function voltearCarta(cardElement) {
         if (tableroBloqueado || cardElement.classList.contains('flip')) return;
-
         cardElement.classList.add('flip');
-
         if (!primeraCarta) {
             primeraCarta = cardElement;
             return;
         }
-
         segundaCarta = cardElement;
         tableroBloqueado = true;
-
         revisaPareja();
     }
 
-    function revisaPareja() {
-        if (primeraCarta.dataset.value === segundaCarta.dataset.value) {
-            acualizaPuntuacion();
-            reiniciarTablero(true);
-        } else {
-            setTimeout(() => {
-                primeraCarta.classList.remove('flip');
-                segundaCarta.classList.remove('flip');
-                cambiarJugador();
-                reiniciarTablero(false);
-            }, 1000);
-        }
+  function revisaPareja() {
+    if (primeraCarta.dataset.value === segundaCarta.dataset.value) {
+        acualizaPuntuacion();
+        reiniciarTablero(true);
+    } else {
+        setTimeout(function() {
+            primeraCarta.classList.remove('flip');
+            segundaCarta.classList.remove('flip');
+            cambiarJugador();
+            reiniciarTablero(false);
+        }, 1000);
     }
+}
 
     function acualizaPuntuacion() {
         if (jugadorActual === jugador1) {
             puntuaJugUno++;
-            document.getElementById('player1-score').innerText = `${jugador1}: ${puntuaJugUno} puntos`;
+            document.getElementById('puntuacion-jug1').innerText = `${jugador1}: ${puntuaJugUno} puntos`;
         } else {
             puntuaJugDos++;
-            document.getElementById('player2-score').innerText = `${jugador2}: ${puntuaJugDos} puntos`;
+            document.getElementById('puntuacion-jug2').innerText = `${jugador2}: ${puntuaJugDos} puntos`;
         }
-
         if (puntuaJugUno + puntuaJugDos === cartas.length / 2) {
             setTimeout(() => {
                 if(puntuaJugUno > puntuaJugDos){
