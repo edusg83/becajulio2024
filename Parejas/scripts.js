@@ -1,4 +1,6 @@
-let ArrayCards = Array.from(document.getElementsByClassName("card"));
+let cards = document.getElementsByClassName("card");
+
+let arrayCards = Array.from(document.getElementsByClassName("card"));
 
 const imagenes = [
   "/Parejas/resources/Squirtle.jpg",
@@ -11,6 +13,8 @@ const imagenes = [
   "/Parejas/resources/Charmander.jpg",
 ];
 
+let test = new Map();
+
 // Hacer un mapa donde guarde key y url
 
 // Asignar la key de forma aleatoria con cada partida
@@ -20,13 +24,19 @@ function randomGenerator() {
 }
 
 function asignValue() {
-  ArrayCards.forEach((element) => {
+  arrayCards.forEach((element) => {
     element.value = randomGenerator();
-    console.log(element.value);
   });
 }
+
+// function assignImage() {
+//   cards.forEach((element) => {
+//     element.
+//   });
+// }
 
 function toggleEffect(param) {
   let button = document.getElementById(param);
   button.classList.toggle("test");
+  button.children[0].classList.toggle("test2");
 }
