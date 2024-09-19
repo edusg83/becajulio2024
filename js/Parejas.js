@@ -18,16 +18,22 @@ const cards = [
   { id: 'brook1', imgFront: '../../becajulio2024/images/brook.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
   { id: 'brook2', imgFront: '../../becajulio2024/images/brook.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
   { id: 'jinbe1', imgFront: '../../becajulio2024/images/jinbe.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
-  { id: 'jinbe2', imgFront: '../../becajulio2024/images/jinbe.jpg', imgBack: '../../becajulio2024/images/back.jpg' }
+  { id: 'jinbe2', imgFront: '../../becajulio2024/images/jinbe.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
+  { id: 'vivi1', imgFront: '../../becajulio2024/images/vivi.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
+  { id: 'vivi2', imgFront: '../../becajulio2024/images/vivi.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
+  { id: 'yamato1', imgFront: '../../becajulio2024/images/yamato.jpg', imgBack: '../../becajulio2024/images/back.jpg' },
+  { id: 'yamato2', imgFront: '../../becajulio2024/images/yamato.jpg', imgBack: '../../becajulio2024/images/back.jpg' }
 ];
 
-const maxPoints = 10;
+const maxPoints = 12;
 let flippedCards = [];
 let resolvedCards = [];
 let currentPlayer = 1;
 let player1Points = 0;
 let player2Points = 0;
 let totalPoints = 0;
+let player1; 
+let player2; 
 
 //Mostrar modal
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,8 +49,8 @@ function startGame() {
   document.getElementById('playersForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let player1 = document.getElementById('inputPlayer1Name').value;
-    let player2 = document.getElementById('inputPlayer2Name').value;
+    player1 = document.getElementById('inputPlayer1Name').value;
+    player2 = document.getElementById('inputPlayer2Name').value;
     document.getElementById('playerName1').innerHTML = player1;
     document.getElementById('playerName2').innerHTML = player2;
     document.getElementById('playerPoints1').innerHTML = player1Points;
@@ -221,15 +227,15 @@ function showWinnerModal() {
   winnerModal.show();
   if (player1Points > player2Points) {
     document.getElementById('winner').innerHTML = player1;
-    document.getElementById('winnerPoints').innerHTML = player1Points;
+    document.getElementById('winnerPoints').innerHTML = "Con " + player1Points + " puntos!" ;
   } else if (player1Points < player2Points) {
     document.getElementById('winner').innerHTML = player2;
-    document.getElementById('winnerPoints').innerHTML = player2Points;
+    document.getElementById('winnerPoints').innerHTML = "Con " + player2Points + " puntos!" ;
   } else {
     document.getElementById('winner').innerHTML = "Empate!";
   }
 
-  myModal.hide();
+  winnerModal.hide();
 
 }
 
@@ -241,7 +247,10 @@ function resetGame() {
   player1Points = 0;
   player2Points = 0;
   totalPoints = 0;
+  document.getElementById('winner').innerHTML = "";
+  document.getElementById('winnerPoints').innerHTML = "" ;
   startGame();
+  changeTurnVisual(); 
   console.log(player1Points, player2Points);
 
 }

@@ -159,3 +159,17 @@ console.log(navigator.webdriver + ": navigator.webdriver");
 
   
 
+//Ejercicio 17
+
+location.pathname = 'alpha'; 
+
+
+//Ejercicio 18
+
+let method1 = document.getElementsByTagName('header'); 
+let method2 = document.getElementById('header'); 
+let method3 = document.querySelector('#header'); 
+
+console.log(method1); 
+console.log(method2); 
+console.log(method3); 
