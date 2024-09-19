@@ -46,22 +46,19 @@ function barajarCartas() {
 }
 
 function crearTablero() {
-    let container = document.getElementById('imagenesContainer');
-    container.innerHTML = ''; 
+    const contenedor = document.getElementById('imagenesContainer');
+    const columnas = contenedor.getElementsByClassName('col-2');
 
-    cartasDesordenadas.forEach((animal) => {
-        let carta = document.createElement('div');
-        carta.classList.add('col-2', 'mb-3');
-        carta.innerHTML = `
-            <div class="carta">
-                <div class="contenido-carta" onclick="girarCarta(this)" data-animal="${animal}">
-                    <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
-                    <img src="${animal}" class="frente img-fluid" alt="${animal}">
-                </div>
-            </div>
-        `;
-        container.appendChild(carta);
-    });
+    for (let i = 0; i < cartasDesordenadas.length; i++) {
+        const animal = cartasDesordenadas[i];
+        const columna = columnas[i];
+        const contenidoCarta = columna.querySelector('.contenido-carta');
+        
+        if (contenidoCarta) {
+            contenidoCarta.setAttribute('data-animal', animal);
+            contenidoCarta.querySelector('.frente').setAttribute('src', animal);
+        }
+    }
 }
 
 function girarCarta(elemento) {
