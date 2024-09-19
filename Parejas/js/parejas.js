@@ -1,6 +1,7 @@
 let eleccion1 = null;
 let eleccion2 = null;
 const imagenes = ["img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/Eevee.png", "img/Pikachu.png", "img/Vulpix.png", "img/Caterpie.png", "img/Seel.png", "img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/Eevee.png", "img/Pikachu.png", "img/Vulpix.png", "img/Caterpie.png", "img/Seel.png"];
+let turnoActual = 1;
 
 barajarArray(imagenes);
 
@@ -60,6 +61,10 @@ function comprobarEleccion(carta1, carta2) {
         setTimeout(() => {
             resetEstilos(carta1, carta2)
         }, 1000);
+
+        if(turnoActual === 1){
+
+        }
     }
 }
 
@@ -76,4 +81,8 @@ function resetEstilos(carta1, carta2) {
     carta1.style.borderColor = 'black';
     carta2.style.borderColor = 'black';
     resetElecciones();
+}
+
+function turnos(){
+    turnoActual = 2;
 }
