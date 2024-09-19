@@ -20,6 +20,7 @@
             display: block;
         }
         .card{
+           height: fit-content;
            
 
         }
@@ -36,7 +37,7 @@
         }
 
         #card-container{
-            width: 60%;
+            width: 50%;
             margin: 1rem;
             padding: 1rem;
             
@@ -48,49 +49,89 @@
             padding: 1rem;
             background-color: aqua;
         }
+
+        .player1turn{
+            border: 3px solid rgb(0, 26, 255); 
+            -webkit-box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
+            -moz-box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
+            box-shadow: -1px 2px 41px -3px rgba(148, 159, 250, 1);
+        }
+
+        .player2turn{ 
+            border: 3px solid rgb(255, 0, 0); 
+            -webkit-box-shadow: -1px 2px 41px -3px rgba(250, 142, 142, 1);
+            -moz-box-shadow: -1px 2px 41px -3px  rgba(250, 142, 142, 1);
+            box-shadow: -1px 2px 41px -3px  rgba(250, 142, 142, 1);
+        }
         </style>
     </head>
     <body>
-        <div class="modal-dialog modal-dialog-centered">
-            <form>
-                <div class="mb-3">
-                  <label for="player1" class="form-label">Jugador 1</label>
-                  <input type="text" class="form-control" id="player1Name" >
+        <!--Modal para establecer los jugadores-->
+        <div class="modal fade" id="modalSetPlayers" tabindex="-1" aria-labelledby="modalSetPlayersLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalSetPlayersLabel">Ingresa los nombres de los jugadores</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                  <label for="player2" class="form-label">Jugador 2</label>
-                  <input type="text" class="form-control" id="player2Name">
+                <div class="modal-body">
+                  <form id="playersForm">
+                    <div class="mb-3">
+                      <label for="player1Name" class="form-label">Jugador 1</label>
+                      <input type="text" class="form-control" id="inputPlayer1Name" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="player2Name" class="form-label">Jugador 2</label>
+                      <input type="text" class="form-control" id="inputPlayer2Name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Empezar la partida!</button>
+                  </form>
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+              </div>
+            </div>
           </div>
-        <div class="container-fluid m-5 p-5">
+        <!--Fin del modal-->      
+        <!--Modal ganador-->
+           <div class="modal fade" id="modalWinner" tabindex="-1" aria-labelledby="modalWinnerLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalWinnerLabel">El ganador es: </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h1 id="winner"></h1>
+                  <h2 id="winnerPoints"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Fin del modal-->     
+        <div class="container-fluid m-5 p-5 text-center">
           <h1>Encuentra las parejas</h1>
-          <h2 id="playerTurn">Turno del jugador: </h2>
-          <h3 id="playerScore">Aciertos:</h3>
+          <h2 id="playerTurn">Turno del jugador: 1</h2>
           <div class="container-fluid d-flex justify-content-center align-items-center">
-           <div class="row">
-            <div id="player2" class="player">
-                <h4></h4>
-                <h5>Puntos: </h5>
-            </div>
-           </div>
-            <div class="row" id="card-container">       
-            </div>
-            <div class="row">
-                <div id="player1" class="player">
-                    <h4></h4>
-                    <h5>Puntos: </h5>
-                </div>      
+           <div class="card" style="width: 18rem;" id="player1Card">
+            <div class="card-body">
+              <h5 class="card-title" id="playerName1"></h5>
+              <h6 class="card-subtitle mb-2 text-muted">Jugador 1</h6>
+              <p class="card-text" id="playerPoints1"></p>
             </div>
           </div>
-          <div class="row">
+            <div  id="card-container" class="row g-3 justify-content-center">       
+                <!--aqui se cargan las cartas desde-->
+            </div>
+            <div class="card" style="width: 18rem;" id="player2Card">
+                <div class="card-body">
+                  <h5 class="card-title" id="playerName2"></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Jugador 2</h6>
+                  <p class="card-text" id="playerPoints2"></p>
+                </div>
+              </div>
+          </div>
+          <div class="">
             <div class="col">
-                <button onclick="resetGame()">Volver a jugar</button>
+                <button onclick="resetGame()" class="btn btn-primary">Volver a jugar</button>
             </div>
           </div>
         </div>
