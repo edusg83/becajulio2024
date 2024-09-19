@@ -30,7 +30,7 @@ let turno = 0;
     const img = document.createElement("img");
     img.src = "";
     img.className = "imagen";
-    img.setAttribute("hidden", true);
+    // img.setAttribute("hidden", true);
   
     const casilla = document.createElement("div");
       casilla.className = "casilla";
@@ -78,8 +78,7 @@ function bloquearTablero(opcion) {
 }
 
 function seleccionarCasilla(id) {
-  getFondo(id).hidden = true;
-  getImg(id).hidden = false;
+  $casillas[id].className += " flip"
   
   cartasJugadas.push(id);
   
@@ -117,10 +116,12 @@ function comprobarPareja() {
 }
 
 function ocultarPareja() {
-  getFondo(cartasJugadas[0]).hidden = false;
-  getFondo(cartasJugadas[1]).hidden = false;
-  getImg(cartasJugadas[0]).hidden = true;
-  getImg(cartasJugadas[1]).hidden = true;
+  $casillas[cartasJugadas[0]].className = "casilla";
+  $casillas[cartasJugadas[1]].className = "casilla";
+  // getFondo(cartasJugadas[0]).hidden = false;
+  // getFondo(cartasJugadas[1]).hidden = false;
+  // getImg(cartasJugadas[0]).hidden = true;
+  // getImg(cartasJugadas[1]).hidden = true;
 }
 
 function fijarPareja() {
