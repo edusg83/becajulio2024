@@ -3,11 +3,11 @@
     border-radius: 10px;
 }
 
-.imagen.oculta {
+.imagen-oculta {
     display: block;
 }
 
-.imagen.correcta {
+.imagen-correcta {
     display: none;
 }
 
