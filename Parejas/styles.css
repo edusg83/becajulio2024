@@ -47,30 +47,29 @@ main {
     transition: 0.5s ease-in-out;
 }
 
-#game_section button:nth-child(even) {
+#game_section article:nth-child(odd) button:nth-child(even) {
     background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/441/original/water-pokemon-pattern-free-vector.jpg");
     background-size: cover;
-    background-repeat: repeat;
+
 }
 
-#game_section button:nth-child(odd) {
+#game_section article:nth-child(odd) button:nth-child(odd) {
     background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/435/original/grass-pokemon-pattern-free-vector.jpg");
     background-size: cover;
-    background-repeat: repeat;
+}
+
+#game_section article:nth-child(even) button:nth-child(even) {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/435/original/grass-pokemon-pattern-free-vector.jpg");
+    background-size: cover;
+}
+
+#game_section article:nth-child(even) button:nth-child(odd) {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/014/022/441/original/water-pokemon-pattern-free-vector.jpg");
+    background-size: cover;
 }
 
 #game_section button:hover {
     scale: 1.05;
-}
-
-.test {
-    max-width: 80px;
-    height: 120px;
-    transition: 0.5s ease-in-out;
-    background-image: url("https://i.pinimg.com/originals/fd/02/b1/fd02b1ce65cb308730f390ec460d9112.png") !important;
-    background-size: cover;
-    background-repeat: repeat;
-    border: solid red;
 }
 
 footer p:hover {
@@ -85,4 +84,17 @@ footer p:hover {
     to {
         transform: rotate(1turn);
     }
+}
+
+.test {
+    transform: rotate3d(0, 1, 0, 180deg);
+    background-image: url("/Parejas/resources/Squirtle.jpg") !important;
+    background-size: cover;
+    background-position: center;
+}
+
+#game_section button img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }

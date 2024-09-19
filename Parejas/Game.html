@@ -23,12 +23,13 @@
 
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
         <button class="w-50 border-0 mt-2">Nueva Partida!</button>
-        <input class="w-50 border-0 mb-2" type="text" value="" readonly>
+        <input class="w-50 border-0 mb-2 text-center" type="text" value="Turno del jugador x!" readonly>
     </header>
 
     <main class="d-flex flex-row py-5">
 
-        <section class="col-3 align-self-center d-flex flex-column align-items-center border container player_card">
+        <section
+            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column  align-items-center border-bottom">
                 <input type="text" class="border-0" readonly>
                 <label for="text">Aciertos</label>
@@ -40,7 +41,9 @@
 
         <section class="col-6" id="game_section">
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR1C1" class="col card" value="" onclick="toggleEffect(this.id)"></button>
+                <button id="cardR1C1" class="col card" value="" onclick="toggleEffect(this.id)">
+                    <div class="container-fluid"></div>
+                </button>
                 <button id="cardR1C2" class="col card" value="" onclick="toggleEffect(this.id)"></button>
                 <button id="cardR1C3" class="col card" value="" onclick="toggleEffect(this.id)"></button>
                 <button id="cardR1C4" class="col card" value="" onclick="toggleEffect(this.id)"></button>
@@ -65,7 +68,8 @@
             </article>
         </section>
 
-        <section class="col-3 align-self-center d-flex flex-column align-items-center border container player_card">
+        <section
+            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
             <div class="d-flex flex-column align-items-center border-bottom">
                 <input type="text" class="border-0" readonly>
                 <label for="text">Aciertos</label>

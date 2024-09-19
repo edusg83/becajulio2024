@@ -1,5 +1,16 @@
 let ArrayCards = Array.from(document.getElementsByClassName("card"));
 
+const imagenes = [
+  "/Parejas/resources/Squirtle.jpg",
+  "/Parejas/resources/Pikachu.jpg",
+  "/Parejas/resources/Eevee.jpg",
+  "/Parejas/resources/Togepi.jpg",
+  "/Parejas/resources/Jigglypuff.jpg",
+  "/Parejas/resources/Bulbasaur.jpg",
+  "/Parejas/resources/Psyduck.jpg",
+  "/Parejas/resources/Charmander.jpg",
+];
+
 // Hacer un mapa donde guarde key y url
 
 // Asignar la key de forma aleatoria con cada partida
@@ -17,7 +28,5 @@ function asignValue() {
 
 function toggleEffect(param) {
   let button = document.getElementById(param);
-  console.log(button.classList);
   button.classList.toggle("test");
-  console.log(button.classList);
 }
