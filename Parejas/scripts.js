@@ -11,7 +11,13 @@ const imagenes = [
   "/Parejas/resources/Charmander.jpg",
 ];
 
-// let test = new Map();
+let test = new Map();
+
+for (let i = 0; i < imagenes.length; i++) {
+  test.set(imagenes[i], 0);
+}
+
+console.log(test);
 
 // Hacer un mapa donde guarde key y url
 
@@ -33,10 +39,15 @@ function randomGenerator() {
 
 function assignImage() {
   cards.forEach(function (card) {
-    card.children[0].style.backgroundImage = `url(${
-      imagenes[randomGenerator()]
-    })`;
-    console.log(card.children[0].style.backgroundImage);
+    let index = randomGenerator();
+
+    while (test.get(index) == 2) {
+      index = randomGenerator();
+    }
+
+    card.children[0].style.backgroundImage = `url(${imagenes[index]})`;
+
+    test.set(index, test.get(index) + 1);
   });
 }
 
