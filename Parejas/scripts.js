@@ -1,6 +1,4 @@
-let cards = document.getElementsByClassName("card");
-
-let arrayCards = Array.from(document.getElementsByClassName("card"));
+let cards = Array.from(document.getElementsByClassName("card"));
 
 const imagenes = [
   "/Parejas/resources/Squirtle.jpg",
@@ -20,20 +18,21 @@ let test = new Map();
 // Asignar la key de forma aleatoria con cada partida
 
 function randomGenerator() {
-  return Math.floor(Math.random() * 8 + 1);
+  return Math.floor(Math.random() * 9);
 }
 
 function asignValue() {
-  arrayCards.forEach((element) => {
+  cards.forEach((element) => {
     element.value = randomGenerator();
   });
 }
 
-// function assignImage() {
-//   cards.forEach((element) => {
-//     element.
-//   });
-// }
+function assignImage() {
+  cards.forEach(function (card) {
+    element.children[0].style.BackgroundImage(imagenes[randomGenerator]);
+    console.log[element.children[0]];
+  });
+}
 
 function toggleEffect(param) {
   let button = document.getElementById(param);
