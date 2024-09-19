@@ -227,21 +227,23 @@ function showWinnerModal() {
     keyboard: false
   });
   winnerModal.show();
+  showWinner();
+  winnerModal.hide();
+}
+
+function showWinner() {
   if (player1Points > player2Points) {
     document.getElementById('winner').innerHTML = player1;
-    document.getElementById('winnerPoints').innerHTML = "Con " + player1Points + " puntos!" ;
-    document.getElementById('winnerImg').src = "../images/youwin.jpg"; 
+    document.getElementById('winnerPoints').innerHTML = "Con " + player1Points + " puntos!";
+    document.getElementById('winnerImg').src = "../images/youwin.jpg";
   } else if (player1Points < player2Points) {
     document.getElementById('winner').innerHTML = player2;
-    document.getElementById('winnerPoints').innerHTML = "Con " + player2Points + " puntos!" ;
-    document.getElementById('winnerImg').src = "../images/youwin.jpg"; 
+    document.getElementById('winnerPoints').innerHTML = "Con " + player2Points + " puntos!";
+    document.getElementById('winnerImg').src = "../images/youwin.jpg";
   } else {
     document.getElementById('winner').innerHTML = "Empate!";
-    document.getElementById('winnerImg').src = "../images/drawgame.jpg"; 
+    document.getElementById('winnerImg').src = "../images/drawgame.jpg";
   }
-
-  winnerModal.hide();
-
 }
 
 function resetGame() {
