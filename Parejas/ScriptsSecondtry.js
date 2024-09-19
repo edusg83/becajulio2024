@@ -15,6 +15,8 @@ const imageMap = new Map();
 
 const valueMap = new Map();
 
+const cardSet = new Set();
+
 let cardValue1 = null;
 
 let cardValue2 = null;
@@ -31,7 +33,9 @@ function storeCardValue(cardValue, idCard) {
     return;
   }
 
-  const card = document.getElementById(id);
+  const card = document.getElementById(idCard);
+
+  cardSet.add(card);
 
   if (cardValue1 == null) {
     cardValue1 = cardValue;
@@ -47,6 +51,8 @@ function checkCards() {
   } else {
     //Action..
   }
+
+  cardArray = null;
 }
 
 function assignValue() {
@@ -83,4 +89,21 @@ function assignImage() {
 
 function randomGenerator() {
   return Math.floor(Math.random() * imagenes.length);
+}
+
+function flipCard() {}
+
+function flipBack() {
+  cardSet.forEach((card) => {
+    card.classList.remove("rotateEffect");
+    card.children[0].remove("p-100");
+  });
+
+  reset();
+}
+
+function reset() {
+  cardValue1 = null;
+  cardValue1 = null;
+  lock = false;
 }
