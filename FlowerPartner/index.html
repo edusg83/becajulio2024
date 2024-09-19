@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="esp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/flores.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <title>Flower Partners</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/flowerPartner.css">
+    <script src="js/flowerPartner.js"></script>
+
+</head>
+
+<body>
+    <!-- Modal para introducir los nombres de los jugadores -->
+<div class="modal fade" id="modalNombres" tabindex="-1" aria-labelledby="modalNombresLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNombresLabel">Introduce los nombres de los jugadores</h5>
+        </div>
+        <div class="modal-body">
+          <form id="formNombres">
+            <div class="mb-3">
+              <label for="jugador1" class="form-label">Jugador 1</label>
+              <input type="text" class="form-control" id="jugador1" required>
+            </div>
+            <div class="mb-3">
+              <label for="jugador2" class="form-label">Jugador 2</label>
+              <input type="text" class="form-control" id="jugador2" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="guardarNombres">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <header>
+        <h1>Flower Partners</h1>
+    </header>
+
+    <main>
+        <section id="contador-turno">
+            <p id="turno-actual">Turno de</p>
+        </section>
+
+        <section id="tablero-juego-container">
+            <div class="row" id="tablero-juego">
+              <div class="col-2"><button id="carta1" class="btn" onclick="descubrirCarta('carta1')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta2" class="btn" onclick="descubrirCarta('carta2')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta3" class="btn" onclick="descubrirCarta('carta3')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta4" class="btn" onclick="descubrirCarta('carta4')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta5" class="btn" onclick="descubrirCarta('carta5')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta6" class="btn" onclick="descubrirCarta('carta6')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+
+              <div class="col-2"><button id="carta7" class="btn" onclick="descubrirCarta('carta7')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta8" class="btn" onclick="descubrirCarta('carta8')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta9" class="btn" onclick="descubrirCarta('carta9')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta10" class="btn" onclick="descubrirCarta('carta10')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta11" class="btn" onclick="descubrirCarta('carta11')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+              <div class="col-2"><button id="carta12" class="btn" onclick="descubrirCarta('carta12')"><img src="img/carta-vuelta.png" alt="carta"></button></div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Juego de cartas maldito, pero todo bien</p>
+    </footer>
+</body>
+
+</html>

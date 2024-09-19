@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(background.png);
+}
+
+header{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+    margin-top: 30px;
+    background-color: #FFF9D0 ;
+    border-radius: 20px;
+    border: 3px solid #b3ae94;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+
+ h1{
+    font-family: "Dancing Script";
+    font-size: 5em;
+    color: #A0DEFF;
+    
+}
+
+
+
+section#tablero-juego-container{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+    padding: 40px;
+    background-color: #fff9d09f ;
+    border-radius: 20px;
+    width: 60%;
+}
+
+section#tablero-juego-container button{
+    background-image: url(background3.jpg) ;
+    border: 2px solid #105b9c;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 150px;
+
+}
+
+div#tablero-juego img{
+    width: 100px;
+}
+
+footer{
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #105b9c;
+}
