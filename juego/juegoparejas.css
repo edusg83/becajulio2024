@@ -1,3 +1,10 @@
+body {
+    background-image: url(../imagesparejas/TIPOS-DE-LENGUAJE-DE-PROGRAMACIÓN.jpg);
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+}
+
 button {
     width: 120px;
     height: 100px;
@@ -27,9 +34,21 @@ img {
 }
 
 #colJugador1, #colJugador2 {
-    height: 250px;
+    height: 100px;
+    background-color: lightblue;
+    color: white;
+}
+
+.salto {
+    color: rgb(65, 77, 128);
 }
 
 #colJugador1, #colJugador2, #colCartas {
     border-radius: 5px;
+}
+
+#reiniciar {
+    background-image: none;
+    width: 7%;
+    height: 3%;
 }

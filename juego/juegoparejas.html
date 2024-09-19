@@ -9,24 +9,24 @@
     <title>Par Code</title>
 </head>
 <body>
-    <header class="container-fluid text-center fs-2" style="background-color: black; color: white;">
+    <header class="container-fluid text-center fs-2" style="background-color: rgb(65, 77, 128); color: white;">
         <p id="p-header">
             Turno de 
         </p>
+        <button type="button" class="btn btn-warning" id="reiniciar" onclick="iniciarJuego()">Iniciar juego</button>
     </header>
     <main class="container-fluid mt-5">
         <div class="row justify-content-center">
-            <div class="col-2 text-center m-1" style="border: 1px solid black;" id="colJugador1">
+            <div class="col-2 text-center m-1" style="border: 3px solid rgb(65, 77, 128);" id="colJugador1">
                 <p class="text-center" id="p-body-1">
                     
                 </p>
-                <hr>
+                <hr class="salto">
                 <p id="resultado1">
 
                 </p>
             </div>
             <div class="col-6 text-center m-1"  id="colCartas">
-                <h2>Par Code</h2>
                 <div>
                     <button id="button1"><img id="imagen1"></button>
                     <button id="button2"><img id="imagen2"></button>
@@ -52,21 +52,21 @@
                     <button id="button16"><img id="imagen16"></button>
                 </div>
             </div>
-            <div class="col-2 text-center m-1" style="border: 1px solid black;" id="colJugador1">
+            <div class="col-2 text-center m-1" style="border: 3px solid rgb(65, 77, 128);" id="colJugador1">
                 <p class="text-center" id="p-body-2">
                 </p>
-                <hr>
+                <hr class="salto">
                 <p id="resultado2">
 
                 </p>
             </div>
         </div>
     </main>
-    <footer class="container-fluid text-center">
+    <!-- <footer class="container-fluid text-center">
         <div class="col-12" style="background-color: black;">
                 Desarrollado
         </div>
-    </footer>
+    </footer> -->
     <script src="juegoparejas.js"></script>
 </body>
 </html>
