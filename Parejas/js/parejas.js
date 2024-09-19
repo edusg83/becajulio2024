@@ -1,7 +1,7 @@
 let eleccion1 = null;
 let eleccion2 = null;
 const imagenes = ["img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/Eevee.png", "img/Pikachu.png", "img/Vulpix.png", "img/Caterpie.png", "img/Seel.png", "img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/Eevee.png", "img/Pikachu.png", "img/Vulpix.png", "img/Caterpie.png", "img/Seel.png"]
-
+const imagenRandom = shuffe(imagenes);
 asignarImagenes(imagenes);
 
 function asignarImagenes(imagenesRandom) {
@@ -9,6 +9,7 @@ function asignarImagenes(imagenesRandom) {
     cartas.forEach((tarjeta, index) => {
         if (index < imagenesRandom.length) {
             let imagenCorrecta = tarjeta.querySelector(".imagen.correcta");
+
             if (imagenCorrecta) {
                 imagenCorrecta.src = imagenesRandom[index];
             }

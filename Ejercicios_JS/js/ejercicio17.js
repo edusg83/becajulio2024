@@ -1,9 +1,15 @@
-// a) Solicitar por pantalla un valor y guardarlo en una variable llamada nombre , mostrar el valor introducido por console.log. El
-// mensaje que tiene que aparecer al pedir el nombre es ‘Introduzca el nombre :’
-let nombre = prompt("Introduzca el nombre :");
-console.log(nombre);
+//url = "http://127.0.0.1:3000/Ejercicios_JS/ejercicio.html?alfa=beta&delta=gammal";
 
-// a) Solicitar por pantalla una confirmación y guardarlo en una variable llamada continuar , mostrar el valor por console.log. El
-// mensaje que tiene que aparecer al pedir la confirmación es, ‘¿Desea continuar?’
-let continuar = confirm("¿Desea continuar?")
-console.log(continuar);
+// let parametros = "?alfa=beta&delta=gammal";
+// let arrayParam = parametros.split('&');
+
+// let alfa = arrayParam[0].split('=')[1];
+// let delta = arrayParam[1].split('=')[1];
+
+// document.write("Alfa: " + alfa  + " Delta: " + delta);
+
+let params = new URLSearchParams(location.search);
+let alfa = params.get('alfa');
+let delta = params.get('delta');
+
+document.write("Alfa: " + alfa  + " Delta: " + delta);
