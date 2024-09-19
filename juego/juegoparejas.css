@@ -1,0 +1,35 @@
+button {
+    width: 120px;
+    height: 100px;
+    margin: 3px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-image: url('../imagesparejas/interrogation-mark.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+
+button:active {
+    background-color: lightgrey;
+    transform: scale(0.95);
+}
+
+img {
+    width: 120px;
+    height: 100px;
+    border-radius: 5px;
+    margin: -12px;
+    border: 1px solid gray;
+    
+}
+
+#colJugador1, #colJugador2 {
+    height: 250px;
+}
+
+#colJugador1, #colJugador2, #colCartas {
+    border-radius: 5px;
+}
