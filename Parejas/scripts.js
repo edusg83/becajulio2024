@@ -11,26 +11,32 @@ const imagenes = [
   "/Parejas/resources/Charmander.jpg",
 ];
 
-let test = new Map();
+// let test = new Map();
 
 // Hacer un mapa donde guarde key y url
 
 // Asignar la key de forma aleatoria con cada partida
 
 function randomGenerator() {
-  return Math.floor(Math.random() * 9);
+  let ranNum;
+
+  ranNum = Math.floor(Math.random() * imagenes.length);
+
+  return ranNum;
 }
 
-function asignValue() {
-  cards.forEach((element) => {
-    element.value = randomGenerator();
-  });
-}
+// function asignValue() {
+//   cards.forEach((element) => {
+//     element.value = randomGenerator();
+//   });
+// }
 
 function assignImage() {
   cards.forEach(function (card) {
-    element.children[0].style.BackgroundImage(imagenes[randomGenerator]);
-    console.log[element.children[0]];
+    card.children[0].style.backgroundImage = `url(${
+      imagenes[randomGenerator()]
+    })`;
+    console.log(card.children[0].style.backgroundImage);
   });
 }
 
