@@ -1,6 +1,6 @@
-var numero1 = "";
-var numero2 = "";
-var numeroM = "";
+var numero1 = 0;
+var numero2 = 0;
+var numeroM = 0;
 var operador = "";
 var pantalla = document.getElementById("pantalla");
 
@@ -11,7 +11,10 @@ function funcionC(){
 }
 
 function funcionMmas(){
-    numeroM += (pantalla.value);
+
+
+    numeroM += parseFloat(pantalla.value);
+
     pantalla.value = "Guardado";
     
 }
@@ -23,7 +26,7 @@ function funcionMC(){
 
 function funcionMR() {
     pantalla.value = numeroM;
-    numero1 = numeroM;
+    numero1 = "";
     numero2 = "";
     operador = "";
 
@@ -47,6 +50,9 @@ function seleccionarOperador(op) {
 
 
 function calcular() {
+    
+    num1 = parseFloat(numero1);
+    num2 = parseFloat(numero2);
 
     if (isNaN(numero1) || isNaN(numero2)) {
         pantalla.value = "Error";
@@ -56,20 +62,20 @@ function calcular() {
     let resultado;
     switch (operador) {
         case "+":
-            resultado = numero1 + numero2;
+            resultado = num1 + num2;
             break;
         case "-":
-            resultado =numero1 - numero2;
+            resultado =num1 - num2;
             break;
         case "x":
-            resultado = numero1 * numero2;
+            resultado = num1 * num2;
             break;
         case "%":
-            if (numero2 === 0) {
+            if (num2 === 0) {
                 pantalla.value = "Error";
                 return;
             }
-            resultado = numero1 / numero2;
+            resultado = num1 / num2;
             break;
         default:
             return;

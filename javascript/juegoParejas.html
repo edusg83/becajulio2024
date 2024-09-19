@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="description" content="Curso HTML5 EOI">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Juego de Parejas</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="juegosParejas.css">
+    <script src="juegoParejas.js" defer></script>
+    <link rel="icon" href="https://media.istockphoto.com/id/1324893210/es/foto/cachorro-bulldog-franc%C3%A9s-sobre-fondo-blanco.jpg?s=2048x2048&w=is&k=20&c=pZ6ojhCCTKoJ1LxkPbXVpB5HBZJq2auTakHzCQeGWvo=" type="image/png" sizes="16x16">
+</head>
+
+<body>
+    <div class="texto" id="texto">
+        <h1>JUEGO <br>ENCUENTRA LAS PAREJAS DE ANIMALES</h1>
+    </div>
+    <div class="textoTurno" >
+        <h1 id="textoTurno"></h1>
+    </div>
+    <div id="resultado"></div>
+    <div class="jugador1">
+        <h1>Aciertos <span id="jugador1"></span></h1>
+        <div id="imagenesJugador1"></div>
+    </div>
+    <div class="jugador2">
+        <h1>Aciertos <span id="jugador2"></span></h1>
+        
+    </div>
+
+    <div class="container" id="imagenesContainer">
+
+        <!-- Primera fila -->
+        <div class="row">
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="perro.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="perro.JPG" class="frente img-fluid" alt="Perro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gallo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gallo.JPG" class="frente img-fluid" alt="Gallo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gato.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gato.JPG" class="frente img-fluid" alt="Gato">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="toro.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="toro.JPG" class="frente img-fluid" alt="Toro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="oveja.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="oveja.JPG" class="frente img-fluid" alt="Oveja">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="cerdo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="cerdo.JPG" class="frente img-fluid" alt="Cerdo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda fila -->
+        <div class="row">
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="perro.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="perro.JPG" class="frente img-fluid" alt="Perro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gallo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gallo.JPG" class="frente img-fluid" alt="Gallo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gato.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gato.JPG" class="frente img-fluid" alt="Gato">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="toro.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="toro.JPG" class="frente img-fluid" alt="Toro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="oveja.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="oveja.JPG" class="frente img-fluid" alt="Oveja">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="cerdo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="cerdo.JPG" class="frente img-fluid" alt="Cerdo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercera fila -->
+        <div class="row">
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="lobo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="lobo.JPG" class="frente img-fluid" alt="Lobo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="chimpance.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="chimpance.JPG" class="frente img-fluid" alt="Chimpancé">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="buitre.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="buitre.JPG" class="frente img-fluid" alt="Buitre">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="leon.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="leon.JPG" class="frente img-fluid" alt="León">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gorila.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gorila.JPG" class="frente img-fluid" alt="Gorila">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="rana.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="rana.JPG" class="frente img-fluid" alt="Rana">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarta fila -->
+        <div class="row">
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="lobo.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="lobo.JPG" class="frente img-fluid" alt="Lobo">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="chimpance.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="chimpance.JPG" class="frente img-fluid" alt="Chimpancé">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="buitre.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="buitre.JPG" class="frente img-fluid" alt="Buitre">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="leon.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="leon.JPG" class="frente img-fluid" alt="León">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="gorila.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="gorila.JPG" class="frente img-fluid" alt="Gorila">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="carta">
+                    <div class="contenido-carta" onclick="girarCarta(this)" data-animal="rana.JPG">
+                        <img src="carta.JPG" class="dorso img-fluid" alt="Dorso de la carta">
+                        <img src="rana.JPG" class="frente img-fluid" alt="Rana">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
