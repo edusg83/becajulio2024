@@ -29,13 +29,19 @@ for (let i = 0; i < imagenes.length; i++) {
 }
 
 function storeCardValue(cardValue, idCard) {
+  const card = document.getElementById(idCard);
+  cardSet.add(card);
+
   if (lock) {
     return;
   }
 
-  const card = document.getElementById(idCard);
+  if (cardValue1 != null && cardSet.values().next().value.id == idCard) {
+    cardSet.delete(card);
+    return;
+  }
 
-  cardSet.add(card);
+  flipCard(idCard);
 
   if (cardValue1 == null) {
     cardValue1 = cardValue;
@@ -91,12 +97,15 @@ function randomGenerator() {
   return Math.floor(Math.random() * imagenes.length);
 }
 
-function flipCard() {}
+function flipCard(idCard) {
+  document.getElementById(idCard).classList.toggle("rotateEffect");
+  document.getElementById(idCard).children[0].classList.toggle("opacity-100");
+}
 
 function flipBack() {
   cardSet.forEach((card) => {
-    card.classList.remove("rotateEffect");
-    card.children[0].remove("p-100");
+    card.classList.toggle("rotateEffect");
+    card.classList.toggle("p-100");
   });
 
   reset();
