@@ -12,6 +12,35 @@ let jugador2;
 
 function iniciarJuego() {
 
+    let botones = `                
+    <div>
+        <button id="button1"><img id="imagen1"></button>
+        <button id="button2"><img id="imagen2"></button>
+        <button id="button3"><img id="imagen3"></button>
+        <button id="button4"><img id="imagen4"></button>
+    </div>
+    <div>
+        <button id="button5"><img id="imagen5"></button>
+        <button id="button6"><img id="imagen6"></button>
+        <button id="button7"><img id="imagen7"></button>
+        <button id="button8"><img id="imagen8"></button>
+    </div>
+    <div>
+        <button id="button9"><img id="imagen9"></button>
+        <button id="button10"><img id="imagen10"></button>
+        <button id="button11"><img id="imagen11"></button>
+        <button id="button12"><img id="imagen12"></button>
+    </div>
+    <div>
+        <button id="button13"><img id="imagen13"></button>
+        <button id="button14"><img id="imagen14"></button>
+        <button id="button15"><img id="imagen15"></button>
+        <button id="button16"><img id="imagen16"></button>
+    </div>`
+
+    document.getElementById("colCartas").innerHTML = botones;
+
+
     jugador1 = "";
     jugador2 = "";
 
@@ -133,6 +162,10 @@ function asignarAcierto() {
         if (puntosJugador1 === puntosJugador2) {
             alert("Empate!");
         } else {
+            setTimeout(function(){
+
+            },1500)
+
             alert("Ha ganado " + nombreGanador + " con " + puntosGanador + " puntos!");
         }
 
