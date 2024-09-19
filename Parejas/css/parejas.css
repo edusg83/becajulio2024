@@ -1,0 +1,21 @@
+.tarjeta {
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.imagen.oculta {
+    display: block;
+}
+
+.imagen.correcta {
+    display: none;
+}
+
+.tarjeta.inactiva{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.tarjeta img {
+    margin-left: 18%;
+}
