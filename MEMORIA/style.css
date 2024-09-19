@@ -1,7 +1,11 @@
  button {
     background: #ffc8dd;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
+ }
+
+ img {
+    height: 130px;
  }
 
  .caja {
