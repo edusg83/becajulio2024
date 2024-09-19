@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- DATATABLE -->
+    <title>Templates</title>
+</head>
+
+<body>
+    <div id="contenido">
+
+    </div>
+    
+    <script>
+        document.getElementById("contenido").innerHTML="<p>Contenido</p>";
+
+        let arrayTarjetas=[
+        {
+            "id":"1",
+            "tarjeta":"1111 2222 3333 4444",
+            "propietario":"Propietario tarjeta 1"
+        },
+        {
+            "id":"2",
+            "tarjeta":"2222 2222 3333 4444",
+            "propietario":"Propietario tarjeta 2"
+        },
+        {
+            "id":"3",
+            "tarjeta":"3333 2222 3333 4444",
+            "propietario":"Propietario tarjeta 3"
+        }
+    ];
+
+    
+        
+
+    let inicioTabla=`<table id="datable" class="table">
+       <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tarjeta</th>
+                <th>Propietario</th>
+            </tr>
+        </thead>
+        <tbody>`;
+
+    let finTabla=`</tbody>
+        </table>`;
+     
+
+        let filas=``;
+
+        arrayTarjetas.forEach(item=>{
+            filas += `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.tarjeta}</td>
+                <td>${item.propietario}</td>
+            </tr>
+            `;
+        });
+
+        document.getElementById("contenido").innerHTML=inicioTabla+filas+finTabla;
+
+    </script>
+</body>
+</html>
