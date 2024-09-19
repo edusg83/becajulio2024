@@ -103,11 +103,11 @@ function prepararJugada(imagen, button) {
     if (imagen1 == undefined) {
         imagen1 = imagen;
         carta1 = button;
-        document.getElementById(`button${carta1}`).setAttribute("enable", "false");
+        document.getElementById(`button${carta1}`).setAttribute("disabled", "disabled");
     } else {
         imagen2 = imagen;
         carta2 = button;
-        document.getElementById(`button${carta1}`).setAttribute("enable", "false");
+        document.getElementById(`button${carta1}`).setAttribute("disabled", "disabled");
 
         if (imagen1 == imagen2) {
             asignarAcierto();
@@ -122,8 +122,8 @@ function prepararJugada(imagen, button) {
                 }
 
 
-                document.getElementById(`button${carta1}`).setAttribute("enable", "false");
-                document.getElementById(`button${carta2}`).setAttribute("enable", "false");
+                document.getElementById(`button${carta1}`).removeAttribute("disabled");
+                document.getElementById(`button${carta2}`).removeAttribute("disabled");
 
                 document.getElementById(`imagen${carta1}`).removeAttribute("src");
                 document.getElementById(`imagen${carta2}`).removeAttribute("src");
