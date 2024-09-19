@@ -11,14 +11,13 @@ function randomGenerator() {
 function asignValue() {
   ArrayCards.forEach((element) => {
     element.value = randomGenerator();
+    console.log(element.value);
   });
 }
 
 function toggleEffect(param) {
-  console.log(param);
   let button = document.getElementById(param);
-  console.log(button);
+  console.log(button.classList);
   button.classList.toggle("test");
-  console.log(button);
+  console.log(button.classList);
 }
-console.log(ArrayCards);
