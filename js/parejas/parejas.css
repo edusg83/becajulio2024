@@ -1,66 +1,87 @@
-header{
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e2c2c;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
     display: flex;
-    height: 100%;
-    padding-bottom: 10px;
     justify-content: space-between;
-    padding-left: 2%;
+    align-items: center;
+    padding: 20px;
+    background-color: #503955;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
-/*main{
-    display: flex;
-    flex-direction: row;
-}
-img{
-    height: 80px;
-    width: 80px;
-}
-#jugador1{
-    padding-right: 20px ;
-    height: 25%;
-   
 
+h1 {
+    margin: 0;
+    font-size: 24px;
 }
-#jugador2{
-    height: 25%;
-}
-#imagenesParejas{
 
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
-}*/
+button {
+    background-color: #b85fca;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #794983;
+}
+
 main {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    height: 100%; 
+    gap: 20px;
 }
 
 section {
     flex: 1;
     text-align: center;
+    padding: 20px;
+    background-color: #835e8b;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 .jugador_deselec {
-
+    background-color: #503955;
+    color: white;
+    transition: background-color 0.3s;
 }
 
-.jugador_selec{
-     
-    background-color: rgb(160, 229, 229);
+.jugador_selec {
+    background-image: linear-gradient(to bottom, #9d80c4, #603a85);
+    color: white;
+    transition: background-image 0.3s;
 }
-
 
 #imagenesParejas {
     display: grid;
-    grid-template-columns: repeat(6, 80px); /* 6 columnas de 80px de ancho */
-    grid-template-rows: repeat(5, 80px); /* 5 filas de 80px de alto */
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(5, 80px);
     gap: 10px;
-    justify-content: center; /* Centra el grid en el contenedor */
-    width: 60%; /* La parte central ocupará un 60% del ancho */
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
 }
 
 img {
     height: 80px;
     width: 80px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
 }
