@@ -5,10 +5,13 @@ const imagenes = ["img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/E
 asignarImagenes(imagenes);
 
 function asignarImagenes(imagenesRandom) {
-    let cartas = document.querySelectorAll("tarjeta");
-    cartas.forEach((cartas, index) => {
+    let cartas = document.querySelectorAll(".tarjeta");
+    cartas.forEach((tarjeta, index) => {
         if (index < imagenesRandom.length) {
-            cartas.src = imagenesRandom[index];
+            let imagenCorrecta = tarjeta.querySelector(".imagen.correcta");
+            if (imagenCorrecta) {
+                imagenCorrecta.src = imagenesRandom[index];
+            }
         }
     });
 }
