@@ -133,3 +133,29 @@ let confirm = '';
 confirm = confirm('Confirmas?'); 
 console.log(confirm); 
 
+//Ejercicio 16
+console.log(navigator.clipboard + ": navigator.clipboard");
+console.log(navigator.cookieEnabled + ": navigator.cookieEnabled");
+console.log(navigator.credentials + ": navigator.credentials");
+console.log(navigator.doNotTrack + ": navigator.doNotTrack");
+console.log(navigator.geolocation + ": navigator.geolocation");
+console.log(navigator.language + ": navigator.language");
+console.log(navigator.hardwareConcurrency + ": navigator.hardwareConcurrency");
+console.log(navigator.languages + ": navigator.languages");
+console.log(navigator.locks + ": navigator.locks");
+console.log(navigator.maxTouchPoints + ": navigator.maxTouchPoints");
+console.log(navigator.mediaCapabilities + ": navigator.mediaCapabilities");
+console.log(navigator.mediaDevices + ": navigator.mediaDevices");
+console.log(navigator.mediaSession + ": navigator.mediaSession");
+console.log(navigator.onLine + ": navigator.onLine");
+console.log(navigator.pdfViewerEnabled + ": navigator.pdfViewerEnabled");
+console.log(navigator.permissions + ": navigator.permissions");
+console.log(navigator.serviceWorker + ": navigator.serviceWorker");
+console.log(navigator.storage + ": navigator.storage");
+console.log(navigator.userActivation + ": navigator.userActivation");
+console.log(navigator.userAgent + ": navigator.userAgent");
+console.log(navigator.wakeLock + ": navigator.wakeLock");
+console.log(navigator.webdriver + ": navigator.webdriver");
+
+  
+
