@@ -1,55 +1,56 @@
-// Variables globales
 let jugador1, jugador2;
 let turno = 1; 
 let cartaGiradas = [];
 let bloqueo = false;
 let aciertosJugador1 = 0;
 let aciertosJugador2 = 0;
-let cartas = [];
+let cartas = [
+    'perro.JPG', 'gallo.JPG', 'gato.JPG', 'toro.JPG', 
+    'oveja.JPG', 'cerdo.JPG', 'lobo.JPG', 'chimpance.JPG', 
+    'buitre.JPG', 'leon.JPG', 'gorila.JPG', 'rana.JPG',
+    'perro.JPG', 'gallo.JPG', 'gato.JPG', 'toro.JPG', 
+    'oveja.JPG', 'cerdo.JPG', 'lobo.JPG', 'chimpance.JPG', 
+    'buitre.JPG', 'leon.JPG', 'gorila.JPG', 'rana.JPG'
+];
+
 let cartasDesordenadas = [];
 let totalPares;
-
+let mensajeResultado;
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Solicitar nombres y preparar el juego
-    jugador1 = prompt("Nombre del Jugador 1");
-    jugador2 = prompt("Nombre del Jugador 2");
-    document.getElementById('jugador1').textContent = `${jugador1} : `;
-    document.getElementById('jugador2').textContent = `${jugador2} : `;
-    document.getElementById('textoTurno').textContent = `Turno de: ${jugador1}`;
-    document.getElementById('texto').textContent = "";
+  
+    do{
+        jugador1 = prompt("Nombre del Jugador 1").trim();
+        jugador2 = prompt("Nombre del Jugador 2").trim();
 
-    // Inicializar las cartas
-    prepararCartas();
+        if (jugador1 === "" || jugador2 === ""  ) {
+          
+            alert("Por favor, introduce nombres válidos para ambos jugadores.");
+        }else{
+            document.getElementById('jugador1').textContent = `${jugador1} : `;
+            document.getElementById('jugador2').textContent = `${jugador2} : `;
+            document.getElementById('textoTurno').textContent = `Turno de: ${jugador1}`;
+            document.getElementById('texto').textContent = "";
+        }
+        
+    }while(jugador1 === "" || jugador2==="");
+
     barajarCartas();
     crearTablero();
 });
 
-function prepararCartas() {
-    // Definir las cartas, con un par para cada animal
-    const animales = [
-        'perro.JPG', 'gallo.JPG', 'gato.JPG', 'toro.JPG', 
-        'oveja.JPG', 'cerdo.JPG', 'lobo.JPG', 'chimpance.JPG', 
-        'buitre.JPG', 'leon.JPG', 'gorila.JPG', 'rana.JPG'
-    ];
-    // Crear pares de cartas
-    cartas = animales.concat(animales);
-}
-
 function barajarCartas() {
-    // Barajar las cartas
     cartasDesordenadas = cartas.sort(() => Math.random() - 0.5);
     totalPares = cartas.length / 2;
 }
 
 function crearTablero() {
-    const container = document.getElementById('imagenesContainer');
-    container.innerHTML = ''; // Limpiar el contenedor
+    let container = document.getElementById('imagenesContainer');
+    container.innerHTML = ''; 
 
-    // Crear las cartas en el tablero
-    cartasDesordenadas.forEach((animal, index) => {
-        const carta = document.createElement('div');
+    cartasDesordenadas.forEach((animal) => {
+        let carta = document.createElement('div');
         carta.classList.add('col-2', 'mb-3');
         carta.innerHTML = `
             <div class="carta">
@@ -64,9 +65,9 @@ function crearTablero() {
 }
 
 function girarCarta(elemento) {
-    if (bloqueo || elemento.classList.contains('volteada')) return; // Si está bloqueado o ya está volteada, salir
+    if (bloqueo || elemento.classList.contains('volteada')) return; 
 
-    elemento.classList.add('volteada'); // Voltea la carta
+    elemento.classList.add('volteada'); 
     cartaGiradas.push(elemento);
 
     if (cartaGiradas.length === 2) {
@@ -75,33 +76,46 @@ function girarCarta(elemento) {
 }
 
 function verificarPareja() {
-    const [primera, segunda] = cartaGiradas;
+    let [primera, segunda] = cartaGiradas;
 
     if (primera.dataset.animal === segunda.dataset.animal) {
-        // Si son iguales, se marcan como acertadas
+        
         primera.classList.add('acertada');
         segunda.classList.add('acertada');
         cartaGiradas = [];
-        // Actualizar el conteo de aciertos
-        if (turno % 2 === 1) aciertosJugador1++;
-        else aciertosJugador2++;
-        // Actualizar la visualización de aciertos
+      
+        if (turno % 2 === 1) {
+            aciertosJugador1++;
+            actualizarImagenesJugador('imagenesJugador1', primera.dataset.animal);
+        } else {
+            aciertosJugador2++;
+            actualizarImagenesJugador('imagenesJugador2', primera.dataset.animal, segunda.dataset.animal);
+        }
+      
         document.getElementById('jugador1').textContent = `${jugador1} : ${aciertosJugador1}`;
         document.getElementById('jugador2').textContent = `${jugador2} : ${aciertosJugador2}`;
         totalPares--;
 
         if (totalPares === 0) {
-            // Fin del juego
+          
+            if (aciertosJugador1 > aciertosJugador2) {
+                mensajeResultado = `<p>Ganador: ${jugador1}</p>`;
+            } else if (aciertosJugador1 < aciertosJugador2) {
+                mensajeResultado = `<p>Ganador: ${jugador2}</p>`;
+            } else {
+                mensajeResultado = `<p>Empate</p>`;
+            }
+
             document.getElementById('resultado').innerHTML = `
                 <h3>¡El juego ha terminado!</h3>
-                <p>Ganador: ${aciertosJugador1 > aciertosJugador2 ? jugador1 : jugador2}</p>
+                ${mensajeResultado}
                 <p>Aciertos ${jugador1}: ${aciertosJugador1}</p>
                 <p>Aciertos ${jugador2}: ${aciertosJugador2}</p>
             `;
             return;
         }
     } else {
-        // Si no son iguales, se bloquea el juego y se vuelven a ocultar después de un tiempo
+       
         bloqueo = true;
         setTimeout(() => {
             primera.classList.remove('volteada');
@@ -110,11 +124,25 @@ function verificarPareja() {
             bloqueo = false;
             actualizarTurno();
         }, 2000);
-        return; // Asegúrate de que el turno no se actualice inmediatamente si no hay acierto
+        return; 
     }
 
     actualizarTurno();
 }
+
+
+function actualizarImagenesJugador(idContenedor, animal1, animal2) {
+    let contenedor = document.getElementById(idContenedor);
+   
+    let parImagenes = document.createElement('div');
+    parImagenes.classList.add('par-imagenes');
+    parImagenes.innerHTML = `
+        <img src="${animal1}" class="img-fluid" alt="${animal1}">
+
+    `;
+    contenedor.appendChild(parImagenes);
+}
+
 
 function actualizarTurno() {
     turno++;

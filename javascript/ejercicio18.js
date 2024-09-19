@@ -1,5 +1,5 @@
-console.log(document.getElementById("cabecera"));
+console.log(document.getElementById("cabecera").innerHTML);
 
-console.log(document.getElementsByTagName("header")[0]);
+console.log(document.getElementsByTagName("header")[0].innerHTML);
 
-console.log(document.querySelector("header"));
+console.log(document.querySelector("header").innerHTML);

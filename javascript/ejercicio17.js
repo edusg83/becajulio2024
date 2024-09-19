@@ -1,13 +1,5 @@
-var alfa = "alfa=beta";
-var gama = "gama=delta";
+let params = new URLSearchParams(parametros);
 
+let alfa = params.get('param1');
 
-document.write(location.protocol + location.host + location.pathname+"?" + alfa + "&" + gama);
-
-//document.write("file:///C:/Users/Yago/Desktop/gitClonado/becajulio2024/javascript/ejercicio17.html"+"?" + alfa + "&" + gama);
-
-let params = properties.get();
-
-let alfa = params.get('alfa');
-
-let delta = params.get('delta');
+let delta = params.get('param2');
