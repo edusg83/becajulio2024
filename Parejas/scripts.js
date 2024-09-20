@@ -79,47 +79,43 @@ function checkCards() {
 }
 
 function setName() {
-  playerName1 = document.getElementById("player1_name").value;
-  playerName2 = document.getElementById("player2_name").value;
+  playerName1 = document.getElementById("player_name_1_input").value;
+  playerName2 = document.getElementById("player_name_2_input").value;
   if (playerName1 == "" || playerName2 == "") {
     return;
   }
-  document.getElementById("modal_Dialogue").classList.remove("show");
-  document.getElementById("modal_Dialogue").style.display = "none";
-  document.getElementById("player1_board").value = playerName1;
-  document.getElementById("player2_board").value = playerName2;
+  document.getElementById("modal_prompt").classList.remove("show");
+  document.getElementById("modal_prompt").style.display = "none";
+  document.getElementById("player_name_1").value = playerName1;
+  document.getElementById("player_name_2").value = playerName2;
   setTurn();
 }
 
 function showDialogue() {
-  document.getElementById("modal_Dialogue").classList.add("show");
-  document.getElementById("modal_Dialogue").style.display = "block";
+  document.getElementById("modal_prompt").classList.add("show");
+  document.getElementById("modal_prompt").style.display = "block";
 }
 
 function deleteInput() {
-  document.getElementById("player1_name").value = "";
-  document.getElementById("player2_name").value = "";
-  document.getElementById("player1_name").focus();
+  document.getElementById("player_name_1_input").value = "";
+  document.getElementById("player_name_2_input").value = "";
+  document.getElementById("player_name_1_input").focus();
 }
 
 function setScore() {
-  let currentPlayer = "score_display_player1";
+  let currentPlayer = "score_display_player_1";
 
   if (playerTurn == 2) {
-    currentPlayer = "score_display_player2";
+    currentPlayer = "score_display_player_2";
   }
 
   document.getElementById(currentPlayer).value =
     Number(document.getElementById(currentPlayer).value) + 1;
-
-  document.getElementsByClassName("icon-container")[0].innerHTML =
-    "<div>TEST</div>";
 }
 
 function resetScore() {
-  document.getElementById("score_display_player1").value = 0;
-  document.getElementById("score_display_player2").value = 0;
-  document.getElementsByClassName("icon-container")[0].innerHTML = "";
+  document.getElementById("score_display_player_1").value = 0;
+  document.getElementById("score_display_player_2").value = 0;
 }
 
 function setTurn() {

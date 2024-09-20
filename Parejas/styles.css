@@ -11,12 +11,13 @@ header button:hover {
 
 main {
     background-color: #A4A9AD;
-    min-height: 100vh;
+    min-height: 80vh;
+    overflow: hidden;
 }
 
-.player_card {
+.player_board_1,
+.player_board_2 {
     background-color: #78C850;
-    overflow: hidden;
 }
 
 #game_section button {
