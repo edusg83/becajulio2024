@@ -27,9 +27,9 @@ let isActive = false;
 
 let playerTurn = null;
 
-let playerName1;
+let playerName1 = "";
 
-let playerName2;
+let playerName2 = "";
 
 for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
@@ -88,12 +88,14 @@ function setName() {
   playerName1 = document.getElementById("player1_name").value;
   playerName2 = document.getElementById("player2_name").value;
   document.getElementById("modal_Dialogue").classList.remove("show");
+  document.getElementById("modal_Dialogue").style.display = "none";
   document.getElementById("player1_board").value = playerName1;
   document.getElementById("player2_board").value = playerName2;
 }
 
 function showDialogue() {
   document.getElementById("modal_Dialogue").classList.add("show");
+  document.getElementById("modal_Dialogue").style.display = "block";
 }
 
 function deleteInput() {
@@ -120,11 +122,13 @@ function resetScore() {
 function setTurn() {
   if (playerTurn == 2 || playerTurn == null) {
     playerTurn = 1;
-    document.getElementById("turn_display").value = "Turno del jugador 1!";
+    document.getElementById("turn_display").value =
+      "Turno de " + playerName1 + "!";
     document.getElementById("turn_display").style.backgroundColor = "#A8DADC";
   } else {
     playerTurn = 2;
-    document.getElementById("turn_display").value = "Turno del jugador 2!";
+    document.getElementById("turn_display").value =
+      "Turno de " + playerName2 + "!";
     document.getElementById("turn_display").style.backgroundColor = "#E76F51";
   }
 }
@@ -188,7 +192,6 @@ function newGame() {
   cardPairs.clear();
   cardSet.clear();
   flipAll();
-  setTurn();
   resetScore();
   imageMap.clear();
   for (let i = 0; i < imagenes.length; i++) {
@@ -202,5 +205,5 @@ function newGame() {
   showDialogue();
 }
 
-//TODO ASIGNAR NOMBRES, ASIGNAR ICONOS DE ACIERTO, CAMBIAR DISPLAY DE TURNO PARA QUE DIGA NOMBRE DEL JUGADOR
+//TODO ASIGNAR ICONOS DE ACIERTO
 //TODO AÑADIR EFFECTO DE DERROTA Y VICTORIA, AÑADIR CONDICION DE VICTORIA

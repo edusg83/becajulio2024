@@ -18,10 +18,10 @@
         </script>
 </head>
 
-<body onload="assignImages(); setTurn(); showDialogue();">
+<body onload="assignImages(); showDialogue();">
 
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
-        <button class="w-50 border-0 mt-2" onclick="newGame();">Nueva Partida!</button>
+        <button class="w-50 border-0 mt-2" onclick="newGame();">-&gt; Nueva Partida &lt;-</button>
         <input class="w-50 border-0 mb-2 text-center" type="text" value="" readonly id="turn_display">
     </header>
 
@@ -135,7 +135,7 @@
                     </div>
                     <div class="modal-footer container-fluid d-flex justify-content-between">
                         <button type="button" class="btn btn-danger" onclick="deleteInput();">Borrar</button>
-                        <button type="button" class="btn btn-primary" onclick="setName();">Empezar!</button>
+                        <button type="button" class="btn btn-primary" onclick="setName();  setTurn();">Empezar!</button>
                     </div>
                 </div>
             </article>
