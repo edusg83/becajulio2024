@@ -29,6 +29,7 @@ body {
 .imagen {
   transition: all 0.3s linear;
   transform: rotateY(180deg);
+  box-sizing: border-box;
 }
 
 .casilla {

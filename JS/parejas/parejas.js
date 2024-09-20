@@ -64,10 +64,15 @@ function generarImagenes() {
   });
 };
 
+function bloquearCasilla(id) {
+  $casillas[id].setAttribute("onClick", "");
+}
+
 function ocultarTablero() {
   Array.from($casillas).forEach((e, i) => {
-    getFondo(i).hidden = false;
-    getImg(i).hidden = true;
+    // getFondo(i).hidden = false;
+    // getImg(i).hidden = true;
+    e.className = "casilla";
   })
 }
 
@@ -80,6 +85,8 @@ function bloquearTablero(opcion) {
 function seleccionarCasilla(id) {
   $casillas[id].className += " flip"
   
+  bloquearCasilla(id);
+
   cartasJugadas.push(id);
   
   if (cartasJugadas.length === 2) {
@@ -87,7 +94,7 @@ function seleccionarCasilla(id) {
     setTimeout(() => {
       jugada();
       bloquearTablero(false);
-    }, 1200);
+    }, 1000);
   }
 }
 
@@ -129,7 +136,10 @@ function fijarPareja() {
   puntos[turno]++;
   $casillas[cartasJugadas[0]].removeAttribute("onclick");
   $casillas[cartasJugadas[1]].removeAttribute("onclick");
-      
+  
+  getImg(cartasJugadas[0]).style.border = "solid " + COLOR_JUGADOR[turno];
+  getImg(cartasJugadas[1]).style.border = "solid " + COLOR_JUGADOR[turno];
+
   if (casillasRestantes === 0) {
     finPartida();
   }
@@ -151,8 +161,17 @@ function finPartida() {
 function reinicio() {
   cartasJugadas.length = 0;
   puntos.fill(0);
+  document.getElementById("puntuacion0").innerHTML = "0";
+  document.getElementById("puntuacion1").innerHTML = "0";
   turno = 0;
   casillasRestantes = NUMERO_CASILLAS;
+  limpiarImagenes();
   generarImagenes();
   ocultarTablero();
+}
+
+function limpiarImagenes() {
+  Array.from(document.getElementsByClassName("imagen")).forEach(img => {
+    img.style.border = "";
+  })
 }
