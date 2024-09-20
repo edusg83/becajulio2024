@@ -25,7 +25,11 @@ let lock = false;
 
 let isActive = false;
 
-playerTurn = null;
+let playerTurn = null;
+
+let playerName1;
+
+let playerName2;
 
 for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
@@ -75,9 +79,26 @@ function checkCards() {
       }
     });
     setTimeout(flipBack, 1500);
-    setTurn();
+    setTimeout(setTurn, 1600);
   }
   setTimeout(reset, 2000);
+}
+
+function setName() {
+  playerName1 = document.getElementById("player1_name").value;
+  playerName2 = document.getElementById("player2_name").value;
+  document.getElementById("modal_Dialogue").classList.remove("show");
+  document.getElementById("player1_board").value = playerName1;
+  document.getElementById("player2_board").value = playerName2;
+}
+
+function showDialogue() {
+  document.getElementById("modal_Dialogue").classList.add("show");
+}
+
+function deleteInput() {
+  document.getElementById("player1_name").value = "";
+  document.getElementById("player2_name").value = "";
 }
 
 function setScore() {
@@ -91,13 +112,20 @@ function setScore() {
     Number(document.getElementById(currentPlayer).value) + 1;
 }
 
+function resetScore() {
+  document.getElementById("score_display_player1").value = 0;
+  document.getElementById("score_display_player2").value = 0;
+}
+
 function setTurn() {
   if (playerTurn == 2 || playerTurn == null) {
     playerTurn = 1;
     document.getElementById("turn_display").value = "Turno del jugador 1!";
+    document.getElementById("turn_display").style.backgroundColor = "#A8DADC";
   } else {
     playerTurn = 2;
     document.getElementById("turn_display").value = "Turno del jugador 2!";
+    document.getElementById("turn_display").style.backgroundColor = "#E76F51";
   }
 }
 
@@ -160,6 +188,8 @@ function newGame() {
   cardPairs.clear();
   cardSet.clear();
   flipAll();
+  setTurn();
+  resetScore();
   imageMap.clear();
   for (let i = 0; i < imagenes.length; i++) {
     imageMap.set(imagenes[i], 0);
@@ -169,7 +199,8 @@ function newGame() {
     card.value = "";
   });
   assignImages();
+  showDialogue();
 }
 
-//TODO ASIGNAR NOMBRES, ASIGNAR ICONOS DE ACIERTO, ASIGNAR COLOR DE TURNO, CAMBIAR DISPLAY DE TURNO PARA QUE DIGA NOMBRE DEL JUGADOR
+//TODO ASIGNAR NOMBRES, ASIGNAR ICONOS DE ACIERTO, CAMBIAR DISPLAY DE TURNO PARA QUE DIGA NOMBRE DEL JUGADOR
 //TODO AÑADIR EFFECTO DE DERROTA Y VICTORIA, AÑADIR CONDICION DE VICTORIA

@@ -18,7 +18,7 @@
         </script>
 </head>
 
-<body onload="assignImages(); setTurn();">
+<body onload="assignImages(); setTurn(); showDialogue();">
 
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
         <button class="w-50 border-0 mt-2" onclick="newGame();">Nueva Partida!</button>
@@ -28,7 +28,7 @@
     <main class="d-flex flex-row pt-5">
 
         <section
-            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
+            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 mb-5 player_card">
             <div class="d-flex flex-column  align-items-center border-bottom">
                 <input type="text" class="border-0 text-center" id="player1_board" value="" readonly>
                 <label for="text">Aciertos</label>
@@ -110,7 +110,7 @@
         </section>
 
         <section
-            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 player_card">
+            class="col-3 align-self-center d-flex flex-column align-items-center border container pt-3 mb-5 player_card">
             <div class="d-flex flex-column align-items-center border-bottom">
                 <input type="text" class="border-0 text-center" id="player2_board" value="" readonly>
                 <label for="text">Aciertos</label>
@@ -120,6 +120,26 @@
             </div>
         </section>
 
+        <section class="modal fade align-self-center mt-5 show" id="modal_Dialogue" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: block;">
+            <article class="modal-dialog">
+                <div class="modal-content p-4">
+                    <div class="modal-header container container-fluid d-flex justify-content-center">
+                        <h1 class="modal-title fs-5 pb-2" id="modalTitle">Juego de parejas!</h1>
+                    </div>
+                    <div class="modal-body d-flex flex-column align-items-center mb-2">
+                        <p>¿Cual es tu nombre?</p>
+                        <input type="text" id="player1_name" autocomplete="off">
+                        <p class="mt-2">¿Y el nombre de tu contricante?</p>
+                        <input type="text" id="player2_name" autocomplete="off">
+                    </div>
+                    <div class="modal-footer container-fluid d-flex justify-content-between">
+                        <button type="button" class="btn btn-danger" onclick="deleteInput();">Borrar</button>
+                        <button type="button" class="btn btn-primary" onclick="setName();">Empezar!</button>
+                    </div>
+                </div>
+            </article>
+        </section>
 
     </main>
     <footer class=" d-flex justify-content-center">
