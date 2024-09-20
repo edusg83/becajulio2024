@@ -35,17 +35,14 @@ for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
 }
 
-function storeCardValue(cardValue, idCard) {
-  const card = document.getElementById(idCard);
-  cardSet.add(card);
-
-  console.log();
-
+function storeCardValue(idCard) {
   if (lock) {
     return;
   }
+  const card = document.getElementById(idCard);
+  cardSet.add(card);
 
-  if (cardSet.values().next().id == idCard && isActive) {
+  if (cardSet.values().next().id == card.id && isActive) {
     cardPairs.delete(card);
     flipBack();
     reset();
@@ -54,22 +51,19 @@ function storeCardValue(cardValue, idCard) {
 
   cardPairs.add(card);
 
-  flipCard(idCard);
+  flipCard(card.id);
 
   if (cardValue1 == null) {
-    cardValue1 = cardValue;
+    cardValue1 = card.value;
     isActive = true;
   } else if (cardValue2 == null) {
     lock = true;
-    cardValue2 = cardValue;
+    cardValue2 = card.value;
     checkCards();
   }
 }
 
 function checkCards() {
-  console.log(cardValue1, cardValue2);
-  console.log(cardPairs);
-  console.log(cardSet);
   if (cardValue1 == cardValue2) {
     setScore();
   } else {
@@ -81,16 +75,20 @@ function checkCards() {
     setTimeout(flipBack, 1500);
     setTimeout(setTurn, 1600);
   }
-  setTimeout(reset, 2000);
+  setTimeout(reset, 1600);
 }
 
 function setName() {
   playerName1 = document.getElementById("player1_name").value;
   playerName2 = document.getElementById("player2_name").value;
+  if (playerName1 == "" || playerName2 == "") {
+    return;
+  }
   document.getElementById("modal_Dialogue").classList.remove("show");
   document.getElementById("modal_Dialogue").style.display = "none";
   document.getElementById("player1_board").value = playerName1;
   document.getElementById("player2_board").value = playerName2;
+  setTurn();
 }
 
 function showDialogue() {
@@ -101,6 +99,7 @@ function showDialogue() {
 function deleteInput() {
   document.getElementById("player1_name").value = "";
   document.getElementById("player2_name").value = "";
+  document.getElementById("player1_name").focus();
 }
 
 function setScore() {
@@ -112,6 +111,8 @@ function setScore() {
 
   document.getElementById(currentPlayer).value =
     Number(document.getElementById(currentPlayer).value) + 1;
+
+  document.getElementById("scoreBoard").append("TEST");
 }
 
 function resetScore() {
@@ -180,17 +181,14 @@ function flipAll() {
 function reset() {
   cardValue1 = null;
   cardValue2 = null;
-  lock = false;
   cardSet.clear();
+  lock = false;
 }
 
 function newGame() {
-  cardValue1 = null;
-  cardValue2 = null;
-  lock = false;
   playerTurn = null;
   cardPairs.clear();
-  cardSet.clear();
+  reset();
   flipAll();
   resetScore();
   imageMap.clear();

@@ -33,77 +33,65 @@
                 <input type="text" class="border-0 text-center" id="player1_board" value="" readonly>
                 <label for="text">Aciertos</label>
             </div>
-            <div>
+            <div id="scoreBoard">
                 <input type="text" class="text-center" readonly value="0" id="score_display_player1">
             </div>
         </section>
 
         <section class="col-6" id="game_section">
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR1C1" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR1C1" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0 opacity-0"></div>
                 </button>
-                <button id="cardR1C2" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR1C2" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0 opacity-0"></div>
                 </button>
-                <button id="cardR1C3" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR1C3" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR1C4" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-            </article>
-            <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR2C1" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C2" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C3" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
-                    <div class="container-fluid rounded opacity-0"></div>
-                </button>
-                <button id="cardR2C4" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR1C4" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR3C1" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR2C1" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C2" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR2C2" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C3" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR2C3" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR3C4" class="col card border-0 p-0" value=""
-                    onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR2C4" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
             <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
-                <button id="cardR4C1" class="col card border-0 p-0" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR3C1" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C2" class="col card border-0 p-0" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR3C2" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C3" class="col card border-0 p-0" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR3C3" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
-                <button id="cardR4C4" class="col card border-0 p-0" onclick="storeCardValue(this.value, this.id)">
+                <button id="cardR3C4" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+            </article>
+            <article class="row-cols-6 d-flex justify-content-center gap-3 mb-2">
+                <button id="cardR4C1" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C2" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C3" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
+                    <div class="container-fluid rounded opacity-0"></div>
+                </button>
+                <button id="cardR4C4" class="col card border-0 p-0" value="" onclick="storeCardValue(this.id)">
                     <div class="container-fluid rounded opacity-0"></div>
                 </button>
             </article>
@@ -129,13 +117,13 @@
                     </div>
                     <div class="modal-body d-flex flex-column align-items-center mb-2">
                         <p>¿Cual es tu nombre?</p>
-                        <input type="text" id="player1_name" autocomplete="off">
+                        <input type="text" id="player1_name" autocomplete="off" autofocus>
                         <p class="mt-2">¿Y el nombre de tu contricante?</p>
                         <input type="text" id="player2_name" autocomplete="off">
                     </div>
                     <div class="modal-footer container-fluid d-flex justify-content-between">
                         <button type="button" class="btn btn-danger" onclick="deleteInput();">Borrar</button>
-                        <button type="button" class="btn btn-primary" onclick="setName();  setTurn();">Empezar!</button>
+                        <button type="button" class="btn btn-primary" onclick="setName();">Empezar!</button>
                     </div>
                 </div>
             </article>
