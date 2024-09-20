@@ -112,12 +112,14 @@ function setScore() {
   document.getElementById(currentPlayer).value =
     Number(document.getElementById(currentPlayer).value) + 1;
 
-  document.getElementById("scoreBoard").append("TEST");
+  document.getElementsByClassName("icon-container")[0].innerHTML =
+    "<div>TEST</div>";
 }
 
 function resetScore() {
   document.getElementById("score_display_player1").value = 0;
   document.getElementById("score_display_player2").value = 0;
+  document.getElementsByClassName("icon-container")[0].innerHTML = "";
 }
 
 function setTurn() {
