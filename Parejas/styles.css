@@ -18,6 +18,7 @@ main {
 .player_board_1,
 .player_board_2 {
     background-color: #78C850;
+    overflow: hidden;
 }
 
 #game_section button {

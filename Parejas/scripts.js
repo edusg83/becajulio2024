@@ -27,9 +27,17 @@ let isActive = false;
 
 let playerTurn = null;
 
-let playerName1 = "";
+let player_1 = {
+  playerName1: "",
+  score: 0,
+};
 
-let playerName2 = "";
+let player_2 = {
+  playerName2: "",
+  score: 0,
+};
+
+let cardCount = 0;
 
 for (let i = 0; i < imagenes.length; i++) {
   imageMap.set(imagenes[i], 0);
@@ -65,6 +73,7 @@ function storeCardValue(idCard) {
 
 function checkCards() {
   if (cardValue1 == cardValue2) {
+    cardCount++;
     setScore();
   } else {
     cardPairs.forEach((card) => {
@@ -79,15 +88,15 @@ function checkCards() {
 }
 
 function setName() {
-  playerName1 = document.getElementById("player_name_1_input").value;
-  playerName2 = document.getElementById("player_name_2_input").value;
-  if (playerName1 == "" || playerName2 == "") {
+  player_1.playerName1 = document.getElementById("player_name_1_input").value;
+  player_2.playerName2 = document.getElementById("player_name_2_input").value;
+  if (player_1.playerName1 == "" || player_2.playerName2 == "") {
     return;
   }
   document.getElementById("modal_prompt").classList.remove("show");
   document.getElementById("modal_prompt").style.display = "none";
-  document.getElementById("player_name_1").value = playerName1;
-  document.getElementById("player_name_2").value = playerName2;
+  document.getElementById("player_name_1").value = player_1.playerName1;
+  document.getElementById("player_name_2").value = player_2.playerName2;
   setTurn();
 }
 
@@ -104,13 +113,29 @@ function deleteInput() {
 
 function setScore() {
   let currentPlayer = "score_display_player_1";
+  let scorePlayer = player_1;
 
   if (playerTurn == 2) {
     currentPlayer = "score_display_player_2";
+    scorePlayer = player_2;
   }
 
-  document.getElementById(currentPlayer).value =
-    Number(document.getElementById(currentPlayer).value) + 1;
+  scorePlayer.score++;
+
+  let scoreValue = document.getElementById(currentPlayer).value;
+
+  document.getElementById(currentPlayer).value = Number(scoreValue) + 1;
+
+  if (cardCount == 8) {
+    setTimeout(gameEnd, 1500);
+    if (player_1.score > player_2) {
+      console.warn("TEST1");
+    } else if (player_1.score < player_2) {
+      console.warn("TEST2");
+    } else {
+      console.warn("TEST3");
+    }
+  }
 }
 
 function resetScore() {
@@ -118,16 +143,26 @@ function resetScore() {
   document.getElementById("score_display_player_2").value = 0;
 }
 
+function gameEnd() {
+  console.warn("BEGIN");
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.8 },
+  });
+  console.warn("END");
+}
+
 function setTurn() {
   if (playerTurn == 2 || playerTurn == null) {
     playerTurn = 1;
     document.getElementById("turn_display").value =
-      "Turno de " + playerName1 + "!";
+      "Turno de " + player_1.playerName1 + "!";
     document.getElementById("turn_display").style.backgroundColor = "#A8DADC";
   } else {
     playerTurn = 2;
     document.getElementById("turn_display").value =
-      "Turno de " + playerName2 + "!";
+      "Turno de " + player_2.playerName2 + "!";
     document.getElementById("turn_display").style.backgroundColor = "#E76F51";
   }
 }
