@@ -1,12 +1,12 @@
 const imagenes = [
-  "/Parejas/resources/Squirtle.jpg",
-  "/Parejas/resources/Pikachu.jpg",
-  "/Parejas/resources/Eevee.jpg",
-  "/Parejas/resources/Togepi.jpg",
-  "/Parejas/resources/Jigglypuff.jpg",
-  "/Parejas/resources/Bulbasaur.jpg",
-  "/Parejas/resources/Psyduck.jpg",
-  "/Parejas/resources/Charmander.jpg",
+  "resources/Squirtle.jpg",
+  "resources/Pikachu.jpg",
+  "resources/Eevee.jpg",
+  "resources/Togepi.jpg",
+  "resources/Jigglypuff.jpg",
+  "resources/Bulbasaur.jpg",
+  "resources/Psyduck.jpg",
+  "resources/Charmander.jpg",
 ];
 
 const cards = Array.from(document.getElementsByClassName("card"));
@@ -44,10 +44,12 @@ for (let i = 0; i < imagenes.length; i++) {
 }
 
 function storeCardValue(idCard) {
-  if (lock) {
+  const card = document.getElementById(idCard);
+
+  if (lock || card.classList.contains("rotateEffect")) {
     return;
   }
-  const card = document.getElementById(idCard);
+
   cardSet.add(card);
 
   if (cardSet.values().next().id == card.id && isActive) {
@@ -127,10 +129,11 @@ function setScore() {
   document.getElementById(currentPlayer).value = Number(scoreValue) + 1;
 
   if (cardCount == 8) {
+    lock = true;
     setTimeout(gameEnd, 1500);
-    if (player_1.score > player_2) {
+    if (player_1.score > player_2.score) {
       console.warn("TEST1");
-    } else if (player_1.score < player_2) {
+    } else if (player_1.score < player_2.score) {
       console.warn("TEST2");
     } else {
       console.warn("TEST3");
