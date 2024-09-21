@@ -275,4 +275,4 @@ function newGame() {
   showDialogue();
 }
 
-//TODO ASIGNAR ICONOS DE ACIERTO
+//Dar estilo a modal, configuar victoria de jugador
