@@ -170,8 +170,19 @@ function setIconOnHit(param) {
 }
 
 function resetScore() {
+  player_1.iconColumn = 0;
+  player_1.iconContainerRow = 0;
+  player_2.iconColumn = 0;
+  player_2.iconContainerRow = 0;
   document.getElementById("score_display_player_1").value = 0;
   document.getElementById("score_display_player_2").value = 0;
+  Array.from(document.getElementsByClassName("board")).forEach((board) => {
+    Array.from(board.children).forEach((row) => {
+      Array.from(row.children).forEach((column) => {
+        column.style.backgroundImage = "";
+      });
+    });
+  });
 }
 
 function gameEnd() {
@@ -275,4 +286,4 @@ function newGame() {
   showDialogue();
 }
 
-//Dar estilo a modal, configuar victoria de jugador
+//Dar estilo a modal, configuar victoria de jugador, dar opcion de volver a jugar
