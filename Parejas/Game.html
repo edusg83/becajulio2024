@@ -31,27 +31,31 @@
         <input class="w-50 border-0 mb-2 text-center" type="text" value="" readonly id="turn_display">
     </header>
 
-    <main class="d-flex flex-row pt-5">
+    <main class="d-flex flex-row  pt-5 px-5 pb-3">
 
         <!-- Board del primer jugador -->
-        <section class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 player_board_1">
-            <div class="d-flex flex-column align-items-center">
+        <section
+            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 rounded player_board_1">
+            <div class="d-flex flex-column align-items-center mt-2">
                 <input type="text" class="border-0 text-center" id="player_name_1" value="" readonly>
                 <label for="text" class="p-2">Aciertos</label>
                 <input type="text" class="text-center mb-3" readonly value="0" id="score_display_player_1">
             </div>
-
-            <div>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <div class="container icon_container_1 mb-3">
+                <div class="d-flex flex-row row mb-2 gap-2">
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                </div>
+                <div class="d-flex flex-row row mb-2 gap-2">
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                </div>
+                <div class="d-flex flex-row justify-content-center row-cols-4 gap-2">
+                    <div class="icon_hit col me-4"></div>
+                    <div class="icon_hit col ms-2"></div>
+                </div>
             </div>
         </section>
 
@@ -120,30 +124,36 @@
         </section>
 
         <!-- Board del segundo jugador -->
-        <section class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 player_board_2">
-            <div class="d-flex flex-column align-items-center">
+        <section
+            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 rounded player_board_2">
+            <div class="d-flex flex-column align-items-center mt-2">
                 <input type="text" class="border-0 text-center" id="player_name_2" value="" readonly>
                 <label for="text" class="p-2">Aciertos</label>
                 <input type="text" class="text-center mb-3" readonly value="0" id="score_display_player_2">
             </div>
 
-            <div>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <div class="container icon_container_2 mb-3">
+                <div class="d-flex flex-row row mb-2 gap-2">
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                </div>
+                <div class="d-flex flex-row row mb-2 gap-2">
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                    <div class="icon_hit col"></div>
+                </div>
+                <div class="d-flex flex-row justify-content-center row-cols-4 gap-2">
+                    <div class="icon_hit col me-4"></div>
+                    <div class="icon_hit col ms-2"></div>
+                </div>
             </div>
         </section>
 
         <!-- Modal de seleccion de nombre -->
-        <section class="modal fade align-self-center mt-5 show" id="modal_prompt" tabindex="-1" style="display: block;">
-            <article class="modal-dialog">
+        <!-- TODO Leer documentacion, dar estilo... -->
+        <section class="modal fade show" id="modal_prompt" tabindex="-1" style="display: block;">
+            <article class="modal-dialog modal-dialog-centered">
                 <div class="modal-content p-4">
                     <div class="modal-header container-fluid d-flex justify-content-center">
                         <h1 class="modal-title fs-5 pb-2" id="modalTitle">Juego de parejas!</h1>

@@ -30,11 +30,15 @@ let playerTurn = null;
 let player_1 = {
   playerName1: "",
   score: 0,
+  iconContainerRow: 0,
+  iconColumn: 0,
 };
 
 let player_2 = {
   playerName2: "",
   score: 0,
+  iconContainerRow: 0,
+  iconColumn: 0,
 };
 
 let cardCount = 0;
@@ -75,6 +79,7 @@ function storeCardValue(idCard) {
 
 function checkCards() {
   if (cardValue1 == cardValue2) {
+    setIconOnHit(cardValue2);
     cardCount++;
     setScore();
   } else {
@@ -115,14 +120,14 @@ function deleteInput() {
 
 function setScore() {
   let currentPlayer = "score_display_player_1";
-  let scorePlayer = player_1;
+  let playerScore = player_1;
 
   if (playerTurn == 2) {
     currentPlayer = "score_display_player_2";
-    scorePlayer = player_2;
+    playerScore = player_2;
   }
 
-  scorePlayer.score++;
+  playerScore.score++;
 
   let scoreValue = document.getElementById(currentPlayer).value;
 
@@ -131,14 +136,37 @@ function setScore() {
   if (cardCount == 8) {
     lock = true;
     setTimeout(gameEnd, 1500);
-    if (player_1.score > player_2.score) {
-      console.warn("TEST1");
-    } else if (player_1.score < player_2.score) {
-      console.warn("TEST2");
-    } else {
-      console.warn("TEST3");
-    }
   }
+}
+
+function setIconOnHit(param) {
+  let currentContainer = "icon_container_1";
+  let currentPlayer = player_1;
+
+  if (playerTurn == 2) {
+    currentContainer = "icon_container_2";
+    currentPlayer = player_2;
+  }
+
+  console.log(player_1.iconColumn, player_1.iconContainerRow);
+
+  document.getElementsByClassName(currentContainer)[0].children[
+    currentPlayer.iconContainerRow
+  ].children[currentPlayer.iconColumn].style.backgroundImage = `url(${param})`;
+
+  currentPlayer.iconColumn++;
+  if (currentPlayer.iconColumn == 3 && currentPlayer.iconContainerRow == 0) {
+    currentPlayer.iconContainerRow = 1;
+    currentPlayer.iconColumn = 0;
+  } else if (
+    currentPlayer.iconColumn == 3 &&
+    currentPlayer.iconContainerRow == 1
+  ) {
+    currentPlayer.iconContainerRow = 2;
+    currentPlayer.iconColumn = 0;
+  }
+
+  console.log(player_1.iconColumn, player_1.iconContainerRow);
 }
 
 function resetScore() {
@@ -147,13 +175,21 @@ function resetScore() {
 }
 
 function gameEnd() {
-  console.warn("BEGIN");
   confetti({
     particleCount: 100,
     spread: 70,
     origin: { y: 0.8 },
   });
-  console.warn("END");
+
+  // if (player_1.score > player_2.score) {
+  //   console.warn("TEST1");
+  // } else if (player_1.score < player_2.score) {
+  //   console.warn("TEST2");
+  // } else {
+  //   console.warn("TEST3");
+  // }
+
+  //TODO Poner mensaje de victoria mediante modal
 }
 
 function setTurn() {
@@ -240,4 +276,3 @@ function newGame() {
 }
 
 //TODO ASIGNAR ICONOS DE ACIERTO
-//TODO AÑADIR EFFECTO DE DERROTA Y VICTORIA, AÑADIR CONDICION DE VICTORIA
