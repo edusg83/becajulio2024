@@ -203,8 +203,6 @@ function gameEnd() {
   document.getElementById("victory_text").innerHTML = winner;
 
   showDialogue("modal_victory");
-
-  //TODO Poner mensaje de victoria mediante modal
 }
 
 function setTurn() {
@@ -289,5 +287,3 @@ function newGame() {
   assignImages();
   showDialogue("modal_prompt");
 }
-
-//Dar estilo a modal, configuar victoria de jugador, dar opcion de volver a jugar
