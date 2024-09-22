@@ -100,7 +100,7 @@ function setName() {
   if (player_1.name == "" || player_2.name == "") {
     return;
   }
-  dismissDialgue(modal_prompt);
+  dismissDialogue("modal_prompt");
   document.getElementById("player_name_1").value = player_1.name;
   document.getElementById("player_name_2").value = player_2.name;
   setTurn();
@@ -111,9 +111,9 @@ function showDialogue(param) {
   document.getElementById(param).style.display = "block";
 }
 
-function dismissDialgue(param) {
-  document.getElementById("param").classList.remove("show");
-  document.getElementById("param").style.display = "none";
+function dismissDialogue(param) {
+  document.getElementById(param).classList.remove("show");
+  document.getElementById(param).style.display = "none";
 }
 
 function deleteInput() {

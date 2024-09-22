@@ -174,7 +174,7 @@
             </article>
         </section>
 
-        <section class="modal fade show" id="modal_victory" tabindex="-1" style="display: block;">
+        <section class="modal fade" id="modal_victory" tabindex="-1">
             <article class="modal-dialog modal-dialog-centered">
                 <div class="modal-content p-3">
                     <div class="modal-header row">
@@ -184,10 +184,11 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex flex-column align-items-center mb-2">
-                        <p id="victory_text">Felicidades! Has ganado jugador 1</p>
+                        <p id="victory_text"></p>
                     </div>
                     <div class="modal-footer container-fluid d-flex justify-content-center">
-                        <button type="button" class="btn btn-success" onclick="newGame();">¿Jugar de nuevo?</button>
+                        <button type="button" class="btn btn-success"
+                            onclick="newGame(); dismissDialogue('modal_victory');">¿Jugar de nuevo?</button>
                     </div>
                 </div>
             </article>
