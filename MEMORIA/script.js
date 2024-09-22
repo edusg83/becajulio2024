@@ -97,8 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/memoria12.png'
         }
     ]
+
+    cartasArray.sort(() => 0.5 - Math.random());
     
     const cartas = document.querySelector(".cartas");
+    const adios = document.querySelector(".adios");
+    let cartasSeleccionadas = [];
+    let cartasSeleccionadasId = [];
+    const cartasGanadoras = [];
+    const mostrarResultado = document.querySelector("#puntos");
 
     function crearEspacio() {
         for(let i = 0; i < cartasArray.length; i++){
@@ -106,8 +113,51 @@ document.addEventListener('DOMContentLoaded', () => {
             carta.setAttribute('src', 'img/sakura.png');
             carta.setAttribute('data-id', i);
             carta.style.margin = "12px";
+            carta.addEventListener('click', voltearCarta);
             cartas.appendChild(carta);
         }
     }
+
+    function coincidirImg() {
+        let cartaMatch = document.querySelectorAll('img');
+        const cartaUnoId = cartasSeleccionadasId[0];
+        const cartaDosId = cartasSeleccionadasId[1];
+        if(cartaUnoId == cartaDosId) {
+            cartaMatch[cartaUnoId].setAttribute('src', 'img/sakura.png');
+            cartaMatch[cartaDosId].setAttribute('src', 'img/sakura.png');
+        }
+        else if (cartasSeleccionadas[0] === cartasSeleccionadas[1]){
+            cartaMatch[cartaUnoId].setAttribute('src', 'img/atras.png');
+            cartaMatch[cartaDosId].setAttribute('src', 'img/atras.png');
+            cartaMatch[cartaUnoId].removeEventListener('click', voltearCarta);
+            cartaMatch[cartaDosId].removeEventListener('click', voltearCarta);
+            cartasGanadoras.push(cartasSeleccionadas);
+        }
+        else {
+            cartaMatch[cartaUnoId].setAttribute('src', 'img/sakura.png');
+            cartaMatch[cartaDosId].setAttribute('src', 'img/sakura.png');
+        }
+        cartasSeleccionadas=[];
+        cartasSeleccionadasId=[];
+        mostrarResultado.textContent = cartasGanadoras.length;
+        if(cartasGanadoras.length === cartasArray.length/2) {
+            mostrarResultado.textContent = "Ganador";
+            const bye = document.createElement("img");
+            bye.setAttribute('src', 'img/despedida.gif');
+            adios.appendChild(bye);
+        }
+
+    }
+
+    function voltearCarta() {
+        let cartaId = this.getAttribute('data-id');
+        cartasSeleccionadas.push(cartasArray[cartaId].name_img);
+        cartasSeleccionadasId.push(cartaId);
+        this.setAttribute('src', cartasArray[cartaId].img);
+        if(cartasSeleccionadasId.length === 2) {
+            setTimeout(coincidirImg, 500);
+        }
+    }
+
     crearEspacio();
 })

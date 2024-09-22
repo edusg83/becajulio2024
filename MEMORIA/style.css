@@ -12,4 +12,12 @@ main {
  img {
     height: 130px;
  }
- 
+ .adios > img {
+   margin-top: -36em;
+   height: 550px;
+}
+ @media screen and (max-width: 600px) {
+   main {
+      height: 100%;
+    }
+ }
