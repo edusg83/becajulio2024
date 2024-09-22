@@ -1,16 +1,15 @@
- button {
-    background: #ffc8dd;
-    width: 140px;
-    height: 140px;
+main {
+   background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("img/back.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
  }
-
+ .puntuacion {
+   background-color: #D16984;
+   color: #FFFFFF;
+ }
  img {
     height: 130px;
  }
-
- .caja {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5px 5px;
- }
+ 
