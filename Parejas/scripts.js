@@ -28,14 +28,14 @@ let isActive = false;
 let playerTurn = null;
 
 let player_1 = {
-  playerName1: "",
+  name: "",
   score: 0,
   iconContainerRow: 0,
   iconColumn: 0,
 };
 
 let player_2 = {
-  playerName2: "",
+  name: "",
   score: 0,
   iconContainerRow: 0,
   iconColumn: 0,
@@ -95,21 +95,25 @@ function checkCards() {
 }
 
 function setName() {
-  player_1.playerName1 = document.getElementById("player_name_1_input").value;
-  player_2.playerName2 = document.getElementById("player_name_2_input").value;
-  if (player_1.playerName1 == "" || player_2.playerName2 == "") {
+  player_1.name = document.getElementById("player_name_1_input").value;
+  player_2.name = document.getElementById("player_name_2_input").value;
+  if (player_1.name == "" || player_2.name == "") {
     return;
   }
-  document.getElementById("modal_prompt").classList.remove("show");
-  document.getElementById("modal_prompt").style.display = "none";
-  document.getElementById("player_name_1").value = player_1.playerName1;
-  document.getElementById("player_name_2").value = player_2.playerName2;
+  dismissDialgue(modal_prompt);
+  document.getElementById("player_name_1").value = player_1.name;
+  document.getElementById("player_name_2").value = player_2.name;
   setTurn();
 }
 
-function showDialogue() {
-  document.getElementById("modal_prompt").classList.add("show");
-  document.getElementById("modal_prompt").style.display = "block";
+function showDialogue(param) {
+  document.getElementById(param).classList.add("show");
+  document.getElementById(param).style.display = "block";
+}
+
+function dismissDialgue(param) {
+  document.getElementById("param").classList.remove("show");
+  document.getElementById("param").style.display = "none";
 }
 
 function deleteInput() {
@@ -148,8 +152,6 @@ function setIconOnHit(param) {
     currentPlayer = player_2;
   }
 
-  console.log(player_1.iconColumn, player_1.iconContainerRow);
-
   document.getElementsByClassName(currentContainer)[0].children[
     currentPlayer.iconContainerRow
   ].children[currentPlayer.iconColumn].style.backgroundImage = `url(${param})`;
@@ -165,8 +167,6 @@ function setIconOnHit(param) {
     currentPlayer.iconContainerRow = 2;
     currentPlayer.iconColumn = 0;
   }
-
-  console.log(player_1.iconColumn, player_1.iconContainerRow);
 }
 
 function resetScore() {
@@ -192,13 +192,17 @@ function gameEnd() {
     origin: { y: 0.8 },
   });
 
-  // if (player_1.score > player_2.score) {
-  //   console.warn("TEST1");
-  // } else if (player_1.score < player_2.score) {
-  //   console.warn("TEST2");
-  // } else {
-  //   console.warn("TEST3");
-  // }
+  let winner = "Felicidades! Has ganado " + player_1.name;
+
+  if (player_1.score < player_2.score) {
+    winner = "Felicidades! Has ganado " + player_2.name;
+  } else if (player_1.score == player_2.score) {
+    winner = "Empate! No ha ganado nadie! Tampoco ha perdido nadie!";
+  }
+
+  document.getElementById("victory_text").innerHTML = winner;
+
+  showDialogue("modal_victory");
 
   //TODO Poner mensaje de victoria mediante modal
 }
@@ -207,12 +211,12 @@ function setTurn() {
   if (playerTurn == 2 || playerTurn == null) {
     playerTurn = 1;
     document.getElementById("turn_display").value =
-      "Turno de " + player_1.playerName1 + "!";
+      "Turno de " + player_1.name + "!";
     document.getElementById("turn_display").style.backgroundColor = "#A8DADC";
   } else {
     playerTurn = 2;
     document.getElementById("turn_display").value =
-      "Turno de " + player_2.playerName2 + "!";
+      "Turno de " + player_2.name + "!";
     document.getElementById("turn_display").style.backgroundColor = "#E76F51";
   }
 }
@@ -283,7 +287,7 @@ function newGame() {
     card.value = "";
   });
   assignImages();
-  showDialogue();
+  showDialogue("modal_prompt");
 }
 
 //Dar estilo a modal, configuar victoria de jugador, dar opcion de volver a jugar

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Icono -->
+    <!-- Icono de pagina -->
     <link rel="icon"
         href="https://www.seekpng.com/png/detail/220-2200843_116kib-2000x1996-2000px-pokc3a9-ball-icon-pokeball-png.png"
         type="image/png" sizes="16x16">
@@ -23,7 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
-<body onload="assignImages(); showDialogue();">
+<body onload="assignImages(); showDialogue('modal_prompt');">
 
     <!-- Display de turno y boton de nueva partida -->
     <header class="container-fluid d-flex flex-column align-items-center gap-2">
@@ -35,11 +35,12 @@
 
         <!-- Board del primer jugador -->
         <section
-            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 rounded player_board_1">
+            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 border border-dark rounded player_board_1">
             <div class="d-flex flex-column align-items-center mt-2">
+                <label for="text" class="p-2"> &darr; Jugador 1 &darr;</label>
                 <input type="text" class="border-0 text-center" id="player_name_1" value="" readonly>
-                <label for="text" class="p-2">Aciertos</label>
-                <input type="text" class="text-center mb-3" readonly value="0" id="score_display_player_1">
+                <label for="text" class="p-2">&darr; Aciertos &darr;</label>
+                <input type="text" class="text-center mb-3 border-0" readonly value="0" id="score_display_player_1">
             </div>
             <div class="container icon_container_1 mb-3 board">
                 <div class="d-flex flex-row row mb-2 gap-2">
@@ -125,11 +126,12 @@
 
         <!-- Board del segundo jugador -->
         <section
-            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 rounded player_board_2">
+            class="col-3 container align-self-center d-flex flex-column align-items-center pt-3 border border-dark rounded player_board_2">
             <div class="d-flex flex-column align-items-center mt-2">
+                <label for="text" class="p-2"> &darr; Jugador 2 &darr;</label>
                 <input type="text" class="border-0 text-center" id="player_name_2" value="" readonly>
-                <label for="text" class="p-2">Aciertos</label>
-                <input type="text" class="text-center mb-3" readonly value="0" id="score_display_player_2">
+                <label for="text" class="p-2">&darr; Aciertos &darr;</label>
+                <input type="text" class="text-center mb-3 border-0" readonly value="0" id="score_display_player_2">
             </div>
 
             <div class="container icon_container_2 mb-3 board">
@@ -154,8 +156,8 @@
         <!-- TODO Leer documentacion, dar estilo... -->
         <section class="modal fade show" id="modal_prompt" tabindex="-1" style="display: block;">
             <article class="modal-dialog modal-dialog-centered">
-                <div class="modal-content p-4">
-                    <div class="modal-header container-fluid d-flex justify-content-center">
+                <div class="modal-content p-3" id="modal_container">
+                    <div class="modal-header container-fluid d-flex justify-content-center bg-danger">
                         <h1 class="modal-title fs-5 pb-2" id="modalTitle">Juego de parejas!</h1>
                     </div>
                     <div class="modal-body d-flex flex-column align-items-center mb-2">
@@ -164,19 +166,37 @@
                         <p class="mt-2">¿Y el nombre de tu contricante?</p>
                         <input type="text" id="player_name_2_input" autocomplete="off">
                     </div>
-                    <div class="modal-footer container-fluid d-flex justify-content-between">
-                        <button type="button" class="btn btn-danger" onclick="deleteInput();">Borrar</button>
+                    <div class="modal-footer container-fluid d-flex justify-content-between bg-danger">
+                        <button type="button" class="btn btn-warning" onclick="deleteInput();">Borrar</button>
                         <button type="button" class="btn btn-primary" onclick="setName();">Empezar!</button>
                     </div>
                 </div>
             </article>
         </section>
 
+        <section class="modal fade show" id="modal_victory" tabindex="-1" style="display: block;">
+            <article class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                    <div class="modal-header row">
+                        <h1 class="modal-title fs-5 pb-2 col-8 text-end">Fin del
+                            juego!</h1>
+                        <button type="button" class="btn-close col-4" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex flex-column align-items-center mb-2">
+                        <p id="victory_text">Felicidades! Has ganado jugador 1</p>
+                    </div>
+                    <div class="modal-footer container-fluid d-flex justify-content-center">
+                        <button type="button" class="btn btn-success" onclick="newGame();">¿Jugar de nuevo?</button>
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
 
     <!-- Decoracion/Footer -->
     <footer class=" d-flex justify-content-center">
-        <p class="text-light p-2 mt-2">Intentalo lo mejor que puedas!</p>
+        <p class="text-light p-2 mt-2 overflow-hidden">Intentalo lo mejor que puedas!</p>
     </footer>
 
     <!-- Scripts -->

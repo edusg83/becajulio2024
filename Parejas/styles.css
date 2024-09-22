@@ -21,6 +21,18 @@ main {
     overflow: hidden;
 }
 
+.arrow {
+    transform: rotate(90deg);
+    padding-bottom: -20px;
+}
+
+.icon_hit {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+}
+
 #game_section button {
     max-width: 80px;
     height: 120px;
@@ -57,17 +69,6 @@ footer p:hover {
     background-size: cover;
     background-position: center;
     transition: 0.4s ease-in-out;
-}
-
-footer {
-    overflow: hidden;
-}
-
-.icon_hit {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 50px;
 }
 
 @keyframes shakeItBaby {
