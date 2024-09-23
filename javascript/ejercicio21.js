@@ -16,7 +16,7 @@ boton.onclick = function() {
         boton.classList.add('aplicado');
     } else {
         parrafo.classList.remove('parrafo');
-        boton.textContent = 'Aplicar estilo a párrafo';
+        boton.textContent = 'Quitar estilo a párrafo';
         boton.classList.remove('aplicado');
     }
 };
