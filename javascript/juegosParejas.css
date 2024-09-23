@@ -92,8 +92,8 @@ body {
 }
 
 #imagenesJugador1 img, #imagenesJugador2 img {
-    width: 80px;
-    height: 130px;
+    width: 100px;
+    height: 150px;
     margin: 5px;
     border: 2px solid #ddd;
    
