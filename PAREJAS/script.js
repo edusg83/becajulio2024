@@ -105,13 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let contador1 = 0;
     let contador2 = 0;
     let jugadorDeTurno = jugador1;
-    let contadorTurno = 0;
+    let contadorTurno = 1;
     const cartas = document.querySelector(".cartas");
     const adios = document.querySelector(".adios");
     let cartasSeleccionadas = [];
     let cartasSeleccionadasId = [];
     const cartasGanadoras = [];
-    const mostrarResultado = document.querySelector("#jugador");
+    const cartasTotal = [];
 
     function crearEspacio() {
         for(let i = 0; i < cartasArray.length; i++){
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartaMatch[cartaUnoId].removeEventListener('click', voltearCarta);
             cartaMatch[cartaDosId].removeEventListener('click', voltearCarta);
             cartasGanadoras.push(cartasSeleccionadas);
+            cartasTotal.push(cartasSeleccionadas);
         }
         else {
             cartaMatch[cartaUnoId].setAttribute('src', 'img/sakura.png');
@@ -144,32 +145,36 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadas=[];
         cartasSeleccionadasId=[];
 
-        cartaMatch.onclick = turnos(true);
-
-        if(cartasGanadoras.length === cartasArray.length/2) {
-            mostrarResultado.textContent = "Ganador";
-            const bye = document.createElement("img");
-            bye.setAttribute('src', 'img/despedida.gif');
-            adios.appendChild(bye);
+        if(cartasGanadoras.length > 0 ) {
+            cartaMatch.onclick = turnos(true);
+            cartasGanadoras.length = 0;
         }
+
+        jugadorDeTurno = (jugadorDeTurno === jugador1) ? jugador2 : jugador1;
+        document.getElementById("jugadorDeTurno").innerText = `Turno de ${jugadorDeTurno} - Jugadas ${contadorTurno}`;
+        contadorTurno++;
     }
 
     function turnos(e) {
         if (e) {
             if (jugadorDeTurno === jugador1) {
-                contadorTurno++;
+                contador1++;
                 document.getElementById("contador1").innerText = `${contador1}`;
             } else {
                 contador2++;
                 document.getElementById("contador2").innerText = `${contador2}`;
             }
         }
-
-        jugadorDeTurno= (jugadorDeTurno === jugador1) ? jugador2 : jugador1;
-
-        contadorTurno++;
-
-        document.getElementById("jugadorDeTurno").innerText = `Turno de ${jugadorDeTurno} (Turno ${contadorTurno})`;
+        if(cartasTotal.length === cartasArray.length/2) {
+            if(contador1 > contador2) {
+                document.getElementById("contador1").innerText = `Ganador con ${contador1} puntos`;
+            } else {
+                document.getElementById("contador2").innerText = `Ganador con ${contador2} puntos`;
+            }
+            const bye = document.createElement("img");
+            bye.setAttribute('src', 'img/despedida.gif');
+            adios.appendChild(bye);
+        }
     }
 
     function voltearCarta() {
@@ -178,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadasId.push(cartaId);
         this.setAttribute('src', cartasArray[cartaId].img);
         if(cartasSeleccionadasId.length === 2) {
-            setTimeout(coincidirImg, 700);
+            setTimeout(coincidirImg, 500);
         }
     }
 

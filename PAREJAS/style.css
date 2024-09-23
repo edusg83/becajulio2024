@@ -3,7 +3,7 @@ main {
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
-   height: 100vh;
+   height: 100%;
  }
  .puntuacion {
    background-color: #D16984;
@@ -11,6 +11,11 @@ main {
  }
  img {
     height: 130px;
+ }
+ #jugadorDeTurno {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 2em;
  }
  .adios > img {
    margin-top: -36em;
