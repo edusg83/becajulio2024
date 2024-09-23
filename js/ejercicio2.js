@@ -181,3 +181,7 @@ element.innerHTML = "Este texto esta añadido dinámicamente";
 
 let bodyHtml = document.getElementsByTagName('body')[0]; 
 bodyHtml.appendChild(element); 
+
+//Ejercicio 20
+element.setAttribute("id", "parrafo1");
+console.log(element); 
