@@ -1,5 +1,7 @@
 (function () {
     let formulario = document.getElementById("formulario");
+    let valoresFormulario = document.getElementById("mostrarValores");
+
 
     formulario.onsubmit = function (event) {
         event.preventDefault();
@@ -8,7 +10,7 @@
 
     formulario.querySelectorAll('input').forEach(input => {
         input.addEventListener('input', () => {
-            errorMsg.textContent = "";
+            valoresFormulario.textContent = "";
         });
     });
 
