@@ -50,13 +50,13 @@ function barajarCartas() {
 }
 
 function crearTablero() {
-    const contenedor = document.getElementById('imagenesContainer');
-    const columnas = contenedor.getElementsByClassName('col-2');
+    let contenedor = document.getElementById('imagenesContainer');
+    let columnas = contenedor.getElementsByClassName('col-2');
 
     for (let i = 0; i < cartasDesordenadas.length; i++) {
-        const animal = cartasDesordenadas[i];
-        const columna = columnas[i];
-        const contenidoCarta = columna.querySelector('.contenido-carta');
+        let animal = cartasDesordenadas[i];
+        let columna = columnas[i];
+        let contenidoCarta = columna.querySelector('.contenido-carta');
         
         if (contenidoCarta) {
             contenidoCarta.setAttribute('data-animal', animal);
@@ -136,13 +136,13 @@ function verificarPareja() {
 }
 
 
-function actualizarImagenesJugador(idContenedor, animal1, animal2) {
+function actualizarImagenesJugador(idContenedor, animal) {
     let contenedor = document.getElementById(idContenedor);
    
     let parImagenes = document.createElement('div');
     parImagenes.classList.add('par-imagenes');
     parImagenes.innerHTML = `
-        <img src="${animal1}" class="img-fluid" alt="${animal1}">
+        <img src="${animal}" class="img-fluid" alt="${animal}">
 
     `;
     contenedor.appendChild(parImagenes);
