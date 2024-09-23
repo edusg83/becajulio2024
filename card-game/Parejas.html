@@ -27,12 +27,22 @@
                 <div class="modal-body">
                   <form id="playersForm">
                     <div class="mb-3">
-                      <label for="player1Name" class="form-label">Jugador 1</label>
+                      <h3>Jugador 1</h3>
+                      <label for="player1Name" class="form-label">Nombre</label>
                       <input type="text" class="form-control" id="inputPlayer1Name" required>
+                      <label for="avatar">Avatar</label>
+                      <div class="d-flex justify-content-center align-items-center " id="avatarPlayer1">
+                        <!--Avatar a elegir-->
+                      </div>
                     </div>
                     <div class="mb-3">
-                      <label for="player2Name" class="form-label">Jugador 2</label>
+                      <h3>Jugador 2</h3>
+                      <label for="player2Name" class="form-label">Nombre</label>
                       <input type="text" class="form-control" id="inputPlayer2Name" required>
+                      <label for="avatar">Avatar</label>
+                      <div class="d-flex justify-content-center align-items-center " id="avatarPlayer2">
+                        <!--Avatar a elegir-->
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Empezar la partida!</button>
                   </form>
@@ -45,10 +55,9 @@
            <div class="modal fade" id="modalWinner" tabindex="-1" aria-labelledby="modalWinnerLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content text-center">
-                <!-- <div class="modal-header">
-                  <h5 class=" text-center" id="modalWinnerLabel">El ganador es: </h5>
+                <div class="modal-header">
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div> -->
+                </div> 
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-6">
@@ -76,7 +85,7 @@
               <p class="card-text" id="playerPoints1"></p>
             </div>
           </div>
-            <div  id="card-container" class="row g-3 justify-content-center">       
+            <div  id="card-container" class="row  justify-content-center">       
                 <!--aqui se cargan las cartas desde-->
             </div>
             <div class="card" style="width: 18rem;" id="player2Card">

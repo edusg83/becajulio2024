@@ -173,3 +173,11 @@ let method3 = document.querySelector('#header');
 console.log(method1); 
 console.log(method2); 
 console.log(method3); 
+
+//Ejercicio 19
+
+let element = document.createElement("p"); 
+element.innerHTML = "Este texto esta añadido dinámicamente"; 
+
+let bodyHtml = document.getElementsByTagName('body')[0]; 
+bodyHtml.appendChild(element); 

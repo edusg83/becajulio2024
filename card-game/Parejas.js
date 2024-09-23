@@ -25,6 +25,14 @@ const cards = [
   { id: 'yamato2', imgFront: '../../becajulio2024/images/yamato.jpg', imgBack: '../../becajulio2024/images/back.jpg' }
 ];
 
+const iconsPlayers = [
+  {id: 'luffy', icon: '../images/luffyicon.jpg'},
+  {id: 'franky', icon: '../images/iconfranky.jpg'},
+  {id: 'brook', icon: '../images/brookicon.jpg'},
+  {id: 'nami', icon: '../images/namiicon.jpg'},
+  {id: 'jinbe', icon: '../images/jinbeicon.jpg'},
+]
+
 const maxPoints = 12;
 let flippedCards = [];
 let resolvedCards = [];
@@ -48,16 +56,33 @@ function startGame() {
   modalSetPlayers.show();
   document.getElementById('playersForm').addEventListener('submit', function (event) {
     event.preventDefault();
-
-    player1 = document.getElementById('inputPlayer1Name').value;
-    player2 = document.getElementById('inputPlayer2Name').value;
-
-    document.getElementById('playerName1').innerHTML = player1;
-    document.getElementById('playerName2').innerHTML = player2;
-    document.getElementById('playerPoints1').innerHTML = player1Points;
-    document.getElementById('playerPoints2').innerHTML = player2Points;
-  
+    setPlayers();
     modalSetPlayers.hide();
+  });
+}
+
+function setPlayers() {
+  player1 = document.getElementById('inputPlayer1Name').value;
+  player2 = document.getElementById('inputPlayer2Name').value;
+
+  document.getElementById('playerName1').innerHTML = player1;
+  document.getElementById('playerName2').innerHTML = player2;
+  document.getElementById('playerPoints1').innerHTML = player1Points;
+  document.getElementById('playerPoints2').innerHTML = player2Points;
+}
+
+function generateAvatarHTML(icons, container) {
+  const cardContainer = document.getElementById(container);
+  cardContainer.innerHTML = '';
+  icons.forEach(icon => {
+    const iconHTML = `
+            <div class="col-2 card p-0" id="${icon.id}" onclick="selectAvatar(this)">
+             <div class="card-body">
+              <img src="${card.img}" class="img-fluid" alt="">
+              </div>
+            </div>
+          `;
+    cardContainer.innerHTML += cardHTML;
   });
 }
 
@@ -233,11 +258,11 @@ function showWinnerModal() {
 
 function showWinner() {
   if (player1Points > player2Points) {
-    document.getElementById('winner').innerHTML = player1;
+    document.getElementById('winner').innerHTML = "Has ganado " + player1 + "!";
     document.getElementById('winnerPoints').innerHTML = "Con " + player1Points + " puntos!";
     document.getElementById('winnerImg').src = "../images/youwin.jpg";
   } else if (player1Points < player2Points) {
-    document.getElementById('winner').innerHTML = player2;
+    document.getElementById('winner').innerHTML = "Has ganado " + player2 + "!";
     document.getElementById('winnerPoints').innerHTML = "Con " + player2Points + " puntos!";
     document.getElementById('winnerImg').src = "../images/youwin.jpg";
   } else {
