@@ -17,11 +17,27 @@
         <p style="color:white;">Texto demo con fondo rojo</p>
     </div>
     
+    <form name="miForm">
+        Nombre: <input type="text" name="nombre" id="nom" tabindex="10" />
+        Apellidos <input type ="text" name="apellidos" id="ape" tabindex="20" />
+
+    </form>
    <script>
   
-      let capa= document.getElementById("demo");
-      console.log(capa);
-      capa.style.backgroundColor="#ffffff";
+    let campoNombre = document.getElementById("nom");
+    campoNombre.value="Escribe tu nombre";
+
+    campoNombre.onfocus=function(){
+        if (campoNombre.value=="Escribe tu nombre"){
+            campoNombre.value="";
+        }
+    };
+
+    campoNombre.onblur= function(){
+        if (campoNombre.value==""){
+            campoNombre.value="Escribe tu nombre";
+        }
+    };
    
    </script>
 
