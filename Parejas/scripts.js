@@ -17,6 +17,20 @@ const cardSet = new Set();
 
 const cardPairs = new Set();
 
+const player_1 = {
+  name: "",
+  score: 0,
+  iconContainerRow: 0,
+  iconColumn: 0,
+};
+
+const player_2 = {
+  name: "",
+  score: 0,
+  iconContainerRow: 0,
+  iconColumn: 0,
+};
+
 let cardValue1 = null;
 
 let cardValue2 = null;
@@ -26,20 +40,6 @@ let lock = false;
 let isActive = false;
 
 let playerTurn = null;
-
-let player_1 = {
-  name: "",
-  score: 0,
-  iconContainerRow: 0,
-  iconColumn: 0,
-};
-
-let player_2 = {
-  name: "",
-  score: 0,
-  iconContainerRow: 0,
-  iconColumn: 0,
-};
 
 let cardCount = 0;
 
