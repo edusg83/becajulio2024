@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartasSeleccionadasId = [];
     const cartasGanadoras = [];
     const mostrarResultado = document.querySelector("#puntos");
+    let jugador1 = 0;
+    let jugador2 = 0;
+    let contador = 0;
 
     function crearEspacio() {
         for(let i = 0; i < cartasArray.length; i++){
@@ -140,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadas=[];
         cartasSeleccionadasId=[];
         mostrarResultado.textContent = cartasGanadoras.length;
+        contador = mostrarResultado.textContent = cartasGanadoras.length;
         if(cartasGanadoras.length === cartasArray.length/2) {
             mostrarResultado.textContent = "Ganador";
             const bye = document.createElement("img");
