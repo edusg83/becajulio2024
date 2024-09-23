@@ -1,13 +1,102 @@
 body {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./img/mistborn/background.png");
+  background-size: 16em;
+}
+
+main {
+  background-color: lightblue;
+  border-radius: 1em;
+  padding: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
+header {
+  background-color: rgb(129, 222, 253);
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+
+header > h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+#selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#victoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#victoria > * {
+  margin: 0.5em;
+}
+
+#victoria>span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#victoria button {
+  background-color: #00a2ff;
+  font-size: 1em;
+  border-radius: 0.33em;
+  -webkit-border-radius: 0.33em;
+  -moz-border-radius: 0.33em;
+  -ms-border-radius: 0.33em;
+  -o-border-radius: 0.33em;
+}
+
+#selector>* {
+  margin: 0.5em;
+}
+
+#opcion {
+  font-size: 1.5em;
+}
+
+#juego{
+  display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 #panel {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  
   gap: 1em;
+}
+
+.casillas16 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.casillas32 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.btn_jugar {
+  background-color: #00edff;
+  font-size: 1.5em;
+  border-radius: 0.33em;
+  -webkit-border-radius: 0.33em;
+  -moz-border-radius: 0.33em;
+  -ms-border-radius: 0.33em;
+  -o-border-radius: 0.33em;
 }
 
 .fondo, .imagen {
@@ -51,6 +140,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  width: 14em;
+  margin: 1em;
 }
 
 .marcador span:first-of-type {
@@ -70,6 +162,7 @@ body {
 }
 
 .icono {
+  box-sizing: border-box;
   height: 4em;
   width: 4em;
 }

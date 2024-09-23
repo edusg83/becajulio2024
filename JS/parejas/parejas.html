@@ -9,19 +9,41 @@
 </head>
 
 <body>
-  <section id="jugador0" class="marcador">
-    <span>Jugador 1</span><br>
-    <span class="puntuacion" id="puntuacion0">0</span>
-    <div class="iconos"></div>
-  </section>
+  <header>
+    <h1>Parejas Mistborn</h1>
+    <h2 id="turno">Turno del jugador <span id="turno_jugador">1</span></h2>
+  </header>
 
-  <main id="panel"></main>
+  <main>
+    <div id="selector">
+      <select name="opcion" id="opcion">
+        <option value="16">Normal - 8 parejas</option>
+        <option value="32">Dificil - 16 parejas</option>
+      </select>
+      <button class="btn_jugar" onclick="jugar()">Jugar</button>
 
-  <section id="jugador1" class="marcador">
-    <span>Jugador 2</span><br>
-    <span class="puntuacion" id="puntuacion1">0</span>
-    <div class="iconos"></div>
-  </section>
+    </div>
+    <div id="juego">
+      <section id="jugador0" class="marcador">
+        <span hidden>Jugador 1</span><br>
+        <span class="puntuacion" id="puntuacion0" hidden>0</span>
+        <div class="iconos" hidden></div>
+      </section>
+
+      <main id="panel"></main>
+
+      <section id="jugador1" class="marcador">
+        <span hidden>Jugador 2</span><br>
+        <span class="puntuacion" id="puntuacion1" hidden>0</span>
+        <div class="iconos" hidden></div>
+      </section>
+    </div>
+
+    <div id="victoria">
+      <span id="ganador" hidden>Ha ganado el jugador 1</span>
+      <a href="./parejas.html" hidden><button>Jugar Otra Vez</button></a>
+    </div>
+  </main>
 
   <script src="parejas.js"></script>
 </body>

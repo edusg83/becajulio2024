@@ -1,27 +1,77 @@
-const NUMERO_CASILLAS = 16;
+let numeroCasillas = 16;
 const $panel = document.getElementById("panel");
-const $casillas = document.getElementsByClassName("casilla");
+let $casillas;
 
 const COLOR_JUGADOR = ["#ff0000", "#008000"];
 const COLOR_IMAGENES = [
-  "#ff6961",
-  "#ffb480",
-  "#f8f38d",
-  "#42d6a4",
-  "#08cad1",
-  "#59adf6",
-  "#9d94ff",
-  "#c780e8"
+  "#FF0000",
+  "#00FF00",
+  "#0000FF",
+  "#FFFF00",
+  "#FF00FF",
+  "#00FFFF",
+  "#800000",
+  "#808000",
+  "#008080",
+  "#800080",
+  "#FFA500",
+  "#008000",
+  "#338FFF",
+  "#A52A2A",
+  "#FFC0CB",
+  "#FFD700"
 ]
 
 let cartasJugadas = new Array();
 let puntos = [0, 0];
-let casillasRestantes = NUMERO_CASILLAS;
+let casillasRestantes = numeroCasillas;
 let turno = 0;
 
-// Generador de cuadricula
 (function () {
-    for (let i = 0; i < NUMERO_CASILLAS; i++) {
+  ocultarJuego(true);
+  ocultarVictoria(true);
+}());
+
+function jugar() {
+  let parejas = Number(document.getElementById("opcion").value);
+  numeroCasillas = parejas;
+  document.getElementById("panel").className += " casillas" + parejas;
+
+  ocultarOpciones(true);
+  ocultarJuego(false);
+
+  generarCuadricula();
+}
+
+function ocultarTurno(opcion) {
+  document.getElementById("turno").hidden = opcion;
+}
+
+function ocultarJugadores(opcion) {
+  Array.from(document.getElementsByClassName("marcador")).forEach(e => {
+    Array.from(e.children).forEach(c => c.hidden = opcion);
+  })
+}
+
+function ocultarJuego(opcion) {
+  ocultarTurno(opcion);
+  Array.from(document.getElementById("juego").children).forEach(e => {
+    Array.from(e.children).forEach(c => c.hidden = opcion);
+  });
+  
+}
+
+function ocultarOpciones(opcion) {
+  Array.from(document.getElementById("selector").children).forEach(e => e.hidden = opcion);
+}
+
+function ocultarVictoria(opcion) {
+  Array.from(document.getElementById("victoria").children).forEach(e => e.hidden = opcion);
+}
+
+// Generador de cuadricula
+function generarCuadricula () {
+    for (let i = 0; i < numeroCasillas; i++) {
     const fondo = document.createElement("img");
       fondo.className = "fondo";
       fondo.src = "img/mistborn/logo.png";
@@ -43,18 +93,20 @@ let turno = 0;
     $panel.appendChild(casilla);
   }
 
+  $casillas = document.getElementsByClassName("casilla");
+
   generarImagenes();
-}())
+}
 
 // Generador de imagenes
 function generarImagenes() {
-  const imagenesUsadas = new Array(NUMERO_CASILLAS / 2 + 1);
+  const imagenesUsadas = new Array(numeroCasillas / 2 + 1);
   imagenesUsadas.fill(0);
   let rng;
 
   Array.from($casillas).forEach(e => {
     do {
-      rng = Math.round(Math.random() * (NUMERO_CASILLAS / 2 - 1)) + 1;
+      rng = Math.round(Math.random() * (numeroCasillas / 2 - 1)) + 1;
     } while (imagenesUsadas[rng] === 2);
     imagenesUsadas[rng]++;
     let img = e.getElementsByClassName("imagen")[0];
@@ -171,10 +223,23 @@ function establecerPuntuacion() {
 
 function cambioTurno() {
   turno = turno === 0 ? 1 : 0;
+  document.getElementById("turno_jugador").innerHTML = turno + 1;
 }
 
 function finPartida() {
-  if (confirm("Fin de la partida")) reinicio();
+  let ganador = document.getElementById("ganador");
+
+  if (puntos[0] > puntos[1]) {
+    ganador.innerHTML = "Ha ganado el JUGADOR 1";
+  } else if (puntos[0] < puntos[1]) {
+    ganador.innerHTML = "Ha ganado el JUGADOR 2";
+  } else {
+    ganador.innerHTML = "EMPATE";
+  }
+
+  ocultarVictoria(false);
+  ocultarJuego(true);
+  ocultarJugadores(false);
 }
 
 function reinicio() {
@@ -183,7 +248,7 @@ function reinicio() {
   document.getElementById("puntuacion0").innerHTML = "0";
   document.getElementById("puntuacion1").innerHTML = "0";
   turno = 0;
-  casillasRestantes = NUMERO_CASILLAS;
+  casillasRestantes = numeroCasillas;
   limpiarImagenes();
   generarImagenes();
   ocultarTablero();
