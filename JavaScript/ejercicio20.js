@@ -7,4 +7,6 @@
     texto.id = "parrafo1";
 
     document.body.appendChild(texto);
+
+    /* texto.setAtribute */
 })();
