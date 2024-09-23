@@ -24,11 +24,12 @@ function comprobarNombre() {
         valoresFormulario.textContent = "El nombre no puede tener más de 20 caracteres.";
     }
 
-    // if (!nombre.contains("ANTONIO")) {
-    //     alert("El nombre debe comenzar con 'ANTONIO'.");
-    // }
+    if (nombre.startsWith("ANTONIO")) {
+        comrpoabrCampos();
+    } else {
+        valoresFormulario.textContent = ("El nombre debe comenzar con 'ANTONIO'.");
+    }
 
-    comrpoabrCampos();
 }
 
 function comrpoabrCampos() {
@@ -47,9 +48,10 @@ function mostrarValores() {
     let email = document.getElementById("email").value;
     let provincia = document.getElementById("provincia").value;
     let valoresFormulario = document.getElementById("mostrarValores");
+
     valoresFormulario.innerHTML = `
         <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Apellido:</strong> ${email}</p>
-        <p><strong>Email:</strong> ${provincia}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Provincia:</strong> ${provincia}</p>
     `;
 }
