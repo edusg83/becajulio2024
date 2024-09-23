@@ -19,15 +19,11 @@ function comprobarNombre() {
 
     if (nombre.length > 20) {
         valoresFormulario.textContent = "El nombre no puede tener más de 20 caracteres.";
-        return;
-    }
-
-    if (!nombre.startsWith("ANTONIO")) {
+    } else if (!nombre.startsWith("ANTONIO")) {
         valoresFormulario.textContent = ("El nombre debe comenzar con 'ANTONIO'.");
-        return;
+    } else {
+        comrpoabrCampos();
     }
-
-    comrpoabrCampos();
 }
 
 function comrpoabrCampos() {
