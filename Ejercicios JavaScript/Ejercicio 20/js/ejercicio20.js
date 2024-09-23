@@ -1,0 +1,15 @@
+// Crear un nuevo elemento <p>
+let nuevoParrafo = document.createElement('p');
+
+// Añadir el texto al elemento <p>
+nuevoParrafo.textContent = "Este texto está añadido dinámicamente";
+
+// Añadir el atributo id con el valor 'parrafo1' al nuevo elemento <p>
+nuevoParrafo.setAttribute('id', 'parrafo1');
+
+// Añadir el nuevo elemento <p> al body del documento
+document.body.appendChild(nuevoParrafo);
+
+// Mostrar en consola el párrafo creado y su atributo id
+console.log('Párrafo creado dinámicamente:', nuevoParrafo);
+console.log('Atributo id del párrafo:', nuevoParrafo.getAttribute('id'));
