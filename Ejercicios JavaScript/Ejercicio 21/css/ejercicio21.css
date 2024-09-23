@@ -1,0 +1,11 @@
+/* Regla para la clase 'parrafo' */
+.parrafo {
+    color: red;
+    text-decoration: underline;
+    font-size: 2em;
+}
+
+/* Regla para la clase 'aplicado' */
+.aplicado {
+    background-color: yellow;
+}
