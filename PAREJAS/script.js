@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadasId.push(cartaId);
         this.setAttribute('src', cartasArray[cartaId].img);
         if(cartasSeleccionadasId.length === 2) {
-            setTimeout(coincidirImg, 500);
+            setTimeout(coincidirImg, 700);
         }
     }
 
