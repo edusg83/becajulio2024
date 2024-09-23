@@ -134,15 +134,35 @@ function ocultarPareja() {
 function fijarPareja() {
   casillasRestantes -= 2;
   puntos[turno]++;
+
+  registrarImagen();
+
   $casillas[cartasJugadas[0]].removeAttribute("onclick");
   $casillas[cartasJugadas[1]].removeAttribute("onclick");
   
-  getImg(cartasJugadas[0]).style.border = "solid " + COLOR_JUGADOR[turno];
-  getImg(cartasJugadas[1]).style.border = "solid " + COLOR_JUGADOR[turno];
+  dibujarBorde();
 
   if (casillasRestantes === 0) {
     finPartida();
   }
+}
+
+function registrarImagen() {
+  const imgOriginal = getImg(cartasJugadas[0]);
+  const img = document.createElement("img");
+  img.className = "icono";
+  img.src = imgOriginal.src;
+  img.style.backgroundColor = imgOriginal.style.backgroundColor;
+  
+  document.getElementById("jugador" + turno).getElementsByClassName("iconos")[0].append(img);
+
+}
+
+function dibujarBorde() {
+  let estilo = "solid 5px " + COLOR_JUGADOR[turno];
+
+  getImg(cartasJugadas[0]).style.border = estilo;
+  getImg(cartasJugadas[1]).style.border = estilo;
 }
 
 function establecerPuntuacion() {
@@ -154,8 +174,7 @@ function cambioTurno() {
 }
 
 function finPartida() {
-  alert("Fin de la partida");
-  reinicio();
+  if (confirm("Fin de la partida")) reinicio();
 }
 
 function reinicio() {

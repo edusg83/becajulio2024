@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #panel {
@@ -46,5 +46,40 @@ body {
   transform: rotateY(360deg);
 }
 
+.marcador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.marcador span:first-of-type {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.puntuacion {
+  font-size: 2em;
+}
+
+.iconos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin: 1em;
+}
+
+.icono {
+  height: 4em;
+  width: 4em;
+}
+
+#jugador0 img {
+  border: solid #ff0000;
+}
+
+#jugador1 img {
+  border: solid #008000;
+}
 
 
