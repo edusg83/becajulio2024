@@ -1,40 +1,37 @@
-(function () {
-    let formulario = document.getElementById("formulario");
-    let valoresFormulario = document.getElementById("mostrarValores");
+const formulario = document.getElementById("formulario");
+const valoresFormulario = document.getElementById("mostrarValores");
 
+formulario.onsubmit = function (event) {
+    event.preventDefault();
+    comprobarNombre()
+}
 
-    formulario.onsubmit = function (event) {
-        event.preventDefault();
-        comprobarNombre()
-    }
-
-    formulario.querySelectorAll('input').forEach(input => {
-        input.addEventListener('input', () => {
-            valoresFormulario.textContent = "";
-        });
+formulario.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', () => {
+        valoresFormulario.textContent = "";
     });
+});
 
-})();
+
 
 function comprobarNombre() {
-    let nombre = document.getElementById("nombre").value;
-    let valoresFormulario = document.getElementById("mostrarValores");
+    let nombre = document.getElementById("nombre").value.toUpperCase();
 
     if (nombre.length > 20) {
         valoresFormulario.textContent = "El nombre no puede tener más de 20 caracteres.";
+        return;
     }
 
-    if (nombre.startsWith("ANTONIO")) {
-        comrpoabrCampos();
-    } else {
+    if (!nombre.startsWith("ANTONIO")) {
         valoresFormulario.textContent = ("El nombre debe comenzar con 'ANTONIO'.");
+        return;
     }
 
+    comrpoabrCampos();
 }
 
 function comrpoabrCampos() {
     let email = document.getElementById("email").value;
-    let valoresFormulario = document.getElementById("mostrarValores");
 
     if (email == "") {
         valoresFormulario.textContent = "Todos los campos deben estar rellenos.";
@@ -47,7 +44,6 @@ function mostrarValores() {
     let nombre = document.getElementById("nombre").value;
     let email = document.getElementById("email").value;
     let provincia = document.getElementById("provincia").value;
-    let valoresFormulario = document.getElementById("mostrarValores");
 
     valoresFormulario.innerHTML = `
         <p><strong>Nombre:</strong> ${nombre}</p>
