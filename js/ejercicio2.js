@@ -185,3 +185,31 @@ bodyHtml.appendChild(element);
 //Ejercicio 20
 element.setAttribute("id", "parrafo1");
 console.log(element); 
+
+//ejercicio 21
+
+let element2 = document.createElement("p"); 
+element2.innerHTML = "parrafo1"; 
+
+element2.setAttribute("id", "p1");
+console.log(element2); 
+
+let button = document.createElement("button"); 
+button.setAttribute("id", "boton1");
+button.innerHTML = "Aplicar estilo al párrafo 1"; 
+
+button.onclick = function(){
+    if(!element2.classList.contains("parrafo")){
+        button.innerHTML = "Quitar estilo a párrafo 1"; 
+        button.classList.add("aplicado"); 
+        element2.classList.add("parrafo"); 
+    }else{
+        element2.classList.remove("parrafo"); 
+        button.innerHTML = "Aplicar estilo al párrafo 1"; 
+        button.classList.remove("aplicado"); 
+    }
+}
+
+document.body.appendChild(element2);
+document.body.appendChild(button);
+
