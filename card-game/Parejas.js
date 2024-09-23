@@ -26,11 +26,11 @@ const cards = [
 ];
 
 const iconsPlayers = [
-  {id: 'luffy', icon: '../images/luffyicon.jpg'},
-  {id: 'franky', icon: '../images/iconfranky.jpg'},
-  {id: 'brook', icon: '../images/brookicon.jpg'},
-  {id: 'nami', icon: '../images/namiicon.jpg'},
-  {id: 'jinbe', icon: '../images/jinbeicon.jpg'},
+  {id: 'luffy', icon: '../../becajulio2024/images/luffyicon.jpg'},
+  {id: 'franky', icon: '../../becajulio2024/images/iconfranky.jpg'},
+  {id: 'brook', icon: '../../becajulio2024/images/brookicon.jpg'},
+  {id: 'nami', icon: '../../becajulio2024/images/namiicon.jpg'},
+  {id: 'jinbe', icon: '../../becajulio2024/images/jinbeicon.jpg'},
 ]
 
 const maxPoints = 12;
@@ -42,10 +42,14 @@ let player2Points = 0;
 let totalPoints = 0;
 let player1; 
 let player2; 
+let iconPlayer1; 
+let iconPlayer2; 
 
 //Mostrar modal
 document.addEventListener('DOMContentLoaded', function () {
   startGame();
+  generateAvatarHTML(iconsPlayers, "avatarPlayer1"); 
+  generateAvatarHTML(iconsPlayers, "avatarPlayer2"); 
 });
 
 function startGame() {
@@ -56,14 +60,51 @@ function startGame() {
   modalSetPlayers.show();
   document.getElementById('playersForm').addEventListener('submit', function (event) {
     event.preventDefault();
+   
     setPlayers();
     modalSetPlayers.hide();
   });
 }
 
+function selectAvatar(element){
+  selectAvatarVisually(element); 
+
+  let parentId = element.parentElement.id;
+  let  iconSrc = element.querySelector('img').src; 
+
+  if (parentId === "avatarPlayer1") {
+    selectedIconPlayer1 = iconSrc;
+    document.getElementById('player1Icon').src = selectedIconPlayer1;
+  } else if (parentId === "avatarPlayer2") {
+    selectedIconPlayer2 = iconSrc;
+    document.getElementById('player2Icon').src = selectedIconPlayer2;
+  }
+}
+
+function selectAvatarVisually(element){
+  let parent = element.parentElement; 
+  let children = parent.children; 
+  if(parent.id === "avatarPlayer1"){
+    for(let child of children){
+      if (child !== element && child.classList.contains('player1turn')){
+        child.classList.remove('player1turn'); 
+      }
+    }
+    element.classList.add('player1turn');
+  }else{
+    for(let child of children){
+      if (child !== element && child.classList.contains('player2turn')){
+        child.classList.remove('player2turn'); 
+      }
+    }
+   element.classList.add('player2turn');
+  }
+}
+
 function setPlayers() {
   player1 = document.getElementById('inputPlayer1Name').value;
   player2 = document.getElementById('inputPlayer2Name').value;
+
 
   document.getElementById('playerName1').innerHTML = player1;
   document.getElementById('playerName2').innerHTML = player2;
@@ -72,17 +113,18 @@ function setPlayers() {
 }
 
 function generateAvatarHTML(icons, container) {
-  const cardContainer = document.getElementById(container);
-  cardContainer.innerHTML = '';
+  const iconContainer = document.getElementById(container);
+  iconContainer.innerHTML = '';
   icons.forEach(icon => {
     const iconHTML = `
             <div class="col-2 card p-0" id="${icon.id}" onclick="selectAvatar(this)">
              <div class="card-body">
-              <img src="${card.img}" class="img-fluid" alt="">
+              <img src="${icon.icon}" class="img-fluid" alt="">
               </div>
             </div>
           `;
-    cardContainer.innerHTML += cardHTML;
+    iconContainer.innerHTML += iconHTML;
+    console.log(icon.icon);
   });
 }
 
