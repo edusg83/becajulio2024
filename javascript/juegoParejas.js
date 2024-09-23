@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     crearTablero();
 });
 
+document.getElementById('jugarDeNuevo').addEventListener('click', () => {
+    location.reload();
+});
+
 function barajarCartas() {
     cartasDesordenadas = cartas.sort(() => Math.random() - 0.5);
     totalPares = cartas.length / 2;
@@ -94,23 +98,27 @@ function verificarPareja() {
         totalPares--;
 
         if (totalPares === 0) {
-          
+            let mensajeResultado;
             if (aciertosJugador1 > aciertosJugador2) {
                 mensajeResultado = `<p>Ganador: ${jugador1}</p>`;
             } else if (aciertosJugador1 < aciertosJugador2) {
                 mensajeResultado = `<p>Ganador: ${jugador2}</p>`;
             } else {
-                mensajeResultado = `<p>Empate</p>`;
+                mensajeResultado = `<p>¡Empate!</p>`;
             }
-
-            document.getElementById('resultado').innerHTML = `
-                <h3>¡El juego ha terminado!</h3>
+        
+            let contenidoModal = `
                 ${mensajeResultado}
-                <p>Aciertos ${jugador1}: ${aciertosJugador1}</p>
-                <p>Aciertos ${jugador2}: ${aciertosJugador2}</p>
+                <p>${jugador1}: ${aciertosJugador1} aciertos</p>
+                <p>${jugador2}: ${aciertosJugador2} aciertos</p>
             `;
+            
+            document.getElementById('modalContenido').innerHTML = contenidoModal;
+            let modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
+            modal.show();
             return;
         }
+
     } else {
        
         bloqueo = true;
