@@ -1,10 +1,10 @@
-window.onload = function() {
+window.onload = function () {
     var formulario = document.getElementById("formulario");
     var enviarBtn = document.getElementById("enviar");
     var resultadosDiv = document.getElementById("resultados");
     var errorDiv = document.getElementById("error");
 
-    enviarBtn.onclick = function() {
+    enviarBtn.onclick = function () {
         var nombre = document.getElementById("nombre").value;
         var email = document.getElementById("email").value;
         var provincia = document.getElementById("provincia").value;
@@ -19,11 +19,11 @@ window.onload = function() {
         resultadosDiv.innerHTML = `
             <p><strong>Nombre:</strong> ` + nombre + `</p>
             <p><strong>Email:</strong> ` + email + `</p>
-            <p><strong>Provincia:</strong> ` + provincia +`</p>
+            <p><strong>Provincia:</strong> ` + provincia + `</p>
         `;
     };
 
-    formulario.oninput = function() {
+    formulario.oninput = function () {
         errorDiv.textContent = "";
     };
 
