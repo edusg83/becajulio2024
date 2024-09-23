@@ -75,24 +75,27 @@ function girarCarta(elemento) {
         verificarPareja();
     }
 }
-
 function verificarPareja() {
     let [primera, segunda] = cartaGiradas;
 
-    if (primera.dataset.animal === segunda.dataset.animal) {
-        
+
+    let imagen1 = primera.querySelector('.frente').src;
+    let imagen2 = segunda.querySelector('.frente').src;
+
+
+    if (imagen1 === imagen2) {
         primera.classList.add('acertada');
         segunda.classList.add('acertada');
         cartaGiradas = [];
-      
+
         if (turno % 2 === 1) {
             aciertosJugador1++;
-            actualizarImagenesJugador('imagenesJugador1', primera.dataset.animal);
+            actualizarImagenesJugador('imagenesJugador1', imagen1);
         } else {
             aciertosJugador2++;
-            actualizarImagenesJugador('imagenesJugador2', primera.dataset.animal, segunda.dataset.animal);
+            actualizarImagenesJugador('imagenesJugador2', imagen1, imagen2);
         }
-      
+
         document.getElementById('jugador1').textContent = `${jugador1} : ${aciertosJugador1}`;
         document.getElementById('jugador2').textContent = `${jugador2} : ${aciertosJugador2}`;
         totalPares--;
@@ -106,7 +109,7 @@ function verificarPareja() {
             } else {
                 mensajeResultado = `<p>¡Empate!</p>`;
             }
-        
+
             let contenidoModal = `
                 ${mensajeResultado}
                 <p>${jugador1}: ${aciertosJugador1} aciertos</p>
@@ -118,9 +121,7 @@ function verificarPareja() {
             modal.show();
             return;
         }
-
     } else {
-       
         bloqueo = true;
         setTimeout(() => {
             primera.classList.remove('volteada');

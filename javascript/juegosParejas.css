@@ -46,6 +46,7 @@ body {
 }
 
 .textoTurno{
+    margin-top: 17px;
     text-align: center;
     color: white;
     
@@ -78,7 +79,6 @@ body {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
-    
 }
 
 .frente {
@@ -93,8 +93,8 @@ body {
 }
 
 #imagenesJugador1 img, #imagenesJugador2 img {
-    width: 100px;
-    height: 150px;
+    width: 70px;
+    height: 100px;
     margin: 5px;
     border: 2px solid #ddd;
    
