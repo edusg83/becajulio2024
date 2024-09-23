@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
 <body id="body">
-    
-    <script src="ejercicio20.js"></script>
+    <form action="" name="form1" style="width: 30%;">
+        <fieldset id="form1">
+            <legend id="legend">Datos Personales</legend>
+            <!-- <p>Los datos del formulario no son correctos!</p> -->
+            <label for="nombre">Nombre: <input type="text" name="nombre"></label><br><br>
+            <label for="email">Email: <input type="email" name="email"></label><br><br>
+
+            <label for="nombre">Provincia:</label>
+            <select name="provincia" id="Provincia">
+                <optgroup label="Comunidad Valenciana">
+                    <option value="alicante">Alicante</option>
+                    <option value="castellon">Castellon</option>
+                </optgroup>
+                <optgroup label="Comunidad Murciana">
+                    <option value="murcia">Murcia</option>
+                    <option value="totana">Totana</option>
+                </optgroup>
+            </select><br><br>
+
+            <button type="submit" id="submit">Enviar</button>
+        </fieldset>
+    </form>
+
+    <p id="info"></p>
+    <script src="ejercicio23.js"></script>
 </body>
 </html>
