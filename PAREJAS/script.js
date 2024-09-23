@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e) {
             if (jugadorDeTurno === jugador1) {
                 contadorTurno++;
-                document.getElementById("contador1").innerText = `Aciertos: ${contador1}`;
+                document.getElementById("contador1").innerText = `${contador1}`;
             } else {
                 contador2++;
-                document.getElementById("contador2").innerText = `Aciertos: ${contador2}`;
+                document.getElementById("contador2").innerText = `${contador2}`;
             }
         }
 
