@@ -1,6 +1,6 @@
 (function() {
     let texto = document.createElement("p");
-    let contenido = document.createTextNode("Nuevo párrafo creado dinámicamente");
+    let contenido = document.createTextNode("Este texto está añadido dinámicamente :D");
     
     texto.appendChild(contenido);
     
