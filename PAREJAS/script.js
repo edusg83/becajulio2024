@@ -99,16 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     cartasArray.sort(() => 0.5 - Math.random());
-    
+
+    let jugador1;
+    let jugador2;
+    let contador = 0;
     const cartas = document.querySelector(".cartas");
     const adios = document.querySelector(".adios");
     let cartasSeleccionadas = [];
     let cartasSeleccionadasId = [];
     const cartasGanadoras = [];
-    const mostrarResultado = document.querySelector("#puntos");
-    let jugador1 = 0;
-    let jugador2 = 0;
-    let contador = 0;
+    const mostrarResultado1 = document.querySelector("#jugador1");
+    const mostrarResultado2 = document.querySelector("#jugador2");
 
     function crearEspacio() {
         for(let i = 0; i < cartasArray.length; i++){
@@ -142,15 +143,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cartasSeleccionadas=[];
         cartasSeleccionadasId=[];
-        mostrarResultado.textContent = cartasGanadoras.length;
-        contador = mostrarResultado.textContent = cartasGanadoras.length;
+
+        mostrarResultado1.textContent = cartasGanadoras.length;
+        mostrarResultado2.textContent = cartasGanadoras.length;
+
+        if(mostrarResultado1.textContent = cartasGanadoras.length) {
+            jugador1++;
+        }
+        if(mostrarResultado2.textContent = cartasGanadoras.length) {
+            jugador2++;
+        }
+         else {
+            console.log("pierde turno");
+        }
+
         if(cartasGanadoras.length === cartasArray.length/2) {
-            mostrarResultado.textContent = "Ganador";
+            mostrarResultado1.textContent = "Ganador";
+            mostrarResultado2.textContent = "Ganador";
             const bye = document.createElement("img");
             bye.setAttribute('src', 'img/despedida.gif');
             adios.appendChild(bye);
         }
-
     }
 
     function voltearCarta() {
