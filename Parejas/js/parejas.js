@@ -4,11 +4,10 @@ const imagenes = ["img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/E
 let turnoActual = 1;
 let puntosJ1 = 0;
 let puntosJ2 = 0;
-let puntosTotales = puntosJ1 + puntosJ2;
+let puntosTotales = 0;
 const formulario = document.getElementById("formNombres");
 const modalInicio = new bootstrap.Modal(document.getElementById('modalInicio'));
-
-
+// const modalVictoria = new bootstrap.Modal(document.getElementById('modalVictoria'));
 
 document.addEventListener('DOMContentLoaded', function () {
     modalInicio.show();
@@ -103,9 +102,17 @@ function actualizarPuntos(turnoActual) {
     if (turnoActual == 1) {
         puntosJ1++;
         puntosJugador1.innerHTML = "Puntuacion: " + puntosJ1;
+        puntosTotales = puntosJ1 + puntosJ2
+        if (puntosTotales == 8) {
+            mostrarVictoria();
+        }
     } else {
         puntosJ2++;
         puntosJugador2.innerHTML = "Puntuacion: " + puntosJ2;
+        puntosTotales = puntosJ1 + puntosJ2
+        if (puntosTotales == 8) {
+            mostrarVictoria();
+        }
     }
 }
 
@@ -164,4 +171,21 @@ function asginarNombres() {
     }
 
     modalInicio.hide();
+}
+
+function mostrarVictoria() {
+    const nombresGanador = document.getElementById("nombreVictoria");
+    const modalVictoria = new bootstrap.Modal(document.getElementById('modalVictoria'));
+    const nomJugador1 = document.getElementById("nombresJugador1").textContent;
+    const nomJugador2 = document.getElementById("nombresJugador2").textContent;
+
+    if(puntosJ1 > puntosJ2){
+        nombresGanador.innerHTML ="Felicidades al ganador: " + nomJugador1;
+    } else if (puntosJ1 == puntosJ2){
+        nombresGanador.innerHTML = "EMPATE PROBAR OTRA VEZ";
+    } else {
+        nombresGanador.innerHTML ="Felicidades al ganador: " + nomJugador2;
+    }
+
+    modalVictoria.show();
 }

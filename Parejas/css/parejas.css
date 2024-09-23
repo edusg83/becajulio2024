@@ -58,3 +58,10 @@ body {
 #turno-j2{
     color: red;
 }
+
+#fondoVictoria{
+    background-image: url('../img/victoria-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
