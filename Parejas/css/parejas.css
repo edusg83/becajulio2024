@@ -50,3 +50,11 @@ body {
     cursor: not-allowed;
     pointer-events: none;
 }
+
+#turno-j1{
+    color: green;
+}
+
+#turno-j2{
+    color: red;
+}

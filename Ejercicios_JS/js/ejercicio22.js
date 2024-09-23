@@ -12,8 +12,6 @@ formulario.querySelectorAll('input').forEach(input => {
     });
 });
 
-
-
 function comprobarNombre() {
     let nombre = document.getElementById("nombre").value.toUpperCase();
 

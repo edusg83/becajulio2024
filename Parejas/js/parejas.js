@@ -4,14 +4,22 @@ const imagenes = ["img/Squirtel.png", "img/Mew.png", "img/Bulbasaur.png", "img/E
 let turnoActual = 1;
 let puntosJ1 = 0;
 let puntosJ2 = 0;
+let puntosTotales = puntosJ1 + puntosJ2;
+const formulario = document.getElementById("formNombres");
+const modalInicio = new bootstrap.Modal(document.getElementById('modalInicio'));
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    modalInicio.show();
+});
+
+formulario.onsubmit = function (event) {
+    event.preventDefault();
+    asginarNombres();
+}
 
 barajarArray(imagenes);
-
-function reset() {
-    resetElecciones();
-    barajarArray(imagenes);
-}
 
 function barajarArray(imagenes) {
     for (let i = imagenes.length - 1; i > 0; i--) {
@@ -66,7 +74,7 @@ function comprobarEleccion(carta1, carta2) {
 
         setTimeout(() => {
             resetEstilos(carta1, carta2)
-        }, 1000);
+        }, 500);
 
         turnoActual = (turnoActual == 1) ? 2 : 1;
         actualizarTurno(turnoActual);
@@ -107,10 +115,16 @@ function actualizarTurno(turnoActual) {
 
     if (turnoActual == 1) {
         textoTurnoJ1.innerHTML = "Es tu turno";
-        textoTurnoJ2.innerHTML = "No tu turno";
+        textoTurnoJ1.style.color = 'green';
+
+        textoTurnoJ2.innerHTML = "No es tu turno";
+        textoTurnoJ2.style.color = 'red';
     } else {
         textoTurnoJ2.innerHTML = "Es tu turno";
-        textoTurnoJ1.innerHTML = "No tu turno";
+        textoTurnoJ2.style.color = 'green';
+
+        textoTurnoJ1.innerHTML = "No es tu turno";
+        textoTurnoJ1.style.color = 'red';
     }
 }
 
@@ -124,9 +138,30 @@ function agregarImagenAcertada(rutaImagen, turnoActual) {
     `;
 
     if (turnoActual == 1) {
-        //He utiliazado esto porque va añadiendo 1 a 1 ya que innesHTML sobreescribe todas las imagenes
+        //He utiliazado esto porque va añadiendo 1 a 1 ya que innerHTML sobreescribe todas las imagenes
         imagenesJ1.insertAdjacentHTML('beforeend', template);
     } else {
         imagenesJ2.insertAdjacentHTML('beforeend', template);
     }
+}
+
+function asginarNombres() {
+    const nomJugador1 = document.getElementById("nombresJugador1");
+    const nomJugador2 = document.getElementById("nombresJugador2");
+    const nomIntroducidoJugador1 = document.getElementById("nomJ1").value;
+    const nomIntroducidoJugador2 = document.getElementById("nomJ2").value;
+
+    if (nomIntroducidoJugador1 == "") {
+        nomJugador1.innerHTML = "Jugador 1";
+    } else {
+        nomJugador1.innerHTML = nomIntroducidoJugador1;
+    }
+
+    if (nomIntroducidoJugador2 == "") {
+        nomJugador2.innerHTML = "Jugador 2";
+    } else {
+        nomJugador2.innerHTML = nomIntroducidoJugador2;
+    }
+
+    modalInicio.hide();
 }
