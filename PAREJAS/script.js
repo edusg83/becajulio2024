@@ -100,10 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartasArray.sort(() => 0.5 - Math.random());
 
-    let jugador1;
-    let jugador2;
-    let contadorTurno = 0;
+    let jugador1 = "Jugador 1";
+    let jugador2 = "Jugador 2";
+    let contador1 = 0;
+    let contador2 = 0;
     let jugadorDeTurno = jugador1;
+    let contadorTurno = 0;
     const cartas = document.querySelector(".cartas");
     const adios = document.querySelector(".adios");
     let cartasSeleccionadas = [];
@@ -142,9 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadas=[];
         cartasSeleccionadasId=[];
 
-        mostrarResultado.textContent = cartasGanadoras.length;
-
-        img.onclick = turnos();
+        cartaMatch.onclick = turnos(true);
 
         if(cartasGanadoras.length === cartasArray.length/2) {
             mostrarResultado.textContent = "Ganador";
@@ -154,11 +154,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function turnos() {
-        jugadorDeTurno = (jugadorDeTurno === jugador1) ? jugador2 : jugador1;
+    function turnos(e) {
+        if (e) {
+            if (jugadorDeTurno === jugador1) {
+                contadorTurno++;
+                document.getElementById("contador1").innerText = `Aciertos: ${contador1}`;
+            } else {
+                contador2++;
+                document.getElementById("contador2").innerText = `Aciertos: ${contador2}`;
+            }
+        }
+
+        jugadorDeTurno= (jugadorDeTurno === jugador1) ? jugador2 : jugador1;
+
         contadorTurno++;
-        document.getElementById("jugador").innerText = `Turno de ${jugadorDeTurno} (Turno ${contadorTurno})`;
-    };
+
+        document.getElementById("jugadorDeTurno").innerText = `Turno de ${jugadorDeTurno} (Turno ${contadorTurno})`;
+    }
 
     function voltearCarta() {
         let cartaId = this.getAttribute('data-id');
