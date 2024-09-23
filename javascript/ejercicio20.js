@@ -1,12 +1,10 @@
 (function(){
-    var doc = document,
-    elem = doc.createElement("p"),
-    pTres = doc.getElementById("tres");
-
-   
-    elem.innerHTML = "Este texto está añadido dinámicamente";
-    elem.id = "conInner";
-
+    var doc = document;
+    var elem = doc.createElement("p");
+    body = doc.body;
+    elem.id = "parrafo1";
     
-    pTres.parentNode.replaceChild(elem, pTres);
+    elem.innerHTML = ".";
+
+    body.appendChild(elem);
 })();
