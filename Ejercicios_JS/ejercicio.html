@@ -5,18 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/ejercicio21.css" rel="stylesheet">
+    <link href="css/ejercicio22.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- <header id="header">CABECERA</header>
-    <main>
-        <section>SECCION1<article>ARTICULO1
-            </article>
-        </section>
-    </main>
-    <footer>PIE</footer> -->
+    <fieldset id="formulario22">
+        <legend>Datos personales</legend>
+        <form name="formulario" id="formulario">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div>
+                <label for="nombre">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="provincia">Provincia</label>
+                <select name="provincia" id="provincia">
+                    <optgroup label="Comunidad Valenciana">
+                        <option id="alicante">Alicante</option>
+                        <option id="castellon">Castellon</option>
+                    <optgroup label="Comunidad Murciana">
+                        <option id="murcia">Murcia</option>
+                        <option id="totana">Totana</option>
+                </select>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </fieldset>
+    <p id="mostrarValores"></p>
 </body>
 
-<script src="js/ejercicio21.js"></script>
+<script src="js/ejercicio22.js"></script>
+
 </html>
