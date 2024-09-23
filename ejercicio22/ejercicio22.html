@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beca Julio 2024</title>
+
+    <link rel="stylesheet" href="ejercicio22.css">
+
+
+</head>
+
+
+<body>
+    <div class="form-container">
+        <form id="formulario" action="#" method="post">
+            <fieldset>
+                <legend>Datos Personales</legend>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="provincia">Provincia:</label>
+                <select id="provincia" name="provincia">
+                    <option value="">Seleccione una provincia</option>
+                    <option value="alicante">ALICANTE</option>
+                    <option value="castellon">CASTELLÓN</option>
+
+                    <option value="murcia">MURCIA</option>
+                    <option value="totana">TOTANA</option>
+                </select>
+
+                <input type="submit" value="Enviar">
+            </fieldset>
+            <div id="error" class="error-message"></div>
+            <div id="resultado" class="result-message"></div>
+        </form>
+    </div>
+    <script src="ejercicio22.js"></script>
+</body>
+
+
+</html>
