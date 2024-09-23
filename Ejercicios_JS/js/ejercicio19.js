@@ -4,5 +4,5 @@
         contenido = doc.createTextNode("Este texto está añadido dinámicamente");
 
     elem.appendChild(contenido);
-    document.body.appendChild(elem);
+    doc.body.appendChild(elem);
 })();
