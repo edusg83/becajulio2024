@@ -102,14 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let jugador1;
     let jugador2;
-    let contador = 0;
+    let contadorTurno = 0;
+    let jugadorDeTurno = jugador1;
     const cartas = document.querySelector(".cartas");
     const adios = document.querySelector(".adios");
     let cartasSeleccionadas = [];
     let cartasSeleccionadasId = [];
     const cartasGanadoras = [];
-    const mostrarResultado1 = document.querySelector("#jugador1");
-    const mostrarResultado2 = document.querySelector("#jugador2");
+    const mostrarResultado = document.querySelector("#jugador");
 
     function crearEspacio() {
         for(let i = 0; i < cartasArray.length; i++){
@@ -131,8 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cartaMatch[cartaDosId].setAttribute('src', 'img/sakura.png');
         }
         else if (cartasSeleccionadas[0] === cartasSeleccionadas[1]){
-            cartaMatch[cartaUnoId].setAttribute('src', 'img/atras.png');
-            cartaMatch[cartaDosId].setAttribute('src', 'img/atras.png');
             cartaMatch[cartaUnoId].removeEventListener('click', voltearCarta);
             cartaMatch[cartaDosId].removeEventListener('click', voltearCarta);
             cartasGanadoras.push(cartasSeleccionadas);
@@ -144,27 +142,23 @@ document.addEventListener('DOMContentLoaded', () => {
         cartasSeleccionadas=[];
         cartasSeleccionadasId=[];
 
-        mostrarResultado1.textContent = cartasGanadoras.length;
-        mostrarResultado2.textContent = cartasGanadoras.length;
+        mostrarResultado.textContent = cartasGanadoras.length;
 
-        if(mostrarResultado1.textContent = cartasGanadoras.length) {
-            jugador1++;
-        }
-        if(mostrarResultado2.textContent = cartasGanadoras.length) {
-            jugador2++;
-        }
-         else {
-            console.log("pierde turno");
-        }
+        img.onclick = turnos();
 
         if(cartasGanadoras.length === cartasArray.length/2) {
-            mostrarResultado1.textContent = "Ganador";
-            mostrarResultado2.textContent = "Ganador";
+            mostrarResultado.textContent = "Ganador";
             const bye = document.createElement("img");
             bye.setAttribute('src', 'img/despedida.gif');
             adios.appendChild(bye);
         }
     }
+
+    function turnos() {
+        jugadorDeTurno = (jugadorDeTurno === jugador1) ? jugador2 : jugador1;
+        contadorTurno++;
+        document.getElementById("jugador").innerText = `Turno de ${jugadorDeTurno} (Turno ${contadorTurno})`;
+    };
 
     function voltearCarta() {
         let cartaId = this.getAttribute('data-id');
