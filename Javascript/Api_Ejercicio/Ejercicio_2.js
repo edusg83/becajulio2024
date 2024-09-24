@@ -9,10 +9,9 @@ fetch(request)
         let tabla = `<table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Username</th>
                 <th>Nombre</th>
-                <th>Email</th>
+                <th>Apellidos</th>
+                <th>Direcciones</th>
             </tr>
         </thead>
         <tbody>`
@@ -22,13 +21,13 @@ fetch(request)
 
         let filas = '';
 
-        data.arrayUsuarios.forEach(user => {
+        data[0].arrayUsuarios.forEach(user => {
+
             filas += `
             <tr>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
                 <td>${user.nombre}</td>
-                <td>${user.email}</td>
+                <td>${user.apellidos}</td>
+                <td>DIRECCION</td>
             </tr>`
 
         });
