@@ -1,0 +1,20 @@
+/* body {
+    background-color: ;
+} */
+
+nav {
+    background-color: #003366;
+    color: white;
+}
+
+#logo {
+    height: 100%;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+#pfp {
+    height: 100%;
+    max-height: 40px;
+    object-fit: contain;
+}
