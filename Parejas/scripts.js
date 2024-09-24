@@ -13,10 +13,6 @@ const cards = Array.from(document.getElementsByClassName("card"));
 
 const imageMap = new Map();
 
-const cardSet = new Set();
-
-const cardPairs = new Set();
-
 const player_1 = {
   name: "",
   score: 0,
@@ -31,21 +27,15 @@ const player_2 = {
   iconColumn: 0,
 };
 
-let cardValue1 = null;
+let card_1 = null;
 
-let cardValue2 = null;
+let card_2 = null;
 
 let lock = false;
 
-let isActive = false;
-
-let playerTurn = null;
+let playerTurn = 2;
 
 let cardCount = 0;
-
-for (let i = 0; i < imagenes.length; i++) {
-  imageMap.set(imagenes[i], 0);
-}
 
 function storeCardValue(idCard) {
   const card = document.getElementById(idCard);
@@ -54,118 +44,41 @@ function storeCardValue(idCard) {
     return;
   }
 
-  cardSet.add(card);
+  card_1 == null ? card_1 = card : card_2 = card;
 
-  if (cardSet.values().next().id == card.id && isActive) {
-    cardPairs.delete(card);
-    flipBack();
-    reset();
-    return;
-  }
+  flipCard(card);
 
-  cardPairs.add(card);
-
-  flipCard(card.id);
-
-  if (cardValue1 == null) {
-    cardValue1 = card.value;
-    isActive = true;
-  } else if (cardValue2 == null) {
+  if (card_2 != null) {
     lock = true;
-    cardValue2 = card.value;
     checkCards();
   }
 }
 
 function checkCards() {
-  if (cardValue1 == cardValue2) {
-    setIconOnHit(cardValue2);
-    cardCount++;
+  if (card_1.value == card_2.value) {
+    setIconOnHit(card_1.value);
     setScore();
   } else {
-    cardPairs.forEach((card) => {
-      if (card.value == cardValue1 || card.value == cardValue2) {
-        cardPairs.delete(card);
-      }
-    });
     setTimeout(flipBack, 1500);
     setTimeout(setTurn, 1600);
   }
   setTimeout(reset, 1600);
 }
 
-function setName() {
-  player_1.name = document.getElementById("player_name_1_input").value;
-  player_2.name = document.getElementById("player_name_2_input").value;
-  if (player_1.name == "" || player_2.name == "") {
-    return;
-  }
-  dismissDialogue("modal_prompt");
-  document.getElementById("player_name_1").value = player_1.name;
-  document.getElementById("player_name_2").value = player_2.name;
-  setTurn();
-}
-
-function showDialogue(param) {
-  document.getElementById(param).classList.add("show");
-  document.getElementById(param).style.display = "block";
-}
-
-function dismissDialogue(param) {
-  document.getElementById(param).classList.remove("show");
-  document.getElementById(param).style.display = "none";
-}
-
-function deleteInput() {
-  document.getElementById("player_name_1_input").value = "";
-  document.getElementById("player_name_2_input").value = "";
-  document.getElementById("player_name_1_input").focus();
-}
-
 function setScore() {
-  let currentPlayer = "score_display_player_1";
-  let playerScore = player_1;
+  cardCount++;
 
-  if (playerTurn == 2) {
-    currentPlayer = "score_display_player_2";
-    playerScore = player_2;
-  }
+  let player_score = playerTurn == 1 ? player_1 : player_2;
 
-  playerScore.score++;
+  let current_player_score_display = playerTurn == 1 ? "score_display_player_1" : "score_display_player_2";
 
-  let scoreValue = document.getElementById(currentPlayer).value;
+  player_score.score++;
 
-  document.getElementById(currentPlayer).value = Number(scoreValue) + 1;
+  document.getElementById(current_player_score_display).value = player_score.score;
 
   if (cardCount == 8) {
     lock = true;
     setTimeout(gameEnd, 1500);
-  }
-}
-
-function setIconOnHit(param) {
-  let currentContainer = "icon_container_1";
-  let currentPlayer = player_1;
-
-  if (playerTurn == 2) {
-    currentContainer = "icon_container_2";
-    currentPlayer = player_2;
-  }
-
-  document.getElementsByClassName(currentContainer)[0].children[
-    currentPlayer.iconContainerRow
-  ].children[currentPlayer.iconColumn].style.backgroundImage = `url(${param})`;
-
-  currentPlayer.iconColumn++;
-  if (currentPlayer.iconColumn == 3 && currentPlayer.iconContainerRow == 0) {
-    currentPlayer.iconContainerRow = 1;
-    currentPlayer.iconColumn = 0;
-  } else if (
-    currentPlayer.iconColumn == 3 &&
-    currentPlayer.iconContainerRow == 1
-  ) {
-    currentPlayer.iconContainerRow = 2;
-    currentPlayer.iconColumn = 0;
   }
 }
 
@@ -185,6 +98,27 @@ function resetScore() {
   });
 }
 
+function setIconOnHit(card_value) {
+  let current_container = playerTurn == 1 ? "icon_container_1" : "icon_container_2";
+  console.log(current_container)
+
+  let current_player = playerTurn == 1 ? player_1 : player_2;
+  console.log(current_player)
+
+  document.getElementsByClassName(current_container)[0].children[current_player.iconContainerRow].children[current_player.iconColumn].style.backgroundImage = `url(${card_value})`;
+  console.log(document.getElementsByClassName(current_container)[0].children[current_player.iconContainerRow].children[current_player.iconColumn])
+
+  current_player.iconColumn++;
+
+  if (current_player.iconColumn == 3 && current_player.iconContainerRow == 0) {
+    current_player.iconContainerRow = 1;
+    current_player.iconColumn = 0;
+  } else if (current_player.iconColumn == 3 && current_player.iconContainerRow == 1) {
+    current_player.iconContainerRow = 2;
+    current_player.iconColumn = 0;
+  }
+}
+
 function gameEnd() {
   confetti({
     particleCount: 100,
@@ -192,11 +126,11 @@ function gameEnd() {
     origin: { y: 0.8 },
   });
 
-  let winner = "Felicidades! Has ganado " + player_1.name;
+  winner_name = player_1.score > player_2.score ? player_1.name : player_2.name;
 
-  if (player_1.score < player_2.score) {
-    winner = "Felicidades! Has ganado " + player_2.name;
-  } else if (player_1.score == player_2.score) {
+  let winner = "Felicidades! Has ganado " + winner_name;
+
+  if (player_1.score == player_2.score) {
     winner = "Empate! No ha ganado nadie! Tampoco ha perdido nadie!";
   }
 
@@ -205,21 +139,36 @@ function gameEnd() {
   showDialogue("modal_victory");
 }
 
-function setTurn() {
-  if (playerTurn == 2 || playerTurn == null) {
-    playerTurn = 1;
-    document.getElementById("turn_display").value =
-      "Turno de " + player_1.name + "!";
-    document.getElementById("turn_display").style.backgroundColor = "#A8DADC";
-  } else {
-    playerTurn = 2;
-    document.getElementById("turn_display").value =
-      "Turno de " + player_2.name + "!";
-    document.getElementById("turn_display").style.backgroundColor = "#E76F51";
+function setName() {
+  player_1.name = document.getElementById("player_name_1_input").value;
+  player_2.name = document.getElementById("player_name_2_input").value;
+  if (player_1.name == "" || player_2.name == "") {
+    return;
   }
+  dismissDialogue("modal_prompt");
+  document.getElementById("player_name_1").value = player_1.name;
+  document.getElementById("player_name_2").value = player_2.name;
+  setTurn();
+}
+
+function deleteInput() {
+  document.getElementById("player_name_1_input").value = "";
+  document.getElementById("player_name_2_input").value = "";
+  document.getElementById("player_name_1_input").focus();
+}
+
+function setTurn() {
+  playerTurn = playerTurn == 1 ? 2 : 1;
+  current_player = playerTurn == 1 ? player_1 : player_2;
+  document.getElementById("turn_display").value = "Turno de " + current_player.name + "!";
+  document.getElementById("turn_display").style.backgroundColor = current_player == player_1 ? "#A8DADC" : "#E76F51";
 }
 
 function assignImages() {
+  for (let i = 0; i < imagenes.length; i++) {
+    imageMap.set(imagenes[i], 0);
+  }
+
   cards.forEach((card) => {
     let index = randomGenerator();
 
@@ -236,22 +185,32 @@ function assignImages() {
   });
 }
 
-function randomGenerator() {
-  return Math.floor(Math.random() * imagenes.length);
+function reset() {
+  card_1 = null;
+  card_2 = null;
+  lock = false;
 }
 
-function flipCard(idCard) {
-  document.getElementById(idCard).classList.toggle("rotateEffect");
-  document.getElementById(idCard).children[0].classList.toggle("opacity-100");
+function newGame() {
+  playerTurn = 2;
+  reset();
+  flipAll();
+  resetScore();
+  imageMap.clear();
+  assignImages();
+  showDialogue("modal_prompt");
+}
+
+function flipCard(card) {
+  document.getElementById(card.id).classList.toggle("rotateEffect");
+  document.getElementById(card.id).children[0].classList.toggle("opacity-100");
 }
 
 function flipBack() {
-  cardSet.forEach((card) => {
-    if (!cardPairs.has(card)) {
-      card.classList.toggle("rotateEffect");
-      card.children[0].classList.toggle("opacity-100");
-    }
-  });
+  card_1.classList.toggle("rotateEffect");
+  card_1.children[0].classList.toggle("opacity-100");
+  card_2.classList.toggle("rotateEffect");
+  card_2.children[0].classList.toggle("opacity-100");
 }
 
 function flipAll() {
@@ -263,27 +222,16 @@ function flipAll() {
   });
 }
 
-function reset() {
-  cardValue1 = null;
-  cardValue2 = null;
-  cardSet.clear();
-  lock = false;
+function showDialogue(param) {
+  document.getElementById(param).classList.add("show");
+  document.getElementById(param).style.display = "block";
 }
 
-function newGame() {
-  playerTurn = null;
-  cardPairs.clear();
-  reset();
-  flipAll();
-  resetScore();
-  imageMap.clear();
-  for (let i = 0; i < imagenes.length; i++) {
-    imageMap.set(imagenes[i], 0);
-  }
-  cards.forEach((card) => {
-    card.children[0].style.backgroundImage = "";
-    card.value = "";
-  });
-  assignImages();
-  showDialogue("modal_prompt");
+function dismissDialogue(param) {
+  document.getElementById(param).classList.remove("show");
+  document.getElementById(param).style.display = "none";
+}
+
+function randomGenerator() {
+  return Math.floor(Math.random() * imagenes.length);
 }
