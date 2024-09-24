@@ -1,4 +1,4 @@
-const request = new Request("https://eoi.wiremockapi.cloud/clientes");
+const request = new Request("http://169.254.123.192:3000/clientes");
 
 fetch(request)
     .then(response => response.json())
@@ -22,7 +22,7 @@ fetch(request)
 
         let filas = '';
 
-        data.UserListData.array.forEach(user => {
+        data.arrayUsuarios.forEach(user => {
             filas += `
             <tr>
                 <td>${user.id}</td>
