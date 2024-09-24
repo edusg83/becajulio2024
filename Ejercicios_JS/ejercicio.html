@@ -10,12 +10,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div class="card m-5" id="tarjeta" style="width: 40rem;"></div>
+<div class="container mt-5" style="max-width: 500px;">
+    <form name="formulario" id="formulario">
+        <div class="form-group mt-2">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+        </div>
+        <div class="form-group mt-2">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Introduce tus apellidos">
+        </div>
+        <div class="form-group mt-2">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Introduce tu email">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+</div>
+
 </body>
 
-<script src="js/ejercicioAxios2.js"></script>
+<script src="js/ejercicioAxios4.js"></script>
+
 </html>

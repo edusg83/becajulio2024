@@ -42,4 +42,3 @@ axios.get(request,{headers})
         document.getElementById("tarjeta").innerHTML = tabla;
     })
     .catch(error => console.error('Error:', error));
-
