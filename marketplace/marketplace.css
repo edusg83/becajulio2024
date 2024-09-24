@@ -1,0 +1,20 @@
+#product1 .card {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+header {
+    background-image: url('img/banner.jpg');
+    background-size: cover;
+}
+
+.modal-body img {
+    max-height: 200px;
+}
+
+#about {
+    text-align: center;
+}
