@@ -9,77 +9,142 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="principal.css">
     <title>Document</title>
 </head>
 
 <body class="w-100">
     <nav class="container-fluid p-3" style="background-color: lightskyblue; color: white;">
         <div class="row align-items-center">
-            <div class="col ">
-                <p class="mb-0">LOGOTIPO</p>
-            </div>
-            <div class="col text-end">
+            <div class="col d-flex">
+                <p class="mb-0 w-10 pe-5">LOGOTIPO</p>
                 <a href="#about" class="px-3" style="color: white;">About us</a>
                 <a href="#products" class="px-3" style="color: white;">Products</a>
-                <a href="#profile" class="px-3" style="color: white;">Profile</a>
-                <a href=""></a>
+                <a href="./perfil.html" class="px-3" style="color: white;">Profile</a>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button style="border: none;"><img id="carrito" class="mb-0" src="./carrito-marketplace.png" alt=""></button>
             </div>
         </div>
     </nav>
-    <header class="container mt-5">
-        <div id="carouselExampleDark" class="carousel slide" data-bs-theme="dark">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="container mb-5" id="container-image">
-                        <img src="../images/marketplace_producto-removebg-preview.png" class="d-block w-100" alt="...">
-                    
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+    <header class="container mt-5 text-center">
+        <h1>MARKETPLACE EOI</h1>
     </header>
-    
-    <main>
+    <main id="products" class="container">
+        <div class="row row-cols-3 justify-content-between">
+            <!-- INICIO PRIMERA FILA -->
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIM PRIMERA FILA -->
+
+            <!-- INCICIO SEGUNDA FILA -->
+
+            <div class="col mt-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col mt-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col mt-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/marketplace_producto-removebg-preview.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <hr>
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIM SEGUNDA FILA -->
+
+        </div>
+
 
     </main>
-    <footer>
-
+    <footer id="about" class="container-fluid mt-5" style="background-color: black; color: white;">
+        <div class="row">
+            <p class="text-center p-3">Copyright</p>
+        </div>
     </footer>
 </body>
 
