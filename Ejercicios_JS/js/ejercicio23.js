@@ -1,8 +1,10 @@
-(function () {
-    let doc = document,
-        elem = doc.createElement("p"),
-        contenido = doc.createTextNode("Este texto está añadido dinámicamente");
+const request = new Request("https://eoi.wiremockapi.cloud/clientes");
 
-    elem.appendChild(contenido);
-    doc.body.appendChild(elem);
-})();
+fetch(request)
+    .then(response => response.json())
+    .then(data => {
+        data.UserListData.forEach(user => {
+            console.log(user)
+        })
+    })
+    .catch(error => console.error('Error:', error));
