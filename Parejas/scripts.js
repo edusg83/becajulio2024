@@ -11,7 +11,7 @@ const imagenes = [
 
 const cards = Array.from(document.getElementsByClassName("card"));
 
-const imageMap = new Map();
+const image_map = new Map();
 
 const player_1 = {
   name: "",
@@ -33,9 +33,9 @@ let card_2 = null;
 
 let lock = false;
 
-let playerTurn = 2;
+let player_turn = 2;
 
-let cardCount = 0;
+let card_count = 0;
 
 function storeCardValue(idCard) {
   const card = document.getElementById(idCard);
@@ -66,17 +66,17 @@ function checkCards() {
 }
 
 function setScore() {
-  cardCount++;
+  card_count++;
 
-  let player_score = playerTurn == 1 ? player_1 : player_2;
+  let player_score = player_turn == 1 ? player_1 : player_2;
 
-  let current_player_score_display = playerTurn == 1 ? "score_display_player_1" : "score_display_player_2";
+  let current_player_score_display = player_turn == 1 ? "score_display_player_1" : "score_display_player_2";
 
   player_score.score++;
 
   document.getElementById(current_player_score_display).value = player_score.score;
 
-  if (cardCount == 8) {
+  if (card_count == 8) {
     lock = true;
     setTimeout(gameEnd, 1500);
   }
@@ -99,10 +99,10 @@ function resetScore() {
 }
 
 function setIconOnHit(card_value) {
-  let current_container = playerTurn == 1 ? "icon_container_1" : "icon_container_2";
+  let current_container = player_turn == 1 ? "icon_container_1" : "icon_container_2";
   console.log(current_container)
 
-  let current_player = playerTurn == 1 ? player_1 : player_2;
+  let current_player = player_turn == 1 ? player_1 : player_2;
   console.log(current_player)
 
   document.getElementsByClassName(current_container)[0].children[current_player.iconContainerRow].children[current_player.iconColumn].style.backgroundImage = `url(${card_value})`;
@@ -158,30 +158,30 @@ function deleteInput() {
 }
 
 function setTurn() {
-  playerTurn = playerTurn == 1 ? 2 : 1;
-  current_player = playerTurn == 1 ? player_1 : player_2;
+  player_turn = player_turn == 1 ? 2 : 1;
+  current_player = player_turn == 1 ? player_1 : player_2;
   document.getElementById("turn_display").value = "Turno de " + current_player.name + "!";
   document.getElementById("turn_display").style.backgroundColor = current_player == player_1 ? "#A8DADC" : "#E76F51";
 }
 
 function assignImages() {
   for (let i = 0; i < imagenes.length; i++) {
-    imageMap.set(imagenes[i], 0);
+    image_map.set(imagenes[i], 0);
   }
 
   cards.forEach((card) => {
     let index = randomGenerator();
 
-    while (imageMap.get(imagenes[index]) == 2) {
+    while (image_map.get(imagenes[index]) == 2) {
       index = randomGenerator();
     }
 
     card.children[0].style.backgroundImage = `url(${imagenes[index]})`;
     card.value = imagenes[index];
 
-    let cont = imageMap.get(imagenes[index]) + 1;
+    let cont = image_map.get(imagenes[index]) + 1;
 
-    imageMap.set(imagenes[index], cont);
+    image_map.set(imagenes[index], cont);
   });
 }
 
@@ -192,11 +192,11 @@ function reset() {
 }
 
 function newGame() {
-  playerTurn = 2;
+  player_turn = 2;
   reset();
   flipAll();
   resetScore();
-  imageMap.clear();
+  image_map.clear();
   assignImages();
   showDialogue("modal_prompt");
 }
