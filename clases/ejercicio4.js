@@ -1,5 +1,5 @@
 const headers = {
-    'Content-Type': 'application/json', // Fixed the typo from 'aplication' to 'application'
+    'Content-Type': 'application/json', 
     'Access-Control-Allow-Origin': '*'
 };
 
