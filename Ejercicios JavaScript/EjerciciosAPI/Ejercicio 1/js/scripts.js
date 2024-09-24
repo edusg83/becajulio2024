@@ -1,4 +1,10 @@
-fetch('https://eoi.wiremockapi.cloud/clientes')
+const request = new Request('https://eoi.wiremockapi.cloud/clientes');
+
+const URL = request.URL;
+const method = request.method;
+const credentials = request.credentials;
+
+fetch(request)
   .then(response => {
     if (!response.ok) {
       throw new Error('Error en la solicitud: ' + response.status);
