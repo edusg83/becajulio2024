@@ -10,14 +10,13 @@ let carta = document.querySelector(".card");
 fetch(request)
 .then(response => response.json())
 .then(data => {
-    data.clientes.forEach(cliente => {
-        cliente.arrayUsuarios.forEach(usuario => {
+    console.log(data);
+         data.arrayUsuarios.forEach(usuario => {
             console.log(`${usuario.nombre} ${usuario.apellidos}`);
             usuario.direcciones.forEach(direccion => {
                 console.log(`${direccion.direccion} ${direccion.cpostal}`);
             });
         });
-    });
 })
 
 
