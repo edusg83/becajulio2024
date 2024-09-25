@@ -1,6 +1,3 @@
-
-// const axios = require('axios');
-
 const headers = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
