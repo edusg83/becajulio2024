@@ -5,16 +5,35 @@
 nav {
     background-color: #003366;
     color: white;
+    max-height: 60px;
 }
 
 #logo {
     height: 100%;
-    max-height: 40px;
-    object-fit: contain;
+    max-height: 60px;
+    margin-left: -0.5em;
 }
 
 #pfp {
     height: 100%;
     max-height: 40px;
-    object-fit: contain;
+}
+
+main {
+    height: 100vh;
+    background-color: #F2F2F2;
+}
+
+#front_face {
+    background-color: #333333;
+    color: white;
+}
+
+.card-body {
+    max-height: 100px;
+}
+
+#test {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

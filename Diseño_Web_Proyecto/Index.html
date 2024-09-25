@@ -22,9 +22,9 @@
 <body>
   <header>
     <nav class="container-fluid d-flex flex-row justify-content-between p-2">
-      <section>
-        <img src="resources/Icon.png" alt="Logotipo" id="logo">
-      </section>
+
+      <img src="resources/Icon.png" alt="Logotipo" id="logo" class="align-self-center">
+
       <section class="d-flex flex-row gap-2">
         <button class="btn btn-success">Search</button>
         <input type="text" class="form-control">
@@ -37,13 +37,62 @@
       </section>
     </nav>
   </header>
-  <main>
-    <section class="container d-flex flex-column align-items-center bg-dark text-light mt-4 mh-100">
+  <main class="pt-5">
+
+    <section class="container d-flex flex-column align-items-center py-5" id="front_face">
       <h1>Amalgon</h1>
       <p>Your online marketplace</p>
     </section>
-    <section>
 
+    <section class="container mt-5">
+      <!-- Primera fila -->
+      <div class="row-cols-3 d-flex flex-row gap-3 justify-content-center">
+        <!-- Primer articulo -->
+        <article class="col card">
+          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
+          <div class="my-3 ms-2 card-body">
+            <h3 class="card-title fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
+            <p class="card-text fs-6">Article brief description</p>
+          </div>
+          <div class="card-footer pb-3 d-flex flex-row row-cols-3">
+            <p class="col mt-3 d-flex justify-content-center">precio$</p>
+            <button class=" btn btn-warning col">Add to cart!</button>
+          </div>
+        </article>
+        <!-- Segundo articulo -->
+        <article class="col card">
+          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
+          <div class="my-3 ms-2 card-body">
+            <h3 class="card-title fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
+            <p class="card-text fs-6" id="test">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt totam vel
+              in qui
+              molestias. Debitis possimus id optio asperiores inventore similique accusamus? Tempora incidunt nulla
+              cupiditate eum officiis, beatae dolores?</p>
+          </div>
+          <div class="card-footer pb-3 d-flex flex-row row-cols-3">
+            <p class="col mt-3 d-flex justify-content-center">precio$</p>
+            <button class=" btn btn-warning col">Add to cart!</button>
+          </div>
+        </article>
+        <!-- Tercer articulo -->
+        <article class="col card">
+          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
+          <div class="my-3 ms-2 card-body">
+            <h3 class="card-title fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
+            <p class="card-text fs-6">Article brief description</p>
+          </div>
+          <div class="card-footer pb-3 d-flex flex-row row-cols-3">
+            <p class="col mt-3 d-flex justify-content-center">precio$</p>
+            <button class=" btn btn-warning col">Add to cart!</button>
+          </div>
+        </article>
+      </div>
+      <!-- Segunda fila -->
+      <div>
+        <article></article>
+        <article></article>
+        <article></article>
+      </div>
     </section>
   </main>
 </body>
