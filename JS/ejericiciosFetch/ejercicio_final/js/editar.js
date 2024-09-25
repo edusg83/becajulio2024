@@ -30,7 +30,7 @@ function editar() {
     "email": $email.value
   };
 
-  axios.put(url, dataRequest, { headers });
-
-  window.location.href("/JS/ejericiciosFetch/ejercicio_final/listado.html");
+  axios.put(url, dataRequest, { headers }).then((request) => {
+    window.location.assign("/JS/ejericiciosFetch/ejercicio_final/listado.html");
+  });
 }
