@@ -21,5 +21,3 @@ form.addEventListener('submit', function (element) {
             window.location.assign('ejercicio.html');
         })
 })
-
-
