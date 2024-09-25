@@ -45,8 +45,6 @@ function updateData() {
     console.log(new_user_data);
 
     axios.put(`http://169.254.123.192:3000/usuarios/${param.get("id")}`, new_user_data)
-        .then(response => {
-            window.location.assign('http://127.0.0.1:5500/Javascript/Api_Ejercicio/Ejercicio_final/index.html');
-        });
+        .then(window.location.assign('http://127.0.0.1:5500/Javascript/Api_Ejercicio/Ejercicio_final/index.html'));
 
 }

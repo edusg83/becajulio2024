@@ -21,13 +21,21 @@ function writeData(info) {
             <td>${element.nombre}</td>
             <td>${element.apellidos}</td>
             <td>${element.email}</td>
-            <td><button class="btn btn-danger" onclick="deleteEntry('${element.id}');">Delete</button></td>
+            <td><button class="btn btn-danger" onclick="deleteUser('${element.id}');">Delete</button></td>
             </tr>`;
     });
 
     document.getElementById("tarjet_body").innerHTML = table_content;
 }
 
-function deleteEntry(param) {
-    axios.delete(`${urlUsers}/${param}`);
+function deleteUser(param) {
+    document.getElementById("delete_modal").classList.add("show")
+    document.getElementById("delete_modal").style.display = "block";
+    document.getElementById("test").onclick = function () {
+        axios.delete(`${urlUsers}/${param}`);
+    };
+    document.getElementById("test2").onclick = function () {
+        document.getElementById("delete_modal").classList.remove("show");
+        document.getElementById("delete_modal").style.display = "";
+    };
 }
