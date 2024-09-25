@@ -4,11 +4,6 @@ const headers = {
 };
 
 const url = 'http://localhost:3000/usuarios';
-const params = new URLSearchParams(location.search);
-const userId = params.get('id');
-
-const fullUrl = `${url}/${userId}`
-
 
 axios.get(url, {headers})
 .then((respuestaUsuarios) => {
