@@ -1,4 +1,4 @@
-const request = new Request('https://eoi.wiremockapi.cloud/clientes');
+const request = new Request('http://192.168.18.35:3000/clientes');
 
 const URL = request.URL;
 const method = request.method;
