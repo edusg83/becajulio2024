@@ -45,15 +45,15 @@
   ],
   "usuarios": [
     {
-      "id": "U002",
-      "nombre": "Usuario 2",
-      "apellidos": "Apellidos usuario 2",
-      "email": "usuario2@gmail.com"
+      "id": "U001",
+      "nombre": "Usuario 1",
+      "apellidos": "Apellidos usuario 1",
+      "email": "usuario1@gmail.com"
     },
     {
       "id": "U003",
       "nombre": "Usuario 3",
-      "apellidos": "Apellidos usuario 31",
+      "apellidos": "Apellidos usuario 3",
       "email": "usuario3@gmail.com"
     }
   ]
