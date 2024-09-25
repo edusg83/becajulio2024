@@ -10,7 +10,6 @@ let table = document.getElementById("lista");
 
 axios.get(url, { headers })
     .then((datos) => {
-        let cliente;
         cliente = datos.data[0].arrayUsuarios[0];
         console.log(cliente);
         cliente.forEach(usuario => {
