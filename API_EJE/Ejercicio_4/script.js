@@ -10,17 +10,16 @@ let table = document.getElementById("lista");
 
 axios.get(url, { headers })
     .then((datos) => {
-        cliente = datos.data[0].arrayUsuarios[0];
-        console.log(cliente);
-        cliente.forEach(usuario => {
+        const clientes = datos.data[0].arrayUsuarios;
+        clientes.forEach(usuario => {
             console.log(`${usuario.nombre} ${usuario.apellidos}`);
-            table.innerHTML += `<tr><td> ${usuario.nombre} </td></tr>`;
+            table.innerHTML += `<tr><td> ${usuario.nombre} ${usuario.apellidos} </td></tr>`;
             usuario.direcciones.forEach(direccion => {
                 console.log(`${direccion.direccion} ${direccion.cpostal}`);
-                table.innerHTML += `<tr><td> ${direccion.direccion} </td></tr>`; 
+                table.innerHTML += `<tr><td> ${direccion.direccion} ${direccion.cpostal} </td></tr>`; 
             });
         });
     })
-.catch(error => {
-    console.error('Error al realizar la petición GET:', error);
-  });
+    .catch(error => {
+        console.error('Error al realizar la petición GET:', error);
+    });
