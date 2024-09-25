@@ -1,5 +1,6 @@
-{ 
-    "clientes":[{
+{
+  "clientes": [
+    {
       "arrayUsuarios": [
         {
           "nombre": "usuario 1",
@@ -40,23 +41,20 @@
           ]
         }
       ]
-    }],
-    "usuarios":[{
-      "id":"U001",
-      "nombre":"Usuario 1",
-      "apellidos":"Apellidos usuario 1",
-      "email":"usuario1@gmail.com"
+    }
+  ],
+  "usuarios": [
+    {
+      "apellidos": "Galvañ",
+      "nombre": "Usuario 1",
+      "email": "usuario1@gmail.com",
+      "id": "U001"
     },
     {
-      "id":"U002",
-      "nombre":"Usuario 2",
-      "apellidos":"Apellidos usuario 2",
-      "email":"usuario2@gmail.com"
-    },
-    {
-      "id":"U003",
-      "nombre":"Usuario 3",
-      "apellidos":"Apellidos usuario 3",
-      "email":"usuario3@gmail.com"
-    }]
-  }
+      "id": "U002",
+      "nombre": "Usuario 2",
+      "apellidos": "Apellidos usuario 2",
+      "email": "usuario2@gmail.com"
+    }
+  ]
+}
