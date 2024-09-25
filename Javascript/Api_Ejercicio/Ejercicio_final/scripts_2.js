@@ -5,6 +5,9 @@ let usuario = null;
 axios.get(`http://169.254.123.192:3000/usuarios/${param.get("id")}`)
     .then(response => {
         usuario = response.data;
+        console.log(usuario);
+        console.log(response.data);
+
         writeForm(usuario);
     })
 
@@ -24,4 +27,26 @@ function writeForm(usuario) {
     <input name="email" id="email" class="form-control" value="${email}"></input>`;
 
     document.getElementById("form_body").innerHTML = form;
+}
+
+function updateData() {
+
+    let form_data = document.forms.user_form;
+
+    console.log(form_data);
+
+
+    let new_user_data = {
+        nombre: form_data.nombre.value,
+        apellidos: form_data.apellidos.value,
+        email: form_data.email.value
+    };
+
+    console.log(new_user_data);
+
+    axios.put(`http://169.254.123.192:3000/usuarios/${param.get("id")}`, new_user_data)
+        .then(response => {
+            window.location.assign('http://127.0.0.1:5500/Javascript/Api_Ejercicio/Ejercicio_final/index.html');
+        });
+
 }
