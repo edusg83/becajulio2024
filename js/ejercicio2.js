@@ -216,49 +216,129 @@
 //Ejercicio 22
 
 
-    const formulario = document.getElementById('formulario');
-    const nombre = document.getElementById('nombre');
-    const email = document.getElementById('email');
-    const provincias = document.getElementById('provincias');
-    const resultado = document.getElementById('resultado');
-    const errorMensaje = document.getElementById('errorMensaje'); 
+    // const formulario = document.getElementById('formulario');
+    // const nombre = document.getElementById('nombre');
+    // const email = document.getElementById('email');
+    // const provincias = document.getElementById('provincias');
+    // const resultado = document.getElementById('resultado');
+    // const errorMensaje = document.getElementById('errorMensaje'); 
 
-    formulario.addEventListener('submit', function(event){
-        event.preventDefault(); 
+    // formulario.addEventListener('submit', function(event){
+    //     event.preventDefault(); 
 
-        errorMensaje.innerHTML = '';
-        resultado.innerHTML = '';
+    //     errorMensaje.innerHTML = '';
+    //     resultado.innerHTML = '';
 
-        let esValido = true;
+    //     let esValido = true;
 
-        const valorNombre = nombre.value.trim();
-                if (valorNombre.length > 20 || !valorNombre.startsWith('ANTONIO')) {
-                    esValido = false;
-                }else if (email.value.trim() === '' || provincias.value === '' ) {
-                    esValido = false;
-                }
-                if (esValido) {
-                    resultado.innerHTML = `<h3>Datos ingresados:</h3>
-                        <p><strong>Nombre:</strong> ${valorNombre}</p>
-                        <p><strong>Email:</strong> ${email.value}</p>
-                        <p><strong>Provincia:</strong> ${provincias.options[provincias.selectedIndex].text}</p>`;
-                } else {
-                    errorMensaje.innerHTML += "Los datos del formulario no son correctos.";
-                }
+    //     const valorNombre = nombre.value.trim();
+    //             if (valorNombre.length > 20 || !valorNombre.startsWith('ANTONIO')) {
+    //                 esValido = false;
+    //             }else if (email.value.trim() === '' || provincias.value === '' ) {
+    //                 esValido = false;
+    //             }
+    //             if (esValido) {
+    //                 resultado.innerHTML = `<h3>Datos ingresados:</h3>
+    //                     <p><strong>Nombre:</strong> ${valorNombre}</p>
+    //                     <p><strong>Email:</strong> ${email.value}</p>
+    //                     <p><strong>Provincia:</strong> ${provincias.options[provincias.selectedIndex].text}</p>`;
+    //             } else {
+    //                 errorMensaje.innerHTML += "Los datos del formulario no son correctos.";
+    //             }
 
-    });
+    // });
 
-    nombre.addEventListener('input', function() {
-        errorMensaje.innerHTML = '';
-    });
-    email.addEventListener('input', function() {
-        errorMensaje.innerHTML = '';
-    });
-    provincias.addEventListener('change', function() {
-        errorMensaje.innerHTML = '';
-    });
+    // nombre.addEventListener('input', function() {
+    //     errorMensaje.innerHTML = '';
+    // });
+    // email.addEventListener('input', function() {
+    //     errorMensaje.innerHTML = '';
+    // });
+    // provincias.addEventListener('change', function() {
+    //     errorMensaje.innerHTML = '';
+    // });
 
+    let request = new Request('http://192.168.1.135:3000/usuarios');
  
+    let tableBody = document.querySelector('#clientesAxios2 tbody');
+
+    fetch(request)
+                .then(response => response.json())
+                .then(data => {
+                    let columnasTabla = '';
+    
+                    data.forEach(function(user) {
+                        columnasTabla += '<tr>';
+                        columnasTabla += '<td>' + user.id + '</td>';
+                        columnasTabla += '<td>' + user.nombre + '</td>';
+                        columnasTabla += '<td>' + user.apellidos + '</td>';
+                        columnasTabla += '<td>' + user.email + '</td>';
+                        columnasTabla += '</tr>';
+                    });
+                    
+    
+                    tableBody.innerHTML = columnasTabla;  
+                }); 
+
+
+let request2 = new Request('http://192.168.1.135:3000/clientes');
+
+    fetch(request2)
+                .then(response => response.json())
+                .then(data => {
+                    dibujarFetch(data[0].arrayUsuarios[0]);
+                }); 
+
+                function dibujarFetch(datos) {
+                    let direcciones = document.getElementById("direcciones2");
+                    document.getElementById("nombre2").innerHTML = datos.nombre + " " + datos.apellidos;
+                    datos.direcciones.forEach((d) => {
+                      let direccion = `<tr><td>${d.direccion}</td><td>${d.cpostal}</td></tr>`;
+                      direcciones.innerHTML += direccion;
+                    });
+                  }
+
+//AXIOS
+
+
+    // Obtener datos de clientes
+    let tableBody3 = document.querySelector('#clientesAxios tbody');
+    
+    axios.get('http://192.168.1.135:3000/usuarios')
+        .then(response => {
+            let data = response.data;
+            let columnasTabla = '';
+    
+            data.forEach(function(user) {
+                columnasTabla += '<tr>';
+                columnasTabla += '<td>' + user.id + '</td>';
+                columnasTabla += '<td>' + user.nombre + '</td>';
+                columnasTabla += '<td>' + user.apellidos + '</td>';
+                columnasTabla += '<td>' + user.email + '</td>';
+                columnasTabla += '</tr>';
+            });
+    
+            tableBody3.innerHTML = columnasTabla;
+        })
+      
+        
+        axios.get('http://192.168.1.135:3000/clientes')
+        .then(response => {
+            let data = response.data; 
+            dibujar(data[0].arrayUsuarios[0]);
+        })
+        
+        function dibujar(datos) {
+          let direcciones = document.getElementById("direcciones");
+          document.getElementById("nombre").innerHTML = datos.nombre + " " + datos.apellidos;
+          datos.direcciones.forEach((d) => {
+            let direccion = `<tr><td>${d.direccion}</td><td>${d.cpostal}</td></tr>`;
+            direcciones.innerHTML += direccion;
+          });
+        }
+
+
+
 
 
 
