@@ -22,7 +22,7 @@ axios.get(findById, { headers })
 
 function addForm(user) {
     let form = `
-        <form id="formulario" class="mt-5 w-50">
+        <form id="formulario" class=" w-100">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                  <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" value="${user.nombre}">
@@ -35,11 +35,13 @@ function addForm(user) {
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="${user.email}">
             </div>
+            <div class="mt-5 text-center">
             <button id="guardar" type="submit" class="btn btn-primary">Guardar</button>
+            <div>
         </form>
     `;
 
-    document.getElementById("body").innerHTML = form;
+    document.getElementById("container-form").innerHTML = form;
 };
 
 
