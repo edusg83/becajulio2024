@@ -1,11 +1,11 @@
 /** @format */
-
+let modal = new bootstrap.Modal(document.getElementById("modal"));
 const headers = {
   "Content-Type": "application/json",
   "Access-Control-Allow-Origin": "*"
 };
 
-const url = "http://192.168.1.193:3000/usuarios";
+const url = "http://localhost:3000/usuarios";
 
 axios.get(url, { headers }).then((respuesta) => {
   dibujar(respuesta.data);
@@ -26,16 +26,22 @@ function dibujar(datos) {
 }
 
 function eliminar(id) {
-  let modal = new bootstrap.Modal(document.getElementById("modal"));
+  
   document.getElementById("id").innerHTML = id;
   modal.show();
 }
 
 document.getElementById("confirmar").addEventListener("click", () => {
   let id = document.getElementById("id").innerHTML;
-  axios.delete(url + "/" + id);
-  document.getElementById("listado").innerHTML = "";
+  axios.delete(url + "/" + id)
+  .then(respuesta=>{
+    modal.hide();
+    window.location.reload();
+  });
+
+
+  /*document.getElementById("listado").innerHTML = "";
   axios.get(url, { headers }).then((respuesta) => {
     dibujar(respuesta.data);
-  });
+  });*/
 });

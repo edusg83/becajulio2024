@@ -1,5 +1,3 @@
-/** @format */
-
 const id = new URLSearchParams(document.location.search).get("id");
 
 const headers = {
@@ -7,7 +5,7 @@ const headers = {
   "Access-Control-Allow-Origin": "*"
 };
 
-const url = "http://192.168.1.193:3000/usuarios/" + id;
+const url = "http://localhost:3000/usuarios/" + id;
 
 const $nombre = document.getElementById("nombre");
 const $apellidos = document.getElementById("apellidos");
@@ -15,6 +13,9 @@ const $email = document.getElementById("email");
 
 axios.get(url, { headers }).then((respuesta) => {
   rellenar(respuesta.data);
+})
+.catch(error=>{
+  console.error("Error al recuperar usuario: "+error);
 });
 
 function rellenar(datos) {
@@ -30,7 +31,13 @@ function editar() {
     "email": $email.value
   };
 
-  axios.put(url, dataRequest, { headers });
-
-  window.location.href("/JS/ejericiciosFetch/ejercicio_final/listado.html");
+  axios.put(url, dataRequest, { headers })
+  .then(respuesta=>{
+    window.location.assign("listado.html");
+  })
+  .catch(error=>{
+    console.error("Error llamada: "+error);
+  })
+  
+  
 }
