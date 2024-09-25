@@ -35,7 +35,12 @@ function editar() {
     "email": $email.value
   };
 
-  axios.put(url, dataRequest, { headers });
-
-  window.location.href("/JS/ejericiciosFetch/ejercicio_final/listado.html");
+  axios
+    .put(url, dataRequest, { headers })
+    .then((respuesta) => {
+      window.location.assign("listado.html");
+    })
+    .catch((error) => {
+      console.error("Error llamada: " + error);
+    });
 }
