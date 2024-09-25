@@ -1,0 +1,65 @@
+UPDATE articulos SET nombre = 'Figura Luffy', categoria = 'Figuras', coleccion = 'One Piece' WHERE id = 1;
+UPDATE articulos SET nombre = 'Figura Naruto', categoria = 'Figuras', coleccion = 'Naruto' WHERE id = 2;
+UPDATE articulos SET nombre = 'Figura Pokémon', categoria = 'Figuras', coleccion = 'Pokémon' WHERE id = 3;
+UPDATE articulos SET nombre = 'Figura Levi', categoria = 'Figuras', coleccion = 'SNK' WHERE id = 4;
+UPDATE articulos SET nombre = 'Figura Tokyo Ghoul', categoria = 'Figuras', coleccion = 'Tokyo Ghoul' WHERE id = 5;
+UPDATE articulos SET nombre = 'Bufanda One Piece', categoria = 'Accesorios', coleccion = 'One Piece' WHERE id = 6;
+UPDATE articulos SET nombre = 'Gorro One Piece', categoria = 'Accesorios', coleccion = 'One Piece' WHERE id = 7;
+UPDATE articulos SET nombre = 'Pendientes Dragon Ball', categoria = 'Accesorios', coleccion = 'Dragon Ball' WHERE id = 8;
+UPDATE articulos SET nombre = 'FunkoPop sanji', categoria = 'Figuras', coleccion = 'One Piece' WHERE id = 9;
+UPDATE articulos SET nombre = 'Taza One Piece', categoria = 'Merch', coleccion = 'One Piece' WHERE id = 10;
+UPDATE articulos SET nombre = 'Llavero Attack on Titan', categoria = 'Accesorios', coleccion = 'SNK' WHERE id = 11;
+UPDATE articulos SET nombre = 'Set de Lego One Piece', categoria = 'Merch', coleccion = 'One Piece' WHERE id = 12;
+UPDATE articulos SET nombre = 'Monopoly naruto', categoria = 'Merch', coleccion = 'Naruto' WHERE id = 13;
+UPDATE articulos SET nombre = 'Máscara Ken Kaneki', categoria = 'Accesorios', coleccion = 'Tokyo Ghoul' WHERE id = 33;
+
+INSERT INTO articulos (stock, precio, nombre, categoria, coleccion) VALUES
+(40, 55.00, 'FunkoPop Kaneki ', 'Figuras', 'Tokyo Ghoul'),
+(40, 55.00, 'FunkoPop Touka', 'Figuras', 'Tokyo Ghoul'),
+(40, 55.00, 'FunkoPop Nimura', 'Figuras', 'Tokyo Ghoul'),
+
+
+(40, 45.00, 'Figura Sabo', 'Figuras', 'One Piece'),
+(40, 55.00, 'Figura Nami', 'Figuras', 'One Piece'),
+(40, 35.00, 'Figura Ussop', 'Figuras', 'One Piece'),
+
+(40, 45.00, 'Figura Kakashi', 'Figuras', 'Naruto'),
+(40, 55.00, 'Figura Sakura', 'Figuras', 'Naruto'),
+(40, 35.00, 'Figura Sasuke', 'Figuras', 'Naruto'),
+
+(60, 60.00, 'Figura Goku', 'Figuras', 'Dragon Ball'),
+(60, 60.00, 'Figura Vegeta', 'Figuras', 'Dragon Ball'),
+(60, 60.00, 'Figura Freezer', 'Figuras', 'Dragon Ball'),
+(60, 12.00, 'FunkoPop Goku ', 'Figuras', 'Dragon Ball'),
+(60, 12.00, 'FunkoPop Vegeta', 'Figuras', 'Dragon Ball'),
+(60, 12.00, 'FunkoPop Super Goku', 'Figuras', 'Dragon Ball'),
+(60, 12.00, 'FunkoPop Cell', 'Figuras', 'Dragon Ball'),
+
+(100, 10.00, 'Cinta Hoja', 'Accesorios', 'Naruto'),
+(100, 10.00, 'Cinta Roca', 'Accesorios', 'Naruto'),
+(100, 10.00, 'Cinta Arena', 'Accesorios', 'Naruto'),
+(100, 10.00, 'Cinta Niebla', 'Accesorios', 'Naruto'),
+(100, 10.00, 'Cinta Nubes', 'Accesorios', 'Naruto'),
+
+(80, 12.00, 'Taza SNK', 'Merch', 'SNK'),
+(80, 3.00, 'Poster Eren', 'Merch', 'SNK'),
+(80, 3.00, 'Poster Levi', 'Merch', 'SNK'),
+(80, 3.00, 'Poster Mikassa', 'Merch', 'SNK'),
+(80, 3.00, 'Poster Armin', 'Merch', 'SNK'),
+(80, 3.00, 'Collar SNK', 'Merch', 'SNK'),
+
+(80, 3.00, 'Collar SNK', 'Accesorios', 'SNK'),
+(80, 3.00, 'Collar One Piece', 'Accesorios', 'One Piece'),
+(80, 3.00, 'Collar Naruto', 'Accesorios', 'Naruto'),
+(80, 3.00, 'Collar SNK', 'Accesorios', 'SNK'),
+
+(80, 20.00, 'Bolas de Dragon', 'Merch', 'Dragon Ball'),
+(80, 10.00, 'Detector de bolas', 'Merch', 'Dragon Ball'),
+
+(80, 10.00, 'Pokeball', 'Merch', 'Pokemon'),
+(80, 10.00, 'Peluche Pikachu', 'Merch', 'Pokemon'),
+(80, 10.00, 'Peluche Charizar', 'Merch', 'Pokemon'),
+(80, 10.00, 'Peluche Ditto', 'Merch', 'Pokemon'),
+(80, 10.00, 'Peluche Eeve', 'Merch', 'Pokemon'),
+
+(150, 7.00, 'Llavero Star Wars', 'Accesorios', 'Star Wars'),
