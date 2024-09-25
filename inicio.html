@@ -13,32 +13,33 @@
 </head>
 <!-- Indica el cuerpo del documento html. Donde estará toda el contenido del documento-->
 <body>
-    <div id="demo" style="background-color:red;">
-        <p style="color:white;">Texto demo con fondo rojo</p>
-    </div>
-    <div id="errores"></div>
-    <form name="miForm">
-        Nombre: <input type="text" name="nombre" id="nom" tabindex="10" />
-        Apellidos <input type ="text" name="apellidos" id="ape" tabindex="20" />
-
-    </form>
-   <script>
-  
-    const headers = {
-        'Content-Type':'application/json',
-        'Access-Control-Allow-Origin':'*'
-    };
-
-    const url='http://192.168.1.138:3000/usuarios';
-
-    axios.get(url,{headers})
-    .then((respuestaUsuarios) =>{
-        let users;
-        users = respuestaUsuarios.data;
-    })
-   
-   </script>
-
+   <table>
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Eliminar</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><a href="editUser.html?id=U002">U002</a></td>
+        <td>Usuario 2</td>
+        <td>Apellidos usuario 2</td>
+        <td>usuario2@gmail.com</td>
+        <td><input type="button" onclick="eliminar(U002)" value="eliminar" /></td>
+    </tr>
+    <tr>
+        <td>U003</td>
+        <td>Usuario 3</td>
+        <td>Apellidos usuario 3</td>
+        <td>usuario3@gmail.com</td>
+        <td><input type="button" onclick="eliminar(U003)" value="eliminar" /></td>
+    </tr>
+</tbody>
+   </table>
 
 </body>
 
