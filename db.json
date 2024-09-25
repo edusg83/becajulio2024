@@ -45,34 +45,28 @@
   ],
   "usuarios": [
     {
-      "id": "U001",
-      "nombre": "Usuario 1",
-      "apellidos": "Apellidos usuario 1",
-      "email": "usuario1@gmail.com"
+      "nombre": "Carmen",
+      "apellidos": "Garcia Garcia",
+      "email": "carmen@gmaill.com",
+      "id": "U001"
     },
     {
-      "id": "U002",
-      "nombre": "Usuario 2",
-      "apellidos": "Apellidos usuario 2",
-      "email": "usuario2@gmail.com"
+      "nombre": "Jose Maria",
+      "apellidos": "Prueba prueba put2",
+      "email": "carmen@gmail.com",
+      "id": "U002"
     },
     {
-      "id": "U003",
-      "nombre": "Usuario 3",
-      "apellidos": "Apellidos usuario 31",
-      "email": "usuario3@gmail.com"
+      "nombre": "Ruben",
+      "apellidos": "Banegas",
+      "email": "ruben@gmail.com",
+      "id": "U004"
     },
     {
-      "id": "f331",
-      "nombre": "Prueba",
-      "apellidos": "Post",
-      "email": "axios@gmail.com"
-    },
-    {
-      "id": "813c",
-      "nombre": "Prueba2",
-      "apellidos": "Post2",
-      "email": "axios2@gmail.com"
+      "id": "U005",
+      "nombre": "Usuario 5",
+      "apellidos": "Apellidos usuario 5",
+      "email": "usuario5@gmail.com"
     }
   ]
 }
