@@ -3,16 +3,20 @@ const headers = {
     'Authorization': '*'
 };
 
-const url = 'http://192.168.1.14:3000/usuarios';
+const url = 'http://localhost:3000/usuarios';
 
 
 let usuarios = [];
 axios.get(url, { headers })
     .then(response => {
 
-        
+        let filas = ``;
         response.data.forEach((item) => {
-            usuarios.push({ nombre: item.nombre, apellidos: item.apellidos });
+            filas += `
+            <tr>
+                <td>${item.nombre}</td>
+                <td>${item.apellidos}</td>
+            </tr>`;
           
         });
         let tabla = `<table id="dataTable">
@@ -26,15 +30,9 @@ axios.get(url, { headers })
 
         let finTabla = `</tbody></table>`;
 
-        let filas = '';
-        console
-        usuarios.forEach(item => {
-            filas += `
-                    <tr>
-                        <td>${item.nombre}</td>
-                        <td>${item.apellidos}</td>
-                    </tr>`;
-        });
+       
+        
+       
 
         tabla += filas + finTabla;
 
@@ -43,56 +41,39 @@ axios.get(url, { headers })
     .catch(error => console.error('Error al obtener los Usuarios:', error));
 
 
-const urlcliente = 'http://192.168.1.14:3000/cliente';
+const urlcliente = 'http://localhost:3000/clientes';
 
-let usuario = {
-    nombre: '',
-    apellidos: '',
-    direcciones: [
-        { calle: '', cposta: '' },
-        { calle: '', cposta: '' }
-    ]
-};
 
-axios.get(url, { headers })
+axios.get(urlcliente, { headers })
     .then(response => {
 
-        console.log(response)
-        response.data.forEach((item) => {
-            let direccion = [];
-
-            console.log(item.direcciones);
-        
-            usuario.push({ nombre: item.nombre, apellidos: item.apellidos });
-
-            console.log(usuarios)
-        });
-        let card = `
-        <div class="card">
-            <h2>${usuario.nombre} ${usuario.apellidos}</h2>
-            <h3>Direcciones:</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Calle</th>
-                        <th>Ciudad</th>
-                        <th>País</th>
-                    </tr>
-                </thead>
-                <tbody>`;
-        usuario.direcciones.forEach(direccion => {
-            card += `
+        let cliente = response.data[0].arrayUsuarios[0];
+       
+            let card = `
+            <div class="card">
+                <h2>${cliente.nombre} ${cliente.apellidos}</h2>
+                <h3>Direcciones:</h3>
+                <table>
+                    <thead>
                         <tr>
-                            <td>${direccion.calle}</td>
-                            <td>${direccion.ciudad}</td>
-                            <td>${direccion.país}</td>
-                        </tr>`;
-        });
+                            <th>Dirección</th>
+                            <th>C. Postal</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+            cliente.direcciones.forEach(direccion => {
+                card += `
+                            <tr>
+                                <td>${direccion.direccion}</td>
+                                <td>${direccion.cpostal}</td>
+                            </tr>`;
+            });
+    
+            card += `
+                </tbody>
+            </table>
+        </div>`;
 
-        card += `
-            </tbody>
-        </table>
-    </div>`;
 
         document.getElementById('contenido').innerHTML = card;
     })
