@@ -31,16 +31,12 @@ function writeData(info) {
 
 function deleteUser(param) {
     modalEliminar.show();
-    //document.getElementById("delete_modal").classList.add("show")
-    //document.getElementById("delete_modal").style.display = "block";
     document.getElementById("test").onclick = function () {
         axios.delete(`${urlUsers}/${param}`);
         modalEliminar.hide();
         window.location.reload();
     };
     document.getElementById("test2").onclick = function () {
-       
-        //document.getElementById("delete_modal").classList.remove("show");
-        //document.getElementById("delete_modal").style.display = "";
+        modalEliminar.hide();
     };
 }

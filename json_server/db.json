@@ -45,18 +45,6 @@
   ],
   "usuarios": [
     {
-      "nombre": "test1",
-      "apellidos": "test2",
-      "email": "test3",
-      "id": "U001"
-    },
-    {
-      "id": "U002",
-      "nombre": "Usuario 2",
-      "apellidos": "Apellidos usuario 2",
-      "email": "usuario2@gmail.com"
-    },
-    {
       "id": "U003",
       "nombre": "Usuario 3",
       "apellidos": "Apellidos usuario 3",
