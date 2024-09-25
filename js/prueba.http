@@ -1,10 +1,18 @@
 @url=http://192.168.1.135:3000/clientes
 @users=http://192.168.1.135:3000/usuarios
 
+@user=http://192.168.1.135:3000/usuarios/{id} 
 ###
 GET {{url}}
 Content-Type: application/json
 
 ##
 GET {{users}}
+Content-Type: application/json
+
+##
+PUT {{user}}
+Content-Type: application/json
+
+DELETE {{user}}
 Content-Type: application/json
