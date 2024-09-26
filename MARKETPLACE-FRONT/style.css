@@ -1,7 +1,11 @@
 .menuColor {
     background: #00AB61;
 }
-a {
+.btn {
+    background: #00AB61;
+    color: #FFFFFF;
+}
+a, a:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
