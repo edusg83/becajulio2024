@@ -29,11 +29,6 @@ main {
     color: white;
 }
 
-.card-body {
-    max-height: 100px;
-}
-
-#test {
-    overflow: hidden;
-    text-overflow: ellipsis;
+.form-control {
+    width: 100%;
 }
