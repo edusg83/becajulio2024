@@ -35,7 +35,35 @@ body {
     color: #007bff;
 }
 
-#botonLoguin{
+#botonLoguin {
     background-color: #D93900;
     color: white;
+}
+
+.enlaceDeMentiraProvisional {
+    color: #90A9FD;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: #212529;
+    color: white;
+}
+
+.form-control {
+    border: none;
+    background-color: #283034;
+    color: white;
+    padding: 0.75em;
+}
+
+.form-control:focus {
+    background-color: #283034;
+    color: white;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #8BA2AD; 
+    opacity: 1; 
 }
