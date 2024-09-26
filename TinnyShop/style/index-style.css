@@ -7,6 +7,15 @@
     box-shadow: 10px 10px 20px rgba(56, 47, 47, 0.5);
 }
 
+.carousel-control-next, .carousel-control-prev{
+    width: 30px !important;
+}
+
+.carousel {
+   width: 1000px!important;
+   height: 510px !important; 
+}
+
 .slider-img {
     width: 100%;
     object-fit: contain;
@@ -78,4 +87,8 @@ div.card-body a{
     background-color: #6D2932!important;
     border-color: #6D2932;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+btn-primary:hover {
+    border-color:#6D2932!important;
 }
