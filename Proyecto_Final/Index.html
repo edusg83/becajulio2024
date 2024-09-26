@@ -10,6 +10,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link href="css/proyectoFInal.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -20,13 +21,10 @@
             <div class="navbar">
                 <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 justify-co">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Home</a>
+                        <a class="nav-link text-white" href="#">Inicio</a>
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="nav-link text-white" href="#">About</a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a class="nav-link text-white" href="#">Contact</a>
+                        <a class="nav-link text-white" href="#">Contacto</a>
                     </li>
                     <li class="nav-item ms-3">
                         <button class="btn" id="botonLoguin" data-bs-toggle="modal" data-bs-target="#modalLogin">Inicar
@@ -39,7 +37,7 @@
 
     <header class="container-fluid p-0">
         <div class="p-5 my-5 bg-light text-center bg-dark text-white">
-                <h1>¡Bienevenido!</h1>
+            <h1>¡Bienevenido!</h1>
             <p class="fs-5">"Aromas que despiertan, Sabores que enamoran, Momentos que perduran."</p>
         </div>
     </header>
@@ -135,8 +133,40 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center p-5 mt-5">
-        <p class="m-0">Copyright @ Yout Website 2024</p>
+    <footer class="p-4 bg-dark text-white ">
+        <div class="footer-container d-flex flex-row justify-content-around">
+            <div class="footer-column col-3 d-flex flex-column">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos una cafetería dedicada a ofrecer los mejores granos de café seleccionados y una experiencia
+                    única. Visítanos para disfrutar de un ambiente acogedor y un buen café.</p>
+            </div>
+
+            <div class="footer-column d-flex flex-column col-3">
+                <h3>Contacto</h3>
+                <p>📍 Dirección: Calle Principal 123, Ciudad</p>
+                <p>📞 Teléfono: (123) 456-7890</p>
+                <p>✉️ Email: contacto@cafeteria.com</p>
+            </div>
+
+            <div class="footer-column d-flex flex-column col-3">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 7:00 AM - 9:00 PM</p>
+                <p>Sábados: 8:00 AM - 10:00 PM</p>
+                <p>Domingos: 9:00 AM - 8:00 PM</p>
+            </div>
+
+            <div class="footer-column d-flex flex-column col-1">
+                <h3>Síguenos</h3>
+                <div class="social-icons d-flex flex-column gap-4">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom col-12 text-center mt-4">
+            <p>&copy; 2024 Cafetería. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
@@ -204,9 +234,12 @@
                 </div>
                 <form class="container" action="#">
                     <div class="modal-body d-flex flex-column gap-3 justify-content-center">
-                        <input type="email" class="form-control" name="emailOlvidada" id="emailOlvidada" placeholder="Correo electronico">
-                        <input type="password" class="form-control" name="passOlvidada" id="passOlvidada" placeholder="Contraseña">
-                        <input type="password" class="form-control" name="passComfirmarOlvidada" id="passComfirmarOlvidada" placeholder="Confirmar contraseña">
+                        <input type="email" class="form-control" name="emailOlvidada" id="emailOlvidada"
+                            placeholder="Correo electronico">
+                        <input type="password" class="form-control" name="passOlvidada" id="passOlvidada"
+                            placeholder="Contraseña">
+                        <input type="password" class="form-control" name="passComfirmarOlvidada"
+                            id="passComfirmarOlvidada" placeholder="Confirmar contraseña">
                         <button type="submit" class="btn btn-primary mt-3">Cambiar contraseña</button>
                     </div>
                 </form>
