@@ -2,10 +2,20 @@
     margin: 0;
 }
 
+@import url("https: //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    font-family: 'lato', sans-serif;
+    overflow: hidden;
+}
+
 nav {
     max-height: 70px;
     background-color: #E6E3DD;
-    overflow: hidden;
 }
 
 #logo {
@@ -19,11 +29,20 @@ nav {
 
 #link_container li:hover {
     scale: 1.1;
+    cursor: pointer;
 }
 
 #background_section_1 {
-    background-image: url("https://i.postimg.cc/TPScXm1b/background-1.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: cover;
+    background: rgb(7, 3, 88);
+    background: linear-gradient(180deg, rgba(7, 3, 88, 1) 1%, rgba(9, 9, 121, 1) 33%, rgba(32, 102, 165, 1) 69%, rgba(74, 127, 165, 1) 92%);
+    color: white;
+}
+
+.card {
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+
+.card:hover {
+    scale: 1.05;
 }
