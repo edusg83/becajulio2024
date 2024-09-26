@@ -12,8 +12,7 @@
 }
 
 .carousel {
-   width: 1000px!important;
-   height: 510px !important; 
+   width: 1000px;
 }
 
 .slider-img {
@@ -89,6 +88,11 @@ div.card-body a{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-btn-primary:hover {
-    border-color:#6D2932!important;
+.btn:hover {
+    border-color: #6D2932 !important;
+    padding: 10px 15px;
+}
+
+.card-body-custom:hover{
+    padding: 5px 10px;
 }
