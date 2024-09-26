@@ -28,25 +28,61 @@
                     <li class="nav-item ms-3">
                         <a class="nav-link text-white" href="#">Contact</a>
                     </li>
+                    <li class="nav-item ms-3">
+                        <button class="btn" id="botonLoguin" data-bs-toggle="modal" data-bs-target="#modalLogin">Inicar
+                            sesion</button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <header class="container-fluid">
-        <div class="p-5 mt-5 mb-5 bg-light text-center">
+        <div class="p-5 my-5 bg-light text-center">
             <h1>A warm welcome!</h1>
             <p class="fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis error quasi possimus
                 nobis tempora, recusandae beatae voluptatum eveniet alias obcaecati eos impedit. Natus, officia ad
-                qui eum cumque delectus. Dignissimos?</p>
+                qui eum cumque delectus. Dignissimos?
+            </p>
         </div>
     </header>
 
-    <main class="container-fluid p-5">
-        <div class="d-flex g-4 text-center justify-content-evenly">
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/galletas.png" class="card-img-top" alt="Nombre del Producto">
+    <main class="container">
+        <div class="d-flex flex-column text-center">
+
+            <div class="d-flex gap-4 my-2">
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/galletas.png" class="card-img" alt="Nombre del Producto">
+                    <div class="card-body">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                        <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <p class="card-price">$19.99</p>
+                        <button class="btn btn-primary">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/galletas.png" class="card-img" alt="Nombre del Producto">
+                    <div class="card-body">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                        <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <p class="card-price">$19.99</p>
+                        <button class="btn btn-primary">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/pizza.png" class="card-img" alt="Nombre del Producto">
+                    <div class="card-body">
+                        <h4 class="card-title">Nombre del Producto</h4>
+                        <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <p class="card-price">$19.99</p>
+                        <button class="btn btn-primary">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/carton-de-leche.png" class="card-img" alt="Nombre del Producto">
                     <div class="card-body">
                         <h4 class="card-title">Nombre del Producto</h4>
                         <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
@@ -56,9 +92,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/pizza.png" class="card-img-top" alt="Nombre del Producto">
+
+            <div class="d-flex gap-4 my-2">
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/manzana.png" class="card-img" alt="Nombre del Producto">
                     <div class="card-body">
                         <h4 class="card-title">Nombre del Producto</h4>
                         <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
@@ -67,10 +104,8 @@
                         <button class="btn btn-primary">Añadir al carrito</button>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/carton-de-leche.png" class="card-img-top" alt="Nombre del Producto">
+                <div class="card border-0 p-3 rounded">
+                    <img src="img/manzana.png" class="card-img" alt="Nombre del Producto">
                     <div class="card-body">
                         <h4 class="card-title">Nombre del Producto</h4>
                         <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
@@ -79,10 +114,8 @@
                         <button class="btn btn-primary">Añadir al carrito</button>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/manzana.png" class="card-img-top" alt="Nombre del Producto">
+                <div class="card border-0 p-3 rounded">
+                    <img src=" img/hamburguesa.png" class="card-img" alt="Nombre del Producto">
                     <div class="card-body">
                         <h4 class="card-title">Nombre del Producto</h4>
                         <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
@@ -91,22 +124,8 @@
                         <button class="btn btn-primary">Añadir al carrito</button>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/hamburguesa.png" class="card-img-top" alt="Nombre del Producto">
-                    <div class="card-body">
-                        <h4 class="card-title">Nombre del Producto</h4>
-                        <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.</p>
-                        <p class="card-price">$19.99</p>
-                        <button class="btn btn-primary">Añadir al carrito</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card bg-dark-subtle p-3 rounded border-0">
-                    <img src="img/cafe.png" class="card-img-top" alt="Nombre del Producto">
+                <div class="card border-0 p-3 rounded">
+                    <img src=" img/cafe.png" class="card-img" alt="Nombre del Producto">
                     <div class="card-body">
                         <h4 class="card-title">Nombre del Producto</h4>
                         <p class="card-text">Descripción breve del producto. Lorem ipsum dolor sit amet consectetur
@@ -119,46 +138,111 @@
         </div>
     </main>
 
-    <hr class="m-5">
-
-    <section>
-        <form class="container mt-5" action="#">
-            <h3 class="text-center mb-5">Completa el siguiente formulario</h3>
-            <div class="row row-cols-2 g-3">
-                <div class="col">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre">
-                </div>
-                <div class="col">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido">
-                </div>
-                <div class="col-12">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-                <div class="col">
-                    <label for="pass" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="pass">
-                </div>
-                <div class="col">
-                    <label for="conf-pass" class="form-label">Confirmar contraseña</label>
-                    <input type="password" class="form-control" id="conf-pass">
-                </div>
-                <div class="col">
-                    <input class="form-check-input" type="checkbox" id="terminos">
-                    <label class="check" for="terminos">Acepto los <a href="#">terminos y condiciones</a></label>
-                </div>
-                <div class="col text-end">
-                    <button type="submit" class="btn btn-primary">Crear cuenta</button>
-                </div>
-            </div>
-        </form>
-    </section>
-
     <footer class="bg-dark text-white text-center p-5 mt-5">
         <p class="m-0">Copyright @ Yout Website 2024</p>
     </footer>
+
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog p-5">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar sesion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="container" action="#">
+                    <div class="modal-body d-flex flex-column gap-3 justify-content-center">
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="pass" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <div class="col-12">
+                            <a data-bs-toggle="modal" data-bs-target="#modalPassOlvidada"> ¿Has olvidado la
+                                contraseña?</a>
+                        </div>
+                        <div class="col-12">
+                            ¿Es tu primera vez aqui? <a data-bs-toggle="modal"
+                                data-bs-target="#modalRegistro">Registrate</a>
+                        </div>
+                        <button class="col-12 btn btn-primary mt-3">Iniciar sesion</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar sesion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="container" action="#">
+                    <div class="modal-body d-flex flex-column gap-3 justify-content-center">
+                        <div class="col-12">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="col-12">
+                            <label for="apellido" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellido">
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="pass" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <div class="col-12">
+                            <label for="conf-pass" class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="conf-pass">
+                        </div>
+                        <div class="col-12">
+                            <input class="form-check-input" type="checkbox" id="terminos">
+                            <label class="check" for="terminos">Acepto los <a href="#">terminos y
+                                    condiciones</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Crear cuenta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPassOlvidada" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Restablecer contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="container" action="#">
+                    <div class="modal-body d-flex flex-column gap-3 justify-content-center">
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="pass" class="form-label">Nueva contraseña</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <div class="col-12">
+                            <label for="conf-pass" class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="conf-pass">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

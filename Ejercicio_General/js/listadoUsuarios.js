@@ -44,6 +44,8 @@ function eliminar(){
     axios.delete(requestDelete + IdUsuarioElegido, { headers })
     .then(response => {
         console.log("Usuario con el ID: " + IdUsuarioElegido + " eliminado");
+        modalConfirmarDelete.hide();
+        window.location.reload();
     })
     .catch(error => console.error('Error:', error));
 }

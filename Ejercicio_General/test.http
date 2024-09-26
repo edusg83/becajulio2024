@@ -1,0 +1,13 @@
+@url=http://192.168.1.162:3000/usuarios
+
+GET {{url}}
+Content-Type: application/json
+
+# GET {{url}}?nombre=Usuario 6
+# Content-Type: application/json
+
+[GET]
+
+[POST]
+
+[PATCH]
