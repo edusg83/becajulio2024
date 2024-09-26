@@ -1,8 +1,6 @@
 
 const url = 'http://192.168.1.129:8080/marketplace/articulos';
-
 const img = 'img/huevos.jpg';
-
 function obtenerArticulos() {
     axios.get(url)
         .then(respuesta => {
@@ -16,7 +14,7 @@ function obtenerArticulos() {
                             <img src="${img}" class="card-img-top" alt="${articulo.nombre}">
                             <div class="card-body">
                                 <h5 class="card-title">${articulo.nombre}</h5>
-                                <p class="card-text">${articulo.descripcion}</p>
+                                <p class="card-text">Compra nuestro ${articulo.nombre}, es el mejor del mercado!</p>
                                 <button type="button" class="btn" data-toggle="modal" data-target="#modalArticulo${articulo.id}">Ver Detalles</button>
                             </div>
                         </div>
@@ -33,7 +31,7 @@ function obtenerArticulos() {
                                 </div>
                                 <div class="modal-body">
                                     <img src="${img}" class="img-fluid mb-3" alt="${articulo.nombre}">
-                                    <p>${articulo.descripcion}</p>
+                                    <p>${articulo.nombre}, del campo a tu casa!</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn">Comprar</button>
