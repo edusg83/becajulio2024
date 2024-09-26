@@ -1,8 +1,8 @@
 
-const url = '';
+const url = 'http://192.168.1.129:8080/marketplace/articulos';
 
 function obtenerArticulos() {
-    axios.get(`${url}/articulos`)
+    axios.get(url)
         .then(respuesta => {
             const articulos = respuesta.data;
             let articulosHTML = '';
@@ -20,7 +20,7 @@ function obtenerArticulos() {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="modal fade" id="modalArticulo${articulo.id}" tabindex="-1" role="dialog" aria-labelledby="modalArticulo${articulo.id}Label" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
