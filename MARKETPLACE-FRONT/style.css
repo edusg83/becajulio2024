@@ -1,4 +1,7 @@
 .menuColor {
     background: #00AB61;
 }
-
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
