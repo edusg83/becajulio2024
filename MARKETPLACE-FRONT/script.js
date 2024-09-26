@@ -1,6 +1,8 @@
 
 const url = 'http://192.168.1.129:8080/marketplace/articulos';
 
+const img = 'img/huevos.jpg';
+
 function obtenerArticulos() {
     axios.get(url)
         .then(respuesta => {
@@ -9,14 +11,13 @@ function obtenerArticulos() {
             
             articulos.forEach(articulo => {
                 articulosHTML += `
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-2 mb-2">
                         <div class="card">
-                            <img src="${articulo.imagen}" class="card-img-top" alt="${articulo.nombre}">
+                            <img src="${img}" class="card-img-top" alt="${articulo.nombre}">
                             <div class="card-body">
                                 <h5 class="card-title">${articulo.nombre}</h5>
                                 <p class="card-text">${articulo.descripcion}</p>
-                                <p class="card-text"><strong>Precio: $${articulo.precio}</strong></p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalArticulo${articulo.id}">Ver Detalles</button>
+                                <button type="button" class="btn" data-toggle="modal" data-target="#modalArticulo${articulo.id}">Ver Detalles</button>
                             </div>
                         </div>
                     </div>
@@ -31,13 +32,12 @@ function obtenerArticulos() {
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="${articulo.imagen}" class="img-fluid mb-3" alt="${articulo.nombre}">
+                                    <img src="${img}" class="img-fluid mb-3" alt="${articulo.nombre}">
                                     <p>${articulo.descripcion}</p>
-                                    <h5>Precio: $${articulo.precio}</h5>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Comprar</button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn">Comprar</button>
+                                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
