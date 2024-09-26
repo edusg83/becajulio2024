@@ -1,26 +1,29 @@
+* {
+    margin: 0;
+}
+
 nav {
-    background-color: #003366;
-    color: white;
-    max-height: 60px;
+    max-height: 70px;
+    background-color: #E6E3DD;
+    overflow: hidden;
 }
 
 #logo {
-    height: 100%;
-    max-height: 60px;
-    margin-left: -0.5em;
+    max-height: 70px;
+    width: auto;
 }
 
-#pfp {
-    height: 100%;
-    max-height: 40px;
+#link_container li {
+    transition: 0.5s ease-in-out;
 }
 
-main {
-    height: 100vh;
-    background-color: #F2F2F2;
+#link_container li:hover {
+    scale: 1.1;
 }
 
-#front_face {
-    background-color: #333333;
-    color: white;
+#background_section_1 {
+    background-image: url("https://i.postimg.cc/TPScXm1b/background-1.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
 }

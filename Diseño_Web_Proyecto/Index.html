@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketplace</title>
+  <title>Overwolf</title>
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -15,117 +15,49 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <!-- Favicon -->
-  <link rel="icon" href="resources/Icon.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="https://i.postimg.cc/bY4hrFDD/logo.webp" type="image/png" sizes="16x16">
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css">
   <!-- Iconos -->
   <script src="https://kit.fontawesome.com/9a29a4d52e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="bg-light.bg-gradient">
   <header>
-    <nav class="container-fluid d-flex flex-row justify-content-between p-2">
-      <img src="resources/Icon.png" alt="Logotipo" id="logo" class="align-self-center">
-      <form class="d-flex flex-row gap-2 w-50" role="search">
-        <input type="text" class="form-control" type="search" placeholder="search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
-      <section class="d-flex gap-4">
-        <div class="d-flex flex-column align-items-center">
-          <a href="#" class="text-light text-decoration-none fs-5"><i class="fa fa-shopping-basket"></i></a>
-          <p class="">Cesta</p>
+    <nav class="nav align-items-center justify-content-between row">
+      <section class="d-flex flex-row align-items-center col-2">
+        <li class="nav-item me-4">
+          <img src="https://i.postimg.cc/wvHSLS5F/logo-2.webp" alt="logo" id="logo">
+        </li>
+        <div class="d-flex flex-row gap-3" id="link_container">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Info</li>
+          <li class="nav-item">Contact</li>
         </div>
-        <a href="#" class="text-light text-decoration-none"><img
-            src="https://as2.ftcdn.net/v2/jpg/01/60/28/25/1000_F_160282536_phkmQJ06kTyA8mAYnCXvWKrfup1HJVCz.jpg"
-            alt="pfp" id="pfp" class="rounded-circle">
-        </a>
       </section>
+      <form class="d-flex flex-row align-self-center col-6" role="search">
+        <input type="text" id="search" name="search" class="form-control me-2" type="search" placeholder="search">
+        <button class="btn btn-outline-success px-4"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+      <div class="col-2 row me-3 gap-2">
+        <button class="col btn btn-dark">Sign up</button>
+        <button class="col btn btn-dark">Login</button>
+      </div>
     </nav>
   </header>
 
-  <main class="pt-5">
-    <section class="container d-flex flex-column align-items-center py-5" id="front_face">
-      <h1>Amalgon</h1>
-      <p>Your online marketplace</p>
-    </section>
-
-    <section class="container mt-5">
-      <!-- Primera fila -->
-      <div class="row-cols-4 d-flex flex-row gap-3 justify-content-center">
-        <!-- Primer articulo -->
-        <article class="col card">
-          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
-          <div class="ms-2 card-body d-flex flex-column ">
-            <h3 class=" fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
-            <p class="" style="color:#e9a893">precio$</p>
-          </div>
-          <div class="card-footer d-flex justify-content-center">
-            <button class=" btn btn-warning col">Add to cart!</button>
-          </div>
-        </article>
-        <!-- Segundo articulo -->
-        <article class="col card">
-          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
-          <div class="ms-2 card-body d-flex flex-column ">
-            <h3 class=" fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
-            <p class="" style="color:#e9a893">precio$</p>
-          </div>
-          <div class="card-footer d-flex justify-content-center">
-            <button class=" btn btn-warning col">Add to cart!</button>
-          </div>
-        </article>
-        <!-- Tercer articulo -->
-        <article class="col card">
-          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
-          <div class="ms-2 card-body d-flex flex-column ">
-            <h3 class=" fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
-            <p class="" style="color:#e9a893">precio$</p>
-          </div>
-          <div class="card-footer d-flex justify-content-center">
-            <button class=" btn btn-warning col">Add to cart!</button>
-          </div>
-        </article>
-        <article class="col card">
-          <img src="https://placehold.co/800x250" class="card-img-top" alt="...">
-          <div class="ms-2 card-body d-flex flex-column ">
-            <h3 class=" fs-5"><a href="#" class="text-decoration-none text-dark">Article name</a></h3>
-            <p class="" style="color:#e9a893">precio$</p>
-          </div>
-          <div class="card-footer d-flex justify-content-center">
-            <button class=" btn btn-warning col">Add to cart!</button>
-          </div>
-        </article>
+  <main class="mt-5">
+    <section class="container w-75  ">
+      <div id="background_section_1" class="container-fluid rounded d-flex flex-column align-items-center p-4">
+        <h1>Online Market</h1>
+        <p class="text-center w-50 fs-5 fw-bold">Criticism, like rain, may dampen the spirit; yet, from such showers,
+          the soul's
+          garden
+          blooms ever brighter
+        </p>
       </div>
     </section>
   </main>
-
-  <footer class="container-fluid d-flex flex-row justify-content-around bg-dark py-3">
-    <section class="d-flex flex-row gap-5">
-      <div class="d-flex flex-column align-items-center text-light">
-        <h6>Contacta con nosotros: </h6>
-        <div id="enlaces" class="d-flex flex-column gap-2 ms-2">
-          <a class="text-decoration-none text-light" href="tel:+34622743162">622 74 31 62</a>
-          <a class="text-decoration-none text-light" href="mailto:marketplace@gmail.com">marketplace@gmail.com</a>
-          <a class="text-decoration-none text-light" href="#">FAQ</a>
-        </div>
-      </div>
-      <div class="d-flex flex-column align-items-center text-light">
-        <h6 class="mb-3">Conectar con el Marketplace!</h6>
-        <div class="d-flex flex-column fs-3 gap-3">
-          <div class="row">
-            <i class="fa-brands fa-square-facebook col"></i>
-            <i class="fa-brands fa-square-twitter col"></i>
-            <i class="fa-brands fa-square-instagram col"></i>
-          </div>
-          <div class="row">
-            <i class="fa-brands fa-square-youtube col"></i>
-            <i class="fa-brands fa-square-pinterest col"></i>
-            <i class="fa-brands fa-square-snapchat col"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-  </footer>
 </body>
 
 </html>
