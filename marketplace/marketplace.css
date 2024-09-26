@@ -1,0 +1,72 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    height: 65px;
+    align-items: center;
+    margin-bottom: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+.categorias-aside{
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    
+}
+.colecciones{
+    background: whitesmoke;
+    height: 90%;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 10px;
+    justify-items: center;
+    padding: 2%;
+}
+
+.colecciones div{
+    height: 170px;
+    width: 170px;
+    background-color: rgb(163, 206, 206);
+}
+aside{
+    width: 25%;
+    height: 90%;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding: 2%;
+}
+aside div{
+    height: 170px;
+    width: 170px;
+    background-color: rgb(163, 206, 206);
+    margin-bottom: 3%;
+}
+.section_articulos{
+    margin: 3%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.section_articulos div{
+    width: 30%;
+    height: 250px;
+    background-color: rgb(163, 206, 206);
+}
+footer{
+    margin-top: 2%;
+    height: 65px;
+    background-color: rgb(192, 176, 176);
+    display: flex;
+    justify-content: center;
+}
+    
+.card{
+    height: 170px;
+    width: 170px;
+}
