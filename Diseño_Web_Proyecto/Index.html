@@ -41,8 +41,8 @@
         <button class="btn btn-outline-success px-4"><i class="fa fa-search" aria-hidden="true"></i></button>
       </form>
       <div class="col-2 row me-3 gap-2">
-        <button class="col btn btn-dark">Sign up</button>
-        <button class="col btn btn-dark">Login</button>
+        <button class="col btn btn-dark" onclick="use_signup_modal(1);">Register</button>
+        <button class="col btn btn-dark" onclick="use_login_modal(1);">Login</button>
       </div>
     </nav>
   </header>
@@ -144,6 +144,66 @@
     <button class="container-fluid bg-dark text-white p-3">Volver al principio</button>
   </main>
   <footer></footer>
+
+  <div class="modal" tabindex="-1" id="login_modal">
+    <div class="modal-dialog modal-dialog-centered" style="overflow-x: hidden;">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header row">
+          <img src="https://i.postimg.cc/wvHSLS5F/logo-2.webp" alt="logo" id="logo" class="col-2">
+          <h5 class="modal-title col-8 text-center pe-3">Login</h5>
+          <button type="button" class="btn btn-light m-0 col-1" data-bs-dismiss="modal" aria-label="Close"><i
+              class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form class="modal-body">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" id="email" class="form-control" required autofocus>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" id="password" class="form-control" required>
+        </form>
+        <div class="modal-footer d-flex flex-row justify-content-between">
+          <div class="d-flex flex-row justify-content-end align-items-center gap-2">
+            <button class="btn btn-light">Login</button>
+            <button class="btn btn-dark">Forgot password?</button>
+          </div>
+          <div class="d-flex flex-row justify-content-end align-items-center gap-2">
+
+            <button class="btn btn-dark" onclick="use_login_modal(0);use_signup_modal(1);">Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" id="signup_modal">
+    <div class="modal-dialog modal-dialog-centered" style="overflow-x: hidden;">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header row">
+          <img src="https://i.postimg.cc/wvHSLS5F/logo-2.webp" alt="logo" id="logo" class="col-2">
+          <h5 class="modal-title col-8 text-center pe-3">Register</h5>
+          <button type="button" class="btn btn-light m-0 col-1" data-bs-dismiss="modal" aria-label="Close"><i
+              class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form class="modal-body">
+          <label for="name" class="form-label mb-1">Name*</label>
+          <input type="name" name="name" id="name" class="form-control mb-1" required autofocus>
+          <label for="new_email" class="form-label mb-1">Email*</label>
+          <input type="new_email" name="new_email" id="new_email" class="form-control mb-1" required>
+          <label for="new_password" class="form-label mb-1">Password*</label>
+          <input type="new_password" name="new_password" id="new_password" class="form-control" required
+            autocomplete="off">
+        </form>
+        <div class="modal-footer d-flex flex-row justify-content-between">
+          <button class="btn btn-light">Signup</button>
+          <div class="w-75 d-flex flex-row justify-content-end align-items-center">
+            <label class=" form-label mb-0 py-1 px-0 w-50 text-center">Already a member?</label>
+            <button class="btn btn-dark" onclick="use_signup_modal(0);use_login_modal(1);">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 
 </html>
