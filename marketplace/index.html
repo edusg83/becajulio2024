@@ -10,6 +10,7 @@
 
 <body>
 
+  <!-- Barra de navegacion -->
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Tienda Online</a>
@@ -30,103 +31,53 @@
           <button class="btn btn-outline-light" type="submit">Buscar</button>
         </form>
         <a class="nav-tiem" href="#">
-          <img src="img/carrito.png" width="30" class="d-inline-block ms-2">
+          <svg class="d-inline-block ms-2" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 256 256">
+            <path fill="white"
+              d="M230.14 58.87A8 8 0 0 0 224 56H62.68L56.6 22.57A8 8 0 0 0 48.73 16H24a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H91.17a8 8 0 0 1-7.87-6.57L80.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56M104 204a12 12 0 1 1-12-12a12 12 0 0 1 12 12m96 0a12 12 0 1 1-12-12a12 12 0 0 1 12 12m4-74.57a8 8 0 0 1-7.9 6.57H77.22L65.59 72h148.82Z" />
+          </svg>
         </a>
       </div>
     </div>
   </nav>
 
+  <!-- Productos -->
   <main class="container mt-4">
-    <div class="row g-4">
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row gx-4 gy-4">
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 100%;">
-          <img src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <div class="row g-4" id="productos"></div>
   </main>
 
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+    Launch static backdrop modal
+  </button> -->
 
+  <!-- Modal -->
+  <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nombre_producto" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="nombre_producto">Tomate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="imagen_producto" src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
+          <h5 class="mt-2">Descripcion del producto</h5>
+          <p id="descripcion" class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sunt veniam aperiam autem aspernatur ducimus! Corporis enim omnis recusandae aliquam quasi qui, eius commodi tempore delectus praesentium
+            maiores iure quas!</p>
+          <label for="cantidad" class="form-label fw-bold">Cantidad</label>
+          <input class="form-control" type="number" name="cantidad" id="cantidad" value="1" min="1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button onclick="comprar(id, cantidad)" type="button" class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
