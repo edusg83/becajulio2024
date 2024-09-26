@@ -34,8 +34,8 @@ function pintarFila(user) {
 
 function eliminar(id) {
     let deleteUsuario = `http://192.168.0.15:3000/usuarios/${id}`;
-    console.log(deleteUsuario, {headers});
-    axios.delete(deleteUsuario)
+    console.log(deleteUsuario);
+    axios.delete(deleteUsuario, {headers})
         .then((respuestaUsuarios) => {
             window.location.reload();
     })

@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <style>
         body {
-            background-color: gray;
-        }
-
-        #card {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgb(198, 221, 197);
         }
         .cart-icon{
             height: 30px;
             width: 50px;
+        }
+        img {
+            width: 450px;
+            height: 300px;
         }
     </style>
 </head>
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="./main.html">Products</a>
+                        <a class="nav-link active" href="#">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./perfil.html">Profile</a>
@@ -46,7 +46,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <img id="carrito" src="carrito-marketplace.png" alt="Carrito" class="cart-icon img-fluid">
+                            <img src="carrito-marketplace.png" alt="Carrito" class="cart-icon img-fluid">
                         </a>
                     </li>
                 </ul>
@@ -54,37 +54,29 @@
         </div>
     </nav>
 
-    <main>
-        <div class="container d-flex justify-content-center">
-            <div id="card" class="card mt-5 w-50">
-                <div class="card-header ">
-                    User id : ${user.id}
-                </div>
-                <div class="card-body">
-                    <form id="formulario" class=" w-100">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre"
-                                aria-describedby="emailHelp" value="${user.nombre}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="apellidos" class="form-label">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidos" name="apellidos"
-                                value="${user.apellidos}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="${user.email}">
-                        </div>
-                        <div class="mt-5 text-center">
-                            <button id="guardar" type="submit" class="btn btn-primary">Guardar</button>
-                            <div>
-                    </form>
-                </div>
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">EOI Marketplace</h1>
+                <p class="lead fw-normal text-white-50 mb-0"></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div id="product-list" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
             </div>
         </div>
     </main>
 
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Marketplace EOI 2024</p></div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
