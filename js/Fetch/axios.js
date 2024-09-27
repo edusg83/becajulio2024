@@ -29,11 +29,6 @@ axios.get(url, { headers })
                     <tbody>`;
 
         let finTabla = `</tbody></table>`;
-
-       
-        
-       
-
         tabla += filas + finTabla;
 
         document.getElementById("tabla").innerHTML = tabla;

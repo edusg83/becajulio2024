@@ -8,30 +8,66 @@ header {
     padding-right: 2%;
     padding-left: 2%;
 }
-.categorias-aside{
+
+.categorias_aside {
     display: flex;
     justify-content: space-between;
     height: 400px;
-    
+
 }
-.colecciones{
+
+.hidden {
+    display: none !important;
+}
+
+.colecciones {
     background: whitesmoke;
     height: 90%;
     width: 65%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, 1fr);    
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     justify-items: center;
     padding: 2%;
 }
 
-.colecciones div{
+.colecciones div {
     height: 170px;
     width: 170px;
-    background-color: rgb(163, 206, 206);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
 }
-aside{
+.colecciones div p{
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+    background-color: rgba(41, 41, 41, 0.5);
+    text-align: center;
+
+}
+.tokyoGhoul{
+    background-image: url("img/coleccionTokyoGhoul.png");
+}
+.onePiece{
+    background-image: url("img/coleccionOnePiece.png");
+}
+.snk{
+    background-image: url("img/coleccionSNK.png");
+}
+.pokemon{
+    background-image: url("img/coleccionPokemon.png");
+
+}
+.naruto{
+    background-image: url("img/coleccionNaruto.png");
+     
+}
+.dragonBall{
+    background-image: url("img/coleccionDragonBall.png");
+
+}
+aside {
     width: 25%;
     height: 90%;
     display: flex;
@@ -41,32 +77,93 @@ aside{
     background-color: whitesmoke;
     padding: 2%;
 }
-aside div{
-    height: 170px;
-    width: 170px;
-    background-color: rgb(163, 206, 206);
-    margin-bottom: 3%;
-}
-.section_articulos{
+
+.section_articulos {
     margin: 3%;
     display: flex;
     justify-content: space-between;
 
 }
-.section_articulos div{
+
+.articulos_figuras{
+    background-image: url("img/Figura_Goku.png");
+}
+.articulos_merch{
+    background-image: url("img/Monopoly_Naruto.png");
+}
+.articulos_accesorios{
+    background-image: url("img/Mascara_Kaneki.png");
+}
+
+.section_articulos div {
     width: 30%;
     height: 250px;
-    background-color: rgb(163, 206, 206);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
 }
-footer{
+
+.section_articulos div p{
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+    background-color: rgba(41, 41, 41, 0.5);
+    text-align: center;
+
+}
+
+footer {
     margin-top: 2%;
     height: 65px;
     background-color: rgb(192, 176, 176);
     display: flex;
     justify-content: center;
 }
-    
-.card{
-    height: 170px;
-    width: 170px;
+
+.display_articulos {
+    margin-top: 4%;
+    height: auto;
+    background-color: whitesmoke;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #ccc;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+
+}
+.card #nombreArticulo{
+    margin: 0px;
+    font-family: fantasy;
+}
+
+
+.card span {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.card span p {
+    margin: 0px;
+
 }

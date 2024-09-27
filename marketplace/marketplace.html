@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="marketplace.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Marketplace</title>
 </head>
 
@@ -27,77 +28,57 @@
         </div>
     </header>
     <main>
-        <div class="categorias-aside">
-        <section class="colecciones">
-            
-            <div class="onePiece">
-                <p> One Piece</p>
-            </div>
-            <div class="snk">
-                <p>SNK</p>
-            </div>
+        <div class="categorias_aside">
+            <section class="colecciones">
 
-            <div class="tokyoGhoul">
-                <p>Tokyo Ghoul</p>
-            </div>
-            <div class="dreagonBall">
-                <p>Dragon Ball</p>
-            </div>
+                <div class="onePiece" onclick="busqueda('One Piece','coleccion')">
+                    <p> One Piece</p>
+                </div>
+                <div class="snk" onclick="busqueda('SNK','coleccion')">
+                    <p>SNK</p>
+                </div>
 
-            <div class="pokemon">
-                <p>Pokemon</p>
-            </div>
-            <div class="naruto">
-                <p>Naruto</p>
-            </div>
+                <div class="tokyoGhoul" onclick="busqueda('Tokyo Ghoul','coleccion')">
+                    <p>Tokyo Ghoul</p>
+                </div>
+                <div class="dragonBall" onclick="busqueda('Dragon Ball','coleccion')">
+                    <p>Dragon Ball</p>
+                </div>
 
-        </section>
-        <aside>
-            <section class="articulos_recomendados">
-                <div>
-                    <img id="fotoProducto" src="" alt="">
-                    <p id="nombreProducto"></p>
-                    <span>
-                        <p id="categoriaPorducto"></p>
-                        <p id="coleccionProducto"></p>
-                    </span>
-                    
+                <div class="pokemon" onclick="busqueda('Pokemon','coleccion')">
+                    <p>Pokemon</p>
                 </div>
-                <div>
-                    
+                <div class="naruto" onclick="busqueda('Naruto','coleccion')">
+                    <p>Naruto</p>
                 </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
+
             </section>
-        </aside>
+            <aside>
+                <section id="aside_article" class="articulos_recomendados">
+                    
+                </section>
+            </aside>
         </div>
-        <section class="section_articulos">
-            <div class="articulos_figuras">
-                <img src="" alt="">
+        <section id="section_articulos_id" class="section_articulos ">
+            <div class="articulos_figuras"  onclick="busqueda('figuras','categoria')">
+                <p>Figuras</p>
             </div>
-            <div class="articulos_merch">
-                <img src="" alt="">
+            <div class="articulos_merch"  onclick="busqueda('merch','categoria')">
+              <p>Merch</p>
             </div>
-            <div class="articulos_accesorios">
-                <img src="" alt="">
+            <div class="articulos_accesorios"  onclick="busqueda('accesorios','categoria')">
+               <p>Accesorios</p>
 
             </div>
+        </section>
+        <section id="display_articulos_id" class="display_articulos hidden">
+            <button onclick="cerrar()">cerrar</button>
         </section>
     </main>
-    
+
 </body>
 <footer>
     <p>Pagina realizada por Joaquin Gomez</p>
 </footer>
-
+<script src="marketplace.js"></script>
 </html>
