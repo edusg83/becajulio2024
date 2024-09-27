@@ -14,27 +14,11 @@ axios.get(`${urlClientes}/${userId}`, { headers })
     .then((respuestaUsuarios) => {
 
         let user = respuestaUsuarios.data;             
-        let form;
-
-        form =`<h1>Formulario de Actualización del Usuario</h1>
-
-        <form id="formularioUsuario">
-        <label for="id">ID:</label>
-        <input type="text" id="id" name="id" value="${user.id}" required>
-
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="apellidos" name="usuario" value="${user.apellidos}" required>
-
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="${user.nombre}" required>
-
-        <label for="email">Email:</label>   
-        <input type="email" id="email" name="email" value="${user.email}" required>
-
-        <button type="submit" id="formularioUsuario">Enviar</button>
-        </form> `;
-       
-    document.getElementById("resultado").innerHTML=form;
+        
+        document.getElementById("id").value=user.id;
+        document.getElementById("apellidos").value=user.apellidos;
+        document.getElementById("nombre").value=user.nombre;        
+        document.getElementById("email").value=user.email;
         
 
     document.getElementById("formularioUsuario").addEventListener("submit", function(event) {
@@ -51,12 +35,15 @@ axios.get(`${urlClientes}/${userId}`, { headers })
             .then((response) => {
                 console.log("Usuario actualizado exitosamente:", response.data);
                 alert("Usuario actualizado correctamente.");
+                window.location.href = "ejercicioFinalAxios.html";
             })
             .catch((error) => {
                 console.error("Error al actualizar el usuario:", error);
                 alert("Ocurrió un error al actualizar el usuario.");
             });
+           
     });
+    
 });
 
 

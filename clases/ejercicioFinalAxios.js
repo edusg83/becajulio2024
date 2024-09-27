@@ -5,7 +5,6 @@ const headers = {
 
 const urlClientes = ('http://192.168.1.54:3000/usuarios');
 
-
 axios.get(urlClientes, { headers })
     .then((respuestaUsuarios) => {
 
@@ -15,8 +14,8 @@ axios.get(urlClientes, { headers })
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Usuario</th>
                 <th>Nombre</th>
+                <th>Apellidos</th>
                 <th>Email</th>
             </tr>
 

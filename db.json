@@ -46,15 +46,15 @@
   "usuarios": [
     {
       "apellidos": "Galvañ",
-      "nombre": "Usuario 1",
+      "nombre": "Yago",
       "email": "usuario1@gmail.com",
       "id": "U001"
     },
     {
-      "id": "U002",
-      "nombre": "Usuario 2",
-      "apellidos": "Apellidos usuario 2",
-      "email": "usuario2@gmail.com"
+      "apellidos": "Fernández",
+      "nombre": "Pedro",
+      "email": "usuario2@gmail.com",
+      "id": "U002"
     }
   ]
 }
