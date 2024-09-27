@@ -41,6 +41,39 @@
 </tbody>
    </table>
 
+   <script>
+const url="https://apilater.azurewebsites.net/api/token";
+
+const headers={
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin':'*'
+}
+    const request={
+        "username":"usertest@gmail.com",
+        "password":"aaa"
+    }
+
+    axios.post(url,request, {headers})
+    .then(respuesta=>{
+        const token = respuesta.data;
+    
+    const base64Url = token.split('.')[1]; // Esto es el payload (segunda parte del JWT)
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+}).join(''));
+
+const objectJWT=JSON.parse(jsonPayload);
+
+
+    console.log(objectJWT);
+    })
+    
+
+
+
+   </script>
 </body>
 
 </html>
