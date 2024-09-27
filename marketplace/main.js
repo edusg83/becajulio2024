@@ -65,6 +65,7 @@ function printModal(id) {
 
 const inicioSesion = document.getElementById("buttonIniciarSesion");
 const modal = new bootstrap.Modal(document.getElementById('sesionModal'));
+const sesionContainer = document.getElementById("sesion-container");
 
 inicioSesion.addEventListener("click", function () {
 
@@ -93,11 +94,20 @@ inicioSesion.addEventListener("click", function () {
                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
             }).join(''));
 
+            modal.hide();
+            
             const objectJWT = JSON.parse(jsonPayload);
-
             console.log(objectJWT.unique_name);
             window.location.href += objectJWT.unique_name;
-            location.reload();
+            //location.reload();
+
+            sesionContainer.innerHTML = `
+                        <p class="mb-0">
+                            <strong>Usuario:</strong>  ${objectJWT.unique_name}
+                        </p>
+            `;
+
+            document.getElementById("pagina-perfil").setAttribute("href","./perfil.html"); 
 
         })
 
