@@ -18,7 +18,7 @@ function obtenerArticulos() {
                             <div class="card-body">
                                 <h5 class="card-title">${articulo.nombre}</h5>
                                 <p class="card-text">Compra nuestro ${articulo.nombre}, es el mejor del mercado!</p>
-                                <button type="button" class="btn" data-toggle="modal" data-target="#modalArticulo${articulo.id}">Ver Detalles</button>
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modalArticulo${articulo.id}">Ver Detalles</button>
                             </div>
                         </div>
                     </div>
@@ -28,8 +28,7 @@ function obtenerArticulos() {
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="modalArticulo${articulo.id}Label">${articulo.nombre}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -38,7 +37,7 @@ function obtenerArticulos() {
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn">Comprar</button>
-                                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +64,7 @@ function obtenerPedidos() {
                     <td>${pedido.fecha}</td>
                     <td>`;
         pedido.articulos.forEach(articulo => {
-            pedidosHTML += `id = ${articulo.id} y cantidad = ${articulo.cantidad} | `;
+            pedidosHTML += `id = ${articulo.id}, cantidad = ${articulo.cantidad} </br>`;
         });
         pedidosHTML += `
                     </td>

@@ -1,9 +1,18 @@
+.altura{
+    height: 50vh;
+}
 .menuColor {
     background: #00AB61;
+}
+.colorVerde {
+    color: #00AB61;
 }
 .btn, .btn:hover {
     background: #00AB61;
     color: #FFFFFF;
+}
+.texto-menu {
+    color: #FFFFFF !important;
 }
 a, a:hover {
     text-decoration: none;
