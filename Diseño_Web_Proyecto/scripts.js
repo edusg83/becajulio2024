@@ -11,6 +11,8 @@ const headers = {
 
 const url_articles = "http://localhost:8080/marketplace/articulos";
 
+const url_users = "http://localhost:8080/marketplace/usuarios"
+
 let articles;
 
 let product;
@@ -38,6 +40,10 @@ function use_product_modal(product, image) {
             document.getElementById("product_purchase").disabled = false;
         }
     });
+}
+
+function close_modal(modal) {
+    modal.hide();
 }
 
 function get_product_list() {
@@ -96,6 +102,30 @@ function set_product_list(info) {
     product_container.innerHTML = products;
 }
 
+function login_user() {
+    let new_div = `
+    <button class="btn btn-dark btn-sm col"><i class="fa fa-shopping-basket"></i></button>
+    <div class="col"><img
+        src="https://png.pngitem.com/pimgs/s/623-6236346_person-icon-png-download-person-illustration-transparent-png.png"
+        alt="" id="pfp" class="col rounded-circle">
+    </div>`;
+
+    let user_email = document.getElementById("email").value;
+    let user_password = document.getElementById("password").value;
+
+    console.log(user_email, user_password);
+
+    axios.post(`${url_users}/login`, { nombreUsuario: user_email, password: user_password })
+        .then(response => {
+            console.log(response.data);
+            if (response.data.nombreUsuario == user_email && response.data.password == user_password) {
+                document.getElementById("user_container").innerHTML = '';
+                document.getElementById("user_container").innerHTML = new_div;
+                close_modal(login_modal);
+            }
+        })
+}
+
 function search_product() {
 
     let product_name = document.getElementById("search").value;
@@ -107,6 +137,5 @@ function search_product() {
             articles = response.data;
             product_container.innerHTML = '';
             set_product_list(articles);
-            return false;
         })
 }
