@@ -11,12 +11,9 @@ const headers = {
 
 const url_articles = "http://localhost:8080/marketplace/articulos";
 
-const url_images = new Map();
-
 let articles;
 
 let product;
-
 
 function use_login_modal(param) {
     param == 1 ? login_modal.show() : login_modal.hide();
@@ -26,6 +23,7 @@ function use_signup_modal(param) {
     param == 1 ? signup_modal.show() : signup_modal.hide();
 }
 
+//TODO PENSAR EN LAS IMAGENES
 function use_product_modal(product, image) {
     document.getElementById("product_title").innerHTML = product.nombre;
     document.getElementById("product_image").src = image;
@@ -50,6 +48,7 @@ function get_product_list() {
         })
 }
 
+//TODO AÑADIR DESCRIPCION A BASE DE DATOS
 function get_product(id, image) {
     axios.get(`${url_articles}/${id}`)
         .then(response => {
@@ -95,4 +94,18 @@ function set_product_list(info) {
     });
 
     product_container.innerHTML = products;
+}
+
+//FIXME
+function search_product() {
+
+    let product_name = document.getElementById("search").value;
+
+    axios.get(`${url_articles}/${product_name}/nombre`)
+        .then(response => {
+            articles = response.data;
+            product_container.innerHTML = '';
+            console.log(articles);
+            set_product_list(articles);
+        })
 }
