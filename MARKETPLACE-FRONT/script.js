@@ -1,12 +1,15 @@
 
-const url = 'http://192.168.1.129:8080/marketplace/articulos';
-const img = 'img/huevos.jpg';
+const urlArt = 'http://192.168.1.129:8080/marketplace/articulos';
+const urlUsu = 'http://192.168.1.129:8080/marketplace';
+const urlPed = 'http://192.168.1.129:8080/marketplace/pedidos';
+
+const img = 'img/Leche.jpg';
+
 function obtenerArticulos() {
-    axios.get(url)
-        .then(respuesta => {
-            const articulos = respuesta.data;
+    axios.get(urlArt)
+        .then(datos => {
+            const articulos = datos.data;
             let articulosHTML = '';
-            
             articulos.forEach(articulo => {
                 articulosHTML += `
                     <div class="col-md-4 mt-2 mb-2">
@@ -39,15 +42,77 @@ function obtenerArticulos() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
             });
-
             document.getElementById('articulos-container').innerHTML = articulosHTML;
         })
         .catch(error => {
             console.error("Error:", error);
         });
 }
-
 obtenerArticulos();
+
+function obtenerPedidos() {
+    axios.get(urlPed)
+        .then(datos => {
+            const pedidos = datos.data;
+            let pedidosHTML = '';
+            pedidos.forEach(pedido => {
+                pedidosHTML += `
+                <tr>
+                    <td>${pedido.id}</td>
+                    <td>${pedido.nombre}</td>
+                    <td>${pedido.fecha}</td>
+                    <td>`;
+        pedido.articulos.forEach(articulo => {
+            pedidosHTML += `id = ${articulo.id} y cantidad = ${articulo.cantidad} | `;
+        });
+        pedidosHTML += `
+                    </td>
+                </tr>`;
+            });
+            document.getElementById('pedidos-tbody').innerHTML = pedidosHTML;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+}
+obtenerPedidos();
+
+
+function obtenerUsuario(id) {
+    axios.get(`${urlUsu}/usuarios/${id}`)
+        .then(datos => {
+            const usuario = datos.data;
+            document.getElementById('nombre').value = usuario.nombre;
+            document.getElementById('email').value = usuario.email;
+            document.getElementById('password').value = usuario.direccion;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+}
+
+function actualizarUsuario(e) {
+    e.preventDefault();
+    const usuarioActualizado = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        direccion: document.getElementById('password').value
+    };
+
+    axios.put(`${urlUsu}/usuarios`, usuarioActualizado)
+        .then(datos => {
+            alert('Usuario actualizado correctamente.');
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert('Error en actualización de usuario.');
+        });
+}
+
+obtenerUsuario(2);
+
+document.getElementById('usuario-form').addEventListener('submit', actualizarUsuario);
+
+
