@@ -38,19 +38,24 @@ function busqueda(busqueda, categoria) {
                 let nombreFoto = item.nombre.replace(/ /g, '_');
                 articulo += `
             <div class="card">
-                <img id="fotoProducto" src="img/${nombreFoto}.png" alt="">
-                <span>
-                    <p id="nombreProducto">${item.nombre}</p>
+                <img id="fotoArticulo" src="img/${nombreFoto}.png" alt="">
+                <p id="nombreArticulo">${item.nombre}</p>
+                <span>  
+                    <p>Precio :</p>
                     <p id="precioProducto">${item.precio}€</p>
                 </span>
                 <span>
-                    <p id="categoriaPorducto">${item.categoria}</p>
-                    <p id="coleccionProducto">${item.coleccion}</p>
+                    <p>Categoria :</p>
+                    <p id="categoriaArticulo">${item.categoria}</p>
+                </span>
+                <span>  
+                    <p>Coleccion :</p>
+                    <p id="coleccionArticulo">${item.coleccion}</p>
                 </span>
             </div>`;
 
             });
-
+            document.getElementById("display_articulos_id").innerHTML = "<button onclick='cerrar()'>cerrar</button>"
             document.getElementById("section_articulos_id").classList = "section_articulos hidden"
             document.getElementById("display_articulos_id").classList = "display_articulos"
             document.getElementById("display_articulos_id").innerHTML += articulo;
@@ -99,5 +104,5 @@ function generarAside(url) {
 function cerrar(){
     document.getElementById("section_articulos_id").classList = "section_articulos"
      document.getElementById("display_articulos_id").classList = "display_articulos hidden"
-     document.getElementById("display_articulos_id").innerHTML = " <button onclick='cerrar()'>cerrar</button>"
+     document.getElementById("display_articulos_id").innerHTML = "<button onclick='cerrar()'>cerrar</button>"
 }
