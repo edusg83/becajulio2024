@@ -13,9 +13,18 @@ const url_articles = "http://localhost:8080/marketplace/articulos";
 
 const url_users = "http://localhost:8080/marketplace/usuarios"
 
-let articles;
 
-let product;
+
+function move_top() {
+    document.getElementById("move_button").addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    })
+}
+
+
 
 function use_login_modal(param) {
     param == 1 ? login_modal.show() : login_modal.hide();
@@ -47,6 +56,8 @@ function close_modal(modal) {
 }
 
 function get_product_list() {
+    let articles;
+
     axios.get(url_articles, { headers })
         .then(response => {
             articles = response.data;
@@ -56,6 +67,8 @@ function get_product_list() {
 
 //TODO AÑADIR DESCRIPCION A BASE DE DATOS
 function get_product(id, image) {
+    let product;
+
     axios.get(`${url_articles}/${id}`)
         .then(response => {
             let info = response.data;
@@ -92,8 +105,8 @@ function set_product_list(info) {
               <p class="text-warning mb-0">${product.precio}</p>
             </div>
             <div class="card-footer row gap-3 justify-content-center">
-              <button class="btn btn-success col-5 btn-sm btn-sm">Comprar</button>
-              <button class="btn btn-primary col-5 btn-sm btn-sm" onclick="get_product(${product.idArticulo},'${image}');">Ver mas</button>
+              <button class="btn btn-success col-5 btn-sm btn-sm">Buy now</button>
+              <button class="btn btn-primary col-5 btn-sm btn-sm" onclick="get_product(${product.idArticulo},'${image}');">Details</button>
             </div>
           </div>
         </article>`
@@ -102,6 +115,7 @@ function set_product_list(info) {
     product_container.innerHTML = products;
 }
 
+//TODO CREAR TOKEN GENERATOR, HACER AUTH Y GENERAR TOKEN DE USUARIO
 function login_user() {
     let new_div = `
     <button class="btn btn-dark btn-sm col"><i class="fa fa-shopping-basket"></i></button>
@@ -113,11 +127,25 @@ function login_user() {
     let user_email = document.getElementById("email").value;
     let user_password = document.getElementById("password").value;
 
-    console.log(user_email, user_password);
 
-    axios.post(`${url_users}/login`, { nombreUsuario: user_email, password: user_password })
+    axios.post(`${url_users}/login`, { nombreUsuario: user_email, password: user_password }, headers)
         .then(response => {
-            console.log(response.data);
+            // const token = response.data;
+            // sessionStorage.setItem('token', token);
+            // const base64Url = token.split('.')[1];
+            // const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+
+            // const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) { //UTF8 - decodificación
+
+            //     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            // }).join(''));
+
+            // const objectJWT = JSON.parse(jsonPayload);
+
+            // console.log(objectJWT);
+            // let tokenRecuperado = sessionStorage.getItem("token");
+            // console.log(tokenRecuperado);
+
             if (response.data.nombreUsuario == user_email && response.data.password == user_password) {
                 document.getElementById("user_container").innerHTML = '';
                 document.getElementById("user_container").innerHTML = new_div;

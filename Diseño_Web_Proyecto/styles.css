@@ -55,3 +55,9 @@ nav {
 .card:hover {
     scale: 1.05;
 }
+
+#move_button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
