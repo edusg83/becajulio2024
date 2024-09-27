@@ -1,5 +1,6 @@
 
 const urlArt = 'http://192.168.1.129:8080/marketplace/articulos';
+const urlUsuTotal = 'http://localhost:8080/marketplace/usuarios';
 const urlUsu = 'http://192.168.1.129:8080/marketplace';
 const urlPed = 'http://192.168.1.129:8080/marketplace/pedidos';
 
@@ -78,14 +79,12 @@ function obtenerPedidos() {
 }
 obtenerPedidos();
 
-
 function obtenerUsuario(id) {
     axios.get(`${urlUsu}/usuarios/${id}`)
         .then(datos => {
             const usuario = datos.data;
             document.getElementById('nombre').value = usuario.nombre;
-            document.getElementById('email').value = usuario.email;
-            document.getElementById('password').value = usuario.direccion;
+            document.getElementById('password').value = usuario.password;
         })
         .catch(error => {
             console.error("Error:", error);
@@ -96,8 +95,7 @@ function actualizarUsuario(e) {
     e.preventDefault();
     const usuarioActualizado = {
         nombre: document.getElementById('nombre').value,
-        email: document.getElementById('email').value,
-        direccion: document.getElementById('password').value
+        password: document.getElementById('password').value
     };
 
     axios.put(`${urlUsu}/usuarios`, usuarioActualizado)
@@ -113,5 +111,25 @@ function actualizarUsuario(e) {
 obtenerUsuario(2);
 
 document.getElementById('usuario-form').addEventListener('submit', actualizarUsuario);
+
+function obtenerUsuarios() {
+    axios.get(urlUsuTotal)
+        .then(datos => {
+            const usuarios = datos.data;
+            let usuariosHTML = '';
+            usuarios.forEach(usuario => {
+                usuariosHTML += `
+                <tr>
+                    <td>${usuario.id}</td>
+                    <td>${usuario.nombre}</td>
+                </tr>`;
+            });
+            document.getElementById('usuarios-tbody').innerHTML = usuariosHTML;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+}
+obtenerUsuarios();
 
 
