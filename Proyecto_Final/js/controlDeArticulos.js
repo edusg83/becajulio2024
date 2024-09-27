@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function mostrarArticulos(articulos) {
     const tarjetas = document.querySelectorAll(".card");
-    const maxCaracteres = 100;
+    const maxCaracteres = 130;
     const rutaImg = "img/";
 
     tarjetas.forEach((tarjeta, index) => {

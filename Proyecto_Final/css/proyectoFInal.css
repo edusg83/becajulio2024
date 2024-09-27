@@ -4,7 +4,7 @@ body {
     background-image: url(../img/fondo.jpg);
 }
 
-#logo{
+#logo {
     width: 60px;
     padding: 0;
     margin: 0;
@@ -23,14 +23,18 @@ body {
     box-shadow: 0px 0px 15px rgb(27, 20, 20);
 }
 
+.card-header {
+    background-color: white;
+}
+
 .card img {
-    max-width: 200px;
-    max-height: 130px;
+    max-width: 240px;
+    max-height: 160px;
     margin: auto;
     object-fit: cover;
 }
 
-.card-body{
+.card-body {
     margin-top: 0.8em;
     padding: 0;
 }
@@ -87,6 +91,6 @@ body {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #D69A6E; 
-    opacity: 1; 
+    color: #D69A6E;
+    opacity: 1;
 }
