@@ -62,3 +62,49 @@ function printModal(id) {
         })
 
 }
+
+const inicioSesion = document.getElementById("buttonIniciarSesion");
+const modal = new bootstrap.Modal(document.getElementById('sesionModal'));
+
+inicioSesion.addEventListener("click", function () {
+
+    const usuario = {
+        "username": document.getElementById("name").value,
+        "password": document.getElementById("password").value
+    }
+
+    const url = "https://apilater.azurewebsites.net/api/token";
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    }
+
+    axios.post(url, usuario, { headers })
+        .then(respuesta => {
+            const token = respuesta.data;
+            sessionStorage.setItem("token", token); //Almacenar token en Session storage
+
+            const base64Url = token.split('.')[1]; // Esto es el payload (segunda parte del JWT)
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); //Reemplazo contenido para base64
+
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) { //UTF8 - decodificación
+
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            const objectJWT = JSON.parse(jsonPayload);
+
+            console.log(objectJWT.unique_name);
+            window.location.href += objectJWT.unique_name;
+            location.reload();
+
+        })
+
+
+    let tokenRecuperado = sessionStorage.getItem("token");
+    console.log(tokenRecuperado);
+    console.log(sessionStorage);
+
+}, false)
+
