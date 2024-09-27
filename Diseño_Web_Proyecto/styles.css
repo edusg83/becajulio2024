@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 * {
     margin: 0;
 }
 
-@import url("https: //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     overflow-x: hidden;
@@ -27,7 +31,7 @@ nav {
     transition: 0.5s ease-in-out;
 }
 
-#link_container li:hover {
+#link_container>li:hover {
     scale: 1.1;
     cursor: pointer;
 }
