@@ -82,7 +82,7 @@ div#best-sellers hr{
 
 }
 
-div.card-body a{
+div.card-body button{
     background-color: #6D2932!important;
     border-color: #6D2932;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -95,4 +95,43 @@ div.card-body a{
 
 .card-body-custom:hover{
     padding: 5px 10px;
+}
+
+/*Modal Personalizada: */
+
+.modal-custom-header {
+    background-color: #6D2932;
+    padding: 9px;
+}
+
+
+#productModal{
+    border-radius: 20px;
+}
+
+.custom-modal-card {
+    border-radius: 25px;
+    border: none;
+    background-color: #f8f2ef;
+}
+
+.btn-close-custom{
+    margin-right: 10px!important;
+    width: 10px!important;
+}
+
+div .modal-body button {
+    background-color: #6D2932!important;
+    border-color: #6D2932;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+button #addToCartButton:hover{
+    border-color: #6D2932 !important;
+    padding: 10px 15px;
+}
+
+div .modal-body .modal-price{
+    font-size: 2em;
+    font-weight: bolder;
 }
