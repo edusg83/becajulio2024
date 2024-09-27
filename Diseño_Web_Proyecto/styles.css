@@ -56,8 +56,12 @@ nav {
     scale: 1.05;
 }
 
-#move_button {
+#top_button {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+footer {
+    overflow: hidden;
 }

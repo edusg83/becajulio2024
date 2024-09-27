@@ -15,14 +15,7 @@ const url_users = "http://localhost:8080/marketplace/usuarios"
 
 
 
-function move_top() {
-    document.getElementById("move_button").addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    })
-}
+
 
 
 
@@ -102,7 +95,7 @@ function set_product_list(info) {
             <div class="card-body">
               <h5>${product.nombreArticulo}</h5>
               <p class="text-truncate mb-0">Breve descripcion</p>
-              <p class="text-warning mb-0">${product.precio}</p>
+              <p class="text-warning mb-0">${product.precio}€</p>
             </div>
             <div class="card-footer row gap-3 justify-content-center">
               <button class="btn btn-success col-5 btn-sm btn-sm">Buy now</button>
@@ -154,6 +147,10 @@ function login_user() {
         })
 }
 
+function create_user(username, email, password) {
+
+}
+
 function search_product() {
 
     let product_name = document.getElementById("search").value;
@@ -167,3 +164,17 @@ function search_product() {
             set_product_list(articles);
         })
 }
+
+
+document.getElementById("top_button").addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+})
+
+Array.from(document.getElementsByClassName("bottom")).forEach(element => {
+    element.addEventListener('click', function () {
+        window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+    })
+})
