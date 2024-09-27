@@ -10,6 +10,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link href="css/proyectoFInal.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -187,12 +188,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form class="container" action="#">
+                <form class="container" action="#" name="formLogin" id="formLogin">
                     <div class="modal-body d-flex flex-column gap-3 justify-content-center">
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                        <div class="col-12">
-                            <input type="password" class="form-control" id="pass" placeholder="Contraseña">
-                        </div>
+                        <input type="email" class="form-control" name="emailLogin" id="emailLogin" placeholder="Email">
+                        <input type="password" class="form-control" name="passLogin" id="passLogin" placeholder="Contraseña">
                         <div class="col-12">
                             <a data-bs-toggle="modal" data-bs-target="#modalPassOlvidada"
                                 class="enlaceDeMentiraProvisional"> ¿Has olvidado la
@@ -202,7 +201,7 @@
                             ¿Es tu primera vez aqui? <a data-bs-toggle="modal" data-bs-target="#modalRegistro"
                                 class="enlaceDeMentiraProvisional">Registrate</a>
                         </div>
-                        <button class="col-12 btn btn-primary mt-3">Iniciar sesion</button>
+                        <button type="submit" class="col-12 btn btn-primary mt-3">Iniciar sesion</button>
                     </div>
                 </form>
             </div>
@@ -218,8 +217,7 @@
                 </div>
                 <form class="container" action="#">
                     <div class="modal-body d-flex flex-column gap-3 justify-content-center">
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                        <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
                         <input type="email" class="form-control" id="email" placeholder="Correo electronico">
                         <input type="password" class="form-control" id="pass" placeholder="Contraseña">
                         <input type="password" class="form-control" id="conf-pass" placeholder="Confirmar contraseña">
@@ -258,6 +256,7 @@
     </div>
 </body>
 
+<script src="js/controlDeArticulos.js"></script>
 <script src="https://kit.fontawesome.com/118c807785.js" crossorigin="anonymous"></script>
 
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<!-- Se definen los elementos de la cabecera del documento -->
+
+<head>
+    <meta name="description" content="Página web de coches futuristas">
+    <meta charset="utf-8">
+    <title>Beca julio 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<!-- Indica el cuerpo del documento html. Donde estará toda el contenido del documento-->
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="editUser.html?id=U002">U002</a></td>
+                <td>Usuario 2</td>
+                <td>Apellidos usuario 2</td>
+                <td>usuario2@gmail.com</td>
+                <td><input type="button" onclick="eliminar(U002)" value="eliminar" /></td>
+            </tr>
+            <tr>
+                <td>U003</td>
+                <td>Usuario 3</td>
+                <td>Apellidos usuario 3</td>
+                <td>usuario3@gmail.com</td>
+                <td><input type="button" onclick="eliminar(U003)" value="eliminar" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const url = "https://apilater.azurewebsites.net/api/token";
+
+        const headers = {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
+        const request = {
+            "username": "usertest@gmail.com",
+            "password": "aaa"
+        }
+
+        axios.post(url, request, { headers })
+            .then(respuesta => {
+                const token = respuesta.data;
+                sessionStorage.setItem("token", token); //Almacenar token en Session storage
+
+                const base64Url = token.split('.')[1]; // Esto es el payload (segunda parte del JWT)
+                const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); //Reemplazo contenido para base64
+
+                const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) { //UTF8 - decodificación
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+
+                const objectJWT = JSON.parse(jsonPayload);
+
+                if (objectJWT.role === "admin") {
+                    console.log(objectJWT.role);
+                }
+                console.log(objectJWT);
+            })
+
+        let tokenRecuperado = sessionStorage.getItem("token");
+        console.log(tokenRecuperado);
+
+    </script>
+</body>
+
+</html>

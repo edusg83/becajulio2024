@@ -5,6 +5,7 @@ const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
 };
+
 const listado = document.getElementById("listado");
 const modalConfirmarDelete = new bootstrap.Modal(document.getElementById('modalConfirmarDelete'));
 let IdUsuarioElegido = "";
