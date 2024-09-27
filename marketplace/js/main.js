@@ -3,12 +3,15 @@ const url = "http://192.168.1.193:3000/articulo";
 
 let modalCompra = new bootstrap.Modal(document.getElementById("modal_compra"));
 let modalCarrito = new bootstrap.Modal(document.getElementById("modal_carrito"));
+let total = 0;
 
 const $productos = document.getElementById("productos");
 const $cantidadModal = document.getElementById("cantidad");
 const $nombreProductoModal = document.getElementById("nombre_producto");
 const $descripcionProductoModal = document.getElementById("descripcion");
 const $btnAddCarrito = document.getElementById("btn_add_carrito");
+const $productosEnCarro = document.getElementById("productos_en_carrito");
+const $productosCarrito = document.getElementById("productos_carrito");
 
 const carrito = new Array();
 
@@ -66,18 +69,79 @@ function addCarrito(id, cantidad) {
     modalCompra.hide();
   }
 
-  let pedido = {
-    idArticulo: id,
-    cantdadComprada: cantidad
-  };
+  let pedido = carrito.find((e) => {
+    return e.idArticulo === id;
+  });
 
-  carrito.push(pedido);
+  if (pedido === undefined) {
+    pedido = {
+      idArticulo: id,
+      cantdadComprada: cantidad
+    };
 
+    carrito.push(pedido);
+  } else {
+    pedido.cantdadComprada += cantidad;
+  }
+
+  $productosEnCarro.innerHTML = carrito.length;
+
+  $productosEnCarro.hidden = carrito.length === 0;
   console.log(carrito);
 }
 
 function getNumericValue(element) {
   return Number(element.value);
+}
+
+function mostrarCarrito() {
+  rellenarModalCarrito();
+
+  modalCarrito.show();
+}
+
+function rellenarModalCarrito() {
+  total = 0;
+  $productosCarrito.innerHTML = "";
+  carrito.forEach((e, i) => {
+    axios.get(url + "/" + e.idArticulo, { headers }).then((respuesta) => {
+      addProductoCarrito(respuesta.data, e.cantdadComprada);
+    });
+    if (i === carrito.length - 1) {
+      $productosCarrito.innerHTML += `
+      <div class="row text-center align-items-center text-end">
+        <span class="col-12 fw-bold">Total: <span class="text-primary">${total}</span>€</span>
+      </div>
+      `;
+    }
+  });
+}
+
+function addProductoCarrito(producto, cantidad) {
+  let linea = `
+    <div class="row text-center align-items-center">
+      <img src="../JS/parejas/img/mistborn/logo.png" class="col-2">
+      <span class="col-2 fw-bold">${producto.nombre}</span>
+      <span class="col-2 text-primary fw-bold">${producto.precio}€</span>
+      <span class="col-2 text-secondary">${cantidad} unidades</span>
+      <span class="col-2 text-primary fw-bold">${producto.precio * cantidad}€</span>
+      <span class="col-2">
+        <svg onclick"borrarProductoCarro(${producto.id})" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32">
+          <circle cx="10" cy="28" r="2" fill="red" />
+          <circle cx="24" cy="28" r="2" fill="red" />
+          <path fill="red" d="M4.98 2.804A1 1 0 0 0 4 2H0v2h3.18l3.84 19.196A1 1 0 0 0 8 24h18v-2H8.82l-.8-4H26a1 1 0 0 0 .976-.783L29.244 7h-2.047l-1.999 9H7.62Z" />
+          <path fill="red" d="M18.41 8L22 4.41L20.59 3L17 6.59L13.41 3L12 4.41L15.59 8L12 11.59L13.41 13L17 9.41L20.59 13L22 11.59z" />
+        </svg>
+      </span>
+    </div>
+    <div class="row m-3">
+      <hr class="col-12">
+    </div>
+  `;
+
+  total += producto.precio * cantidad;
+
+  $productosCarrito.innerHTML += linea;
 }
 
 $cantidadModal.addEventListener("blur", () => {
