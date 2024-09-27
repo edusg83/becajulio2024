@@ -67,6 +67,8 @@ function detallesProducto(datos) {
 }
 
 function addCarrito(id, cantidad) {
+  $cantidadModal.value = 1;
+
   if (cantidad === -1) {
     cantidad = getNumericValue($cantidadModal);
     modalCompra.hide();
@@ -90,7 +92,6 @@ function addCarrito(id, cantidad) {
   $productosEnCarro.innerHTML = carrito.length;
 
   $productosEnCarro.hidden = carrito.length === 0;
-  console.log(carrito);
 }
 
 function getNumericValue(element) {
@@ -107,13 +108,12 @@ function rellenarModalCarrito() {
   total = 0;
   $productosCarrito.innerHTML = "";
   carrito.forEach((e, i) => {
-    console.log(getProductoById(e.idArticulo));
     addProductoCarrito(getProductoById(e.idArticulo), e.cantdadComprada);
 
     if (i === carrito.length - 1) {
       $productosCarrito.innerHTML += `
-      <div class="row text-center align-items-center justify-content-end">
-        <span class="col-12 fw-bold">Total: <span class="text-primary">${total.toFixed(2)}</span>€</span>
+      <div class="row text-end align-items-center">
+        <span class="col-12 fw-bold">Total: <span class="text-primary">${total.toFixed(2)}€</span></span>
       </div>
       `;
     }
@@ -125,11 +125,11 @@ function addProductoCarrito(producto, cantidad) {
     <div class="row text-center align-items-center">
       <img src="../JS/parejas/img/mistborn/logo.png" class="col-2">
       <span class="col-2 fw-bold">${producto.nombre}</span>
-      <span class="col-2 text-primary fw-bold">${producto.precio}€</span>
+      <span class="col-2 text-primary fw-bold">${producto.precio.toFixed(2)}€</span>
       <span class="col-2 text-secondary">${cantidad} unidades</span>
-      <span class="col-2 text-primary fw-bold">${producto.precio * cantidad}€</span>
+      <span class="col-2 text-primary fw-bold">${(producto.precio * cantidad).toFixed(2)}€</span>
       <span class="col-2">
-        <svg onclick"borrarProductoCarro(${producto.id})" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32">
+        <svg onclick="borrarProductoCarro(${producto.id})" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 32 32">
           <circle cx="10" cy="28" r="2" fill="red" />
           <circle cx="24" cy="28" r="2" fill="red" />
           <path fill="red" d="M4.98 2.804A1 1 0 0 0 4 2H0v2h3.18l3.84 19.196A1 1 0 0 0 8 24h18v-2H8.82l-.8-4H26a1 1 0 0 0 .976-.783L29.244 7h-2.047l-1.999 9H7.62Z" />
@@ -147,9 +147,13 @@ function addProductoCarrito(producto, cantidad) {
   $productosCarrito.innerHTML += linea;
 }
 
+function borrarProductoCarro(id) {
+  carrito.splice(carrito.indexOf(carrito.find((e) => e.idArticulo == id)), 1);
+  $productosEnCarro.innerHTML = carrito.length;
+  rellenarModalCarrito();
+}
+
 function getProductoById(id) {
-  console.log(productos);
-  console.log(id);
   return productos.find((e) => e.id == id);
 }
 
