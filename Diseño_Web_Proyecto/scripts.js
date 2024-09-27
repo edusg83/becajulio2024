@@ -96,16 +96,17 @@ function set_product_list(info) {
     product_container.innerHTML = products;
 }
 
-//FIXME
 function search_product() {
 
     let product_name = document.getElementById("search").value;
+
+    let product_container = document.getElementById("product_container");
 
     axios.get(`${url_articles}/${product_name}/nombre`)
         .then(response => {
             articles = response.data;
             product_container.innerHTML = '';
-            console.log(articles);
             set_product_list(articles);
+            return false;
         })
 }
