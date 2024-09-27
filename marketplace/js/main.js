@@ -3,6 +3,8 @@ const url = "http://192.168.1.193:3000/articulo";
 
 let modalCompra = new bootstrap.Modal(document.getElementById("modal_compra"));
 let modalCarrito = new bootstrap.Modal(document.getElementById("modal_carrito"));
+
+let productos;
 let total = 0;
 
 const $productos = document.getElementById("productos");
@@ -25,6 +27,7 @@ axios.get(url, { headers }).then((respuesta) => {
 });
 
 function mostrarProductos(datos) {
+  productos = datos;
   datos.forEach((producto) => {
     let carta = `
       <div class="col-xxl-2  col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -104,13 +107,13 @@ function rellenarModalCarrito() {
   total = 0;
   $productosCarrito.innerHTML = "";
   carrito.forEach((e, i) => {
-    axios.get(url + "/" + e.idArticulo, { headers }).then((respuesta) => {
-      addProductoCarrito(respuesta.data, e.cantdadComprada);
-    });
+    console.log(getProductoById(e.idArticulo));
+    addProductoCarrito(getProductoById(e.idArticulo), e.cantdadComprada);
+
     if (i === carrito.length - 1) {
       $productosCarrito.innerHTML += `
-      <div class="row text-center align-items-center text-end">
-        <span class="col-12 fw-bold">Total: <span class="text-primary">${total}</span>€</span>
+      <div class="row text-center align-items-center justify-content-end">
+        <span class="col-12 fw-bold">Total: <span class="text-primary">${total.toFixed(2)}</span>€</span>
       </div>
       `;
     }
@@ -142,6 +145,12 @@ function addProductoCarrito(producto, cantidad) {
   total += producto.precio * cantidad;
 
   $productosCarrito.innerHTML += linea;
+}
+
+function getProductoById(id) {
+  console.log(productos);
+  console.log(id);
+  return productos.find((e) => e.id == id);
 }
 
 $cantidadModal.addEventListener("blur", () => {
