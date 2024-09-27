@@ -52,19 +52,25 @@
 
   <!-- Modal -->
   <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="nombre_producto" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="nombre_producto">Tomate</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <img id="imagen_producto" src="../JS/parejas/img/mistborn/logo.png" class="card-img-top" alt="...">
-          <h5 class="mt-2">Descripcion del producto</h5>
-          <p id="descripcion" class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sunt veniam aperiam autem aspernatur ducimus! Corporis enim omnis recusandae aliquam quasi qui, eius commodi tempore delectus praesentium
-            maiores iure quas!</p>
-          <label for="cantidad" class="form-label fw-bold">Cantidad</label>
-          <input class="form-control" type="number" name="cantidad" id="cantidad" value="1" min="1">
+        <div class="d-flex flex-row modal-body">
+          <img id="imagen_producto" src="../JS/parejas/img/mistborn/logo.png" class="card-img-top w-50 h-50" alt="...">
+          <div class="d-flex flex-column ms-3 w-50">
+            <div>
+              <h5>Descripcion del producto</h5>
+              <p id="descripcion" class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sunt veniam aperiam autem aspernatur ducimus! Corporis enim omnis recusandae aliquam quasi qui, eius commodi tempore delectus praesentium
+                maiores iure quas!</p>
+            </div>
+            <div>
+              <label for="cantidad" class="form-label fw-bold">Cantidad</label>
+              <input class="form-control" type="number" name="cantidad" id="cantidad" value="1" min="1">
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
