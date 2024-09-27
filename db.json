@@ -40,7 +40,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "9a24"
     }
   ],
   "usuarios": [
@@ -57,16 +58,10 @@
       "id": "U002"
     },
     {
-      "nombre": "Ruben",
-      "apellidos": "Banegas",
-      "email": "ruben@gmail.com",
+      "nombre": "Ismael",
+      "apellidos": "Suspendido",
+      "email": "manzanita@gmail.com",
       "id": "U004"
-    },
-    {
-      "id": "U005",
-      "nombre": "Usuario 5",
-      "apellidos": "Apellidos usuario 5",
-      "email": "usuario5@gmail.com"
     }
   ]
 }
