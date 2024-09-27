@@ -67,8 +67,6 @@ function detallesProducto(datos) {
 }
 
 function addCarrito(id, cantidad) {
-  $cantidadModal.value = 1;
-
   if (cantidad === -1) {
     cantidad = getNumericValue($cantidadModal);
     modalCompra.hide();
@@ -92,6 +90,8 @@ function addCarrito(id, cantidad) {
   $productosEnCarro.innerHTML = carrito.length;
 
   $productosEnCarro.hidden = carrito.length === 0;
+
+  $cantidadModal.value = 1;
 }
 
 function getNumericValue(element) {
