@@ -1,0 +1,97 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "money_expended": 0.0,
+        "name": "Juan",
+        "password": "password123"
+      },
+      {
+        "id": 2,
+        "money_expended": 100.0,
+        "name": "Maria",
+        "password": "password456"
+      },
+      {
+        "id": 3,
+        "money_expended": 50.0,
+        "name": "Carlos",
+        "password": "password789"
+      },
+      {
+        "id": 4,
+        "money_expended": 200.0,
+        "name": "Ana",
+        "password": "password321"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "Moisturizing Cream",
+        "price": 15.0,
+        "sales": 0,
+        "stock": 100
+      },
+      {
+        "id": 2,
+        "name": "Sunscreen SPF 50",
+        "price": 20.0,
+        "sales": 0,
+        "stock": 50
+      },
+      {
+        "id": 3,
+        "name": "Vitamin C Serum",
+        "price": 25.0,
+        "sales": 0,
+        "stock": 200
+      },
+      {
+        "id": 4,
+        "name": "Anti-aging Night Cream",
+        "price": 30.0,
+        "sales": 0,
+        "stock": 150
+      },
+      {
+        "id": 5,
+        "name": "Exfoliating Scrub",
+        "price": 18.0,
+        "sales": 0,
+        "stock": 75
+      }
+    ],
+    "orders": [
+      {
+        "id": 1,
+        "date": "2023-09-01",
+        "name": "Pedido 1",
+        "total": 0.0,
+        "user_id": 1
+      },
+      {
+        "id": 2,
+        "date": "2023-09-02",
+        "name": "Pedido 2",
+        "total": 0.0,
+        "user_id": 2
+      }
+    ],
+    "order_items": [
+      {
+        "id": 1,
+        "quantity": 2,
+        "order_id": 1,
+        "product_id": 1
+      },
+      {
+        "id": 2,
+        "quantity": 3,
+        "order_id": 2,
+        "product_id": 2
+      }
+    ]
+  
+  }
+  

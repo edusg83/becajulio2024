@@ -1,0 +1,27 @@
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
+.btn-shop {
+  background-color: rgb(153, 13, 53) !important;
+  color: rgb(246, 247, 248) !important;
+}
+
+.btn-info {
+  background-color: rgb(182, 214, 204) !important;
+  color: rgb(27, 27, 30) !important;
+}
+
+.bg-red {
+  background-color: rgb(153, 13, 53);
+}
+
+.txt-dark {
+  color: rgb(246, 247, 248) !important;
+}
+
+.icon-red {
+  color: rgb(153, 13, 53) !important;
+}
+
+/*# sourceMappingURL=style.css.map */
