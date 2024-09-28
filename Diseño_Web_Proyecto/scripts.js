@@ -13,12 +13,6 @@ const url_articles = "http://localhost:8080/marketplace/articulos";
 
 const url_users = "http://localhost:8080/marketplace/usuarios"
 
-
-
-
-
-
-
 function use_login_modal(param) {
     param == 1 ? login_modal.show() : login_modal.hide();
 }
@@ -147,9 +141,16 @@ function login_user() {
         })
 }
 
+//TODO CREAR USUARIO
 function create_user(username, email, password) {
-
+    axios.post(url_users, headers)
+        .then(response => {
+            close_modal(signup_modal);
+            //login...  
+        })
 }
+
+//TODO AÑADIR ARTICULO A LISTA, AÑADIR ARTICULO A CARRO DE LA COMPRA, REALIZAR PEDIDO, CERRAR CUENTA
 
 function search_product() {
 
