@@ -87,6 +87,9 @@ function resetScore() {
   player_1.iconContainerRow = 0;
   player_2.iconColumn = 0;
   player_2.iconContainerRow = 0;
+  player_1.score = 0;
+  player_2.score = 0;
+  card_count = 0;
   document.getElementById("score_display_player_1").value = 0;
   document.getElementById("score_display_player_2").value = 0;
   Array.from(document.getElementsByClassName("board")).forEach((board) => {
@@ -100,14 +103,10 @@ function resetScore() {
 
 function setIconOnHit(card_value) {
   let current_container = player_turn == 1 ? "icon_container_1" : "icon_container_2";
-  console.log(current_container)
 
   let current_player = player_turn == 1 ? player_1 : player_2;
-  console.log(current_player)
 
   document.getElementsByClassName(current_container)[0].children[current_player.iconContainerRow].children[current_player.iconColumn].style.backgroundImage = `url(${card_value})`;
-  console.log(document.getElementsByClassName(current_container)[0].children[current_player.iconContainerRow].children[current_player.iconColumn])
-
   current_player.iconColumn++;
 
   if (current_player.iconColumn == 3 && current_player.iconContainerRow == 0) {
